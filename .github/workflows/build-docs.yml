@@ -24,8 +24,8 @@ jobs:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
-            mkdocs-material-
+            mkdocs-material-${{ hashFiles('requirements.txt') }}
 
-      - run: pip install mkdocs-material
+      - run: pip install -r requirements.txt
 
       - run: mkdocs gh-deploy --force
