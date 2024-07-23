@@ -2,3 +2,12 @@ site_name: Fundamentals of Computing and Programming
 
 theme:
   name: material
+  features:
+    - navigation.footer
+
+
+nav:
+  - index.md
+  - setup.md
+
+site_url: https://anandology.github.io/isi-fcp/
