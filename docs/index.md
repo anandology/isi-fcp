@@ -12,3 +12,19 @@ This course uses unix environment for writing, compiling and executing c program
 
 If you are using Linux or Mac, you probably don't need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the [Software Setup](setup.md) page.
 
+
+## Credits
+
+This course is taught of Prof. Jishnu Biswas, ISI Bangalore.
+
+This website is setup by [Anand Chitipothu](https://anandology.com/).
+
+## License
+
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
