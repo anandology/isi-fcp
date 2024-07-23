@@ -5,10 +5,19 @@ theme:
   features:
     - navigation.footer
 
-
 nav:
   - index.md
   - setup.md
+  - playground.md
+
+plugins:
+    - feather:
+        server_url: https://livecode.pipal.in/
+        modes:
+          - clike
 
 site_url: https://anandology.github.io/isi-fcp/
 repo_url: https://github.com/anandology/isi-fcp
+
+extra_javascript:
+  - js/feather.js
