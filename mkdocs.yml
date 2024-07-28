@@ -10,6 +10,11 @@ nav:
   - setup.md
   - playground.md
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 plugins:
     - feather:
         server_url: https://livecode.pipal.in/

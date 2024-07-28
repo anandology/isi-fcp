@@ -1,34 +1,14 @@
 # Software Setup
 
-This page explains how to setup the coding environment for Linux and Windows.
+This page explains how to setup the coding environment for Ubuntu.
 
-## Windows
+!!! note
 
-Please use these instructions if your laptop is running Windows.
+    If you are have a computer running Windows, please follow instructions on [Installing Ubuntu on Windows using WSL](ubuntu-wsl.md) before moving further.
 
-Please note that only Windows 10 version 2004 and higher or Windows 11 are supported.
+## Install C compiler
 
-**Step 1: Open Windows Power Shell**
-
-Enter `Windows Power Shell` in the system search bar and open the application.
-
-**Step 2: Install Ubuntu using WSL**
-
-WSL is _Windows Subsystem for Linux_ and it supports running Linux inside Windows. For this course we'll be using the Linux distribution Ubuntu 24.04.
-
-Run the following command in the power shell to download and install Ubuntu.
-
-```
-wsl --install
-```
-
-Please make sure you have a fast internet connection as this step downloads more than 1GB of data.
-
-**Step 3: Open Ubuntu Terminal**
-
-Enter `Ubuntu` in the system search bar and open the application.
-
-**Step 4: Install C compiler**
+For this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install GCC compiler.
 
 Run the following commands to install C compiler and other build tools.
 
@@ -37,21 +17,83 @@ sudo apt-get update
 sudo apt-get install build-essential
 ```
 
-## Linux
+## Install Visual Studio Code
 
-Please use these instructions if your laptop is running Linux.
+Visual Studio Code (vscode) is the recommended editor for this course. Please install it from [Visual Studio Code Downloads][2] page.
 
-For this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install c compiler.
+[2]: https://code.visualstudio.com/download
 
-Run the following commands to install C compiler and other build tools.
+## Install SVG extension in vscode
+
+Follow the following instructions to install [SVG Extension][svg-ex] to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.
+
+1. Open vscode and press `Ctrl+P`**
+2. Type `ext install jock.svg` and press Enter
+
+![](images/vscode-ext-install.png)
+
+[svg-ex]: https://marketplace.visualstudio.com/items?itemName=jock.svg
+
+## Make a directory for your code
+
+It is recommended to create a new directory for all your programs in this course. Let's call it `computing`.
+
+Open your terminal and run the following command.
 
 ```
-sudo apt-get update
-sudo apt-get install build-essential
+mkdir computing
 ```
 
-## References
+You can change the current directory to that using:
 
-* [How to install Linux on Windows with WSL][1]
+```
+cd computing
+```
 
-[1]: https://learn.microsoft.com/en-us/windows/wsl/install
+## Download CSketch library
+
+[CSketch][] is a library for drawing simple shapes in C programming language and it is required for this course.
+
+Run the following command in your terminal to install it.
+
+```
+curl https://anandology.github.io/csketch/install.sh | bash
+```
+
+[CSketch]: https://anandology.github.io/csketch/
+
+This will download the csketch library to your current directory and also adds a sample file `circle.c` and a `Makefile` to build your C code.
+
+## Build your first program
+
+Run `make` to compile the `circle.c` file in the current directory.
+
+```
+$ make
+gcc -I sketch -L sketch circle.c  -lm -l sketch -o circle
+```
+
+That compiled the `circle.c` and created executable file `circle`.
+
+Run the `circle` program.
+
+```
+$ ./circle
+```
+
+That would have created a file `circle.svg`.
+
+Open `vscode` to see the SVG image.
+
+```
+$ code .
+```
+
+That will open _vscode_ with all the files in the current directory. Select `circle.svg` and press the _preview_ button.
+
+![](images/vscode-open-svg.png)
+
+Once you click preview, you'll be able to see the image in the right.
+
+![](images/vscode-svg-preview.png)
+
