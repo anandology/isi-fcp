@@ -27,7 +27,7 @@ Visual Studio Code (vscode) is the recommended editor for this course. Please in
 
 Follow the following instructions to install [SVG Extension][svg-ex] to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.
 
-1. Open vscode and press `Ctrl+P`**
+1. Open vscode and press `Ctrl+P`
 2. Type `ext install jock.svg` and press Enter
 
 ![](images/vscode-ext-install.png)
