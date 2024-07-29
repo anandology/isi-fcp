@@ -23,6 +23,17 @@ Visual Studio Code (vscode) is the recommended editor for this course. Please in
 
 [2]: https://code.visualstudio.com/download
 
+
+!!! note
+
+    If you are on Ubuntu 18.04, please install an older version by running the following commands.
+
+    ```
+    wget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable
+    sudo dpkg -i code_1.75.1-1675893397_amd64.deb
+    ```
+
+
 ## Install SVG extension in vscode
 
 Follow the following instructions to install [SVG Extension][svg-ex] to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.
