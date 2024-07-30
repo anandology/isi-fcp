@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fundamentals of Computing and Programming</title>
+<title>ubuntu-wsl – Fundamentals of Computing and Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./setup.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +80,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Fundamentals of Computing and Programming</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Fundamentals of Computing and Programming
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -108,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fundamentals of Computing and Programming</span></a>
   </div>
 </li>
@@ -151,57 +152,44 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#credits" id="toc-credits" class="nav-link" data-scroll-target="#credits">Credits</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#installing-ubuntu-on-windows-using-wsl" id="toc-installing-ubuntu-on-windows-using-wsl" class="nav-link active" data-scroll-target="#installing-ubuntu-on-windows-using-wsl">Installing Ubuntu on Windows using WSL</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Fundamentals of Computing and Programming</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
+<section id="installing-ubuntu-on-windows-using-wsl" class="level1">
+<h1>Installing Ubuntu on Windows using WSL</h1>
+<p><em>Windows Subsystem for Linux</em>, shortly called as <em>WSL</em>, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.</p>
+<p>Follow the following instructions to install Ubuntu on your Windows computer using WSL.</p>
+<p>Please note that only Windows 10 version 2004 and higher or Windows 11 are supported.</p>
+<p><strong>Step 1: Open Windows Power Shell</strong></p>
+<p>Enter <code>Windows Power Shell</code> in the system search bar and open the application.</p>
+<p><strong>Step 2: Install Ubuntu using WSL</strong></p>
+<p>WSL is <em>Windows Subsystem for Linux</em> and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.</p>
+<p>Run the following command in the power shell to download and install Ubuntu.</p>
+<pre><code>wsl --install</code></pre>
+<p>Please make sure you have a fast internet connection as this step downloads more than 1GB of data.</p>
+<p><strong>Step 3: Open Ubuntu Terminal</strong></p>
+<p>Enter <code>Ubuntu</code> in the system search bar and open the application.</p>
+<p>You’ll should see a Ubuntu terminal.</p>
+<p>That’s all! You are now ready to code.</p>
+<p><a href="./setup.html">← Back to Software Setup</a></p>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">How to install Linux on Windows with WSL</a></li>
+</ul>
 
-    
-  
-    
-  </div>
-  
 
-
-</header>
-
-
-<p>Welcome to the <em>Fundamentals of Computing and Programming</em> course.</p>
-<p>Please look at the <a href="https://www.isibang.ac.in/~adean/infsys/database/Bmath/FCP.html">course page on ISI Bangalore website</a> for syllabus and other details.</p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This course uses unix environment for writing, compiling and executing c programs.</p>
-<p>If you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the <a href="./setup.html">Software Setup</a> page.</p>
 </section>
-<section id="credits" class="level2">
-<h2 class="anchored" data-anchor-id="credits">Credits</h2>
-<p>This course is taught of Prof.&nbsp;Jishnu Biswas, ISI Bangalore.</p>
-<p>This website is setup by <a href="https://anandology.com/">Anand Chitipothu</a>.</p>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" class="img-fluid figure-img" alt="CC BY-SA 4.0"></a></p>
-<figcaption>CC BY-SA 4.0</figcaption>
-</figure>
-</div>
-
-
 </section>
 
 </main> <!-- /main -->
@@ -625,15 +613,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./setup.html" class="pagination-link" aria-label="Software Setup">
-        <span class="nav-page-text">Software Setup</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

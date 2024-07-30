@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "ubuntu-wsl.html",
+    "href": "ubuntu-wsl.html",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "Windows Subsystem for Linux, shortly called as WSL, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.\nFollow the following instructions to install Ubuntu on your Windows computer using WSL.\nPlease note that only Windows 10 version 2004 and higher or Windows 11 are supported.\nStep 1: Open Windows Power Shell\nEnter Windows Power Shell in the system search bar and open the application.\nStep 2: Install Ubuntu using WSL\nWSL is Windows Subsystem for Linux and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.\nRun the following command in the power shell to download and install Ubuntu.\nwsl --install\nPlease make sure you have a fast internet connection as this step downloads more than 1GB of data.\nStep 3: Open Ubuntu Terminal\nEnter Ubuntu in the system search bar and open the application.\nYou’ll should see a Ubuntu terminal.\nThat’s all! You are now ready to code.\n← Back to Software Setup\n\n\n\nHow to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "ubuntu-wsl.html#references",
+    "href": "ubuntu-wsl.html#references",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "How to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "",
+    "text": "Welcome to the Fundamentals of Computing and Programming course.\nPlease look at the course page on ISI Bangalore website for syllabus and other details.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Introduction",
+    "text": "Introduction\nThis course uses unix environment for writing, compiling and executing c programs.\nIf you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the Software Setup page.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Credits",
+    "text": "Credits\nThis course is taught of Prof. Jishnu Biswas, ISI Bangalore.\nThis website is setup by Anand Chitipothu.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nCC BY-SA 4.0",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/01/index.html",
+    "href": "lecture-notes/01/index.html",
+    "title": "Lecture Notes 01",
+    "section": "",
+    "text": "This will be updated soon!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 01"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html",
+    "href": "lecture-notes/02/index.html",
+    "title": "Lecture Notes 02",
+    "section": "",
+    "text": "Warning\n\n\n\nThis lecture notes is still work in progress. Not all programs covered in the class are added here yet. The remaining ones will be added soon!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#introduction",
+    "href": "lecture-notes/02/index.html#introduction",
+    "title": "Lecture Notes 02",
+    "section": "Introduction",
+    "text": "Introduction\nWhy should you learn programming?\n\nA powerful programming language is more than just a means for instructing a computer to perform tasks. The language also serves as a framework within which we organize our ideas about processes.\n\n– Structure and Interpretation of Computer Programs\n\nEvery powerful language has three mechanisms for accomplishing this:\n\nprimitive expressions, which represent the simplest entities the language is concerned with,\nmeans of combination, by which compound elements are built from simpler ones, and\nmeans of abstraction, by which compound elements can be named and manipulated as units.\n\n\n– Structure and Interpretation of Computer Programs",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#diving-in",
+    "href": "lecture-notes/02/index.html#diving-in",
+    "title": "Lecture Notes 02",
+    "section": "Diving in",
+    "text": "Diving in\n\nA Circle\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    // draw a circle with center as (0, 0) and radius 100\n    draw_circle(0, 0, 100);\n\n    // save all the shapes draws to lesson2.svg\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nTwo Circles\nHow do we draw two circles instead of just one?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(-100, 0, 100);\n    draw_circle(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\nHow about drawing two concentic circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(0, 0, 200);\n    draw_circle(0, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nWhat if we want three circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    float r = 150;\n\n    draw_circle(0, 0, r / 3);\n    draw_circle(0, 0, 2 * r / 3);\n    draw_circle(0, 0, r);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCandle Lights\n#include &lt;sketch.h&gt;\n\nvoid bottle_circle(float bx, float by, float r)\n{\n    float cx = bx;\n    float cy = by + r;\n\n    draw_circle(cx, cy, r);\n}\n\nvoid draw_candle_light(float x, float y, float r)\n{\n    bottle_circle(x, y, r / 3);\n    bottle_circle(x, y, 2 * r / 3);\n    bottle_circle(x, y, r);\n}\n\nint main()\n{\n    draw_candle_light(-100, 0, 100);\n    draw_candle_light(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\n#include &lt;sketch.h&gt;\n\nvoid concentric_circles(float x, float y, float r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        draw_circle(x, y, i * r / n);\n    }\n}\n\nint main()\n{\n    concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nRandom Concentric Circles\n#include &lt;sketch.h&gt;\n#include &lt;stdlib.h&gt;\n#include &lt;time.h&gt;\n\nvoid random_concentric_circles(float x, float y, int r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        // pick a random number from 1 to r\n        float r1 = 1 + rand() % r;\n\n        draw_circle(x, y, r1);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    random_concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nTry running this program again and you’ll get completely different circles!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#string-art",
+    "href": "lecture-notes/02/index.html#string-art",
+    "title": "Lecture Notes 02",
+    "section": "String Art",
+    "text": "String Art\nLet’s add a bit more complexity. How do you find N points equidistant on a circle?\nYes, trigonometry!\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\nConnecting Points\nWhat if we connect some points?\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect(0, 4);\n    connect(1, 5);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConnecting All Points\nLet’s go one step further and connect all the points.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nA Pattern\nWe could use connect_all multiple times to generate very interesting pattern.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(16);\n    connect_all(12);\n    connect_all(7);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCardoid\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 72\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    make_circle(250);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, 2 * i);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nFinal Touch\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 720\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    set_stroke_width(0.5);\n    set_stroke(\"#44444480\");\n\n    make_circle(250);\n\n    // connect_all(16);\n    // connect_all(12);\n    // connect_all(7);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        int d = N / 6;\n\n        connect(i, (i * i) % d);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#references",
+    "href": "lecture-notes/02/index.html#references",
+    "title": "Lecture Notes 02",
+    "section": "References",
+    "text": "References\n\nStructure and Interpretation of Computer Programs\nCurve stitching: the art of sewing beautiful mathematical patterns, Jon Millington",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/index.html",
+    "href": "lecture-notes/index.html",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "Lecture Notes\n\n\n\n\n\n\n\n\n\n\nLecture Notes 01\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nJishnu Biswas\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 02\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Lecture Notes"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Software Setup",
+    "section": "",
+    "text": "This page explains how to setup the coding environment for Ubuntu.\n\n\n\n\n\n\nNote\n\n\n\nIf you are have a computer running Windows, please follow instructions on Installing Ubuntu on Windows using WSL before moving further.\n\n\n\n\nFor this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install GCC compiler.\nRun the following commands to install C compiler and other build tools.\nsudo apt-get update\nsudo apt-get install build-essential\n\n\n\nVisual Studio Code (vscode) is the recommended editor for this course. Please install it from Visual Studio Code Downloads page.\n\n\n\n\n\n\nWarning\n\n\n\nIf you are on Ubuntu 18.04, please install an older version by running the following commands.\nwget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable\nsudo dpkg -i code_1.75.1-1675893397_amd64.deb\n\n\n\n\n\nFollow the following instructions to install SVG Extension to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.\n\nOpen vscode and press Ctrl+P\nType ext install jock.svg and press Enter\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYou need to install WSL extension only if you are running Windows.\n\n\nFollow the following instructions to install the extension.\n\nOpen vscode and press Ctrl+P\nType ext install ms-vscode-remote.remote-wsl and press Enter\n\n\n\n\nIt is recommended to create a new directory for all your programs in this course. Let’s call it computing.\nOpen your terminal and run the following command.\nmkdir computing\nYou can change the current directory to that using:\ncd computing\n\n\n\nCSketch is a library for drawing simple shapes in C programming language and it is required for this course.\nRun the following command in your terminal to install it.\ncurl https://anandology.github.io/csketch/install.sh | bash\nThis will download the csketch library to your current directory and also adds a sample file circle.c and a Makefile to build your C code.\n\n\n\nOpen your computing directory in vscode by running code . in your terminal.\n$ code .\nIf you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the code command available in your environment.\nOnce the vscode is open, open a terminal from the menu View -&gt; Terminal. You can also open the same using keyboard shortcut Ctrl + `.\n\n\n\nIn the terminal, run make to compile the circle.c file in the current directory.\n$ make\ngcc -I sketch -L sketch circle.c  -lm -l sketch -o circle\nThat compiled the circle.c and created executable file circle.\nRun the circle program.\n$ ./circle\nThat would have created a file circle.svg. Select the circle.svg file in the left sidebar to open it now press the preview button.\n\n\n\nOnce you click preview, you’ll be able to see the image in the right.",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#install-c-compiler",
+    "href": "setup.html#install-c-compiler",
+    "title": "Software Setup",
+    "section": "",
+    "text": "For this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install GCC compiler.\nRun the following commands to install C compiler and other build tools.\nsudo apt-get update\nsudo apt-get install build-essential",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#install-visual-studio-code",
+    "href": "setup.html#install-visual-studio-code",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Visual Studio Code (vscode) is the recommended editor for this course. Please install it from Visual Studio Code Downloads page.\n\n\n\n\n\n\nWarning\n\n\n\nIf you are on Ubuntu 18.04, please install an older version by running the following commands.\nwget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable\nsudo dpkg -i code_1.75.1-1675893397_amd64.deb",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#install-svg-extension-in-vscode",
+    "href": "setup.html#install-svg-extension-in-vscode",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Follow the following instructions to install SVG Extension to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.\n\nOpen vscode and press Ctrl+P\nType ext install jock.svg and press Enter",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#install-wsl-extension-in-vscode",
+    "href": "setup.html#install-wsl-extension-in-vscode",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Warning\n\n\n\nYou need to install WSL extension only if you are running Windows.\n\n\nFollow the following instructions to install the extension.\n\nOpen vscode and press Ctrl+P\nType ext install ms-vscode-remote.remote-wsl and press Enter",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#make-a-directory-for-your-code",
+    "href": "setup.html#make-a-directory-for-your-code",
+    "title": "Software Setup",
+    "section": "",
+    "text": "It is recommended to create a new directory for all your programs in this course. Let’s call it computing.\nOpen your terminal and run the following command.\nmkdir computing\nYou can change the current directory to that using:\ncd computing",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#download-csketch-library",
+    "href": "setup.html#download-csketch-library",
+    "title": "Software Setup",
+    "section": "",
+    "text": "CSketch is a library for drawing simple shapes in C programming language and it is required for this course.\nRun the following command in your terminal to install it.\ncurl https://anandology.github.io/csketch/install.sh | bash\nThis will download the csketch library to your current directory and also adds a sample file circle.c and a Makefile to build your C code.",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#build-your-first-program",
+    "href": "setup.html#build-your-first-program",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Open your computing directory in vscode by running code . in your terminal.\n$ code .\nIf you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the code command available in your environment.\nOnce the vscode is open, open a terminal from the menu View -&gt; Terminal. You can also open the same using keyboard shortcut Ctrl + `.\n\n\n\nIn the terminal, run make to compile the circle.c file in the current directory.\n$ make\ngcc -I sketch -L sketch circle.c  -lm -l sketch -o circle\nThat compiled the circle.c and created executable file circle.\nRun the circle program.\n$ ./circle\nThat would have created a file circle.svg. Select the circle.svg file in the left sidebar to open it now press the preview button.\n\n\n\nOnce you click preview, you’ll be able to see the image in the right.",
+    "crumbs": [
+      "Software Setup"
+    ]
+  }
+]
