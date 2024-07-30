@@ -1,0 +1,12 @@
+/* css styles */
+
+.screenshot img {
+    max-height: 500px;
+}
+
+.sketch img {
+    width: 100%;
+    padding: 2px;
+    border: 2px solid #eee;
+    margin-top: 0px;
+}

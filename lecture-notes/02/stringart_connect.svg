@@ -1,0 +1,42 @@
+<?xml version='1.0' standalone='no'?>
+<svg version='1.1' viewBox='-300 -300 600 600' width='600' height='600'  xmlns='http://www.w3.org/2000/svg'>
+<rect x='-300' y='-300' width='100%' height='100%' fill='white' /><g transform='scale(1, -1)'>
+  <circle cx='250.000000' cy='0.000000' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='246.201935' cy='43.412045' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='234.923157' cy='85.505035' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='216.506348' cy='125.000000' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='191.511108' cy='160.696899' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='160.696899' cy='191.511108' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='124.999992' cy='216.506348' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='85.505035' cy='234.923157' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='43.412056' cy='246.201935' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-0.000011' cy='250.000000' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-43.412048' cy='246.201935' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-85.505028' cy='234.923157' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-125.000015' cy='216.506348' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-160.696899' cy='191.511108' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-191.511108' cy='160.696899' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-216.506348' cy='125.000008' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-234.923141' cy='85.505058' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-246.201935' cy='43.412071' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-250.000000' cy='-0.000022' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-246.201935' cy='-43.412056' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-234.923157' cy='-85.505043' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-216.506348' cy='-125.000000' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-191.511124' cy='-160.696899' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-160.696869' cy='-191.511139' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-124.999977' cy='-216.506363' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-85.505020' cy='-234.923157' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='-43.412033' cy='-246.201935' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='0.000003' cy='-250.000000' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='43.412037' cy='-246.201935' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='85.505020' cy='-234.923157' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='124.999977' cy='-216.506363' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='160.696884' cy='-191.511124' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='191.511078' cy='-160.696930' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='216.506332' cy='-125.000046' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='234.923141' cy='-85.505089' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <circle cx='246.201950' cy='-43.411991' r='2.000000' stroke='black' fill='none' stroke-width='1.000000'/>
+  <line x1='250.000000' y1='0.000000' x2='191.511108' y2='160.696899' stroke='black' stroke-width='1.000000'/>
+  <line x1='246.201935' y1='43.412045' x2='160.696899' y2='191.511108' stroke='black' stroke-width='1.000000'/>
+</g></svg>

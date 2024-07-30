@@ -4,28 +4,31 @@ on:
     branches:
       - main
 permissions:
-  contents: write
+    contents: write
+    pages: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Render Book project
+        uses: quarto-dev/quarto-actions/render@v2
         with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+          to: html
 
-      - uses: actions/cache@v4
+      - name: Publish HTML book
+          uses: quarto-dev/quarto-actions/publish@v2
         with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-${{ hashFiles('requirements.txt') }}
-
-      - run: pip install -r requirements.txt
-
-      - run: mkdocs gh-deploy --force
+          target: gh-pages
+          render: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions

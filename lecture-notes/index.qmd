@@ -1,0 +1,13 @@
+---
+listing:
+  contents: "*.qmd"
+  type: default
+  id: sample-listings
+sidebar: true
+toc: false
+---
+
+# Lecture Notes
+
+::: {#sample-listings}
+:::

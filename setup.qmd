@@ -2,9 +2,9 @@
 
 This page explains how to setup the coding environment for Ubuntu.
 
-!!! note
-
-    If you are have a computer running Windows, please follow instructions on [Installing Ubuntu on Windows using WSL](ubuntu-wsl.md) before moving further.
+:::{.callout-note}
+If you are have a computer running Windows, please follow instructions on [Installing Ubuntu on Windows using WSL](ubuntu-wsl.qmd) before moving further.
+:::
 
 ## Install C compiler
 
@@ -12,7 +12,7 @@ For this course, we support only Ubuntu distribution of Linux. If you have any o
 
 Run the following commands to install C compiler and other build tools.
 
-```
+```bash
 sudo apt-get update
 sudo apt-get install build-essential
 ```
@@ -24,15 +24,14 @@ Visual Studio Code (vscode) is the recommended editor for this course. Please in
 [2]: https://code.visualstudio.com/download
 
 
-!!! note
+:::{.callout-warning}
+If you are on Ubuntu 18.04, please install an older version by running the following commands.
 
-    If you are on Ubuntu 18.04, please install an older version by running the following commands.
-
-    ```
-    wget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable
-    sudo dpkg -i code_1.75.1-1675893397_amd64.deb
-    ```
-
+```bash
+wget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable
+sudo dpkg -i code_1.75.1-1675893397_amd64.deb
+```
+:::
 
 ## Install SVG extension in vscode
 
@@ -41,9 +40,23 @@ Follow the following instructions to install [SVG Extension][svg-ex] to preview 
 1. Open vscode and press `Ctrl+P`
 2. Type `ext install jock.svg` and press Enter
 
+::: {.screenshot}
 ![](images/vscode-ext-install.png)
+:::
 
 [svg-ex]: https://marketplace.visualstudio.com/items?itemName=jock.svg
+
+
+## Install WSL extension in vscode
+
+:::{.callout-warning}
+You need to install WSL extension only if you are running Windows.
+:::
+
+Follow the following instructions to install the extension.
+
+1. Open vscode and press `Ctrl+P`
+2. Type `ext install ms-vscode-remote.remote-wsl` and press Enter
 
 ## Make a directory for your code
 
@@ -51,13 +64,13 @@ It is recommended to create a new directory for all your programs in this course
 
 Open your terminal and run the following command.
 
-```
+```bash
 mkdir computing
 ```
 
 You can change the current directory to that using:
 
-```
+```bash
 cd computing
 ```
 
@@ -67,7 +80,7 @@ cd computing
 
 Run the following command in your terminal to install it.
 
-```
+```bash
 curl https://anandology.github.io/csketch/install.sh | bash
 ```
 
@@ -77,9 +90,23 @@ This will download the csketch library to your current directory and also adds a
 
 ## Build your first program
 
-Run `make` to compile the `circle.c` file in the current directory.
+Open your `computing` directory in vscode by running `code .` in your terminal.
 
+```bash
+$ code .
 ```
+
+If you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the `code` command available in your environment.
+
+Once the vscode is open, open a terminal from the menu `View -> Terminal`. You can also open the same using keyboard shortcut ``Ctrl + ` ``.
+
+::: {.screenshot}
+![](images/vscode-terminal-menu.png)
+:::
+
+In the terminal, run `make` to compile the `circle.c` file in the current directory.
+
+```bash
 $ make
 gcc -I sketch -L sketch circle.c  -lm -l sketch -o circle
 ```
@@ -88,23 +115,19 @@ That compiled the `circle.c` and created executable file `circle`.
 
 Run the `circle` program.
 
-```
+```bash
 $ ./circle
 ```
 
-That would have created a file `circle.svg`.
 
-Open `vscode` to see the SVG image.
+That would have created a file `circle.svg`. Select the `circle.svg` file in the left sidebar to open it now press the _preview_ button.
 
-```
-$ code .
-```
-
-That will open _vscode_ with all the files in the current directory. Select `circle.svg` and press the _preview_ button.
-
+::: {.screenshot}
 ![](images/vscode-open-svg.png)
+:::
 
 Once you click preview, you'll be able to see the image in the right.
 
+::: {.screenshot}
 ![](images/vscode-svg-preview.png)
-
+:::

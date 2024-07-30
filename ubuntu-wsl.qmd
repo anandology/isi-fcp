@@ -31,7 +31,7 @@ You'll should see a Ubuntu terminal.
 
 That's all! You are now ready to code.
 
-[&larr; Back to Software Setup](setup.md)
+[&larr; Back to Software Setup](setup.qmd)
 
 ## References
 

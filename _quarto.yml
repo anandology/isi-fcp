@@ -1,0 +1,36 @@
+project:
+  type: website
+
+website:
+  title: "Fundamentals of Computing and Programming"
+  page-navigation: true
+  # navbar:
+  #   left:
+  #     - href: index.qmd
+  #       text: Home
+  #     - about.qmd
+
+  #   tools:
+  #     - icon: github
+  #       href:  https://github.com/anandology/isi-fcp
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - index.qmd
+      - setup.qmd
+      - section: Lecture Notes
+        href: lecture-notes/index.qmd
+        contents:
+          - lecture-notes/01/index.qmd
+          - lecture-notes/02/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

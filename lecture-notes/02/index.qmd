@@ -1,0 +1,188 @@
+---
+title: Lecture Notes 02
+date: 2024-07-29
+author:
+  - name: Anand Chitipothu
+filters:
+   - include-code-files
+toc-depth: 3
+---
+
+:::{.callout-warning}
+
+This lecture notes is still work in progress. Not all programs covered in the class are added here yet. The remaining ones will be added soon!
+
+:::
+
+## Introduction
+
+Why should you learn programming?
+
+
+> A powerful programming language is more than just a means for instructing a computer to perform tasks. The language also serves as a framework within which we organize our ideas about processes.
+
+-- Structure and Interpretation of Computer Programs
+
+
+> Every powerful language has three mechanisms for accomplishing this:
+>
+> * **primitive expressions**, which represent the simplest entities the language is concerned with,
+> * **means of combination**, by which compound elements are built from simpler ones, and
+> * **means of abstraction**, by which compound elements can be named and manipulated as units.
+
+-- Structure and Interpretation of Computer Programs
+
+## Diving in
+
+### A Circle
+
+```{.c include="01-circle.c"}
+```
+
+::: {.column-margin .sketch}
+![](01-circle.svg)
+:::
+
+### Two Circles
+
+How do we draw two circles instead of just one?
+
+
+```{.c include="02-two-circles.c"}
+```
+
+::: {.column-margin .sketch}
+![](02-two-circles.svg)
+:::
+
+
+### Concentric Circles
+
+How about drawing two concentic circles?
+
+```{.c include="03-two-concentric-circles.c"}
+```
+
+::: {.column-margin .sketch}
+![](03-two-concentric-circles.svg)
+:::
+
+What if we want three circles?
+
+```{.c include="04-three-concentric-circles.c"}
+```
+
+::: {.column-margin .sketch}
+![](04-three-concentric-circles.svg)
+
+:::
+
+
+### Candle Lights
+
+```{.c include="candle_light.c"}
+```
+
+::: {.column-margin .sketch}
+![](candle_light.svg)
+
+:::
+
+
+### Concentric Circles
+
+```{.c include="concentric_circles.c"}
+```
+
+::: {.column-margin .sketch}
+![](concentric_circles.svg)
+
+:::
+
+### Random Concentric Circles
+
+```{.c include="random_concentric_circles.c"}
+```
+
+::: {.column-margin .sketch}
+![](random_concentric_circles.svg)
+:::
+
+Try running this program again and you'll get completely different circles!
+
+
+## String Art
+
+Let's add a bit more complexity. How do you find N points equidistant on a circle?
+
+Yes, trigonometry!
+
+```{.c include="stringart_circle.c" }
+```
+
+::: {.column-margin .sketch}
+![](stringart_circle.svg)
+:::
+
+
+### Connecting Points
+
+What if we connect some points?
+
+
+```{.c include="stringart_connect.c" }
+```
+
+::: {.column-margin .sketch}
+![](stringart_connect.svg)
+:::
+
+### Connecting All Points
+
+Let's go one step further and connect all the points.
+
+
+```{.c include="stringart_connect_all.c" }
+```
+
+::: {.column-margin .sketch}
+![](stringart_connect_all.svg)
+:::
+
+### A Pattern
+
+We could use `connect_all` multiple times to generate very interesting pattern.
+
+```{.c include="stringart.c" }
+```
+
+::: {.column-margin .sketch}
+![](stringart.svg)
+:::
+
+### Cardoid
+
+```{.c include="stringart_cardoid.c"}
+```
+
+::: {.column-margin .sketch}
+![](stringart_cardoid.svg)
+:::
+
+
+### Final Touch
+
+```{.c include="stringart_magic.c"}
+```
+
+::: {.column-margin .sketch}
+![](stringart_magic.svg)
+:::
+
+
+## References
+
+* [Structure and Interpretation of Computer Programs][sicp]
+* Curve stitching: the art of sewing beautiful mathematical patterns, Jon Millington
+
+[sicp]: https://sarabander.github.io/sicp/
