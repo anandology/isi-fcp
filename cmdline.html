@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ubuntu-wsl – Fundamentals of Computing and Programming</title>
+<title>cmdline – Fundamentals of Computing and Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./lecture-notes/index.html" rel="next">
+<link href="./setup.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,9 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Fundamentals of Computing and Programming
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./cmdline.html">Introduction to Unix Command Line</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -121,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cmdline.html" class="sidebar-item-text sidebar-link">
+  <a href="./cmdline.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction to Unix Command Line</span></a>
   </div>
 </li>
@@ -158,8 +192,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installing-ubuntu-on-windows-using-wsl" id="toc-installing-ubuntu-on-windows-using-wsl" class="nav-link active" data-scroll-target="#installing-ubuntu-on-windows-using-wsl">Installing Ubuntu on Windows using WSL</a>
+  <li><a href="#introduction-to-unix-command-line" id="toc-introduction-to-unix-command-line" class="nav-link active" data-scroll-target="#introduction-to-unix-command-line">Introduction to Unix Command Line</a>
   <ul class="collapse">
+  <li><a href="#quick-setup" id="toc-quick-setup" class="nav-link" data-scroll-target="#quick-setup">Quick Setup</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes</a></li>
+  <li><a href="#shell-scripts" id="toc-shell-scripts" class="nav-link" data-scroll-target="#shell-scripts">Shell Scripts</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -171,27 +209,108 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="installing-ubuntu-on-windows-using-wsl" class="level1">
-<h1>Installing Ubuntu on Windows using WSL</h1>
-<p><em>Windows Subsystem for Linux</em>, shortly called as <em>WSL</em>, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.</p>
-<p>Follow the following instructions to install Ubuntu on your Windows computer using WSL.</p>
-<p>Please note that only Windows 10 version 2004 and higher or Windows 11 are supported.</p>
-<p><strong>Step 1: Open Windows Power Shell</strong></p>
-<p>Enter <code>Windows Power Shell</code> in the system search bar and open the application.</p>
-<p><strong>Step 2: Install Ubuntu using WSL</strong></p>
-<p>WSL is <em>Windows Subsystem for Linux</em> and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.</p>
-<p>Run the following command in the power shell to download and install Ubuntu.</p>
-<pre><code>wsl --install</code></pre>
-<p>Please make sure you have a fast internet connection as this step downloads more than 1GB of data.</p>
-<p><strong>Step 3: Open Ubuntu Terminal</strong></p>
-<p>Enter <code>Ubuntu</code> in the system search bar and open the application.</p>
-<p>You’ll should see a Ubuntu terminal.</p>
-<p>That’s all! You are now ready to code.</p>
-<p><a href="./setup.html">← Back to Software Setup</a></p>
+<section id="introduction-to-unix-command-line" class="level1">
+<h1>Introduction to Unix Command Line</h1>
+<p>The primary mode of interacting with a unix system is using the command line. While it may look like using a graphical user interface is lot easier to use, it is not usually optimal in most of the cases. While the command-line interface may have steeper learning curve, the ability to automate things easily pays off the effort very quickly.</p>
+<p>Let me recall the quote that we have discussed from <a href="https://sarabander.github.io/sicp/html/1_002e1.xhtml#g_t1_002e1">SICP</a>.</p>
+<blockquote class="blockquote">
+<p>Every powerful language has three mechanisms for accomplishing this:</p>
+<ul>
+<li><strong>primitive expressions</strong>, which represent the simplest entities the language is concerned with,</li>
+<li><strong>means of combination</strong>, by which compound elements are built from simpler ones, and</li>
+<li><strong>means of abstraction</strong>, by which compound elements can be named and manipulated as units.</li>
+</ul>
+</blockquote>
+<p>– Structure and Interpretation of Computer Programs</p>
+<p>Consider the task of creating a mp4 video from frame images generated by your C program, like some of you have done. It requires running the program, converting each of the SVG image generated by the program into png and combining all of them together to make it into a video.</p>
+<p>The typical way of doing this using a graphical user interface would really cumbersome. That may involve doing something like this:</p>
+<ul>
+<li>Run your program</li>
+<li>Open the image converter program, select an svg file and press a button to convert it to png and repeat it for each one of the images</li>
+<li>Open the video maker program, select all the png files that need to be included, press a button to make the video</li>
+</ul>
+<p>It is really tedious to do this again and again. If we look this in the lens <em>SICP</em>, the primitive expressions of this system are your program, image converter and video maker. The only way to combine them is by doing each one of them one after the other and there is no way to abstrat them, give it a name and use like a single operation.</p>
+<p>When you think of command line, you can take combine the primitive commands by running them one after the other, but you can also abstract them and give it a name by making a script and running just that script.</p>
+<p>In this lesson, we’ll learn the how command-line interface works and how to use it effectively.</p>
+<section id="quick-setup" class="level2">
+<h2 class="anchored" data-anchor-id="quick-setup">Quick Setup</h2>
+<p>Please install the required packages to install the commands used in this lesson.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sudo apt-get <span class="at">-y</span> install coreutils figlet cowsay</span></code></pre></div>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Let’s start with priting a hello message.</p>
+<p>Open your terminal and type <code>echo hello world</code>. You’ll see the message <code>hello world</code> printed back.</p>
+<pre><code>$ echo hello world
+hello world</code></pre>
+</section>
+<section id="pipes" class="level2">
+<h2 class="anchored" data-anchor-id="pipes">Pipes</h2>
+<p>One of the beautiful things about Unix command line is the ability to connect the output of one command as input as another one.</p>
+<p>We’ve seen two command <code>seq</code> and <code>figlet</code>. Wouldn’t it be nice if we can print the numbers as large characters using figlet? For this we need to connect the output of <code>seq</code> to the input of <code>figlet</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> seq 5 <span class="kw">|</span> <span class="ex">figlet</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">_</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/</span> <span class="kw">|</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="kw">|</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="kw">|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">_</span><span class="kw">|</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a> <span class="ex">____</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">___</span> <span class="dt">\</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  __<span class="er">)</span> <span class="kw">|</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a> <span class="ex">/</span> __/</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">_____</span><span class="kw">|</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a> <span class="ex">_____</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">___</span> /</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">|</span><span class="ex">_</span> <span class="dt">\</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a> ___<span class="er">)</span> <span class="kw">|</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">____/</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">_</span>  _</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="kw">||</span> <span class="kw">|</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="kw">||</span> <span class="kw">|</span><span class="ex">_</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">__</span>   _<span class="kw">|</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>   <span class="kw">|</span><span class="ex">_</span><span class="kw">|</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a> <span class="ex">____</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">___</span><span class="kw">|</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">___</span> <span class="dt">\</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a> ___<span class="er">)</span> <span class="kw">|</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">____/</span></span></code></pre></div>
+<p>The <code>|</code> charater creates a pipeline connecting output of the first command to the input of the second command.</p>
+</section>
+<section id="shell-scripts" class="level2">
+<h2 class="anchored" data-anchor-id="shell-scripts">Shell Scripts</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>numbers.sh</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="numbers.sh"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">n</span><span class="op">=</span><span class="va">$1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span> <span class="va">$n</span> <span class="kw">|</span> <span class="ex">figlet</span></span></code></pre></div>
+</div>
+<p>The <code>$1</code> is the first argument that is passed to the script.</p>
+<p>Remember that in a shell script, space around <code>=</code> are not accepted. So <code>n=$1</code> is valid, but <code>n = $1</code> is invalid. We’ll learn more about the nuances of shell scripts later.</p>
+<p>And you can run it using: <code>bash numbers.sh</code></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> bash numbers.sh 2</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">_</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">/</span> <span class="kw">|</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="kw">|</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="kw">|</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">_</span><span class="kw">|</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> <span class="ex">____</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">___</span> <span class="dt">\</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  __<span class="er">)</span> <span class="kw">|</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a> <span class="ex">/</span> __/</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">_____</span><span class="kw">|</span></span></code></pre></div>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">How to install Linux on Windows with WSL</a></li>
+<li><a href="https://www.youtube.com/watch?v=YwqmLi0MoYU">The Unix Episode | Episode 32 of Everything is Everything</a></li>
+<li><a href="https://swcarpentry.github.io/shell-novice/01-intro.html">The Unix Shell - Software Carpentry</a></li>
+<li><a href="https://tylersguides.com/tutorials/beginners-vi-tutorial/">VI Tutorial for Beginners - Tyler’s Guides</a></li>
 </ul>
 
 
@@ -226,69 +345,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -619,6 +675,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./setup.html" class="pagination-link" aria-label="Software Setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Software Setup</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./lecture-notes/index.html" class="pagination-link" aria-label="Lecture Notes">
+        <span class="nav-page-text">Lecture Notes</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

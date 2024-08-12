@@ -1,142 +1,5 @@
 [
   {
-    "objectID": "ubuntu-wsl.html",
-    "href": "ubuntu-wsl.html",
-    "title": "Installing Ubuntu on Windows using WSL",
-    "section": "",
-    "text": "Windows Subsystem for Linux, shortly called as WSL, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.\nFollow the following instructions to install Ubuntu on your Windows computer using WSL.\nPlease note that only Windows 10 version 2004 and higher or Windows 11 are supported.\nStep 1: Open Windows Power Shell\nEnter Windows Power Shell in the system search bar and open the application.\nStep 2: Install Ubuntu using WSL\nWSL is Windows Subsystem for Linux and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.\nRun the following command in the power shell to download and install Ubuntu.\nwsl --install\nPlease make sure you have a fast internet connection as this step downloads more than 1GB of data.\nStep 3: Open Ubuntu Terminal\nEnter Ubuntu in the system search bar and open the application.\nYou’ll should see a Ubuntu terminal.\nThat’s all! You are now ready to code.\n← Back to Software Setup\n\n\n\nHow to install Linux on Windows with WSL"
-  },
-  {
-    "objectID": "ubuntu-wsl.html#references",
-    "href": "ubuntu-wsl.html#references",
-    "title": "Installing Ubuntu on Windows using WSL",
-    "section": "",
-    "text": "How to install Linux on Windows with WSL"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "",
-    "text": "Welcome to the Fundamentals of Computing and Programming course.\nPlease look at the course page on ISI Bangalore website for syllabus and other details.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "Introduction",
-    "text": "Introduction\nThis course uses unix environment for writing, compiling and executing c programs.\nIf you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the Software Setup page.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#credits",
-    "href": "index.html#credits",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "Credits",
-    "text": "Credits\nThis course is taught of Prof. Jishnu Biswas, ISI Bangalore.\nThis website is setup by Anand Chitipothu.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nCC BY-SA 4.0",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/01/index.html",
-    "href": "lecture-notes/01/index.html",
-    "title": "Lecture Notes 01",
-    "section": "",
-    "text": "This will be updated soon!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 01"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html",
-    "href": "lecture-notes/02/index.html",
-    "title": "Lecture Notes 02",
-    "section": "",
-    "text": "Warning\n\n\n\nThis lecture notes is still work in progress. Not all programs covered in the class are added here yet. The remaining ones will be added soon!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#introduction",
-    "href": "lecture-notes/02/index.html#introduction",
-    "title": "Lecture Notes 02",
-    "section": "Introduction",
-    "text": "Introduction\nWhy should you learn programming?\n\nA powerful programming language is more than just a means for instructing a computer to perform tasks. The language also serves as a framework within which we organize our ideas about processes.\n\n– Structure and Interpretation of Computer Programs\n\nEvery powerful language has three mechanisms for accomplishing this:\n\nprimitive expressions, which represent the simplest entities the language is concerned with,\nmeans of combination, by which compound elements are built from simpler ones, and\nmeans of abstraction, by which compound elements can be named and manipulated as units.\n\n\n– Structure and Interpretation of Computer Programs",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#diving-in",
-    "href": "lecture-notes/02/index.html#diving-in",
-    "title": "Lecture Notes 02",
-    "section": "Diving in",
-    "text": "Diving in\n\nA Circle\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    // draw a circle with center as (0, 0) and radius 100\n    draw_circle(0, 0, 100);\n\n    // save all the shapes draws to lesson2.svg\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nTwo Circles\nHow do we draw two circles instead of just one?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(-100, 0, 100);\n    draw_circle(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\nHow about drawing two concentic circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(0, 0, 200);\n    draw_circle(0, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nWhat if we want three circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    float r = 150;\n\n    draw_circle(0, 0, r / 3);\n    draw_circle(0, 0, 2 * r / 3);\n    draw_circle(0, 0, r);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCandle Lights\n#include &lt;sketch.h&gt;\n\nvoid bottle_circle(float bx, float by, float r)\n{\n    float cx = bx;\n    float cy = by + r;\n\n    draw_circle(cx, cy, r);\n}\n\nvoid draw_candle_light(float x, float y, float r)\n{\n    bottle_circle(x, y, r / 3);\n    bottle_circle(x, y, 2 * r / 3);\n    bottle_circle(x, y, r);\n}\n\nint main()\n{\n    draw_candle_light(-100, 0, 100);\n    draw_candle_light(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\n#include &lt;sketch.h&gt;\n\nvoid concentric_circles(float x, float y, float r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        draw_circle(x, y, i * r / n);\n    }\n}\n\nint main()\n{\n    concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nRandom Concentric Circles\n#include &lt;sketch.h&gt;\n#include &lt;stdlib.h&gt;\n#include &lt;time.h&gt;\n\nvoid random_concentric_circles(float x, float y, int r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        // pick a random number from 1 to r\n        float r1 = 1 + rand() % r;\n\n        draw_circle(x, y, r1);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    random_concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nTry running this program again and you’ll get completely different circles!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#string-art",
-    "href": "lecture-notes/02/index.html#string-art",
-    "title": "Lecture Notes 02",
-    "section": "String Art",
-    "text": "String Art\nLet’s add a bit more complexity. How do you find N points equidistant on a circle?\nYes, trigonometry!\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\nConnecting Points\nWhat if we connect some points?\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect(0, 4);\n    connect(1, 5);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConnecting All Points\nLet’s go one step further and connect all the points.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nA Pattern\nWe could use connect_all multiple times to generate very interesting pattern.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(16);\n    connect_all(12);\n    connect_all(7);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCardoid\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 72\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    make_circle(250);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, 2 * i);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nFinal Touch\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 720\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    set_stroke_width(0.5);\n    set_stroke(\"#44444480\");\n\n    make_circle(250);\n\n    // connect_all(16);\n    // connect_all(12);\n    // connect_all(7);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        int d = N / 6;\n\n        connect(i, (i * i) % d);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#references",
-    "href": "lecture-notes/02/index.html#references",
-    "title": "Lecture Notes 02",
-    "section": "References",
-    "text": "References\n\nStructure and Interpretation of Computer Programs\nCurve stitching: the art of sewing beautiful mathematical patterns, Jon Millington",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/index.html",
-    "href": "lecture-notes/index.html",
-    "title": "Lecture Notes",
-    "section": "",
-    "text": "Lecture Notes\n\n\n\n\n\n\n\n\n\n\nLecture Notes 01\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nJishnu Biswas\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 02\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Lecture Notes"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "setup.html",
     "href": "setup.html",
     "title": "Software Setup",
@@ -214,6 +77,203 @@
     "text": "Open your computing directory in vscode by running code . in your terminal.\n$ code .\nIf you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the code command available in your environment.\nOnce the vscode is open, open a terminal from the menu View -&gt; Terminal. You can also open the same using keyboard shortcut Ctrl + `.\n\n\n\nIn the terminal, run make to compile the circle.c file in the current directory.\n$ make\ngcc -I sketch -L sketch circle.c  -lm -l sketch -o circle\nThat compiled the circle.c and created executable file circle.\nRun the circle program.\n$ ./circle\nThat would have created a file circle.svg. Select the circle.svg file in the left sidebar to open it now press the preview button.\n\n\n\nOnce you click preview, you’ll be able to see the image in the right.",
     "crumbs": [
       "Software Setup"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/index.html",
+    "href": "lecture-notes/index.html",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "Lecture Notes\n\n\n\n\n\n\n\n\n\n\nLecture Notes 01\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nJishnu Biswas\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 02\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Lecture Notes"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/01/index.html",
+    "href": "lecture-notes/01/index.html",
+    "title": "Lecture Notes 01",
+    "section": "",
+    "text": "This will be updated soon!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 01"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "cmdline.html",
+    "href": "cmdline.html",
+    "title": "Introduction to Unix Command Line",
+    "section": "",
+    "text": "The primary mode of interacting with a unix system is using the command line. While it may look like using a graphical user interface is lot easier to use, it is not usually optimal in most of the cases. While the command-line interface may have steeper learning curve, the ability to automate things easily pays off the effort very quickly.\nLet me recall the quote that we have discussed from SICP.\n\nEvery powerful language has three mechanisms for accomplishing this:\n\nprimitive expressions, which represent the simplest entities the language is concerned with,\nmeans of combination, by which compound elements are built from simpler ones, and\nmeans of abstraction, by which compound elements can be named and manipulated as units.\n\n\n– Structure and Interpretation of Computer Programs\nConsider the task of creating a mp4 video from frame images generated by your C program, like some of you have done. It requires running the program, converting each of the SVG image generated by the program into png and combining all of them together to make it into a video.\nThe typical way of doing this using a graphical user interface would really cumbersome. That may involve doing something like this:\n\nRun your program\nOpen the image converter program, select an svg file and press a button to convert it to png and repeat it for each one of the images\nOpen the video maker program, select all the png files that need to be included, press a button to make the video\n\nIt is really tedious to do this again and again. If we look this in the lens SICP, the primitive expressions of this system are your program, image converter and video maker. The only way to combine them is by doing each one of them one after the other and there is no way to abstrat them, give it a name and use like a single operation.\nWhen you think of command line, you can take combine the primitive commands by running them one after the other, but you can also abstract them and give it a name by making a script and running just that script.\nIn this lesson, we’ll learn the how command-line interface works and how to use it effectively.\n\n\nPlease install the required packages to install the commands used in this lesson.\n$ sudo apt-get -y install coreutils figlet cowsay\n\n\n\nLet’s start with priting a hello message.\nOpen your terminal and type echo hello world. You’ll see the message hello world printed back.\n$ echo hello world\nhello world\n\n\n\nOne of the beautiful things about Unix command line is the ability to connect the output of one command as input as another one.\nWe’ve seen two command seq and figlet. Wouldn’t it be nice if we can print the numbers as large characters using figlet? For this we need to connect the output of seq to the input of figlet.\n$ seq 5 | figlet\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|\n\n _____\n|___ /\n  |_ \\\n ___) |\n|____/\n\n _  _\n| || |\n| || |_\n|__   _|\n   |_|\n\n ____\n| ___|\n|___ \\\n ___) |\n|____/\nThe | charater creates a pipeline connecting output of the first command to the input of the second command.\n\n\n\n\n\nnumbers.sh\n\nn=$1\nseq $n | figlet\n\nThe $1 is the first argument that is passed to the script.\nRemember that in a shell script, space around = are not accepted. So n=$1 is valid, but n = $1 is invalid. We’ll learn more about the nuances of shell scripts later.\nAnd you can run it using: bash numbers.sh\n$ bash numbers.sh 2\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|\n\n\n\n\nThe Unix Episode | Episode 32 of Everything is Everything\nThe Unix Shell - Software Carpentry\nVI Tutorial for Beginners - Tyler’s Guides",
+    "crumbs": [
+      "Introduction to Unix Command Line"
+    ]
+  },
+  {
+    "objectID": "cmdline.html#quick-setup",
+    "href": "cmdline.html#quick-setup",
+    "title": "Introduction to Unix Command Line",
+    "section": "",
+    "text": "Please install the required packages to install the commands used in this lesson.\n$ sudo apt-get -y install coreutils figlet cowsay",
+    "crumbs": [
+      "Introduction to Unix Command Line"
+    ]
+  },
+  {
+    "objectID": "cmdline.html#getting-started",
+    "href": "cmdline.html#getting-started",
+    "title": "Introduction to Unix Command Line",
+    "section": "",
+    "text": "Let’s start with priting a hello message.\nOpen your terminal and type echo hello world. You’ll see the message hello world printed back.\n$ echo hello world\nhello world",
+    "crumbs": [
+      "Introduction to Unix Command Line"
+    ]
+  },
+  {
+    "objectID": "cmdline.html#pipes",
+    "href": "cmdline.html#pipes",
+    "title": "Introduction to Unix Command Line",
+    "section": "",
+    "text": "One of the beautiful things about Unix command line is the ability to connect the output of one command as input as another one.\nWe’ve seen two command seq and figlet. Wouldn’t it be nice if we can print the numbers as large characters using figlet? For this we need to connect the output of seq to the input of figlet.\n$ seq 5 | figlet\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|\n\n _____\n|___ /\n  |_ \\\n ___) |\n|____/\n\n _  _\n| || |\n| || |_\n|__   _|\n   |_|\n\n ____\n| ___|\n|___ \\\n ___) |\n|____/\nThe | charater creates a pipeline connecting output of the first command to the input of the second command.",
+    "crumbs": [
+      "Introduction to Unix Command Line"
+    ]
+  },
+  {
+    "objectID": "cmdline.html#shell-scripts",
+    "href": "cmdline.html#shell-scripts",
+    "title": "Introduction to Unix Command Line",
+    "section": "",
+    "text": "numbers.sh\n\nn=$1\nseq $n | figlet\n\nThe $1 is the first argument that is passed to the script.\nRemember that in a shell script, space around = are not accepted. So n=$1 is valid, but n = $1 is invalid. We’ll learn more about the nuances of shell scripts later.\nAnd you can run it using: bash numbers.sh\n$ bash numbers.sh 2\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|",
+    "crumbs": [
+      "Introduction to Unix Command Line"
+    ]
+  },
+  {
+    "objectID": "cmdline.html#references",
+    "href": "cmdline.html#references",
+    "title": "Introduction to Unix Command Line",
+    "section": "",
+    "text": "The Unix Episode | Episode 32 of Everything is Everything\nThe Unix Shell - Software Carpentry\nVI Tutorial for Beginners - Tyler’s Guides",
+    "crumbs": [
+      "Introduction to Unix Command Line"
+    ]
+  },
+  {
+    "objectID": "ubuntu-wsl.html",
+    "href": "ubuntu-wsl.html",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "Windows Subsystem for Linux, shortly called as WSL, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.\nFollow the following instructions to install Ubuntu on your Windows computer using WSL.\nPlease note that only Windows 10 version 2004 and higher or Windows 11 are supported.\nStep 1: Open Windows Power Shell\nEnter Windows Power Shell in the system search bar and open the application.\nStep 2: Install Ubuntu using WSL\nWSL is Windows Subsystem for Linux and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.\nRun the following command in the power shell to download and install Ubuntu.\nwsl --install\nPlease make sure you have a fast internet connection as this step downloads more than 1GB of data.\nStep 3: Open Ubuntu Terminal\nEnter Ubuntu in the system search bar and open the application.\nYou’ll should see a Ubuntu terminal.\nThat’s all! You are now ready to code.\n← Back to Software Setup\n\n\n\nHow to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "ubuntu-wsl.html#references",
+    "href": "ubuntu-wsl.html#references",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "How to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "lecture-notes/02/index.html",
+    "href": "lecture-notes/02/index.html",
+    "title": "Lecture Notes 02",
+    "section": "",
+    "text": "Warning\n\n\n\nThis lecture notes is still work in progress. Not all programs covered in the class are added here yet. The remaining ones will be added soon!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#introduction",
+    "href": "lecture-notes/02/index.html#introduction",
+    "title": "Lecture Notes 02",
+    "section": "Introduction",
+    "text": "Introduction\nWhy should you learn programming?\n\nA powerful programming language is more than just a means for instructing a computer to perform tasks. The language also serves as a framework within which we organize our ideas about processes.\n\n– Structure and Interpretation of Computer Programs\n\nEvery powerful language has three mechanisms for accomplishing this:\n\nprimitive expressions, which represent the simplest entities the language is concerned with,\nmeans of combination, by which compound elements are built from simpler ones, and\nmeans of abstraction, by which compound elements can be named and manipulated as units.\n\n\n– Structure and Interpretation of Computer Programs",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#diving-in",
+    "href": "lecture-notes/02/index.html#diving-in",
+    "title": "Lecture Notes 02",
+    "section": "Diving in",
+    "text": "Diving in\n\nA Circle\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    // draw a circle with center as (0, 0) and radius 100\n    draw_circle(0, 0, 100);\n\n    // save all the shapes draws to lesson2.svg\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nTwo Circles\nHow do we draw two circles instead of just one?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(-100, 0, 100);\n    draw_circle(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\nHow about drawing two concentic circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(0, 0, 200);\n    draw_circle(0, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nWhat if we want three circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    float r = 150;\n\n    draw_circle(0, 0, r / 3);\n    draw_circle(0, 0, 2 * r / 3);\n    draw_circle(0, 0, r);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCandle Lights\n#include &lt;sketch.h&gt;\n\nvoid bottle_circle(float bx, float by, float r)\n{\n    float cx = bx;\n    float cy = by + r;\n\n    draw_circle(cx, cy, r);\n}\n\nvoid draw_candle_light(float x, float y, float r)\n{\n    bottle_circle(x, y, r / 3);\n    bottle_circle(x, y, 2 * r / 3);\n    bottle_circle(x, y, r);\n}\n\nint main()\n{\n    draw_candle_light(-100, 0, 100);\n    draw_candle_light(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\n#include &lt;sketch.h&gt;\n\nvoid concentric_circles(float x, float y, float r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        draw_circle(x, y, i * r / n);\n    }\n}\n\nint main()\n{\n    concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nRandom Concentric Circles\n#include &lt;sketch.h&gt;\n#include &lt;stdlib.h&gt;\n#include &lt;time.h&gt;\n\nvoid random_concentric_circles(float x, float y, int r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        // pick a random number from 1 to r\n        float r1 = 1 + rand() % r;\n\n        draw_circle(x, y, r1);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    random_concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nTry running this program again and you’ll get completely different circles!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#string-art",
+    "href": "lecture-notes/02/index.html#string-art",
+    "title": "Lecture Notes 02",
+    "section": "String Art",
+    "text": "String Art\nLet’s add a bit more complexity. How do you find N points equidistant on a circle?\nYes, trigonometry!\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\nConnecting Points\nWhat if we connect some points?\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect(0, 4);\n    connect(1, 5);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConnecting All Points\nLet’s go one step further and connect all the points.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nA Pattern\nWe could use connect_all multiple times to generate very interesting pattern.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(16);\n    connect_all(12);\n    connect_all(7);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCardoid\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 72\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    make_circle(250);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, 2 * i);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nFinal Touch\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 720\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    set_stroke_width(0.5);\n    set_stroke(\"#44444480\");\n\n    make_circle(250);\n\n    // connect_all(16);\n    // connect_all(12);\n    // connect_all(7);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        int d = N / 6;\n\n        connect(i, (i * i) % d);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#references",
+    "href": "lecture-notes/02/index.html#references",
+    "title": "Lecture Notes 02",
+    "section": "References",
+    "text": "References\n\nStructure and Interpretation of Computer Programs\nCurve stitching: the art of sewing beautiful mathematical patterns, Jon Millington",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "",
+    "text": "Welcome to the Fundamentals of Computing and Programming course.\nPlease look at the course page on ISI Bangalore website for syllabus and other details.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Introduction",
+    "text": "Introduction\nThis course uses unix environment for writing, compiling and executing c programs.\nIf you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the Software Setup page.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Credits",
+    "text": "Credits\nThis course is taught of Prof. Jishnu Biswas, ISI Bangalore.\nThis website is setup by Anand Chitipothu.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nCC BY-SA 4.0",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
     ]
   }
 ]
