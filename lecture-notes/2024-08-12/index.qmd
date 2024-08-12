@@ -7,61 +7,71 @@ author:
 
 Please see lesson [Introduction to Unix Command Line](../../cmdline.qmd).
 
+## Quick Setup
+
+Please install the required packages to install the commands used in this session.
+
+```txt
+$ sudo apt-get -y install coreutils figlet cowsay wbritish
+```
 
 ## The log
 
 Here is the log of all the commands tried in the class.
 
-```bash
+Let's start with printing a _hello world_ message.
+
+```txt
 $ echo hello world
 hello world
-$
-$
-$ echo hello world
-hello world
+```
+
+The `echo` command takes one or more command-line arguments and prints all of them as output. In this case `echo` is the name of the program and `hello` and `world` are two arguments passed to it.
+
+We could try the `date` command to find the current date and time.
+
+```txt
 $ date
 Monday 12 August 2024 11:33:05 AM IST
 $ date
 Monday 12 August 2024 11:33:07 AM IST
+```
+
+Now, let's try something fun!
+
+```txt
 $ figlet hello world
  _          _ _                            _     _
 | |__   ___| | | ___   __      _____  _ __| | __| |
 | '_ \ / _ \ | |/ _ \  \ \ /\ / / _ \| '__| |/ _` |
 | | | |  __/ | | (_) |  \ V  V / (_) | |  | | (_| |
 |_| |_|\___|_|_|\___/    \_/\_/ \___/|_|  |_|\__,_|
+```
 
-$ seq
-$ seq 5
-1
-2
-3
-4
-5
-$ figlet a*b
-            _
-  __ ___/\_| |__
- / _` \    / '_ \
-| (_| /_  _\ |_) |
- \__,_| \/ |_.__/
+Figlet is a program that prints the given text as large characters made up of ordinary screen characters.
 
-$ ls
-circle      Makefile          moving-circle.c
-circle.c    moving-circle     moving-circle.mp4
-circle.svg  moving-circle2    moving-circle.svg
-frames      moving-circle2.c  sketch
+Please try `figlet` with some other arguments and see what happens.
+
+Also note that if you are using figlet with any special characters, make sure you enclose the arguments pased to figlet in single quotes. If you don't do that then shell may interpret them differently and do some weird things.
+
+For example, if you call `figlet` with `a * b` as argument:
+
+```txt
 $ figlet a * b
+
               _          _             _          _
   __ _    ___(_)_ __ ___| | ___    ___(_)_ __ ___| | ___   ___
  / _` |  / __| | '__/ __| |/ _ \  / __| | '__/ __| |/ _ \ / __|
 | (_| | | (__| | | | (__| |  __/ | (__| | | | (__| |  __/| (__
  \__,_|  \___|_|_|  \___|_|\___|  \___|_|_|  \___|_|\___(_)___|
 
-      _          _                          __
-  ___(_)_ __ ___| | ___   _____   ____ _   / _|_ __ __ _ _ __ ___   ___  ___
- / __| | '__/ __| |/ _ \ / __\ \ / / _` | | |_| '__/ _` | '_ ` _ \ / _ \/ __|
-| (__| | | | (__| |  __/_\__ \\ V / (_| | |  _| | | (_| | | | | | |  __/\__ \
- \___|_|_|  \___|_|\___(_)___/ \_/ \__, | |_| |_|  \__,_|_| |_| |_|\___||___/
+      _          _
+  ___(_)_ __ ___| | ___   _____   ____ _
+ / __| | '__/ __| |/ _ \ / __\ \ / / _` |
+| (__| | | | (__| |  __/_\__ \\ V / (_| |
+ \___|_|_|  \___|_|\___(_)___/ \_/ \__, |
                                    |___/
+
  __  __       _         __ _ _
 |  \/  | __ _| | _____ / _(_) | ___
 | |\/| |/ _` | |/ / _ \ |_| | |/ _ \
@@ -69,66 +79,46 @@ $ figlet a * b
 |_|  |_|\__,_|_|\_\___|_| |_|_|\___|
 
                       _                        _          _
- _ __ ___   _____   _(_)_ __   __ _        ___(_)_ __ ___| | ___
-| '_ ` _ \ / _ \ \ / / | '_ \ / _` |_____ / __| | '__/ __| |/ _ \
-| | | | | | (_) \ V /| | | | | (_| |_____| (__| | | | (__| |  __/
-|_| |_| |_|\___/ \_/ |_|_| |_|\__, |      \___|_|_|  \___|_|\___|
-                              |___/
-                      _                        _          _      ____
- _ __ ___   _____   _(_)_ __   __ _        ___(_)_ __ ___| | ___|___ \
-| '_ ` _ \ / _ \ \ / / | '_ \ / _` |_____ / __| | '__/ __| |/ _ \ __) |
-| | | | | | (_) \ V /| | | | | (_| |_____| (__| | | | (__| |  __// __/
-|_| |_| |_|\___/ \_/ |_|_| |_|\__, |      \___|_|_|  \___|_|\___|_____|
-                              |___/
-                      _                        _          _      ____
- _ __ ___   _____   _(_)_ __   __ _        ___(_)_ __ ___| | ___|___ \   ___
-| '_ ` _ \ / _ \ \ / / | '_ \ / _` |_____ / __| | '__/ __| |/ _ \ __) | / __|
-| | | | | | (_) \ V /| | | | | (_| |_____| (__| | | | (__| |  __// __/ | (__
-|_| |_| |_|\___/ \_/ |_|_| |_|\__, |      \___|_|_|  \___|_|\___|_____(_)___|
-                              |___/
-                      _                        _          _
- _ __ ___   _____   _(_)_ __   __ _        ___(_)_ __ ___| | ___   ___
-| '_ ` _ \ / _ \ \ / / | '_ \ / _` |_____ / __| | '__/ __| |/ _ \ / __|
-| | | | | | (_) \ V /| | | | | (_| |_____| (__| | | | (__| |  __/| (__
-|_| |_| |_|\___/ \_/ |_|_| |_|\__, |      \___|_|_|  \___|_|\___(_)___|
-                              |___/
-                      _                        _          _
- _ __ ___   _____   _(_)_ __   __ _        ___(_)_ __ ___| | ___   _ __ ___
-| '_ ` _ \ / _ \ \ / / | '_ \ / _` |_____ / __| | '__/ __| |/ _ \ | '_ ` _ \
-| | | | | | (_) \ V /| | | | | (_| |_____| (__| | | | (__| |  __/_| | | | | |
-|_| |_| |_|\___/ \_/ |_|_| |_|\__, |      \___|_|_|  \___|_|\___(_)_| |_| |_|
-                              |___/
-       _  _
- _ __ | || |
-| '_ \| || |_
-| |_) |__   _|
-| .__/   |_|
-|_|
-                      _                        _          _
- _ __ ___   _____   _(_)_ __   __ _        ___(_)_ __ ___| | ___   _____   __
-| '_ ` _ \ / _ \ \ / / | '_ \ / _` |_____ / __| | '__/ __| |/ _ \ / __\ \ / /
-| | | | | | (_) \ V /| | | | | (_| |_____| (__| | | | (__| |  __/_\__ \\ V /
-|_| |_| |_|\___/ \_/ |_|_| |_|\__, |      \___|_|_|  \___|_|\___(_)___/ \_/
-                              |___/
              _        _       _       _
-  __ _   ___| | _____| |_ ___| |__   | |__
- / _` | / __| |/ / _ \ __/ __| '_ \  | '_ \
-| (_| | \__ \   <  __/ || (__| | | | | |_) |
- \__, | |___/_|\_\___|\__\___|_| |_| |_.__/
- |___/
+ ___| | _____| |_ ___| |__   | |__
+/ __| |/ / _ \ __/ __| '_ \  | '_ \
+\__ \   <  __/ || (__| | | | | |_) |
+|___/_|\_\___|\__\___|_| |_| |_.__/
+                                                          _
+```
+
+The special character `*` means all the files in the current directory. You can verify that by running `echo *`.
+
+```txt
+$ echo *
+circle circle.c circle.svg Makefile sketch
+```
+
+We can enclose the arguments in single quotes to ignore the special characters.
+
+```txt
 $ figlet 'a * b'
                 _
   __ _  __/\__ | |__
  / _` | \    / | '_ \
 | (_| | /_  _\ | |_) |
  \__,_|   \/   |_.__/
+```
 
+Now, let's try a new command `seq`. The `seq` command  takes a number `n` as argument and prints all numbers from `1` to `n`.
+
+```txt
 $ seq 5
 1
 2
 3
 4
 5
+```
+
+How do we combine the `seq` and `figlet` program together so that the output of `seq` is passed as input to `figlet`? We just use the `|` character.
+
+```txt
 $ seq 5 | figlet
  _
 / |
@@ -159,11 +149,11 @@ $ seq 5 | figlet
 |___ \
  ___) |
 |____/
+```
 
-$
-$
-$ /usr/games/cow
-cowsay    cowthink
+There is another interesting program called `cowsay`. It is usually not in the PATH (more about this later) so we need to give the full path for it to work. It is at path `/usr/games/cowsay`.
+
+```txt
 $ /usr/games/cowsay hello world
  _____________
 < hello world >
@@ -173,6 +163,11 @@ $ /usr/games/cowsay hello world
             (__)\       )\/\
                 ||----w |
                 ||     ||
+```
+
+We could use a different animal by specifing the cowfile using option `-f`.
+
+```txt
 $ /usr/games/cowsay -f tux hello world
  _____________
 < hello world >
@@ -186,9 +181,9 @@ $ /usr/games/cowsay -f tux hello world
      (|     | )
     /'\_   _/`\
     \___)=(___/
+```
 
-$ seq 5 | /usr/games/cow
-cowsay    cowthink
+```txt
 $ seq 5 | /usr/games/cowsay
  ___________
 < 1 2 3 4 5 >
@@ -526,11 +521,31 @@ $ seq 1000000 | grep '5.*5' | wc -l
 
 ## Solving Wordle with command-line
 
-[Wordle](https://www.nytimes.com/games/wordle/index.html) is a word game where you guess a word. We are going to try solving it using unix command-line tools.
+[Wordle](https://www.nytimes.com/games/wordle/index.html) is a word game where you guess a word.
 
-```bash
+We are going to try solving it using unix command-line tools. For this we are going to use the command `grep` to match lines in a file that match given [Regular Expression][re] pattern.
+
+[re]: https://en.wikipedia.org/wiki/Regular_expression
+
+The file `/usr/share/dict/words` contains all the words in the dictionary, one in each line.
+
+::: {.callout-note}
+If you don't find that file, it means you don't have a dictionary installed. Install it by running:
+
+```
+$ sudo apt-get -y install wbritish
+```
+:::
+
+
+```txt
 $ wc -l /usr/share/dict/words
 104334 /usr/share/dict/words
+```
+
+Let's try to find all words that start with a prefix, say `ice`.
+
+```
 $ grep '^ice' /usr/share/dict/words
 ice
 iceberg
@@ -553,7 +568,7 @@ ices
 
 Let's find all the 5 letter words in the dictionary.
 
-```
+```txt
 $ grep '^.....$' /usr/share/dict/words | head
 ABC's
 ABM's
@@ -579,21 +594,21 @@ There are quite many of them. Let's start with a guess. What shall we start with
 
 How many 5-letter words are there that have letter `f` in them?
 
-```bash
+```txt
 $ grep '^.....$' /usr/share/dict/words | grep f | wc -l
 469
 ```
 
 The letter `L`, `A`, `M` and `E` are not present in our word. Let's try to skip all the words that have any of these characters.
 
-```bash
+```txt
 $ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | wc -l
 123
 ```
 
 That is still quite a lof of them. Lets see some of those options.
 
-```bash
+```txt
 $ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | head
 Acuff
 Afros
@@ -615,7 +630,7 @@ I'm going to try one of them. I'll go with `Swift`.
 
 Now that we know correct letters in three positions and 6 letters that are not present, let's see what all words are available.
 
-```bash
+```txt
 $ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]' | head
 skiff
 sniff
