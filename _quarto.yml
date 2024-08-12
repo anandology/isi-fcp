@@ -26,6 +26,7 @@ website:
         contents:
           - lecture-notes/01/index.qmd
           - lecture-notes/02/index.qmd
+          - lecture-notes/2024-08-12/index.qmd
 
 format:
   html:
