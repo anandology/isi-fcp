@@ -20,6 +20,7 @@ website:
     contents:
       - index.qmd
       - setup.qmd
+      - cmdline.qmd
       - section: Lecture Notes
         href: lecture-notes/index.qmd
         contents:
