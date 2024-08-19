@@ -8,5 +8,9 @@
     width: 100%;
     padding: 2px;
     border: 2px solid #eee;
-    margin-top: 0px;
+    margin-top: 10px;
+}
+
+.wordle img {
+    max-height: 300px;
 }
