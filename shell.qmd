@@ -207,7 +207,7 @@ Now lets write a shell script add-two-numbers.sh that takes two numbers as comma
 ```{.txt filename=add-two-numbers.sh}
 #! /bin/bash
 a=$1
-b=$1
+b=$2
 echo $((a+b))
 ```
 
