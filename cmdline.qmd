@@ -38,7 +38,7 @@ In this lesson, we'll learn the how command-line interface works and how to use 
 Please install the required packages to install the commands used in this lesson.
 
 ```bash
-$ sudo apt-get -y install coreutils figlet cowsay
+$ sudo apt-get -y install coreutils figlet cowsay wbritish
 ```
 
 ## Getting Started
