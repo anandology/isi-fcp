@@ -1,0 +1,422 @@
+---
+format:
+  html:
+    code-copy: false
+---
+
+# Introduction to Shell Programming
+
+* hello-world
+* permissions and `#!`
+* numerical expressions
+* add.sh
+* loops
+
+## Introduction
+
+A shell script is file that contains the list of commands that you want to run in a sequence.
+
+Let's write a simple script.
+
+```{.bash filename="hello-world.sh"}
+echo "Hello, world!"
+```
+
+We can run this as:
+
+```txt
+$ bash hello-world.sh
+Hello, world!
+```
+
+To run this script directly without invoking bash, we need do two things::
+
+1. First, we need to add a [hash-bang][1] directive in the first line of the script
+2. Make the script executable
+
+[1]: https://en.wikipedia.org/wiki/Shebang_(Unix)
+
+Let's add the `#!` line.
+
+
+```{.bash filename="hello-world.sh"}
+#! /bin/bash
+echo "Hello, world!"
+```
+
+The `#!` line is the unix way to tell the system that execute this script using `bash`.
+
+After adding that line, we still need to make the file executable. The file not executable unless we explicitly make it so. Let's look at the output of `ls -l`.
+
+```txt
+$ ls -l hello-world.sh
+-rw-rw-r-- 1 anand anand 34 Aug 19 09:07 hello-world.sh
+```
+
+The first column of the output indicates that the file has _read_, and _write_ permissions.
+
+We do add execute permissions by running `chmod`.
+
+```txt
+$ chmod +x hello-world.sh
+
+$ ls -l hello-world.sh
+-rwxrwxr-x 1 anand anand 34 Aug 19 09:07 hello-world.sh
+```
+
+Now the file is exutable. We can execute it using:
+
+```txt
+$ ./hello-world.sh
+Hello, world!
+```
+
+## Comments
+
+In shell scripts, `#` is the comment prefix. Everything after that character is considered a comment.
+
+```{.bash filename="hello-world.sh"}
+#! /bin/bash
+#
+# This program prints a hello world message
+#
+
+echo "Hello, world!" # you can change the message here, if you wish
+
+# end of program
+```
+
+## Variables
+
+Variables are placeholders to a value. Shell is weekly typed, so it doesn't bother about datatypes like C.
+
+You can define a variable just in a shell.
+
+```txt
+$ fruit=Apple
+```
+
+Please note that the `$` at the beginning of the line is just prompt of the shell. That is not something that you type.
+
+::: {.callout-note}
+
+Remember that shell is very sensitive to spaces. You can set a variable only as `name=value`.
+
+If you put spaces around `=`, it will complain. So `name = value` is invalid.
+
+```txt
+$ x = 2
+x: command not found
+```
+
+In this case shell interprets it as invoking command with name `x` with two arguments `=` and `2`. Just like what happens when we call `echo hello world`.
+:::
+
+To use the value of a variable, we prefix the variable name with `$`.
+
+```txt
+$ echo $fruit
+Apple
+$ echo I like $fruit
+I like Apple
+```
+
+When we want to use a variable in a sentence, we typically enclose it double quotes. We'll learn more about quotes in a latter section.
+
+```txt
+$ echo "I like $fruit!"
+I like Apple!
+```
+
+### Predefine variables
+
+There are some variables already defined by the system. Variables like `USER`, `HOME`, `SHELL`, `PATH` etc. are usually defined for every session by the system.
+
+```txt
+$ echo $USER
+anand
+$ echo $HOME
+/home/anand
+$ echo $SHELL
+/bin/bash
+$ echo $PATH
+/home/anand/.local/bin:/home/anand/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+```
+
+The variable `PATH` is an interesting one. When you type a command, the system search for a file with that name in all the paths specified in the variable `PATH`. We'll learn more about it later.
+
+## Integer expressions
+
+Shell has a shorthand for working with integer values. Put an expression in `$((..))``.
+
+```txt
+$ x=3
+$ y=4
+$ echo "$((x + y))"
+7
+$ echo "$((x * y))"
+12
+$ echo "$((x ** y))"
+81
+```
+
+Please note that this is limited only to integers, doesn't work with floating point numbers.
+
+If you want to work with floating point numbers, use tools like `bc` or `awk`.
+
+## Arguments
+
+The command line arguments passed to a shell script are available in a special variable `$*`. You can use `$#` to find the number of arguments passed.
+
+```{.bash filename=args.sh}
+#! /bin/bash
+echo "You have given $# arguments"
+echo "The arguments are $*"
+echo "The first argument is $1"
+echo "The second argument is $2"
+```
+
+Let's make the script executable.
+
+```txt
+$ chmod +x args.sh
+$ ls -l args.sh
+-rwxrwxr-x 1 anand anand 113 Aug 19 07:53 args.sh
+```
+
+Let's run it.
+
+```txt
+$ ./args.sh hello world
+You have given 2 arguments
+The first argument is hello
+The second argument is world
+```
+
+If you give less than 2 arguments `$2` will be empty. Shell is weakly typed, so it doesn't complain.
+
+```txt
+$ ./args.sh hello
+You have given 1 arguments
+The first argument is hello
+The second argument is
+```
+
+Now lets write a shell script add-two-numbers.sh that takes two numbers as command line arguments and prints their sum.
+
+```{.txt filename=add-two-numbers.sh}
+#! /bin/bash
+a=$1
+b=$1
+echo $((a+b))
+```
+
+Let's make the script executable.
+
+```txt
+$ chmod +x add-two-numbers.sh
+```
+
+And run it.
+
+```txt
+$ ./add-two-numbers.sh 3 4
+7
+```
+
+**Problem:** Write a program `square.sh` that takes a number as command-line argument and prints its square.
+
+```txt
+$ ./square.sh 5
+25
+```
+
+## Reading input
+
+The `read`
+
+```{.bash filename="hello.sh"}
+read -p "What is your name? " name
+
+echo "Hello $name! Nice to meet you!!"
+```
+
+```txt
+$ bash hello.sh
+What is your name? Anand
+Hello Anand! Nice to meet you!!
+```
+
+## Quotes
+
+There are three kinds of quotes used in shell scripts.
+
+### single quotes
+
+Single quotes preserve the literal value of the enclosed characters.
+
+```txt
+$ echo 'You owe me $10 & an apple!'
+You owe me $10 & an apple!
+```
+
+### Double quotes
+
+Double quotes preserves the literal value of the enclosed characters, but expands the variables and allows escape characters.
+
+```txt
+$ echo "hello $USER, how are you doing?"
+hello anand, how are you doing?
+
+$ echo "2 * 3 = $((2 * 3))"
+2 * 3 = 6
+```
+
+**Question:**
+
+What would the output of the following command? Can you explain why it produces a different result than what is shown in the example above?
+
+```txt
+echo 2 * 3 = $((2 * 3))
+```
+
+### Back Quotes
+
+Shell allows putting a command in backquotes `` `...` `` and replaces it with the output of that command.
+
+```txt
+$ echo "The current date is `date`"
+The current date is Monday 19 August 2024 08:48:39 AM IST
+```
+
+We can also use `$(...)` instead of `` `...` ``.
+
+```txt
+$ echo "The current date is $(date)"
+The current date is Monday 19 August 2024 08:48:39 AM IST
+```
+
+The date command also supports custom formatting, we can use that to select that the day of the week.
+
+```txt
+$ echo "Today is a $(date +%A)"
+Today is a Monday
+```
+
+We could also do the same thing using a variable.
+
+```txt
+$ day=$(date +%A)
+$ echo "Today is a $day"
+Today is a Monday
+```
+
+## Loops
+
+Shell provides two kinds of loops, for loop and while loop.
+
+### The `for` loop
+
+```{.bash filename="square-args.sh"}
+#! /bin/bash
+#
+# Program to compute square of all the numbers passed as command-line arguments
+#
+for n in $*
+do
+    echo $((n*n))
+done
+```
+
+```txt
+$ bash square-args.sh 1 2 3 4
+1
+4
+9
+16
+```
+
+We can use wildcards to list file.
+
+```txt
+$ for f in *.c; do figlet $f; done
+  ___(_)_ __ ___| | ___   ___
+ / __| | '__/ __| |/ _ \ / __|
+| (__| | | | (__| |  __/| (__
+ \___|_|_|  \___|_|\___(_)___|
+
+     _             _     _
+  __| | ___  _   _| |__ | | ___   ___
+ / _` |/ _ \| | | | '_ \| |/ _ \ / __|
+| (_| | (_) | |_| | |_) | |  __/| (__
+ \__,_|\___/ \__,_|_.__/|_|\___(_)___|
+```
+
+
+If we want to loop over a sequence of numbers, we could make use of the `seq` command.
+
+```txt
+$ for n in `seq 5`; do echo "$((n*n))"; done
+1
+4
+9
+16
+25
+```
+
+## The `while` loop
+
+The `while` loop is used with a condition and it continues to run until the condition is false. It is very handly to read data from stdin or a file.
+
+```{.bash filename="squares.sh"}
+#! /bin/bash
+
+# read each line in the input input variable `n`
+while read n
+do
+    echo $((n*n))
+done
+```
+
+```txt
+$ chmod +x squares.sh
+$ seq 5 | ./squares.sh
+1
+4
+9
+16
+25
+```
+
+**Problem:** Write a program `sum.sh` to read numbers from stdin and print their sum.
+
+
+```txt
+$ seq 5 | ./sum.sh
+15
+$ seq 5 | ./squares.sh | ./sum.sh
+55
+```
+
+## Summary
+
+:::: {.columns}
+
+::: {.column}
+### Shell Special variables
+
+`$*`
+: All Arguments
+
+`$#`
+: The numner of arguments
+
+`$0`
+: The program name
+
+`$1`, `$2`, `$3`, ...
+: Individual arguments
+
+:::
+
+:::
