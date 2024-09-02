@@ -15,6 +15,41 @@ Git is a popular version control system used to keep track of changes to various
 </div>
 
 
+## Setting up Git
+
+
+Setup git by configuring your name and email address in git.
+
+```text
+$ git config --global user.name "Anand Chitipothu"
+$ git config --global user.email "anand@example.com"
+```
+
+Please use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.
+
+## Setup ssh-keys
+
+```text
+$ ssh-keygen -t ed25519 -C anand@my-laptop-name
+```
+
+That will output the following:
+
+```text
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/anand/.ssh/id_ed25519):
+```
+
+Just press _Enter_.
+
+```text
+Enter passphrase (empty for no passphrase):
+```
+
+If you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.
+
+
+
 ## References
 
 * [GIT CHEAT SHEET - Github (PDF)](https://education.github.com/git-cheat-sheet-education.pdf)
