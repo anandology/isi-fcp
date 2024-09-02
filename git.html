@@ -187,6 +187,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#level-3" id="toc-level-3" class="nav-link" data-scroll-target="#level-3">Level 3</a></li>
   </ul></li>
   <li><a href="#cloning-a-repository" id="toc-cloning-a-repository" class="nav-link" data-scroll-target="#cloning-a-repository">Cloning a Repository</a></li>
+  <li><a href="#commiting-changes" id="toc-commiting-changes" class="nav-link" data-scroll-target="#commiting-changes">Commiting changes</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -253,6 +254,30 @@ Receiving objects: 100% (4/4), done.
 $ cd git-practice/
 $ code .</code></pre>
 <p>Replace the repository URL in the example with the URL of your repoistory clone URL.</p>
+</section>
+<section id="commiting-changes" class="level2">
+<h2 class="anchored" data-anchor-id="commiting-changes">Commiting changes</h2>
+<p>Create a new file.</p>
+<pre class="text"><code>$ seq 10 &gt; 10.txt</code></pre>
+<p>Add the file to git staging area.</p>
+<pre><code>$ git add 10.txt
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file&gt;..." to unstage)
+        new file:   10.txt</code></pre>
+<p>Commit the changes.</p>
+<pre class="text"><code>$ git commit -m "Added 10.txt"
+[main b8c9a60] added 10.txt file
+ 1 file changed, 10 insertions(+)
+ create mode 100644 10.txt</code></pre>
+<p>And push the changes.</p>
+<pre class="text"><code>$ git push
+...
+To github.com:anandology/git-practice.git
+   b8c9a60..e53d588  main -&gt; main</code></pre>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
