@@ -85,6 +85,44 @@ $ code .
 Replace the repository URL in the example with the URL of your repoistory clone URL.
 
 
+## Commiting changes
+
+Create a new file.
+
+```text
+$ seq 10 > 10.txt
+```
+
+Add the file to git staging area.
+
+```
+$ git add 10.txt
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   10.txt
+```
+
+Commit the changes.
+
+```text
+$ git commit -m "Added 10.txt"
+[main b8c9a60] added 10.txt file
+ 1 file changed, 10 insertions(+)
+ create mode 100644 10.txt
+```
+
+And push the changes.
+
+```text
+$ git push
+...
+To github.com:anandology/git-practice.git
+   b8c9a60..e53d588  main -> main
+```
 
 ## References
 
