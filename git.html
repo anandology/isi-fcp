@@ -178,6 +178,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#introduction-to-git" id="toc-introduction-to-git" class="nav-link active" data-scroll-target="#introduction-to-git">Introduction to Git</a>
   <ul class="collapse">
+  <li><a href="#setting-up-git" id="toc-setting-up-git" class="nav-link" data-scroll-target="#setting-up-git">Setting up Git</a></li>
+  <li><a href="#setup-ssh-keys" id="toc-setup-ssh-keys" class="nav-link" data-scroll-target="#setup-ssh-keys">Setup ssh-keys</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -195,6 +197,23 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <iframe class="slide-deck" src="git-slides/"></iframe>
 </div>
+<section id="setting-up-git" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-git">Setting up Git</h2>
+<p>Setup git by configuring your name and email address in git.</p>
+<pre class="text"><code>$ git config --global user.name "Anand Chitipothu"
+$ git config --global user.email "anand@example.com"</code></pre>
+<p>Please use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.</p>
+</section>
+<section id="setup-ssh-keys" class="level2">
+<h2 class="anchored" data-anchor-id="setup-ssh-keys">Setup ssh-keys</h2>
+<pre class="text"><code>$ ssh-keygen -t ed25519 -C anand@my-laptop-name</code></pre>
+<p>That will output the following:</p>
+<pre class="text"><code>Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/anand/.ssh/id_ed25519):</code></pre>
+<p>Just press <em>Enter</em>.</p>
+<pre class="text"><code>Enter passphrase (empty for no passphrase):</code></pre>
+<p>If you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.</p>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>

@@ -400,7 +400,27 @@
     "href": "git.html",
     "title": "Introduction to Git",
     "section": "",
-    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setting-up-git",
+    "href": "git.html#setting-up-git",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setup-ssh-keys",
+    "href": "git.html#setup-ssh-keys",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
     "crumbs": [
       "Introduction to Git"
     ]
