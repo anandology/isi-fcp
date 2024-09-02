@@ -48,6 +48,42 @@ Enter passphrase (empty for no passphrase):
 
 If you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.
 
+## Git Usage Complexity
+
+### Level 1
+
+Use git for managing your own projects.
+
+### Level 2
+
+Use git to collaborate with a small number of known people.
+
+### Level 3
+
+Collaborate with unknown, untrusted people.
+
+## Cloning a Repository
+
+Run these steps after creating your repository and adding your ssh-keys.
+
+```text
+$ cd
+$ pwd
+/home/anand
+$
+$ git clone git@github.com:anandology/git-practice.git
+Cloning into 'git-practice'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (4/4), done.
+$ cd git-practice/
+$ code .
+```
+
+Replace the repository URL in the example with the URL of your repoistory clone URL.
+
 
 
 ## References
