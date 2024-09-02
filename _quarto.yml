@@ -22,6 +22,7 @@ website:
       - setup.qmd
       - cmdline.qmd
       - shell.qmd
+      - git.qmd
       - section: Lecture Notes
         href: lecture-notes/index.qmd
         contents:

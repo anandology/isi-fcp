@@ -1,0 +1,114 @@
+---
+title: "Introduction to Git"
+subtitle: "How to keep track of changes to work using Git & GitHub"
+format:
+  revealjs:
+    slide-number: true
+    chalkboard:
+      buttons: false
+    preview-links: auto
+---
+
+## Introduction to Git
+
+## What is Git?
+
+## What is a version control system?
+
+---
+### Why do we need a version control system?
+
+<img
+  src="http://www.phdcomics.com/comics/archive/phd101212s.gif"
+  align="right"
+  style="text-align: right; margin-bottom: -50px;">
+
+<!--
+![](http://www.phdcomics.com/comics/archive/phd101212s.gif){.nostretch fig-align="right" width="50%"} -->
+
+To avoid sistualtions like this.
+
+
+::: aside
+Image Credits: notFinal.doc by Jorge Cham,<br>
+https://www.phdcomics.com
+:::
+
+## Git vs. Github
+
+**Git** is a version control system created by Linus Torvalds.
+
+**Github** is a commercial service that offers git hosting in the cloud. It is very popular among the developers and it is almost the defacto standard for hosting code.
+
+It is possible to use _Git_ without using _Github_. However, for this course, we'll use both _Git_ and _Github_.
+
+## Setting up Git
+
+
+Setup git by configuring your name and email address in git.
+
+```text
+$ git config --global user.name "Anand Chitipothu"
+$ git config --global user.email "anand@example.com"
+```
+
+Please use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.
+
+## Setup ssh-keys
+
+```text
+$ ssh-keygen -t ed25519 -C anand@my-laptop-name
+```
+
+That will output the following:
+
+```text
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/anand/.ssh/id_ed25519):
+```
+
+Just press _Enter_.
+
+```text
+Enter passphrase (empty for no passphrase):
+```
+
+If you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.
+
+## Create a Repository on Github  {.nostretch}
+
+:::: columns
+
+::: column
+
+* Login to github
+* Create a new repository with name `git-practice`.
+* Add _Repository name_ and _Description_
+* And select _Add a README file_.
+
+:::
+
+::: column
+<img
+  src="new-repo.png"
+  align="right" style="border: 1px solid #ddd; padding: 2px;">
+
+:::
+
+::::
+
+## Clone the repo
+
+Clone the repo to your local computer.
+
+```txt
+git clone git@github.com:anandology/git-practice.git
+```
+
+## Add a new file to the repo
+
+```
+$ touch planets.md
+
+$ git status
+```

@@ -1,0 +1,22 @@
+---
+slide-format: revealjs
+---
+
+# Introduction to Git
+
+Git is a popular version control system used to keep track of changes to various files.
+
+<div>
+
+```{=html}
+<iframe class="slide-deck" src="git-slides/"></iframe>
+```
+
+</div>
+
+
+## References
+
+* [GIT CHEAT SHEET - Github (PDF)](https://education.github.com/git-cheat-sheet-education.pdf)
+* [Getting Started with Git - Github](https://docs.github.com/en/get-started/getting-started-with-git)
+* [Version Control with Git - Software Carpentry](https://swcarpentry.github.io/git-novice/)
