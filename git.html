@@ -180,6 +180,13 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#setting-up-git" id="toc-setting-up-git" class="nav-link" data-scroll-target="#setting-up-git">Setting up Git</a></li>
   <li><a href="#setup-ssh-keys" id="toc-setup-ssh-keys" class="nav-link" data-scroll-target="#setup-ssh-keys">Setup ssh-keys</a></li>
+  <li><a href="#git-usage-complexity" id="toc-git-usage-complexity" class="nav-link" data-scroll-target="#git-usage-complexity">Git Usage Complexity</a>
+  <ul class="collapse">
+  <li><a href="#level-1" id="toc-level-1" class="nav-link" data-scroll-target="#level-1">Level 1</a></li>
+  <li><a href="#level-2" id="toc-level-2" class="nav-link" data-scroll-target="#level-2">Level 2</a></li>
+  <li><a href="#level-3" id="toc-level-3" class="nav-link" data-scroll-target="#level-3">Level 3</a></li>
+  </ul></li>
+  <li><a href="#cloning-a-repository" id="toc-cloning-a-repository" class="nav-link" data-scroll-target="#cloning-a-repository">Cloning a Repository</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -213,6 +220,39 @@ Enter file in which to save the key (/home/anand/.ssh/id_ed25519):</code></pre>
 <p>Just press <em>Enter</em>.</p>
 <pre class="text"><code>Enter passphrase (empty for no passphrase):</code></pre>
 <p>If you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.</p>
+</section>
+<section id="git-usage-complexity" class="level2">
+<h2 class="anchored" data-anchor-id="git-usage-complexity">Git Usage Complexity</h2>
+<section id="level-1" class="level3">
+<h3 class="anchored" data-anchor-id="level-1">Level 1</h3>
+<p>Use git for managing your own projects.</p>
+</section>
+<section id="level-2" class="level3">
+<h3 class="anchored" data-anchor-id="level-2">Level 2</h3>
+<p>Use git to collaborate with a small number of known people.</p>
+</section>
+<section id="level-3" class="level3">
+<h3 class="anchored" data-anchor-id="level-3">Level 3</h3>
+<p>Collaborate with unknown, untrusted people.</p>
+</section>
+</section>
+<section id="cloning-a-repository" class="level2">
+<h2 class="anchored" data-anchor-id="cloning-a-repository">Cloning a Repository</h2>
+<p>Run these steps after creating your repository and adding your ssh-keys.</p>
+<pre class="text"><code>$ cd
+$ pwd
+/home/anand
+$
+$ git clone git@github.com:anandology/git-practice.git
+Cloning into 'git-practice'...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (4/4), done.
+$ cd git-practice/
+$ code .</code></pre>
+<p>Replace the repository URL in the example with the URL of your repoistory clone URL.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>

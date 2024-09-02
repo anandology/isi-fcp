@@ -400,7 +400,7 @@
     "href": "git.html",
     "title": "Introduction to Git",
     "section": "",
-    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
     "crumbs": [
       "Introduction to Git"
     ]
@@ -421,6 +421,26 @@
     "title": "Introduction to Git",
     "section": "",
     "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#git-usage-complexity",
+    "href": "git.html#git-usage-complexity",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#cloning-a-repository",
+    "href": "git.html#cloning-a-repository",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
     "crumbs": [
       "Introduction to Git"
     ]
