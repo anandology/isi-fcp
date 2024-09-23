@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Fundamentals of Computing and Programming</title>
+<title>quarto – Fundamentals of Computing and Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./problem-sets/index.html" rel="next">
+<link href="./git.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,9 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Fundamentals of Computing and Programming
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto.html">Publishing with Quarto</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -142,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Publishing with Quarto</span></a>
   </div>
 </li>
@@ -197,34 +197,168 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#publishing-with-quarto" id="toc-publishing-with-quarto" class="nav-link active" data-scroll-target="#publishing-with-quarto">Publishing with Quarto</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#creating-a-book" id="toc-creating-a-book" class="nav-link" data-scroll-target="#creating-a-book">Creating a book</a>
+  <ul class="collapse">
+  <li><a href="#step-1-create-a-github-repository" id="toc-step-1-create-a-github-repository" class="nav-link" data-scroll-target="#step-1-create-a-github-repository">Step 1: Create a github repository</a></li>
+  <li><a href="#step-2-clone-the-repo-on-your-computer" id="toc-step-2-clone-the-repo-on-your-computer" class="nav-link" data-scroll-target="#step-2-clone-the-repo-on-your-computer">Step 2: Clone the repo on your computer</a></li>
+  <li><a href="#step-3-create-a-quarto-project" id="toc-step-3-create-a-quarto-project" class="nav-link" data-scroll-target="#step-3-create-a-quarto-project">Step 3: Create a quarto project</a></li>
+  <li><a href="#edit-_quarto.yml" id="toc-edit-_quarto.yml" class="nav-link" data-scroll-target="#edit-_quarto.yml">Edit _quarto.yml</a></li>
+  <li><a href="#open-preview" id="toc-open-preview" class="nav-link" data-scroll-target="#open-preview">Open preview</a></li>
+  </ul></li>
+  <li><a href="#publishing-the-book" id="toc-publishing-the-book" class="nav-link" data-scroll-target="#publishing-the-book">Publishing the book</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
+<section id="publishing-with-quarto" class="level1">
+<h1>Publishing with Quarto</h1>
+<p><a href="https://quarto.org/">Quarto</a> is an open-source scientific and technical publishing system. It makes it easier to publish articles, books and websites for techincal content.</p>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>Install Quarto.</p>
+<pre class="text"><code>$ wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.57/quarto-1.5.57-linux-amd64.deb
+$ sudo dpkg -i quarto-1.5.57-linux-amd64.deb</code></pre>
+<p>Install <code>librsvg2-bin</code> package to work with svg.</p>
+<pre class="text"><code>$ sudo apt install librsvg2-bin</code></pre>
+<p>Install Latex.</p>
+<pre><code>$ sudo quarto install tinytex</code></pre>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Quarto .qmd files contain a combination of markdown and executable code cells. For the scope of this article, we’ll limit ourselves to Markdown.</p>
+<p>Create a file with name <code>demo.qmd</code> with the following content.</p>
+<pre><code># Quarto Demo
 
-    
-  
-    
-  </div>
-  
+This is a demonstration of authoring articles with [Quarto](https://quarto.qmd).
+
+## A Bit of Math
+
+Markdown supports embedding LaTeX for writing mathematics.
+
+For example, the area of a circle with radius $r$ is $\pi r^2$.
+
+And:
+
+$\Sigma_{x=1}^{n}{x} = \frac{n(n+1)}{2}$
+
+## The Circle
+
+Here is a sample C program using [csketch](https://gitub.com/anandology/csketch) library.
+
+```c
+#include &lt;sketch.h&gt;
+
+int main()
+{
+    // draw a circle with center as (0, 0) and radius 100
+    draw_circle(0, 0, 100);
+
+    // save all the shapes draws to lesson2.svg
+    save_sketch("circle.svg");
+}
+```
+
+And that generates a `circle.svg` with the following image.
+
+![](circle.svg)</code></pre>
+<p>Now convert this to HTML by running:</p>
+<pre class="text"><code>$ quarto render demo.qmd --to html
+...
+
+Output created: demo.html</code></pre>
+<p>Open <code>demo.html</code> in your browser to see the output.</p>
+<p>You can also convert this to PDF by running:</p>
+<pre class="text"><code>$ quarto render demo.qmd --to pdf
+...
+
+Output created: demo.pdf</code></pre>
+<p>You can open <code>demo.pdf</code> to see how it looks like.</p>
+</section>
+<section id="creating-a-book" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-book">Creating a book</h2>
+<p>You can create a book using Quarto to publish the solutions to problem sets.</p>
+<section id="step-1-create-a-github-repository" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-create-a-github-repository">Step 1: Create a github repository</h3>
+<p>Create a new github repository. You may call it <code>fcp-practice</code> or <code>programming-practice</code> or something else.</p>
+</section>
+<section id="step-2-clone-the-repo-on-your-computer" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-clone-the-repo-on-your-computer">Step 2: Clone the repo on your computer</h3>
+<pre class="text"><code>$ git clone https://github.com/&lt;your-username&gt;/&lt;repo-name&gt;
+
+$ cd &lt;repo-name&gt;</code></pre>
+</section>
+<section id="step-3-create-a-quarto-project" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-create-a-quarto-project">Step 3: Create a quarto project</h3>
+<p>Run command <code>quarto create</code>.</p>
+<pre class="text"><code>$ quarto create
+ ? Create
+ ❯ project
+   extension</code></pre>
+<p>Select <em>project</em> and press <code>Enter</code>.</p>
+<pre class="text"><code>$ quarto create
+ ? Create › project
+ ? Type
+   default
+   website
+   blog
+ ❯ book
+   confluence</code></pre>
+<p>Select <em>book</em> and press <code>Enter</code>.</p>
+<pre class="text"><code>$ quarto create
+ ? Create › project
+ ? Type › book
+ ? Directory › .</code></pre>
+<p>Enter <code>.</code> for directory and press <code>Enter</code>.</p>
+<pre class="text"><code>$ quarto create
+ ? Create › project
+ ? Type › book
+ ? Directory › .
+Creating project at /tmp/quarto2:
+  - Created _quarto.yml
+  - Created index.qmd
+  - Created intro.qmd
+  - Created summary.qmd
+  - Created references.qmd
+  - Created cover.png
+  - Created references.bib
+ ? Open With
+ ❯ vscode
+   (don't open)</code></pre>
+<p>Select Open With <em>vscode</em> and press <code>Enter</code>.</p>
+</section>
+<section id="edit-_quarto.yml" class="level3">
+<h3 class="anchored" data-anchor-id="edit-_quarto.yml">Edit _quarto.yml</h3>
+<p>Edit the <code>_quarto.yml</code> file to edit the <code>title</code> and <code>author</code> fields.</p>
+</section>
+<section id="open-preview" class="level3">
+<h3 class="anchored" data-anchor-id="open-preview">Open preview</h3>
+<p>In the terminal, run <code>quarto preview</code> to open the preview in your browser.</p>
+<p>You can edit and files in vscode and the preview will be updated live in the browser.</p>
+</section>
+</section>
+<section id="publishing-the-book" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-the-book">Publishing the book</h2>
+<p>You can publish the book as a website to github.</p>
+<p><em>TODO</em></p>
 
 
-</header>
-
-
-<p>About this site</p>
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -647,6 +781,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./git.html" class="pagination-link" aria-label="Introduction to Git">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to Git</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./problem-sets/index.html" class="pagination-link" aria-label="Problem Sets">
+        <span class="nav-page-text">Problem Sets</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

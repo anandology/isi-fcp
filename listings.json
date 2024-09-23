@@ -1,16 +1,16 @@
 [
   {
-    "listing": "/problem-sets/index.html",
-    "items": [
-      "/problem-sets/ps1.html"
-    ]
-  },
-  {
     "listing": "/lecture-notes/index.html",
     "items": [
       "/lecture-notes/2024-08-12/index.html",
       "/lecture-notes/01/index.html",
       "/lecture-notes/02/index.html"
+    ]
+  },
+  {
+    "listing": "/problem-sets/index.html",
+    "items": [
+      "/problem-sets/ps1.html"
     ]
   }
 ]
