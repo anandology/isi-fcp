@@ -1,0 +1,176 @@
+# Publishing with Quarto
+
+[Quarto][] is an open-source scientific and technical publishing system. It makes it easier to publish articles, books and websites for techincal content.
+
+[Quarto]: https://quarto.org/
+
+### Installation
+
+Install Quarto.
+
+```text
+$ wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.57/quarto-1.5.57-linux-amd64.deb
+$ sudo dpkg -i quarto-1.5.57-linux-amd64.deb
+```
+
+Install `librsvg2-bin` package to work with svg.
+
+```text
+$ sudo apt install librsvg2-bin
+```
+
+Install Latex.
+
+```
+$ sudo quarto install tinytex
+```
+
+## Getting Started
+
+Quarto .qmd files contain a combination of markdown and executable code cells. For the scope of this article, we'll limit ourselves to Markdown.
+
+Create a file with name `demo.qmd` with the following content.
+
+    # Quarto Demo
+
+    This is a demonstration of authoring articles with [Quarto](https://quarto.qmd).
+
+    ## A Bit of Math
+
+    Markdown supports embedding LaTeX for writing mathematics.
+
+    For example, the area of a circle with radius $r$ is $\pi r^2$.
+
+    And:
+
+    $\Sigma_{x=1}^{n}{x} = \frac{n(n+1)}{2}$
+
+    ## The Circle
+
+    Here is a sample C program using [csketch](https://gitub.com/anandology/csketch) library.
+
+    ```c
+    #include <sketch.h>
+
+    int main()
+    {
+        // draw a circle with center as (0, 0) and radius 100
+        draw_circle(0, 0, 100);
+
+        // save all the shapes draws to lesson2.svg
+        save_sketch("circle.svg");
+    }
+    ```
+
+    And that generates a `circle.svg` with the following image.
+
+    ![](circle.svg)
+
+Now convert this to HTML by running:
+
+```text
+$ quarto render demo.qmd --to html
+...
+
+Output created: demo.html
+```
+
+Open `demo.html` in your browser to see the output.
+
+You can also convert this to PDF by running:
+
+```text
+$ quarto render demo.qmd --to pdf
+...
+
+Output created: demo.pdf
+```
+
+You can open `demo.pdf` to see how it looks like.
+
+## Creating a book
+
+You can create a book using Quarto to publish the solutions to problem sets.
+
+### Step 1: Create a github repository
+
+Create a new github repository. You may call it `fcp-practice` or `programming-practice` or something else.
+
+### Step 2: Clone the repo on your computer
+
+```text
+$ git clone https://github.com/<your-username>/<repo-name>
+
+$ cd <repo-name>
+```
+
+### Step 3: Create a quarto project
+
+Run command `quarto create`.
+
+```text
+$ quarto create
+ ? Create
+ ❯ project
+   extension
+```
+
+Select _project_ and press `Enter`.
+
+```text
+$ quarto create
+ ? Create › project
+ ? Type
+   default
+   website
+   blog
+ ❯ book
+   confluence
+```
+
+Select _book_ and press `Enter`.
+
+```text
+$ quarto create
+ ? Create › project
+ ? Type › book
+ ? Directory › .
+```
+
+Enter `.` for directory and press `Enter`.
+
+```text
+$ quarto create
+ ? Create › project
+ ? Type › book
+ ? Directory › .
+Creating project at /tmp/quarto2:
+  - Created _quarto.yml
+  - Created index.qmd
+  - Created intro.qmd
+  - Created summary.qmd
+  - Created references.qmd
+  - Created cover.png
+  - Created references.bib
+ ? Open With
+ ❯ vscode
+   (don't open)
+```
+
+Select Open With _vscode_ and press `Enter`.
+
+### Edit _quarto.yml
+
+Edit the `_quarto.yml` file to edit the `title` and `author` fields.
+
+### Open preview
+
+In the terminal, run `quarto preview` to open the preview in your browser.
+
+You can edit and files in vscode and the preview will be updated live in the browser.
+
+## Publishing the book
+
+You can publish the book as a website to github.
+
+_TODO_
