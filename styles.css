@@ -11,6 +11,22 @@
     margin-top: 10px;
 }
 
+.sketch-small {
+    max-width: 300px;
+}
+
 .wordle img {
     max-height: 300px;
+}
+
+.slide-deck {
+    width: 100%;
+    border: 3px solid #dee2e6;
+    height: 475px;
+}
+
+@media only screen and (max-width: 600px) {
+    .slide-deck {
+        height: 400px;
+    }
 }

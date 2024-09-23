@@ -1,123 +1,66 @@
 [
   {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "Software Setup",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "This page explains how to setup the coding environment for Ubuntu.\n\n\n\n\n\n\nNote\n\n\n\nIf you are have a computer running Windows, please follow instructions on Installing Ubuntu on Windows using WSL before moving further.\n\n\n\n\nFor this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install GCC compiler.\nRun the following commands to install C compiler and other build tools.\nsudo apt-get update\nsudo apt-get install build-essential\n\n\n\nVisual Studio Code (vscode) is the recommended editor for this course. Please install it from Visual Studio Code Downloads page.\n\n\n\n\n\n\nWarning\n\n\n\nIf you are on Ubuntu 18.04, please install an older version by running the following commands.\nwget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable\nsudo dpkg -i code_1.75.1-1675893397_amd64.deb\n\n\n\n\n\nFollow the following instructions to install SVG Extension to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.\n\nOpen vscode and press Ctrl+P\nType ext install jock.svg and press Enter\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYou need to install WSL extension only if you are running Windows.\n\n\nFollow the following instructions to install the extension.\n\nOpen vscode and press Ctrl+P\nType ext install ms-vscode-remote.remote-wsl and press Enter\n\n\n\n\nIt is recommended to create a new directory for all your programs in this course. Let’s call it computing.\nOpen your terminal and run the following command.\nmkdir computing\nYou can change the current directory to that using:\ncd computing\n\n\n\nCSketch is a library for drawing simple shapes in C programming language and it is required for this course.\nRun the following command in your terminal to install it.\ncurl https://anandology.github.io/csketch/install.sh | bash\nThis will download the csketch library to your current directory and also adds a sample file circle.c and a Makefile to build your C code.\n\n\n\nOpen your computing directory in vscode by running code . in your terminal.\n$ code .\nIf you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the code command available in your environment.\nOnce the vscode is open, open a terminal from the menu View -&gt; Terminal. You can also open the same using keyboard shortcut Ctrl + `.\n\n\n\nIn the terminal, run make to compile the circle.c file in the current directory.\n$ make\ngcc -I sketch -L sketch circle.c  -lm -l sketch -o circle\nThat compiled the circle.c and created executable file circle.\nRun the circle program.\n$ ./circle\nThat would have created a file circle.svg. Select the circle.svg file in the left sidebar to open it now press the preview button.\n\n\n\nOnce you click preview, you’ll be able to see the image in the right.",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "text": "About this site"
   },
   {
-    "objectID": "setup.html#install-c-compiler",
-    "href": "setup.html#install-c-compiler",
-    "title": "Software Setup",
-    "section": "",
-    "text": "For this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install GCC compiler.\nRun the following commands to install C compiler and other build tools.\nsudo apt-get update\nsudo apt-get install build-essential",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "objectID": "git-slides/index.html#what-is-git",
+    "href": "git-slides/index.html#what-is-git",
+    "title": "Introduction to Git",
+    "section": "What is Git?",
+    "text": "What is Git?"
   },
   {
-    "objectID": "setup.html#install-visual-studio-code",
-    "href": "setup.html#install-visual-studio-code",
-    "title": "Software Setup",
-    "section": "",
-    "text": "Visual Studio Code (vscode) is the recommended editor for this course. Please install it from Visual Studio Code Downloads page.\n\n\n\n\n\n\nWarning\n\n\n\nIf you are on Ubuntu 18.04, please install an older version by running the following commands.\nwget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable\nsudo dpkg -i code_1.75.1-1675893397_amd64.deb",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "objectID": "git-slides/index.html#what-is-a-version-control-system",
+    "href": "git-slides/index.html#what-is-a-version-control-system",
+    "title": "Introduction to Git",
+    "section": "What is a version control system?",
+    "text": "What is a version control system?\n\n\nWhy do we need a version control system?\n\n\nTo avoid sistualtions like this.\n\n\nImage Credits: notFinal.doc by Jorge Cham, https://www.phdcomics.com"
   },
   {
-    "objectID": "setup.html#install-svg-extension-in-vscode",
-    "href": "setup.html#install-svg-extension-in-vscode",
-    "title": "Software Setup",
-    "section": "",
-    "text": "Follow the following instructions to install SVG Extension to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.\n\nOpen vscode and press Ctrl+P\nType ext install jock.svg and press Enter",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "objectID": "git-slides/index.html#git-vs.-github",
+    "href": "git-slides/index.html#git-vs.-github",
+    "title": "Introduction to Git",
+    "section": "Git vs. Github",
+    "text": "Git vs. Github\nGit is a version control system created by Linus Torvalds.\nGithub is a commercial service that offers git hosting in the cloud. It is very popular among the developers and it is almost the defacto standard for hosting code.\nIt is possible to use Git without using Github. However, for this course, we’ll use both Git and Github."
   },
   {
-    "objectID": "setup.html#install-wsl-extension-in-vscode",
-    "href": "setup.html#install-wsl-extension-in-vscode",
-    "title": "Software Setup",
-    "section": "",
-    "text": "Warning\n\n\n\nYou need to install WSL extension only if you are running Windows.\n\n\nFollow the following instructions to install the extension.\n\nOpen vscode and press Ctrl+P\nType ext install ms-vscode-remote.remote-wsl and press Enter",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "objectID": "git-slides/index.html#setting-up-git",
+    "href": "git-slides/index.html#setting-up-git",
+    "title": "Introduction to Git",
+    "section": "Setting up Git",
+    "text": "Setting up Git\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github."
   },
   {
-    "objectID": "setup.html#make-a-directory-for-your-code",
-    "href": "setup.html#make-a-directory-for-your-code",
-    "title": "Software Setup",
-    "section": "",
-    "text": "It is recommended to create a new directory for all your programs in this course. Let’s call it computing.\nOpen your terminal and run the following command.\nmkdir computing\nYou can change the current directory to that using:\ncd computing",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "objectID": "git-slides/index.html#setup-ssh-keys",
+    "href": "git-slides/index.html#setup-ssh-keys",
+    "title": "Introduction to Git",
+    "section": "Setup ssh-keys",
+    "text": "Setup ssh-keys\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github."
   },
   {
-    "objectID": "setup.html#download-csketch-library",
-    "href": "setup.html#download-csketch-library",
-    "title": "Software Setup",
-    "section": "",
-    "text": "CSketch is a library for drawing simple shapes in C programming language and it is required for this course.\nRun the following command in your terminal to install it.\ncurl https://anandology.github.io/csketch/install.sh | bash\nThis will download the csketch library to your current directory and also adds a sample file circle.c and a Makefile to build your C code.",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "objectID": "git-slides/index.html#create-a-repository-on-github",
+    "href": "git-slides/index.html#create-a-repository-on-github",
+    "title": "Introduction to Git",
+    "section": "Create a Repository on Github",
+    "text": "Create a Repository on Github\n\n\n\nLogin to github\nCreate a new repository with name git-practice.\nAdd Repository name and Description\nAnd select Add a README file."
   },
   {
-    "objectID": "setup.html#build-your-first-program",
-    "href": "setup.html#build-your-first-program",
-    "title": "Software Setup",
-    "section": "",
-    "text": "Open your computing directory in vscode by running code . in your terminal.\n$ code .\nIf you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the code command available in your environment.\nOnce the vscode is open, open a terminal from the menu View -&gt; Terminal. You can also open the same using keyboard shortcut Ctrl + `.\n\n\n\nIn the terminal, run make to compile the circle.c file in the current directory.\n$ make\ngcc -I sketch -L sketch circle.c  -lm -l sketch -o circle\nThat compiled the circle.c and created executable file circle.\nRun the circle program.\n$ ./circle\nThat would have created a file circle.svg. Select the circle.svg file in the left sidebar to open it now press the preview button.\n\n\n\nOnce you click preview, you’ll be able to see the image in the right.",
-    "crumbs": [
-      "Software Setup"
-    ]
+    "objectID": "git-slides/index.html#clone-the-repo",
+    "href": "git-slides/index.html#clone-the-repo",
+    "title": "Introduction to Git",
+    "section": "Clone the repo",
+    "text": "Clone the repo\nClone the repo to your local computer.\ngit clone git@github.com:anandology/git-practice.git"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "",
-    "text": "Welcome to the Fundamentals of Computing and Programming course.\nPlease look at the course page on ISI Bangalore website for syllabus and other details.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "Introduction",
-    "text": "Introduction\nThis course uses unix environment for writing, compiling and executing c programs.\nIf you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the Software Setup page.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#credits",
-    "href": "index.html#credits",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "Credits",
-    "text": "Credits\nThis course is taught of Prof. Jishnu Biswas, ISI Bangalore.\nThis website is setup by Anand Chitipothu.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nCC BY-SA 4.0",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
+    "objectID": "git-slides/index.html#add-a-new-file-to-the-repo",
+    "href": "git-slides/index.html#add-a-new-file-to-the-repo",
+    "title": "Introduction to Git",
+    "section": "Add a new file to the repo",
+    "text": "Add a new file to the repo\n$ touch planets.md\n\n$ git status"
   },
   {
     "objectID": "lecture-notes/02/index.html",
@@ -175,47 +118,155 @@
     ]
   },
   {
-    "objectID": "lecture-notes/2024-08-12/index.html",
-    "href": "lecture-notes/2024-08-12/index.html",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "objectID": "lecture-notes/01/index.html",
+    "href": "lecture-notes/01/index.html",
+    "title": "Lecture Notes 01",
     "section": "",
-    "text": "Please see lesson Introduction to Unix Command Line.",
+    "text": "This will be updated soon!",
     "crumbs": [
       "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
+      "Lecture Notes 01"
     ]
   },
   {
-    "objectID": "lecture-notes/2024-08-12/index.html#quick-setup",
-    "href": "lecture-notes/2024-08-12/index.html#quick-setup",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
-    "section": "Quick Setup",
-    "text": "Quick Setup\nPlease install the required packages to install the commands used in this session.\n$ sudo apt-get -y install coreutils figlet cowsay wbritish",
+    "objectID": "ubuntu-wsl.html",
+    "href": "ubuntu-wsl.html",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "Windows Subsystem for Linux, shortly called as WSL, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.\nFollow the following instructions to install Ubuntu on your Windows computer using WSL.\nPlease note that only Windows 10 version 2004 and higher or Windows 11 are supported.\nStep 1: Open Windows Power Shell\nEnter Windows Power Shell in the system search bar and open the application.\nStep 2: Install Ubuntu using WSL\nWSL is Windows Subsystem for Linux and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.\nRun the following command in the power shell to download and install Ubuntu.\nwsl --install\nPlease make sure you have a fast internet connection as this step downloads more than 1GB of data.\nStep 3: Open Ubuntu Terminal\nEnter Ubuntu in the system search bar and open the application.\nYou’ll should see a Ubuntu terminal.\nThat’s all! You are now ready to code.\n← Back to Software Setup\n\n\n\nHow to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "ubuntu-wsl.html#references",
+    "href": "ubuntu-wsl.html#references",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "How to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "problem-sets/index.html",
+    "href": "problem-sets/index.html",
+    "title": "Problem Sets",
+    "section": "",
+    "text": "Problem Sets\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nProblem Set 1\n\n\nCSketch\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "",
+    "text": "Welcome to the Fundamentals of Computing and Programming course.\nPlease look at the course page on ISI Bangalore website for syllabus and other details.",
     "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
+      "Fundamentals of Computing and Programming"
     ]
   },
   {
-    "objectID": "lecture-notes/2024-08-12/index.html#the-log",
-    "href": "lecture-notes/2024-08-12/index.html#the-log",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
-    "section": "The log",
-    "text": "The log\nHere is the log of all the commands tried in the class.\nLet’s start with printing a hello world message.\n$ echo hello world\nhello world\nThe echo command takes one or more command-line arguments and prints all of them as output. In this case echo is the name of the program and hello and world are two arguments passed to it.\nWe could try the date command to find the current date and time.\n$ date\nMonday 12 August 2024 11:33:05 AM IST\n$ date\nMonday 12 August 2024 11:33:07 AM IST\nNow, let’s try something fun!\n$ figlet hello world\n _          _ _                            _     _\n| |__   ___| | | ___   __      _____  _ __| | __| |\n| '_ \\ / _ \\ | |/ _ \\  \\ \\ /\\ / / _ \\| '__| |/ _` |\n| | | |  __/ | | (_) |  \\ V  V / (_) | |  | | (_| |\n|_| |_|\\___|_|_|\\___/    \\_/\\_/ \\___/|_|  |_|\\__,_|\nFiglet is a program that prints the given text as large characters made up of ordinary screen characters.\nPlease try figlet with some other arguments and see what happens.\nAlso note that if you are using figlet with any special characters, make sure you enclose the arguments pased to figlet in single quotes. If you don’t do that then shell may interpret them differently and do some weird things.\nFor example, if you call figlet with a * b as argument:\n$ figlet a * b\n\n              _          _             _          _\n  __ _    ___(_)_ __ ___| | ___    ___(_)_ __ ___| | ___   ___\n / _` |  / __| | '__/ __| |/ _ \\  / __| | '__/ __| |/ _ \\ / __|\n| (_| | | (__| | | | (__| |  __/ | (__| | | | (__| |  __/| (__\n \\__,_|  \\___|_|_|  \\___|_|\\___|  \\___|_|_|  \\___|_|\\___(_)___|\n\n      _          _\n  ___(_)_ __ ___| | ___   _____   ____ _\n / __| | '__/ __| |/ _ \\ / __\\ \\ / / _` |\n| (__| | | | (__| |  __/_\\__ \\\\ V / (_| |\n \\___|_|_|  \\___|_|\\___(_)___/ \\_/ \\__, |\n                                   |___/\n\n __  __       _         __ _ _\n|  \\/  | __ _| | _____ / _(_) | ___\n| |\\/| |/ _` | |/ / _ \\ |_| | |/ _ \\\n| |  | | (_| |   &lt;  __/  _| | |  __/\n|_|  |_|\\__,_|_|\\_\\___|_| |_|_|\\___|\n\n                      _                        _          _\n             _        _       _       _\n ___| | _____| |_ ___| |__   | |__\n/ __| |/ / _ \\ __/ __| '_ \\  | '_ \\\n\\__ \\   &lt;  __/ || (__| | | | | |_) |\n|___/_|\\_\\___|\\__\\___|_| |_| |_.__/\n                                                          _\nThe special character * means all the files in the current directory. You can verify that by running echo *.\n$ echo *\ncircle circle.c circle.svg Makefile sketch\nWe can enclose the arguments in single quotes to ignore the special characters.\n$ figlet 'a * b'\n                _\n  __ _  __/\\__ | |__\n / _` | \\    / | '_ \\\n| (_| | /_  _\\ | |_) |\n \\__,_|   \\/   |_.__/\nNow, let’s try a new command seq. The seq command takes a number n as argument and prints all numbers from 1 to n.\n$ seq 5\n1\n2\n3\n4\n5\nHow do we combine the seq and figlet program together so that the output of seq is passed as input to figlet? We just use the | character.\n$ seq 5 | figlet\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|\n\n _____\n|___ /\n  |_ \\\n ___) |\n|____/\n\n _  _\n| || |\n| || |_\n|__   _|\n   |_|\n\n ____\n| ___|\n|___ \\\n ___) |\n|____/\nThere is another interesting program called cowsay. It is usually not in the PATH (more about this later) so we need to give the full path for it to work. It is at path /usr/games/cowsay.\n$ /usr/games/cowsay hello world\n _____________\n&lt; hello world &gt;\n -------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\nWe could use a different animal by specifing the cowfile using option -f.\n$ /usr/games/cowsay -f tux hello world\n _____________\n&lt; hello world &gt;\n -------------\n   \\\n    \\\n        .--.\n       |o_o |\n       |:_/ |\n      //   \\ \\\n     (|     | )\n    /'\\_   _/`\\\n    \\___)=(___/\n$ seq 5 | /usr/games/cowsay\n ___________\n&lt; 1 2 3 4 5 &gt;\n -----------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 5 | /usr/games/cowsay -n\n ___\n/ 1 \\\n| 2 |\n| 3 |\n| 4 |\n\\ 5 /\n ---\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 2 | figlet | /usr/games/cowsay -n\n _________\n/  _      \\\n| / |     |\n| | |     |\n| | |     |\n| |_|     |\n|         |\n|  ____   |\n| |___ \\  |\n|   __) | |\n|  / __/  |\n| |_____| |\n\\         /\n ---------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ echo hello | figlet | /usr/games/cowsay -n\n ________________________\n/  _          _ _        \\\n| | |__   ___| | | ___   |\n| | '_ \\ / _ \\ | |/ _ \\  |\n| | | | |  __/ | | (_) | |\n| |_| |_|\\___|_|_|\\___/  |\n\\                        /\n ------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet\nhello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\nworld\n                    _     _\n__      _____  _ __| | __| |\n\\ \\ /\\ / / _ \\| '__| |/ _` |\n \\ V  V / (_) | |  | | (_| |\n  \\_/\\_/ \\___/|_|  |_|\\__,_|\n\n$ /usr/games/cowsay -n\nhello\nworld\n _______\n/ hello \\\n\\ world /\n -------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet -f slant hello\n    __         ____\n   / /_  ___  / / /___\n  / __ \\/ _ \\/ / / __ \\\n / / / /  __/ / / /_/ /\n/_/ /_/\\___/_/_/\\____/\n\n$ figlet -f lean hello\n\n    _/                  _/  _/\n   _/_/_/      _/_/    _/  _/    _/_/\n  _/    _/  _/_/_/_/  _/  _/  _/    _/\n _/    _/  _/        _/  _/  _/    _/\n_/    _/    _/_/_/  _/  _/    _/_/\n\n\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ cd\n$ pwd\n/home/anand\n$ cd /home/anand/github/anandology/isi-fcp/computing\n$\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat numbers.sh\nn=$1\nseq $n | figlet$\n$\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ cat\nhello\nhello\n$ ls -l\ntotal 168\n-rwxrwxr-x 1 anand anand 16976 Jul 30 21:54 circle\n-rw-rw-r-- 1 anand anand   196 Jul 29 00:16 circle.c\n-rw-rw-r-- 1 anand anand  6682 Aug  5 10:55 circle.svg\ndrwxrwxr-x 2 anand anand 32768 Aug  6 17:51 frames\n-rw-rw-r-- 1 anand anand   575 Aug  6 17:46 Makefile\n-rwxrwxr-x 1 anand anand 17152 Aug  6 17:50 moving-circle\n-rwxrwxr-x 1 anand anand 17024 Aug  6 17:32 moving-circle2\n-rw-rw-r-- 1 anand anand   433 Aug  6 17:32 moving-circle2.c\n-rw-rw-r-- 1 anand anand  1034 Aug  6 18:11 moving-circle.c\n-rw-rw-r-- 1 anand anand 40176 Aug  6 17:52 moving-circle.mp4\n-rw-rw-r-- 1 anand anand   359 Aug  6 17:36 moving-circle.svg\n-rw-rw-r-- 1 anand anand    21 Aug 12 12:07 numbers.sh\nlrwxrwxrwx 1 anand anand     9 Aug  5 10:55 sketch -&gt; ../sketch\n$ whoami\nanand\n$\n$ figlet sketch\n     _        _       _\n ___| | _____| |_ ___| |__\n/ __| |/ / _ \\ __/ __| '_ \\\n\\__ \\   &lt;  __/ || (__| | | |\n|___/_|\\_\\___|\\__\\___|_| |_|\n\n$ figlet -f slant sketch\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ figlet -f slant sketch &gt; sketch.txt\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ seq\n$ seq 1000000 &gt; 1m.txt\n$ ls -l *.txt\n-rw-rw-r-- 1 anand anand 6888896 Aug 12 12:15 1m.txt\n-rw-rw-r-- 1 anand anand     198 Aug 12 12:12 sketch.txt\n$ wc -l 1m.txt\n1000000 1m.txt\n\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ /usr/games/cowsay -n &lt; sketch.txt\n __________________________________\n/          __        __       __   \\\n|    _____/ /_____  / /______/ /_  |\n|   / ___/ //_/ _ \\/ __/ ___/ __ \\ |\n|  (__  ) ,&lt; /  __/ /_/ /__/ / / / |\n| /____/_/|_|\\___/\\__/\\___/_/ /_/  |\n\\                                  /\n ----------------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ /usr/games/cowsay -n &lt; numbers.sh\n _________________\n/ n=$1            \\\n\\ seq $n | figlet /\n -----------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ seq 2000 | tail -5\n1996\n1997\n1998\n1999\n2000\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)+/g\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)/g\\1,/'\ng123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/'\n123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/g'\n123,456,7\n$ echo 1234567 | sed 's/.*\\(...\\)/\\1,/g'\n567,\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/g'\n1234567\n$ sudo apt-get -y install wbritish\n[sudo] password for anand:\nSorry, try again.\n[sudo] password for anand:\nReading package lists... Done\nBuilding dependency tree... Done\nReading state information... Done\nwbritish is already the newest version (2020.12.07-2).\n0 upgraded, 0 newly installed, 0 to remove and 706 not upgraded.\n$\n$ ls\n1m.txt      frames          moving-circle2.c   numbers.sh\ncircle      Makefile        moving-circle.c    sketch\ncircle.c    moving-circle   moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2  moving-circle.svg\n$\n\n$ cat moving-circle.c\n#include &lt;sketch.h&gt;\n#include &lt;unistd.h&gt;\n\nint frame_count = 0;\n\n// saves each frame as file frames/0000.svg, frames/0001.svg etc.\nvoid save_frame()\n{\n    char filename[100];\n\n    // format the file name and save it into the variable filename\n    sprintf(filename, \"frames/%04d.svg\", frame_count);\n\n    // save the sketch into the frame filename\n    save_sketch(filename);\n\n    // increment the frame count, so that the next call to this function\n    // will write to a different file\n    frame_count++;\n\n    printf(\"saved %s\\n\", filename);\n}\n\nint main()\n{\n    float r = 50;\n    float y = 0;\n    float x = -300 + r;\n\n    while (x &lt; 300)\n    {\n        // clear everything that is drawn so far\n        clear_sketch();\n\n        // draw one circle\n        draw_circle(x, y, r);\n\n        // save the sketch\n        // since we are doing this in a loop, the svg extension of vscode will\n        // update the image everytime the file is updated.\n        save_frame();\n\n        // move the circle by 10 pixels to the right\n        x++;\n    }\n}\n\n$ grep draw moving-circle.c\n        // clear everything that is drawn so far\n        // draw one circle\n        draw_circle(x, y, r);\n$ grep draw_ moving-circle.c\n        draw_circle(x, y, r);\n$ seq 1000000 | grep 5 | wc -l\n468559\n$ seq 1000000 | grep '5.*5' | head\n55\n155\n255\n355\n455\n505\n515\n525\n535\n545\n$ seq 1000000 | grep '5.*5' | wc -l\n114265",
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Introduction",
+    "text": "Introduction\nThis course uses unix environment for writing, compiling and executing c programs.\nIf you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the Software Setup page.",
     "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
+      "Fundamentals of Computing and Programming"
     ]
   },
   {
-    "objectID": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
-    "href": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
-    "section": "Solving Wordle with command-line",
-    "text": "Solving Wordle with command-line\nWordle is a word game where you guess a word.\nWe are going to try solving it using unix command-line tools. For this we are going to use the command grep to match lines in a file that match given Regular Expression pattern.\nThe file /usr/share/dict/words contains all the words in the dictionary, one in each line.\n\n\n\n\n\n\nNote\n\n\n\nIf you don’t find that file, it means you don’t have a dictionary installed. Install it by running:\n$ sudo apt-get -y install wbritish\n\n\n$ wc -l /usr/share/dict/words\n104334 /usr/share/dict/words\nLet’s try to find all words that start with a prefix, say ice.\n$ grep '^ice' /usr/share/dict/words\nice\niceberg\niceberg's\nicebergs\nicebound\nicebox\niceboxes\nicebox's\nicebreaker\nicebreaker's\nicebreakers\nicecap\nicecap's\nicecaps\niced\nice's\nices\nLet’s find all the 5 letter words in the dictionary.\n$ grep '^.....$' /usr/share/dict/words | head\nABC's\nABM's\nAFAIK\nAFC's\nAMD's\nANSIs\nANZUS\nAOL's\nASCII\nASL's\n$ grep '^.....$' /usr/share/dict/words | wc -l\n7044\nThere are quite many of them. Let’s start with a guess. What shall we start with? Ok, FLAME!\n\n\n\nHow many 5-letter words are there that have letter f in them?\n$ grep '^.....$' /usr/share/dict/words | grep f | wc -l\n469\nThe letter L, A, M and E are not present in our word. Let’s try to skip all the words that have any of these characters.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | wc -l\n123\nThat is still quite a lof of them. Lets see some of those options.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | head\nAcuff\nAfros\nBuffy\nCorfu\nDuffy\nKhufu\nKnopf\nRufus\nSwift\nbiffs\nI’m going to try one of them. I’ll go with Swift.\n\n\n\nNow that we know correct letters in three positions and 6 letters that are not present, let’s see what all words are available.\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]' | head\nskiff\nsniff\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]'\nskiff\nsniff\nLet’s try with the first one skiff.\n\n\n\nYay! We solved Worle with command-line!",
+    "objectID": "index.html#source-code",
+    "href": "index.html#source-code",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Source Code",
+    "text": "Source Code\nThe source code for this website is available at the following github repository:\nhttps://github.com/anandology/isi-fcp",
     "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Credits",
+    "text": "Credits\nThis course is taught of Prof. Jishnu Biswas, ISI Bangalore.\nThis website is setup by Anand Chitipothu.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nCC BY-SA 4.0",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setting-up-git",
+    "href": "git.html#setting-up-git",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setup-ssh-keys",
+    "href": "git.html#setup-ssh-keys",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#git-usage-complexity",
+    "href": "git.html#git-usage-complexity",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#cloning-a-repository",
+    "href": "git.html#cloning-a-repository",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#commiting-changes",
+    "href": "git.html#commiting-changes",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#references",
+    "href": "git.html#references",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
     ]
   },
   {
@@ -329,11 +380,88 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "problem-sets/ps1.html",
+    "href": "problem-sets/ps1.html",
+    "title": "Fundamentals of Computing and Programming",
     "section": "",
-    "text": "About this site"
+    "text": "This is a practice problem set and there problems are not counted for your grade.\nAll these problems are expected to be solved in C programming language and all these problems require using the sketch library.\nPlease refer to the the following resources before wokring on this problem set.\n\nCSketch API\nCSketch Gallery\nLecture Notes 02"
+  },
+  {
+    "objectID": "problem-sets/ps1.html#problem-set-1",
+    "href": "problem-sets/ps1.html#problem-set-1",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "",
+    "text": "This is a practice problem set and there problems are not counted for your grade.\nAll these problems are expected to be solved in C programming language and all these problems require using the sketch library.\nPlease refer to the the following resources before wokring on this problem set.\n\nCSketch API\nCSketch Gallery\nLecture Notes 02"
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.1---mirror-circles",
+    "href": "problem-sets/ps1.html#p1.1---mirror-circles",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.1 - Mirror Circles",
+    "text": "P1.1 - Mirror Circles\nWrite a program to draw the following picture. The radius of the largest circle is 100 pixels."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.2-row-of-circles",
+    "href": "problem-sets/ps1.html#p1.2-row-of-circles",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.2: Row of Circles",
+    "text": "P1.2: Row of Circles\nWrite a program to draw the following picture. The radius of the each circle is 50 pixels."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.3-row-of-concentric-circles",
+    "href": "problem-sets/ps1.html#p1.3-row-of-concentric-circles",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.3: Row of Concentric Circles",
+    "text": "P1.3: Row of Concentric Circles\nWrite a program to draw the following picture. The radius of the largest circle is 50 pixels."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.4-growing-circles",
+    "href": "problem-sets/ps1.html#p1.4-growing-circles",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.4: Growing Circles",
+    "text": "P1.4: Growing Circles\nWrite a program to draw the following picture. The radius of the smallest circle is 30 pixels and the radius of each subsequent circle is 15 pixels more than the previous one. So the radius of all these circles will be 30, 45, 60, 75 and 90 respectively.\nTry to write your program in a modular way to make it easier to change the radius to a different value and accommodate a different number of circles."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.5-growing-candle-lights",
+    "href": "problem-sets/ps1.html#p1.5-growing-candle-lights",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.5: Growing Candle Lights",
+    "text": "P1.5: Growing Candle Lights\nWrite a program to draw the following picture. This picture is similar the one in the previous problem, except the circle has been replaced by a shape containing three circles touching at the bottom point. In each shape, the inner two circles have radius of \\(\\frac{1}{3}^{rd}\\) and \\(\\frac{2}{3}^{rd}\\) of the outer circle.\nThe radii of the outer circles will be 30, 45, 60, 75 and 90 pixels respectively."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.6-grid-of-candle-lights",
+    "href": "problem-sets/ps1.html#p1.6-grid-of-candle-lights",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.6: Grid of Candle Lights",
+    "text": "P1.6: Grid of Candle Lights\nWrite a program to draw the following picture.\nYou can refer to the Grid of Circles program from the Sketch Gallery."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.7-grid-of-concentric-circles",
+    "href": "problem-sets/ps1.html#p1.7-grid-of-concentric-circles",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.7: Grid of Concentric Circles",
+    "text": "P1.7: Grid of Concentric Circles\nWrite a program to draw the following picture.\nThis is similar to the Grid of Concentric Circles program from the Sketch Gallery, but with slighly different order."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.8-the-complex-grid",
+    "href": "problem-sets/ps1.html#p1.8-the-complex-grid",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.8: The Complex Grid",
+    "text": "P1.8: The Complex Grid\nWrite a program to draw the following picture.\nAgain, the Grid of Concentric Circles program from the Sketch Gallery, is the starting point for you. It is just a small trick."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.9-packed-circles",
+    "href": "problem-sets/ps1.html#p1.9-packed-circles",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.9: Packed circles",
+    "text": "P1.9: Packed circles\nWrite a program to draw the following picture. The radius of the outer circle is 150 pixels.\nHint: You may need to make use of some trigonometry."
+  },
+  {
+    "objectID": "problem-sets/ps1.html#p1.10-packed-candle-lights",
+    "href": "problem-sets/ps1.html#p1.10-packed-candle-lights",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "P1.10: Packed Candle Lights",
+    "text": "P1.10: Packed Candle Lights\nWrite a program to draw the following picture. The radius of the outer circle is 150 pixels.\nHint: You may need to make use of some trigonometry."
   },
   {
     "objectID": "cmdline.html",
@@ -396,101 +524,6 @@
     ]
   },
   {
-    "objectID": "git.html",
-    "href": "git.html",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setting-up-git",
-    "href": "git.html#setting-up-git",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setup-ssh-keys",
-    "href": "git.html#setup-ssh-keys",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#git-usage-complexity",
-    "href": "git.html#git-usage-complexity",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#cloning-a-repository",
-    "href": "git.html#cloning-a-repository",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#commiting-changes",
-    "href": "git.html#commiting-changes",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#references",
-    "href": "git.html#references",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "ubuntu-wsl.html",
-    "href": "ubuntu-wsl.html",
-    "title": "Installing Ubuntu on Windows using WSL",
-    "section": "",
-    "text": "Windows Subsystem for Linux, shortly called as WSL, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.\nFollow the following instructions to install Ubuntu on your Windows computer using WSL.\nPlease note that only Windows 10 version 2004 and higher or Windows 11 are supported.\nStep 1: Open Windows Power Shell\nEnter Windows Power Shell in the system search bar and open the application.\nStep 2: Install Ubuntu using WSL\nWSL is Windows Subsystem for Linux and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.\nRun the following command in the power shell to download and install Ubuntu.\nwsl --install\nPlease make sure you have a fast internet connection as this step downloads more than 1GB of data.\nStep 3: Open Ubuntu Terminal\nEnter Ubuntu in the system search bar and open the application.\nYou’ll should see a Ubuntu terminal.\nThat’s all! You are now ready to code.\n← Back to Software Setup\n\n\n\nHow to install Linux on Windows with WSL"
-  },
-  {
-    "objectID": "ubuntu-wsl.html#references",
-    "href": "ubuntu-wsl.html#references",
-    "title": "Installing Ubuntu on Windows using WSL",
-    "section": "",
-    "text": "How to install Linux on Windows with WSL"
-  },
-  {
-    "objectID": "lecture-notes/01/index.html",
-    "href": "lecture-notes/01/index.html",
-    "title": "Lecture Notes 01",
-    "section": "",
-    "text": "This will be updated soon!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 01"
-    ]
-  },
-  {
     "objectID": "lecture-notes/index.html",
     "href": "lecture-notes/index.html",
     "title": "Lecture Notes",
@@ -501,59 +534,127 @@
     ]
   },
   {
-    "objectID": "git-slides/index.html#what-is-git",
-    "href": "git-slides/index.html#what-is-git",
-    "title": "Introduction to Git",
-    "section": "What is Git?",
-    "text": "What is Git?"
+    "objectID": "lecture-notes/2024-08-12/index.html",
+    "href": "lecture-notes/2024-08-12/index.html",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "",
+    "text": "Please see lesson Introduction to Unix Command Line.",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
   },
   {
-    "objectID": "git-slides/index.html#what-is-a-version-control-system",
-    "href": "git-slides/index.html#what-is-a-version-control-system",
-    "title": "Introduction to Git",
-    "section": "What is a version control system?",
-    "text": "What is a version control system?\n\n\nWhy do we need a version control system?\n\n\nTo avoid sistualtions like this.\n\n\nImage Credits: notFinal.doc by Jorge Cham, https://www.phdcomics.com"
+    "objectID": "lecture-notes/2024-08-12/index.html#quick-setup",
+    "href": "lecture-notes/2024-08-12/index.html#quick-setup",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "Quick Setup",
+    "text": "Quick Setup\nPlease install the required packages to install the commands used in this session.\n$ sudo apt-get -y install coreutils figlet cowsay wbritish",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
   },
   {
-    "objectID": "git-slides/index.html#git-vs.-github",
-    "href": "git-slides/index.html#git-vs.-github",
-    "title": "Introduction to Git",
-    "section": "Git vs. Github",
-    "text": "Git vs. Github\nGit is a version control system created by Linus Torvalds.\nGithub is a commercial service that offers git hosting in the cloud. It is very popular among the developers and it is almost the defacto standard for hosting code.\nIt is possible to use Git without using Github. However, for this course, we’ll use both Git and Github."
+    "objectID": "lecture-notes/2024-08-12/index.html#the-log",
+    "href": "lecture-notes/2024-08-12/index.html#the-log",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "The log",
+    "text": "The log\nHere is the log of all the commands tried in the class.\nLet’s start with printing a hello world message.\n$ echo hello world\nhello world\nThe echo command takes one or more command-line arguments and prints all of them as output. In this case echo is the name of the program and hello and world are two arguments passed to it.\nWe could try the date command to find the current date and time.\n$ date\nMonday 12 August 2024 11:33:05 AM IST\n$ date\nMonday 12 August 2024 11:33:07 AM IST\nNow, let’s try something fun!\n$ figlet hello world\n _          _ _                            _     _\n| |__   ___| | | ___   __      _____  _ __| | __| |\n| '_ \\ / _ \\ | |/ _ \\  \\ \\ /\\ / / _ \\| '__| |/ _` |\n| | | |  __/ | | (_) |  \\ V  V / (_) | |  | | (_| |\n|_| |_|\\___|_|_|\\___/    \\_/\\_/ \\___/|_|  |_|\\__,_|\nFiglet is a program that prints the given text as large characters made up of ordinary screen characters.\nPlease try figlet with some other arguments and see what happens.\nAlso note that if you are using figlet with any special characters, make sure you enclose the arguments pased to figlet in single quotes. If you don’t do that then shell may interpret them differently and do some weird things.\nFor example, if you call figlet with a * b as argument:\n$ figlet a * b\n\n              _          _             _          _\n  __ _    ___(_)_ __ ___| | ___    ___(_)_ __ ___| | ___   ___\n / _` |  / __| | '__/ __| |/ _ \\  / __| | '__/ __| |/ _ \\ / __|\n| (_| | | (__| | | | (__| |  __/ | (__| | | | (__| |  __/| (__\n \\__,_|  \\___|_|_|  \\___|_|\\___|  \\___|_|_|  \\___|_|\\___(_)___|\n\n      _          _\n  ___(_)_ __ ___| | ___   _____   ____ _\n / __| | '__/ __| |/ _ \\ / __\\ \\ / / _` |\n| (__| | | | (__| |  __/_\\__ \\\\ V / (_| |\n \\___|_|_|  \\___|_|\\___(_)___/ \\_/ \\__, |\n                                   |___/\n\n __  __       _         __ _ _\n|  \\/  | __ _| | _____ / _(_) | ___\n| |\\/| |/ _` | |/ / _ \\ |_| | |/ _ \\\n| |  | | (_| |   &lt;  __/  _| | |  __/\n|_|  |_|\\__,_|_|\\_\\___|_| |_|_|\\___|\n\n                      _                        _          _\n             _        _       _       _\n ___| | _____| |_ ___| |__   | |__\n/ __| |/ / _ \\ __/ __| '_ \\  | '_ \\\n\\__ \\   &lt;  __/ || (__| | | | | |_) |\n|___/_|\\_\\___|\\__\\___|_| |_| |_.__/\n                                                          _\nThe special character * means all the files in the current directory. You can verify that by running echo *.\n$ echo *\ncircle circle.c circle.svg Makefile sketch\nWe can enclose the arguments in single quotes to ignore the special characters.\n$ figlet 'a * b'\n                _\n  __ _  __/\\__ | |__\n / _` | \\    / | '_ \\\n| (_| | /_  _\\ | |_) |\n \\__,_|   \\/   |_.__/\nNow, let’s try a new command seq. The seq command takes a number n as argument and prints all numbers from 1 to n.\n$ seq 5\n1\n2\n3\n4\n5\nHow do we combine the seq and figlet program together so that the output of seq is passed as input to figlet? We just use the | character.\n$ seq 5 | figlet\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|\n\n _____\n|___ /\n  |_ \\\n ___) |\n|____/\n\n _  _\n| || |\n| || |_\n|__   _|\n   |_|\n\n ____\n| ___|\n|___ \\\n ___) |\n|____/\nThere is another interesting program called cowsay. It is usually not in the PATH (more about this later) so we need to give the full path for it to work. It is at path /usr/games/cowsay.\n$ /usr/games/cowsay hello world\n _____________\n&lt; hello world &gt;\n -------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\nWe could use a different animal by specifing the cowfile using option -f.\n$ /usr/games/cowsay -f tux hello world\n _____________\n&lt; hello world &gt;\n -------------\n   \\\n    \\\n        .--.\n       |o_o |\n       |:_/ |\n      //   \\ \\\n     (|     | )\n    /'\\_   _/`\\\n    \\___)=(___/\n$ seq 5 | /usr/games/cowsay\n ___________\n&lt; 1 2 3 4 5 &gt;\n -----------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 5 | /usr/games/cowsay -n\n ___\n/ 1 \\\n| 2 |\n| 3 |\n| 4 |\n\\ 5 /\n ---\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 2 | figlet | /usr/games/cowsay -n\n _________\n/  _      \\\n| / |     |\n| | |     |\n| | |     |\n| |_|     |\n|         |\n|  ____   |\n| |___ \\  |\n|   __) | |\n|  / __/  |\n| |_____| |\n\\         /\n ---------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ echo hello | figlet | /usr/games/cowsay -n\n ________________________\n/  _          _ _        \\\n| | |__   ___| | | ___   |\n| | '_ \\ / _ \\ | |/ _ \\  |\n| | | | |  __/ | | (_) | |\n| |_| |_|\\___|_|_|\\___/  |\n\\                        /\n ------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet\nhello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\nworld\n                    _     _\n__      _____  _ __| | __| |\n\\ \\ /\\ / / _ \\| '__| |/ _` |\n \\ V  V / (_) | |  | | (_| |\n  \\_/\\_/ \\___/|_|  |_|\\__,_|\n\n$ /usr/games/cowsay -n\nhello\nworld\n _______\n/ hello \\\n\\ world /\n -------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet -f slant hello\n    __         ____\n   / /_  ___  / / /___\n  / __ \\/ _ \\/ / / __ \\\n / / / /  __/ / / /_/ /\n/_/ /_/\\___/_/_/\\____/\n\n$ figlet -f lean hello\n\n    _/                  _/  _/\n   _/_/_/      _/_/    _/  _/    _/_/\n  _/    _/  _/_/_/_/  _/  _/  _/    _/\n _/    _/  _/        _/  _/  _/    _/\n_/    _/    _/_/_/  _/  _/    _/_/\n\n\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ cd\n$ pwd\n/home/anand\n$ cd /home/anand/github/anandology/isi-fcp/computing\n$\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat numbers.sh\nn=$1\nseq $n | figlet$\n$\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ cat\nhello\nhello\n$ ls -l\ntotal 168\n-rwxrwxr-x 1 anand anand 16976 Jul 30 21:54 circle\n-rw-rw-r-- 1 anand anand   196 Jul 29 00:16 circle.c\n-rw-rw-r-- 1 anand anand  6682 Aug  5 10:55 circle.svg\ndrwxrwxr-x 2 anand anand 32768 Aug  6 17:51 frames\n-rw-rw-r-- 1 anand anand   575 Aug  6 17:46 Makefile\n-rwxrwxr-x 1 anand anand 17152 Aug  6 17:50 moving-circle\n-rwxrwxr-x 1 anand anand 17024 Aug  6 17:32 moving-circle2\n-rw-rw-r-- 1 anand anand   433 Aug  6 17:32 moving-circle2.c\n-rw-rw-r-- 1 anand anand  1034 Aug  6 18:11 moving-circle.c\n-rw-rw-r-- 1 anand anand 40176 Aug  6 17:52 moving-circle.mp4\n-rw-rw-r-- 1 anand anand   359 Aug  6 17:36 moving-circle.svg\n-rw-rw-r-- 1 anand anand    21 Aug 12 12:07 numbers.sh\nlrwxrwxrwx 1 anand anand     9 Aug  5 10:55 sketch -&gt; ../sketch\n$ whoami\nanand\n$\n$ figlet sketch\n     _        _       _\n ___| | _____| |_ ___| |__\n/ __| |/ / _ \\ __/ __| '_ \\\n\\__ \\   &lt;  __/ || (__| | | |\n|___/_|\\_\\___|\\__\\___|_| |_|\n\n$ figlet -f slant sketch\n        __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ figlet -f slant sketch &gt; sketch.txt\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ seq\n$ seq 1000000 &gt; 1m.txt\n$ ls -l *.txt\n-rw-rw-r-- 1 anand anand 6888896 Aug 12 12:15 1m.txt\n-rw-rw-r-- 1 anand anand     198 Aug 12 12:12 sketch.txt\n$ wc -l 1m.txt\n1000000 1m.txt\n\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ /usr/games/cowsay -n &lt; sketch.txt\n __________________________________\n/          __        __       __   \\\n|    _____/ /_____  / /______/ /_  |\n|   / ___/ //_/ _ \\/ __/ ___/ __ \\ |\n|  (__  ) ,&lt; /  __/ /_/ /__/ / / / |\n| /____/_/|_|\\___/\\__/\\___/_/ /_/  |\n\\                                  /\n ----------------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ /usr/games/cowsay -n &lt; numbers.sh\n _________________\n/ n=$1            \\\n\\ seq $n | figlet /\n -----------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ seq 2000 | tail -5\n1996\n1997\n1998\n1999\n2000\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)+/g\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)/g\\1,/'\ng123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/'\n123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/g'\n123,456,7\n$ echo 1234567 | sed 's/.*\\(...\\)/\\1,/g'\n567,\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/g'\n1234567\n$ sudo apt-get -y install wbritish\n[sudo] password for anand:\nSorry, try again.\n[sudo] password for anand:\nReading package lists... Done\nBuilding dependency tree... Done\nReading state information... Done\nwbritish is already the newest version (2020.12.07-2).\n0 upgraded, 0 newly installed, 0 to remove and 706 not upgraded.\n$\n$ ls\n1m.txt      frames          moving-circle2.c   numbers.sh\ncircle      Makefile        moving-circle.c    sketch\ncircle.c    moving-circle   moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2  moving-circle.svg\n$\n\n$ cat moving-circle.c\n#include &lt;sketch.h&gt;\n#include &lt;unistd.h&gt;\n\nint frame_count = 0;\n\n// saves each frame as file frames/0000.svg, frames/0001.svg etc.\nvoid save_frame()\n{\n    char filename[100];\n\n    // format the file name and save it into the variable filename\n    sprintf(filename, \"frames/%04d.svg\", frame_count);\n\n    // save the sketch into the frame filename\n    save_sketch(filename);\n\n    // increment the frame count, so that the next call to this function\n    // will write to a different file\n    frame_count++;\n\n    printf(\"saved %s\\n\", filename);\n}\n\nint main()\n{\n    float r = 50;\n    float y = 0;\n    float x = -300 + r;\n\n    while (x &lt; 300)\n    {\n        // clear everything that is drawn so far\n        clear_sketch();\n\n        // draw one circle\n        draw_circle(x, y, r);\n\n        // save the sketch\n        // since we are doing this in a loop, the svg extension of vscode will\n        // update the image everytime the file is updated.\n        save_frame();\n\n        // move the circle by 10 pixels to the right\n        x++;\n    }\n}\n\n$ grep draw moving-circle.c\n        // clear everything that is drawn so far\n        // draw one circle\n        draw_circle(x, y, r);\n$ grep draw_ moving-circle.c\n        draw_circle(x, y, r);\n$ seq 1000000 | grep 5 | wc -l\n468559\n$ seq 1000000 | grep '5.*5' | head\n55\n155\n255\n355\n455\n505\n515\n525\n535\n545\n$ seq 1000000 | grep '5.*5' | wc -l\n114265",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
   },
   {
-    "objectID": "git-slides/index.html#setting-up-git",
-    "href": "git-slides/index.html#setting-up-git",
-    "title": "Introduction to Git",
-    "section": "Setting up Git",
-    "text": "Setting up Git\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github."
+    "objectID": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
+    "href": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "Solving Wordle with command-line",
+    "text": "Solving Wordle with command-line\nWordle is a word game where you guess a word.\nWe are going to try solving it using unix command-line tools. For this we are going to use the command grep to match lines in a file that match given Regular Expression pattern.\nThe file /usr/share/dict/words contains all the words in the dictionary, one in each line.\n\n\n\n\n\n\nNote\n\n\n\nIf you don’t find that file, it means you don’t have a dictionary installed. Install it by running:\n$ sudo apt-get -y install wbritish\n\n\n$ wc -l /usr/share/dict/words\n104334 /usr/share/dict/words\nLet’s try to find all words that start with a prefix, say ice.\n$ grep '^ice' /usr/share/dict/words\nice\niceberg\niceberg's\nicebergs\nicebound\nicebox\niceboxes\nicebox's\nicebreaker\nicebreaker's\nicebreakers\nicecap\nicecap's\nicecaps\niced\nice's\nices\nLet’s find all the 5 letter words in the dictionary.\n$ grep '^.....$' /usr/share/dict/words | head\nABC's\nABM's\nAFAIK\nAFC's\nAMD's\nANSIs\nANZUS\nAOL's\nASCII\nASL's\n$ grep '^.....$' /usr/share/dict/words | wc -l\n7044\nThere are quite many of them. Let’s start with a guess. What shall we start with? Ok, FLAME!\n\n\n\nHow many 5-letter words are there that have letter f in them?\n$ grep '^.....$' /usr/share/dict/words | grep f | wc -l\n469\nThe letter L, A, M and E are not present in our word. Let’s try to skip all the words that have any of these characters.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | wc -l\n123\nThat is still quite a lof of them. Lets see some of those options.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | head\nAcuff\nAfros\nBuffy\nCorfu\nDuffy\nKhufu\nKnopf\nRufus\nSwift\nbiffs\nI’m going to try one of them. I’ll go with Swift.\n\n\n\nNow that we know correct letters in three positions and 6 letters that are not present, let’s see what all words are available.\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]' | head\nskiff\nsniff\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]'\nskiff\nsniff\nLet’s try with the first one skiff.\n\n\n\nYay! We solved Worle with command-line!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
   },
   {
-    "objectID": "git-slides/index.html#setup-ssh-keys",
-    "href": "git-slides/index.html#setup-ssh-keys",
-    "title": "Introduction to Git",
-    "section": "Setup ssh-keys",
-    "text": "Setup ssh-keys\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github."
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Software Setup",
+    "section": "",
+    "text": "This page explains how to setup the coding environment for Ubuntu.\n\n\n\n\n\n\nNote\n\n\n\nIf you are have a computer running Windows, please follow instructions on Installing Ubuntu on Windows using WSL before moving further.\n\n\n\n\nFor this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install GCC compiler.\nRun the following commands to install C compiler and other build tools.\nsudo apt-get update\nsudo apt-get install build-essential\n\n\n\nVisual Studio Code (vscode) is the recommended editor for this course. Please install it from Visual Studio Code Downloads page.\n\n\n\n\n\n\nWarning\n\n\n\nIf you are on Ubuntu 18.04, please install an older version by running the following commands.\nwget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable\nsudo dpkg -i code_1.75.1-1675893397_amd64.deb\n\n\n\n\n\nFollow the following instructions to install SVG Extension to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.\n\nOpen vscode and press Ctrl+P\nType ext install jock.svg and press Enter\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYou need to install WSL extension only if you are running Windows.\n\n\nFollow the following instructions to install the extension.\n\nOpen vscode and press Ctrl+P\nType ext install ms-vscode-remote.remote-wsl and press Enter\n\n\n\n\nIt is recommended to create a new directory for all your programs in this course. Let’s call it computing.\nOpen your terminal and run the following command.\nmkdir computing\nYou can change the current directory to that using:\ncd computing\n\n\n\nCSketch is a library for drawing simple shapes in C programming language and it is required for this course.\nRun the following command in your terminal to install it.\ncurl https://anandology.github.io/csketch/install.sh | bash\nThis will download the csketch library to your current directory and also adds a sample file circle.c and a Makefile to build your C code.\n\n\n\nOpen your computing directory in vscode by running code . in your terminal.\n$ code .\nIf you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the code command available in your environment.\nOnce the vscode is open, open a terminal from the menu View -&gt; Terminal. You can also open the same using keyboard shortcut Ctrl + `.\n\n\n\nIn the terminal, run make to compile the circle.c file in the current directory.\n$ make\ngcc -I sketch -L sketch circle.c  -lm -l sketch -o circle\nThat compiled the circle.c and created executable file circle.\nRun the circle program.\n$ ./circle\nThat would have created a file circle.svg. Select the circle.svg file in the left sidebar to open it now press the preview button.\n\n\n\nOnce you click preview, you’ll be able to see the image in the right.",
+    "crumbs": [
+      "Software Setup"
+    ]
   },
   {
-    "objectID": "git-slides/index.html#create-a-repository-on-github",
-    "href": "git-slides/index.html#create-a-repository-on-github",
-    "title": "Introduction to Git",
-    "section": "Create a Repository on Github",
-    "text": "Create a Repository on Github\n\n\n\nLogin to github\nCreate a new repository with name git-practice.\nAdd Repository name and Description\nAnd select Add a README file."
+    "objectID": "setup.html#install-c-compiler",
+    "href": "setup.html#install-c-compiler",
+    "title": "Software Setup",
+    "section": "",
+    "text": "For this course, we support only Ubuntu distribution of Linux. If you have any other distribution, please find out how to install GCC compiler.\nRun the following commands to install C compiler and other build tools.\nsudo apt-get update\nsudo apt-get install build-essential",
+    "crumbs": [
+      "Software Setup"
+    ]
   },
   {
-    "objectID": "git-slides/index.html#clone-the-repo",
-    "href": "git-slides/index.html#clone-the-repo",
-    "title": "Introduction to Git",
-    "section": "Clone the repo",
-    "text": "Clone the repo\nClone the repo to your local computer.\ngit clone git@github.com:anandology/git-practice.git"
+    "objectID": "setup.html#install-visual-studio-code",
+    "href": "setup.html#install-visual-studio-code",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Visual Studio Code (vscode) is the recommended editor for this course. Please install it from Visual Studio Code Downloads page.\n\n\n\n\n\n\nWarning\n\n\n\nIf you are on Ubuntu 18.04, please install an older version by running the following commands.\nwget https://update.code.visualstudio.com/1.75.1/linux-deb-x64/stable\nsudo dpkg -i code_1.75.1-1675893397_amd64.deb",
+    "crumbs": [
+      "Software Setup"
+    ]
   },
   {
-    "objectID": "git-slides/index.html#add-a-new-file-to-the-repo",
-    "href": "git-slides/index.html#add-a-new-file-to-the-repo",
-    "title": "Introduction to Git",
-    "section": "Add a new file to the repo",
-    "text": "Add a new file to the repo\n$ touch planets.md\n\n$ git status"
+    "objectID": "setup.html#install-svg-extension-in-vscode",
+    "href": "setup.html#install-svg-extension-in-vscode",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Follow the following instructions to install SVG Extension to preview SVG files directly in vscode. SVG is an image format that we are going to use in the course.\n\nOpen vscode and press Ctrl+P\nType ext install jock.svg and press Enter",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#install-wsl-extension-in-vscode",
+    "href": "setup.html#install-wsl-extension-in-vscode",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Warning\n\n\n\nYou need to install WSL extension only if you are running Windows.\n\n\nFollow the following instructions to install the extension.\n\nOpen vscode and press Ctrl+P\nType ext install ms-vscode-remote.remote-wsl and press Enter",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#make-a-directory-for-your-code",
+    "href": "setup.html#make-a-directory-for-your-code",
+    "title": "Software Setup",
+    "section": "",
+    "text": "It is recommended to create a new directory for all your programs in this course. Let’s call it computing.\nOpen your terminal and run the following command.\nmkdir computing\nYou can change the current directory to that using:\ncd computing",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#download-csketch-library",
+    "href": "setup.html#download-csketch-library",
+    "title": "Software Setup",
+    "section": "",
+    "text": "CSketch is a library for drawing simple shapes in C programming language and it is required for this course.\nRun the following command in your terminal to install it.\ncurl https://anandology.github.io/csketch/install.sh | bash\nThis will download the csketch library to your current directory and also adds a sample file circle.c and a Makefile to build your C code.",
+    "crumbs": [
+      "Software Setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#build-your-first-program",
+    "href": "setup.html#build-your-first-program",
+    "title": "Software Setup",
+    "section": "",
+    "text": "Open your computing directory in vscode by running code . in your terminal.\n$ code .\nIf you are on Windows, you should run this in Ubuntu running in WSL. The WSL Extension of vscode would have made the code command available in your environment.\nOnce the vscode is open, open a terminal from the menu View -&gt; Terminal. You can also open the same using keyboard shortcut Ctrl + `.\n\n\n\nIn the terminal, run make to compile the circle.c file in the current directory.\n$ make\ngcc -I sketch -L sketch circle.c  -lm -l sketch -o circle\nThat compiled the circle.c and created executable file circle.\nRun the circle program.\n$ ./circle\nThat would have created a file circle.svg. Select the circle.svg file in the left sidebar to open it now press the preview button.\n\n\n\nOnce you click preview, you’ll be able to see the image in the right.",
+    "crumbs": [
+      "Software Setup"
+    ]
   }
 ]
