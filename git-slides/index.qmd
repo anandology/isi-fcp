@@ -21,7 +21,7 @@ format:
 <img
   src="http://www.phdcomics.com/comics/archive/phd101212s.gif"
   align="right"
-  style="text-align: right; margin-bottom: -50px;">
+  style="text-align: right;">
 
 <!--
 ![](http://www.phdcomics.com/comics/archive/phd101212s.gif){.nostretch fig-align="right" width="50%"} -->

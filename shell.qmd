@@ -390,7 +390,6 @@ $ seq 5 | ./squares.sh
 
 **Problem:** Write a program `sum.sh` to read numbers from stdin and print their sum.
 
-
 ```txt
 $ seq 5 | ./sum.sh
 15
