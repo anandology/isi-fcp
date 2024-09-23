@@ -147,7 +147,10 @@
     "href": "problem-sets/index.html",
     "title": "Problem Sets",
     "section": "",
-    "text": "Problem Sets\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nProblem Set 1\n\n\nCSketch\n\n\n\n\n\nNo matching items"
+    "text": "Problem Sets\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nProblem Set 1\n\n\nCSketch\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Problem Sets"
+    ]
   },
   {
     "objectID": "index.html",
@@ -384,84 +387,132 @@
     "href": "problem-sets/ps1.html",
     "title": "Fundamentals of Computing and Programming",
     "section": "",
-    "text": "This is a practice problem set and there problems are not counted for your grade.\nAll these problems are expected to be solved in C programming language and all these problems require using the sketch library.\nPlease refer to the the following resources before wokring on this problem set.\n\nCSketch API\nCSketch Gallery\nLecture Notes 02"
+    "text": "This is a practice problem set and there problems are not counted for your grade.\nAll these problems are expected to be solved in C programming language and all these problems require using the sketch library.\nPlease refer to the the following resources before wokring on this problem set.\n\nCSketch API\nCSketch Gallery\nLecture Notes 02",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#problem-set-1",
     "href": "problem-sets/ps1.html#problem-set-1",
     "title": "Fundamentals of Computing and Programming",
     "section": "",
-    "text": "This is a practice problem set and there problems are not counted for your grade.\nAll these problems are expected to be solved in C programming language and all these problems require using the sketch library.\nPlease refer to the the following resources before wokring on this problem set.\n\nCSketch API\nCSketch Gallery\nLecture Notes 02"
+    "text": "This is a practice problem set and there problems are not counted for your grade.\nAll these problems are expected to be solved in C programming language and all these problems require using the sketch library.\nPlease refer to the the following resources before wokring on this problem set.\n\nCSketch API\nCSketch Gallery\nLecture Notes 02",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.1---mirror-circles",
     "href": "problem-sets/ps1.html#p1.1---mirror-circles",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.1 - Mirror Circles",
-    "text": "P1.1 - Mirror Circles\nWrite a program to draw the following picture. The radius of the largest circle is 100 pixels."
+    "text": "P1.1 - Mirror Circles\nWrite a program to draw the following picture. The radius of the largest circle is 100 pixels.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.2-row-of-circles",
     "href": "problem-sets/ps1.html#p1.2-row-of-circles",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.2: Row of Circles",
-    "text": "P1.2: Row of Circles\nWrite a program to draw the following picture. The radius of the each circle is 50 pixels."
+    "text": "P1.2: Row of Circles\nWrite a program to draw the following picture. The radius of the each circle is 50 pixels.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.3-row-of-concentric-circles",
     "href": "problem-sets/ps1.html#p1.3-row-of-concentric-circles",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.3: Row of Concentric Circles",
-    "text": "P1.3: Row of Concentric Circles\nWrite a program to draw the following picture. The radius of the largest circle is 50 pixels."
+    "text": "P1.3: Row of Concentric Circles\nWrite a program to draw the following picture. The radius of the largest circle is 50 pixels.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.4-growing-circles",
     "href": "problem-sets/ps1.html#p1.4-growing-circles",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.4: Growing Circles",
-    "text": "P1.4: Growing Circles\nWrite a program to draw the following picture. The radius of the smallest circle is 30 pixels and the radius of each subsequent circle is 15 pixels more than the previous one. So the radius of all these circles will be 30, 45, 60, 75 and 90 respectively.\nTry to write your program in a modular way to make it easier to change the radius to a different value and accommodate a different number of circles."
+    "text": "P1.4: Growing Circles\nWrite a program to draw the following picture. The radius of the smallest circle is 30 pixels and the radius of each subsequent circle is 15 pixels more than the previous one. So the radius of all these circles will be 30, 45, 60, 75 and 90 respectively.\nTry to write your program in a modular way to make it easier to change the radius to a different value and accommodate a different number of circles.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.5-growing-candle-lights",
     "href": "problem-sets/ps1.html#p1.5-growing-candle-lights",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.5: Growing Candle Lights",
-    "text": "P1.5: Growing Candle Lights\nWrite a program to draw the following picture. This picture is similar the one in the previous problem, except the circle has been replaced by a shape containing three circles touching at the bottom point. In each shape, the inner two circles have radius of \\(\\frac{1}{3}^{rd}\\) and \\(\\frac{2}{3}^{rd}\\) of the outer circle.\nThe radii of the outer circles will be 30, 45, 60, 75 and 90 pixels respectively."
+    "text": "P1.5: Growing Candle Lights\nWrite a program to draw the following picture. This picture is similar the one in the previous problem, except the circle has been replaced by a shape containing three circles touching at the bottom point. In each shape, the inner two circles have radius of \\(\\frac{1}{3}^{rd}\\) and \\(\\frac{2}{3}^{rd}\\) of the outer circle.\nThe radii of the outer circles will be 30, 45, 60, 75 and 90 pixels respectively.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.6-grid-of-candle-lights",
     "href": "problem-sets/ps1.html#p1.6-grid-of-candle-lights",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.6: Grid of Candle Lights",
-    "text": "P1.6: Grid of Candle Lights\nWrite a program to draw the following picture.\nYou can refer to the Grid of Circles program from the Sketch Gallery."
+    "text": "P1.6: Grid of Candle Lights\nWrite a program to draw the following picture.\nYou can refer to the Grid of Circles program from the Sketch Gallery.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.7-grid-of-concentric-circles",
     "href": "problem-sets/ps1.html#p1.7-grid-of-concentric-circles",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.7: Grid of Concentric Circles",
-    "text": "P1.7: Grid of Concentric Circles\nWrite a program to draw the following picture.\nThis is similar to the Grid of Concentric Circles program from the Sketch Gallery, but with slighly different order."
+    "text": "P1.7: Grid of Concentric Circles\nWrite a program to draw the following picture.\nThis is similar to the Grid of Concentric Circles program from the Sketch Gallery, but with slighly different order.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.8-the-complex-grid",
     "href": "problem-sets/ps1.html#p1.8-the-complex-grid",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.8: The Complex Grid",
-    "text": "P1.8: The Complex Grid\nWrite a program to draw the following picture.\nAgain, the Grid of Concentric Circles program from the Sketch Gallery, is the starting point for you. It is just a small trick."
+    "text": "P1.8: The Complex Grid\nWrite a program to draw the following picture.\nAgain, the Grid of Concentric Circles program from the Sketch Gallery, is the starting point for you. It is just a small trick.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.9-packed-circles",
     "href": "problem-sets/ps1.html#p1.9-packed-circles",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.9: Packed circles",
-    "text": "P1.9: Packed circles\nWrite a program to draw the following picture. The radius of the outer circle is 150 pixels.\nHint: You may need to make use of some trigonometry."
+    "text": "P1.9: Packed circles\nWrite a program to draw the following picture. The radius of the outer circle is 150 pixels.\nHint: You may need to make use of some trigonometry.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "problem-sets/ps1.html#p1.10-packed-candle-lights",
     "href": "problem-sets/ps1.html#p1.10-packed-candle-lights",
     "title": "Fundamentals of Computing and Programming",
     "section": "P1.10: Packed Candle Lights",
-    "text": "P1.10: Packed Candle Lights\nWrite a program to draw the following picture. The radius of the outer circle is 150 pixels.\nHint: You may need to make use of some trigonometry."
+    "text": "P1.10: Packed Candle Lights\nWrite a program to draw the following picture. The radius of the outer circle is 150 pixels.\nHint: You may need to make use of some trigonometry.",
+    "crumbs": [
+      "Problem Sets",
+      "Problem Set 1"
+    ]
   },
   {
     "objectID": "cmdline.html",
