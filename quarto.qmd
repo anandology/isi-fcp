@@ -174,3 +174,9 @@ You can edit and files in vscode and the preview will be updated live in the bro
 You can publish the book as a website to github.
 
 _TODO_
+
+## Setting up github actions
+
+See [Publishing to github pages][1] in quarto documentation.
+
+[1]: https://quarto.org/docs/publishing/github-pages.html#publish-action
