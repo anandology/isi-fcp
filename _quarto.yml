@@ -26,6 +26,10 @@ website:
       - cmdline.qmd
       - shell.qmd
       - git.qmd
+      - section: Problem Sets
+        href: problem-sets/index.qmd
+        contents:
+          - problem-sets/ps1.qmd
       - section: Lecture Notes
         href: lecture-notes/index.qmd
         contents:
