@@ -8,20 +8,20 @@
 
 Install Quarto.
 
-```text
+```txt
 $ wget https://github.com/quarto-dev/quarto-cli/releases/download/v1.5.57/quarto-1.5.57-linux-amd64.deb
 $ sudo dpkg -i quarto-1.5.57-linux-amd64.deb
 ```
 
 Install `librsvg2-bin` package to work with svg.
 
-```text
+```txt
 $ sudo apt install librsvg2-bin
 ```
 
 Install Latex.
 
-```
+```txt
 $ sudo quarto install tinytex
 ```
 
@@ -30,6 +30,8 @@ $ sudo quarto install tinytex
 Quarto .qmd files contain a combination of markdown and executable code cells. For the scope of this article, we'll limit ourselves to Markdown.
 
 Create a file with name `demo.qmd` with the following content.
+
+::: {.demo-source .sourceCode}
 
     # Quarto Demo
 
@@ -66,6 +68,8 @@ Create a file with name `demo.qmd` with the following content.
 
     ![](circle.svg)
 
+:::
+
 Now convert this to HTML by running:
 
 ```text
@@ -79,7 +83,7 @@ Open `demo.html` in your browser to see the output.
 
 You can also convert this to PDF by running:
 
-```text
+```txt
 $ quarto render demo.qmd --to pdf
 ...
 
