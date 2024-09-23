@@ -1,0 +1,16 @@
+---
+listing:
+  contents: "*.qmd"
+  type: table
+  id: sample-listings
+  fields:
+    - title
+    - categories
+sidebar: true
+toc: false
+---
+
+# Problem Sets
+
+::: {#sample-listings}
+:::

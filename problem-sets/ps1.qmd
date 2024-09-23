@@ -1,0 +1,116 @@
+---
+categories:
+    - CSketch
+---
+## Problem Set 1
+
+This is a practice problem set and there problems are not counted for your grade.
+
+All these problems are expected to be solved in C programming language and all these problems require using the sketch library.
+
+Please refer to the the following resources before wokring on this problem set.
+
+* [CSketch API](https://anandology.github.io/csketch/api/)
+* [CSketch Gallery](https://anandology.github.io/csketch/gallery/)
+* [Lecture Notes 02](http://localhost:3034/lecture-notes/02/)
+
+## P1.1 - Mirror Circles
+
+Write a program to draw the following picture. The radius of the largest circle is 100 pixels.
+
+::: {.sketch .sketch-small}
+![](img/ps1-mirror-circles.svg)
+:::
+
+## P1.2: Row of Circles
+
+Write a program to draw the following picture. The radius of the each circle is 50 pixels.
+
+::: {.sketch .sketch-small}
+![](img/ps1-row-of-circles.svg)
+:::
+
+## P1.3: Row of Concentric Circles
+
+Write a program to draw the following picture. The radius of the largest circle is 50 pixels.
+
+
+::: {.sketch .sketch-small}
+![](img/ps1-row-of-concentric-circles.svg)
+:::
+
+## P1.4: Growing Circles
+
+Write a program to draw the following picture. The radius of the smallest circle is 30 pixels and the radius of each subsequent circle is 15 pixels more than the previous one. So the radius of all these circles will be 30, 45, 60, 75 and 90 respectively.
+
+Try to write your program in a modular way to make it easier to change the radius to a different value and accommodate a different number of circles.
+
+::: {.sketch .sketch-small}
+![](img/ps1-growing-circles.svg)
+:::
+
+## P1.5: Growing Candle Lights
+
+Write a program to draw the following picture. This picture is similar the one in the previous problem, except the circle has been replaced by a shape containing three circles touching at the bottom point. In each shape, the inner two circles have radius of $\frac{1}{3}^{rd}$ and $\frac{2}{3}^{rd}$ of the outer circle.
+
+The radii of the outer circles will be 30, 45, 60, 75 and 90 pixels respectively.
+
+::: {.sketch .sketch-small}
+![](img/ps1-growing-circles-v2.svg)
+:::
+
+## P1.6: Grid of Candle Lights
+
+Write a program to draw the following picture.
+
+You can refer to the [Grid of Circles][1] program from the [Sketch Gallery][].
+
+[1]: https://anandology.github.io/csketch/gallery/grid-of-circles/
+[Sketch Gallery]: https://anandology.github.io/csketch/gallery/
+
+::: {.sketch .sketch-small}
+![](img/ps1-grid-of-candle-lights.svg)
+:::
+
+## P1.7: Grid of Concentric Circles
+
+Write a program to draw the following picture.
+
+This is similar to the [Grid of Concentric Circles][3] program from the [Sketch Gallery][], but with slighly different order.
+
+[3]: https://anandology.github.io/csketch/gallery/grid-of-circles/
+
+
+::: {.sketch .sketch-small}
+![](img/ps1-grid-of-concentric-circles.svg)
+:::
+
+## P1.8: The Complex Grid
+
+Write a program to draw the following picture.
+
+Again, the [Grid of Concentric Circles][3] program from the [Sketch Gallery][], is the starting point for you. It is just a small trick.
+
+::: {.sketch .sketch-small}
+![](img/ps1-grid-of-concentric-circles-v2.svg)
+:::
+
+## P1.9: Packed circles
+
+Write a program to draw the following picture. The radius of the outer circle is 150 pixels.
+
+**Hint:** You may need to make use of some trigonometry.
+
+::: {.sketch .sketch-small}
+![](img/ps1-packed-circles.svg)
+:::
+
+## P1.10: Packed Candle Lights
+
+Write a program to draw the following picture. The radius of the outer circle is 150 pixels.
+
+**Hint:** You may need to make use of some trigonometry.
+
+::: {.sketch .sketch-small}
+![](img/ps1-packed-candle-lights.svg)
+:::
