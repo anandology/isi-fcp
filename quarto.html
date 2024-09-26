@@ -243,13 +243,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#creating-a-quarto-book" id="toc-creating-a-quarto-book" class="nav-link" data-scroll-target="#creating-a-quarto-book">Creating a quarto book</a>
   <ul class="collapse">
   <li><a href="#step-1-create-a-github-repository" id="toc-step-1-create-a-github-repository" class="nav-link" data-scroll-target="#step-1-create-a-github-repository">Step 1: Create a github repository</a></li>
-  <li><a href="#step-2-clone-the-repo-on-your-computer" id="toc-step-2-clone-the-repo-on-your-computer" class="nav-link" data-scroll-target="#step-2-clone-the-repo-on-your-computer">Step 2: Clone the repo on your computer</a></li>
-  <li><a href="#step-3-create-a-quarto-project" id="toc-step-3-create-a-quarto-project" class="nav-link" data-scroll-target="#step-3-create-a-quarto-project">Step 3: Create a quarto project</a></li>
-  <li><a href="#edit-_quarto.yml" id="toc-edit-_quarto.yml" class="nav-link" data-scroll-target="#edit-_quarto.yml">Edit _quarto.yml</a></li>
-  <li><a href="#open-preview" id="toc-open-preview" class="nav-link" data-scroll-target="#open-preview">Open preview</a></li>
+  <li><a href="#step-2-create-a-quarto-project" id="toc-step-2-create-a-quarto-project" class="nav-link" data-scroll-target="#step-2-create-a-quarto-project">Step 2: Create a quarto project</a></li>
+  <li><a href="#step-3-open-preview" id="toc-step-3-open-preview" class="nav-link" data-scroll-target="#step-3-open-preview">Step 3: Open preview</a></li>
+  <li><a href="#step-4-commit-all-your-changes-to-git" id="toc-step-4-commit-all-your-changes-to-git" class="nav-link" data-scroll-target="#step-4-commit-all-your-changes-to-git">Step 4: Commit all your changes to git</a></li>
   </ul></li>
   <li><a href="#publishing-the-book" id="toc-publishing-the-book" class="nav-link" data-scroll-target="#publishing-the-book">Publishing the book</a></li>
   <li><a href="#setting-up-github-actions" id="toc-setting-up-github-actions" class="nav-link" data-scroll-target="#setting-up-github-actions">Setting up github actions</a></li>
+  <li><a href="#thu-sep-26---task" id="toc-thu-sep-26---task" class="nav-link" data-scroll-target="#thu-sep-26---task">Thu Sep 26 - Task</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -334,7 +334,7 @@ Output created: demo.html</code></pre>
 <ol type="1">
 <li>Create a github repository</li>
 <li>Create a quarto project for the book</li>
-<li>Edit _quarto.yml to update title of the book</li>
+<li>Quarto Preview and edit _quarto.yml to update title of the book</li>
 <li>Commit all the new files to git</li>
 <li>Deploy the quarto book to github pages to get a website for the book</li>
 <li>Setup a github workflow to automate the publishing</li>
@@ -343,15 +343,13 @@ Output created: demo.html</code></pre>
 <section id="step-1-create-a-github-repository" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-create-a-github-repository">Step 1: Create a github repository</h3>
 <p>Create a new github repository. You may call it <code>fcp-practice</code> or <code>programming-practice</code> or something else.</p>
-</section>
-<section id="step-2-clone-the-repo-on-your-computer" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-clone-the-repo-on-your-computer">Step 2: Clone the repo on your computer</h3>
+<p>Once the repository is created, clone it on to your computer.</p>
 <pre class="text"><code>$ git clone https://github.com/&lt;your-username&gt;/&lt;repo-name&gt;
 
 $ cd &lt;repo-name&gt;</code></pre>
 </section>
-<section id="step-3-create-a-quarto-project" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-create-a-quarto-project">Step 3: Create a quarto project</h3>
+<section id="step-2-create-a-quarto-project" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-create-a-quarto-project">Step 2: Create a quarto project</h3>
 <p>Run command <code>quarto create</code>.</p>
 <pre class="text"><code>$ quarto create
  ? Create
@@ -389,14 +387,19 @@ Creating project at /tmp/quarto2:
    (don't open)</code></pre>
 <p>Select Open With <em>vscode</em> and press <code>Enter</code>.</p>
 </section>
-<section id="edit-_quarto.yml" class="level3">
-<h3 class="anchored" data-anchor-id="edit-_quarto.yml">Edit _quarto.yml</h3>
-<p>Edit the <code>_quarto.yml</code> file to edit the <code>title</code> and <code>author</code> fields.</p>
-</section>
-<section id="open-preview" class="level3">
-<h3 class="anchored" data-anchor-id="open-preview">Open preview</h3>
+<section id="step-3-open-preview" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-open-preview">Step 3: Open preview</h3>
 <p>In the terminal, run <code>quarto preview</code> to open the preview in your browser.</p>
 <p>You can edit and files in vscode and the preview will be updated live in the browser.</p>
+<p>You can edit the <code>_quarto.yml</code> file to update the <code>title</code> and <code>author</code> fields. Once you save the file in vscode, the preview will also be updated.</p>
+</section>
+<section id="step-4-commit-all-your-changes-to-git" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-commit-all-your-changes-to-git">Step 4: Commit all your changes to git</h3>
+<p>Edit the <code>.gitignore</code> file and add a new line <code>_book/</code>. This is to avoid adding the HTML generated by quarto to the repository.</p>
+<p>Add all files to repository by running:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>git add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Commit all the changes:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>git commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="publishing-the-book" class="level2">
@@ -407,6 +410,18 @@ Creating project at /tmp/quarto2:
 <section id="setting-up-github-actions" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-github-actions">Setting up github actions</h2>
 <p>See <a href="https://quarto.org/docs/publishing/github-pages.html#publish-action">Publishing to github pages</a> in quarto documentation.</p>
+</section>
+<section id="thu-sep-26---task" class="level2">
+<h2 class="anchored" data-anchor-id="thu-sep-26---task">Thu Sep 26 - Task</h2>
+<p>Clone the fcp-blog repo and start preview.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>git clone https://github.com/anandology/fcp-blog</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>cd fcp-blog</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>quarto preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create a new post introducing yourself.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cd posts</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cp anand.qmd your-name.qmd</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>wget -o images/your-name-cover.jpg 'https://any-image-url-from-web'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should see your post appearing in the quarto preview.</p>
 
 
 </section>
