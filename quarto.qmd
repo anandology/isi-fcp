@@ -231,7 +231,7 @@ Create a new post introducing yourself.
 ```txt
 cd posts
 cp anand.qmd your-name.qmd
-wget -o images/your-name-cover.jpg 'https://any-image-url-from-web'
+wget -O images/your-name-cover.jpg 'https://any-image-url-from-web'
 ```
 
 You should see your post appearing in the quarto preview.
