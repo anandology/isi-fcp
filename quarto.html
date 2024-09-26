@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#creating-a-book" id="toc-creating-a-book" class="nav-link" data-scroll-target="#creating-a-book">Creating a book</a>
+  <li><a href="#creating-a-quarto-book" id="toc-creating-a-quarto-book" class="nav-link" data-scroll-target="#creating-a-quarto-book">Creating a quarto book</a>
   <ul class="collapse">
   <li><a href="#step-1-create-a-github-repository" id="toc-step-1-create-a-github-repository" class="nav-link" data-scroll-target="#step-1-create-a-github-repository">Step 1: Create a github repository</a></li>
   <li><a href="#step-2-clone-the-repo-on-your-computer" id="toc-step-2-clone-the-repo-on-your-computer" class="nav-link" data-scroll-target="#step-2-clone-the-repo-on-your-computer">Step 2: Clone the repo on your computer</a></li>
@@ -326,9 +326,19 @@ Output created: demo.html</code></pre>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>Output created: demo.pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can open <code>demo.pdf</code> to see how it looks like.</p>
 </section>
-<section id="creating-a-book" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-book">Creating a book</h2>
-<p>You can create a book using Quarto to publish the solutions to problem sets.</p>
+<section id="creating-a-quarto-book" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-quarto-book">Creating a quarto book</h2>
+<p>Let’s see how to create a quarto book, manage it as a github repo and publish it as a website using github pages.</p>
+<p>The steps:</p>
+<ol type="1">
+<li>Create a github repository</li>
+<li>Create a quarto project for the book</li>
+<li>Edit _quarto.yml to update title of the book</li>
+<li>Commit all the new files to git</li>
+<li>Deploy the quarto book to github pages to get a website for the book</li>
+<li>Setup a github workflow to automate the publishing</li>
+<li>Add new content to the book</li>
+</ol>
 <section id="step-1-create-a-github-repository" class="level3">
 <h3 class="anchored" data-anchor-id="step-1-create-a-github-repository">Step 1: Create a github repository</h3>
 <p>Create a new github repository. You may call it <code>fcp-practice</code> or <code>programming-practice</code> or something else.</p>
