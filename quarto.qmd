@@ -92,9 +92,20 @@ Output created: demo.pdf
 
 You can open `demo.pdf` to see how it looks like.
 
-## Creating a book
+## Creating a quarto book
 
-You can create a book using Quarto to publish the solutions to problem sets.
+Let's see how to create a quarto book, manage it as a github repo and publish it as a website using github pages.
+
+The steps:
+
+1. Create a github repository
+2. Create a quarto project for the book
+3. Edit _quarto.yml to update title of the book
+4. Commit all the new files to git
+5. Deploy the quarto book to github pages to get a website for the book
+6. Setup a github workflow to automate the publishing
+7. Add new content to the book
+
 
 ### Step 1: Create a github repository
 
