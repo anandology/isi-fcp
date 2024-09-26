@@ -96,6 +96,9 @@ You can open `demo.pdf` to see how it looks like.
 
 Let's see how to create a quarto book, manage it as a github repo and publish it as a website using github pages.
 
+{{< video https://www.youtube.com/embed/v3b75vNpbJ0 >}}
+
+
 The steps:
 
 1. Create a github repository
@@ -105,6 +108,8 @@ The steps:
 5. Deploy the quarto book to github pages to get a website for the book
 6. Setup a github workflow to automate the publishing
 7. Add new content to the book
+
+
 
 
 ### Step 1: Create a github repository
