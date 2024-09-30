@@ -25,6 +25,7 @@ website:
       - setup.qmd
       - cmdline.qmd
       - shell.qmd
+      - unix-power-tools.qmd
       - git.qmd
       - quarto.qmd
       - section: Problem Sets

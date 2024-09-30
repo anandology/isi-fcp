@@ -1,0 +1,105 @@
+# Unix Power Tools
+
+Unix has many power tools to automate a lot of boring things. In this chapter, we'll look at some of those tools.
+
+## Wildcards
+
+Wildcard is pattern to specify match filenames.
+
+The most common pattern is `*`, which matches any characters.
+
+For example, the following program lists all the files with `.c` extension.
+
+```txt
+$ ls *.c
+```
+
+The other commony used wildcard pattern is `[0-9]`, which matches any character in that range.
+
+```
+[0-9] - match any letter from 0 to 9
+[0-9a-f] - match any letter from 0 to 9 and a to f
+[abc] - match any one of a, b and c
+```
+
+## Regular expressions
+
+Regular Expressions are used to search for and replace various patterns in text.
+
+
+TODO:
+
+
+## `find` - Finding files
+
+The `find` is used to find files a directory that match given conditions.
+
+```txt
+USAGE:
+
+find path expressions
+```
+
+Let's look at some examples.
+
+Find all the c files in the current directory.
+
+```txt
+$ find . -name '*.c'
+```
+
+The name uses a wildcard pattern, a pattern in which *
+
+
+Find all subdirectories in the current directory tree.
+
+```
+$ find . -type d
+```
+
+Find all files in /usr/bin which are larger than 10MB.
+
+```txt
+$ find /usr/bin -size +10M
+```
+
+Find all files in current directory which are modified in the last 2 days.
+
+```txt
+$ find . -mtime -2
+```
+
+Find all files in current directory which are modified in the last 2 hours (120 minutes).
+
+```txt
+$ find . -mmin -120
+```
+
+Find all the c files in the current directory and run `wc` command for each of them.
+
+```txt
+$ find . -name '*.c' -exec wc {} \;
+```
+
+When using `-exec`, write the command and use `{}` where you want the matched file to substitued and end it with `\;`.
+
+You can also do the same using `xargs`.
+
+```txt
+$ find . -name '*.c' | xargs wc
+```
+
+## Grep
+
+TODO:
+
+## Awk
+
+Awk is a mini language for manipulating columns of data.
+
+TODO:
+
+## References
+
+* [Unix Power Tools - ](https://docstore.mik.ua/orelly/unix/upt/index.htm)
+* [Awk - Wizardzines](https://wizardzines.com/comics/awk/)
