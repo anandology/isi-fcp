@@ -4,7 +4,7 @@
     "href": "unix-power-tools.html",
     "title": "Unix Power Tools",
     "section": "",
-    "text": "Unix has many power tools to automate a lot of boring things. In this chapter, we’ll look at some of those tools.\n\n\nWildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c\n\n\n\nRegular Expressions are used to search for and replace various patterns in text.\nTODO:\n\n\n\nThe find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc\n\n\n\nTODO:\n\n\n\nAwk is a mini language for manipulating columns of data.\nTODO:\n\n\n\n\nUnix Power Tools -\nAwk - Wizardzines",
+    "text": "Unix has many power tools to automate a lot of boring things. In this chapter, we’ll look at some of those tools.\n\n\nWildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c\n\n\n\nRegular Expressions are used to search for and replace various patterns in text.\nTODO:\n\n\n\nSorts the input.\nTODO:\n\n\n\nFind the unique elements in a sorted input.\n\n\n\nThe find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc\n\n\n\nTODO:\n\n\n\nAwk is a mini language for manipulating columns of data.\nTODO:\n\n\n\n\nPrint all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file\n\n\n\n\n\nUnix Power Tools -\nAwk - Wizardzines",
     "crumbs": [
       "Unix Power Tools"
     ]
@@ -25,6 +25,26 @@
     "title": "Unix Power Tools",
     "section": "",
     "text": "Regular Expressions are used to search for and replace various patterns in text.\nTODO:",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#sort",
+    "href": "unix-power-tools.html#sort",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Sorts the input.\nTODO:",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#uniq",
+    "href": "unix-power-tools.html#uniq",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Find the unique elements in a sorted input.",
     "crumbs": [
       "Unix Power Tools"
     ]
@@ -55,6 +75,16 @@
     "title": "Unix Power Tools",
     "section": "",
     "text": "Awk is a mini language for manipulating columns of data.\nTODO:",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#problems",
+    "href": "unix-power-tools.html#problems",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Print all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file",
     "crumbs": [
       "Unix Power Tools"
     ]
