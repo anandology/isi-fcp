@@ -29,6 +29,18 @@ Regular Expressions are used to search for and replace various patterns in text.
 
 TODO:
 
+## Sort
+
+Sorts the input.
+
+TODO:
+
+## Uniq
+
+Find the unique elements in a sorted input.
+
+
+
 
 ## `find` - Finding files
 
@@ -98,6 +110,12 @@ TODO:
 Awk is a mini language for manipulating columns of data.
 
 TODO:
+
+## Problems
+
+* Print all not empty lines in a file
+* Print a file with line numbers
+* Print only even lines in a file
 
 ## References
 
