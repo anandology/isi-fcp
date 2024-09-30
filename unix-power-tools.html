@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ubuntu-wsl – Fundamentals of Computing and Programming</title>
+<title>unix-power-tools – Fundamentals of Computing and Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./git.html" rel="next">
+<link href="./shell.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,9 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Fundamentals of Computing and Programming
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./unix-power-tools.html">Unix Power Tools</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./unix-power-tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./unix-power-tools.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Unix Power Tools</span></a>
   </div>
 </li>
@@ -208,8 +242,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installing-ubuntu-on-windows-using-wsl" id="toc-installing-ubuntu-on-windows-using-wsl" class="nav-link active" data-scroll-target="#installing-ubuntu-on-windows-using-wsl">Installing Ubuntu on Windows using WSL</a>
+  <li><a href="#unix-power-tools" id="toc-unix-power-tools" class="nav-link active" data-scroll-target="#unix-power-tools">Unix Power Tools</a>
   <ul class="collapse">
+  <li><a href="#wildcards" id="toc-wildcards" class="nav-link" data-scroll-target="#wildcards">Wildcards</a></li>
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular expressions</a></li>
+  <li><a href="#find---finding-files" id="toc-find---finding-files" class="nav-link" data-scroll-target="#find---finding-files"><code>find</code> - Finding files</a></li>
+  <li><a href="#grep" id="toc-grep" class="nav-link" data-scroll-target="#grep">Grep</a></li>
+  <li><a href="#awk" id="toc-awk" class="nav-link" data-scroll-target="#awk">Awk</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -221,27 +260,63 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="installing-ubuntu-on-windows-using-wsl" class="level1">
-<h1>Installing Ubuntu on Windows using WSL</h1>
-<p><em>Windows Subsystem for Linux</em>, shortly called as <em>WSL</em>, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.</p>
-<p>Follow the following instructions to install Ubuntu on your Windows computer using WSL.</p>
-<p>Please note that only Windows 10 version 2004 and higher or Windows 11 are supported.</p>
-<p><strong>Step 1: Open Windows Power Shell</strong></p>
-<p>Enter <code>Windows Power Shell</code> in the system search bar and open the application.</p>
-<p><strong>Step 2: Install Ubuntu using WSL</strong></p>
-<p>WSL is <em>Windows Subsystem for Linux</em> and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.</p>
-<p>Run the following command in the power shell to download and install Ubuntu.</p>
-<pre><code>wsl --install</code></pre>
-<p>Please make sure you have a fast internet connection as this step downloads more than 1GB of data.</p>
-<p><strong>Step 3: Open Ubuntu Terminal</strong></p>
-<p>Enter <code>Ubuntu</code> in the system search bar and open the application.</p>
-<p>You’ll should see a Ubuntu terminal.</p>
-<p>That’s all! You are now ready to code.</p>
-<p><a href="./setup.html">← Back to Software Setup</a></p>
+<section id="unix-power-tools" class="level1">
+<h1>Unix Power Tools</h1>
+<p>Unix has many power tools to automate a lot of boring things. In this chapter, we’ll look at some of those tools.</p>
+<section id="wildcards" class="level2">
+<h2 class="anchored" data-anchor-id="wildcards">Wildcards</h2>
+<p>Wildcard is pattern to specify match filenames.</p>
+<p>The most common pattern is <code>*</code>, which matches any characters.</p>
+<p>For example, the following program lists all the files with <code>.c</code> extension.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$ ls *.c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The other commony used wildcard pattern is <code>[0-9]</code>, which matches any character in that range.</p>
+<pre><code>[0-9] - match any letter from 0 to 9
+[0-9a-f] - match any letter from 0 to 9 and a to f
+[abc] - match any one of a, b and c</code></pre>
+</section>
+<section id="regular-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="regular-expressions">Regular expressions</h2>
+<p>Regular Expressions are used to search for and replace various patterns in text.</p>
+<p>TODO:</p>
+</section>
+<section id="find---finding-files" class="level2">
+<h2 class="anchored" data-anchor-id="find---finding-files"><code>find</code> - Finding files</h2>
+<p>The <code>find</code> is used to find files a directory that match given conditions.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>USAGE:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>find path expressions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s look at some examples.</p>
+<p>Find all the c files in the current directory.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$ find . -name '*.c'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The name uses a wildcard pattern, a pattern in which *</p>
+<p>Find all subdirectories in the current directory tree.</p>
+<pre><code>$ find . -type d</code></pre>
+<p>Find all files in /usr/bin which are larger than 10MB.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>$ find /usr/bin -size +10M</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Find all files in current directory which are modified in the last 2 days.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>$ find . -mtime -2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Find all files in current directory which are modified in the last 2 hours (120 minutes).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>$ find . -mmin -120</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Find all the c files in the current directory and run <code>wc</code> command for each of them.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>$ find . -name '*.c' -exec wc {} \;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When using <code>-exec</code>, write the command and use <code>{}</code> where you want the matched file to substitued and end it with <code>\;</code>.</p>
+<p>You can also do the same using <code>xargs</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>$ find . -name '*.c' | xargs wc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="grep" class="level2">
+<h2 class="anchored" data-anchor-id="grep">Grep</h2>
+<p>TODO:</p>
+</section>
+<section id="awk" class="level2">
+<h2 class="anchored" data-anchor-id="awk">Awk</h2>
+<p>Awk is a mini language for manipulating columns of data.</p>
+<p>TODO:</p>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">How to install Linux on Windows with WSL</a></li>
+<li><a href="https://docstore.mik.ua/orelly/unix/upt/index.htm">Unix Power Tools -</a></li>
+<li><a href="https://wizardzines.com/comics/awk/">Awk - Wizardzines</a></li>
 </ul>
 
 
@@ -669,6 +744,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./shell.html" class="pagination-link" aria-label="Introduction to Shell Programming">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to Shell Programming</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./git.html" class="pagination-link" aria-label="Introduction to Git">
+        <span class="nav-page-text">Introduction to Git</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
