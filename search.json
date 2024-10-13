@@ -1,105 +1,5 @@
 [
   {
-    "objectID": "unix-power-tools.html",
-    "href": "unix-power-tools.html",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Unix has many power tools to automate a lot of boring things. In this chapter, we’ll look at some of those tools.\n\n\nWildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c\n\n\n\nRegular Expressions are used to search for and replace various patterns in text.\nTODO:\n\n\n\nSorts the input.\nTODO:\n\n\n\nFind the unique elements in a sorted input.\n\n\n\nThe find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc\n\n\n\nTODO:\n\n\n\nAwk is a mini language for manipulating columns of data.\nTODO:\n\n\n\n\nPrint all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file\n\n\n\n\n\nUnix Power Tools -\nAwk - Wizardzines",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#wildcards",
-    "href": "unix-power-tools.html#wildcards",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Wildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#regular-expressions",
-    "href": "unix-power-tools.html#regular-expressions",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Regular Expressions are used to search for and replace various patterns in text.\nTODO:",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#sort",
-    "href": "unix-power-tools.html#sort",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Sorts the input.\nTODO:",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#uniq",
-    "href": "unix-power-tools.html#uniq",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Find the unique elements in a sorted input.",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#find---finding-files",
-    "href": "unix-power-tools.html#find---finding-files",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "The find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#grep",
-    "href": "unix-power-tools.html#grep",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "TODO:",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#awk",
-    "href": "unix-power-tools.html#awk",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Awk is a mini language for manipulating columns of data.\nTODO:",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#problems",
-    "href": "unix-power-tools.html#problems",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Print all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
-    "objectID": "unix-power-tools.html#references",
-    "href": "unix-power-tools.html#references",
-    "title": "Unix Power Tools",
-    "section": "",
-    "text": "Unix Power Tools -\nAwk - Wizardzines",
-    "crumbs": [
-      "Unix Power Tools"
-    ]
-  },
-  {
     "objectID": "quarto.html",
     "href": "quarto.html",
     "title": "Publishing with Quarto",
@@ -157,382 +57,6 @@
     "text": "Clone the fcp-blog repo and start preview.\ngit clone https://github.com/anandology/fcp-blog\ncd fcp-blog\nquarto preview\nCreate a new post introducing yourself.\ncd posts\ncp anand.qmd your-name.qmd\nwget -O images/your-name-cover.jpg 'https://any-image-url-from-web'\nYou should see your post appearing in the quarto preview.",
     "crumbs": [
       "Publishing with Quarto"
-    ]
-  },
-  {
-    "objectID": "git-slides/index.html#what-is-git",
-    "href": "git-slides/index.html#what-is-git",
-    "title": "Introduction to Git",
-    "section": "What is Git?",
-    "text": "What is Git?"
-  },
-  {
-    "objectID": "git-slides/index.html#what-is-a-version-control-system",
-    "href": "git-slides/index.html#what-is-a-version-control-system",
-    "title": "Introduction to Git",
-    "section": "What is a version control system?",
-    "text": "What is a version control system?\n\n\nWhy do we need a version control system?\n\n\nTo avoid sistualtions like this.\n\n\nImage Credits: notFinal.doc by Jorge Cham, https://www.phdcomics.com"
-  },
-  {
-    "objectID": "git-slides/index.html#git-vs.-github",
-    "href": "git-slides/index.html#git-vs.-github",
-    "title": "Introduction to Git",
-    "section": "Git vs. Github",
-    "text": "Git vs. Github\nGit is a version control system created by Linus Torvalds.\nGithub is a commercial service that offers git hosting in the cloud. It is very popular among the developers and it is almost the defacto standard for hosting code.\nIt is possible to use Git without using Github. However, for this course, we’ll use both Git and Github."
-  },
-  {
-    "objectID": "git-slides/index.html#setting-up-git",
-    "href": "git-slides/index.html#setting-up-git",
-    "title": "Introduction to Git",
-    "section": "Setting up Git",
-    "text": "Setting up Git\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github."
-  },
-  {
-    "objectID": "git-slides/index.html#setup-ssh-keys",
-    "href": "git-slides/index.html#setup-ssh-keys",
-    "title": "Introduction to Git",
-    "section": "Setup ssh-keys",
-    "text": "Setup ssh-keys\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github."
-  },
-  {
-    "objectID": "git-slides/index.html#create-a-repository-on-github",
-    "href": "git-slides/index.html#create-a-repository-on-github",
-    "title": "Introduction to Git",
-    "section": "Create a Repository on Github",
-    "text": "Create a Repository on Github\n\n\n\nLogin to github\nCreate a new repository with name git-practice.\nAdd Repository name and Description\nAnd select Add a README file."
-  },
-  {
-    "objectID": "git-slides/index.html#clone-the-repo",
-    "href": "git-slides/index.html#clone-the-repo",
-    "title": "Introduction to Git",
-    "section": "Clone the repo",
-    "text": "Clone the repo\nClone the repo to your local computer.\ngit clone git@github.com:anandology/git-practice.git"
-  },
-  {
-    "objectID": "git-slides/index.html#add-a-new-file-to-the-repo",
-    "href": "git-slides/index.html#add-a-new-file-to-the-repo",
-    "title": "Introduction to Git",
-    "section": "Add a new file to the repo",
-    "text": "Add a new file to the repo\n$ touch planets.md\n\n$ git status"
-  },
-  {
-    "objectID": "lecture-notes/02/index.html",
-    "href": "lecture-notes/02/index.html",
-    "title": "Lecture Notes 02",
-    "section": "",
-    "text": "Warning\n\n\n\nThis lecture notes is still work in progress. Not all programs covered in the class are added here yet. The remaining ones will be added soon!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#introduction",
-    "href": "lecture-notes/02/index.html#introduction",
-    "title": "Lecture Notes 02",
-    "section": "Introduction",
-    "text": "Introduction\nWhy should you learn programming?\n\nA powerful programming language is more than just a means for instructing a computer to perform tasks. The language also serves as a framework within which we organize our ideas about processes.\n\n– Structure and Interpretation of Computer Programs\n\nEvery powerful language has three mechanisms for accomplishing this:\n\nprimitive expressions, which represent the simplest entities the language is concerned with,\nmeans of combination, by which compound elements are built from simpler ones, and\nmeans of abstraction, by which compound elements can be named and manipulated as units.\n\n\n– Structure and Interpretation of Computer Programs",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#diving-in",
-    "href": "lecture-notes/02/index.html#diving-in",
-    "title": "Lecture Notes 02",
-    "section": "Diving in",
-    "text": "Diving in\n\nA Circle\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    // draw a circle with center as (0, 0) and radius 100\n    draw_circle(0, 0, 100);\n\n    // save all the shapes draws to lesson2.svg\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nTwo Circles\nHow do we draw two circles instead of just one?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(-100, 0, 100);\n    draw_circle(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\nHow about drawing two concentic circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(0, 0, 200);\n    draw_circle(0, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nWhat if we want three circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    float r = 150;\n\n    draw_circle(0, 0, r / 3);\n    draw_circle(0, 0, 2 * r / 3);\n    draw_circle(0, 0, r);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCandle Lights\n#include &lt;sketch.h&gt;\n\nvoid bottle_circle(float bx, float by, float r)\n{\n    float cx = bx;\n    float cy = by + r;\n\n    draw_circle(cx, cy, r);\n}\n\nvoid draw_candle_light(float x, float y, float r)\n{\n    bottle_circle(x, y, r / 3);\n    bottle_circle(x, y, 2 * r / 3);\n    bottle_circle(x, y, r);\n}\n\nint main()\n{\n    draw_candle_light(-100, 0, 100);\n    draw_candle_light(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\n#include &lt;sketch.h&gt;\n\nvoid concentric_circles(float x, float y, float r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        draw_circle(x, y, i * r / n);\n    }\n}\n\nint main()\n{\n    concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nRandom Concentric Circles\n#include &lt;sketch.h&gt;\n#include &lt;stdlib.h&gt;\n#include &lt;time.h&gt;\n\nvoid random_concentric_circles(float x, float y, int r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        // pick a random number from 1 to r\n        float r1 = 1 + rand() % r;\n\n        draw_circle(x, y, r1);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    random_concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nTry running this program again and you’ll get completely different circles!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#string-art",
-    "href": "lecture-notes/02/index.html#string-art",
-    "title": "Lecture Notes 02",
-    "section": "String Art",
-    "text": "String Art\nLet’s add a bit more complexity. How do you find N points equidistant on a circle?\nYes, trigonometry!\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\nConnecting Points\nWhat if we connect some points?\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect(0, 4);\n    connect(1, 5);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConnecting All Points\nLet’s go one step further and connect all the points.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nA Pattern\nWe could use connect_all multiple times to generate very interesting pattern.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(16);\n    connect_all(12);\n    connect_all(7);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCardoid\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 72\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    make_circle(250);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, 2 * i);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nFinal Touch\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 720\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    set_stroke_width(0.5);\n    set_stroke(\"#44444480\");\n\n    make_circle(250);\n\n    // connect_all(16);\n    // connect_all(12);\n    // connect_all(7);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        int d = N / 6;\n\n        connect(i, (i * i) % d);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/02/index.html#references",
-    "href": "lecture-notes/02/index.html#references",
-    "title": "Lecture Notes 02",
-    "section": "References",
-    "text": "References\n\nStructure and Interpretation of Computer Programs\nCurve stitching: the art of sewing beautiful mathematical patterns, Jon Millington",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 02"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/01/index.html",
-    "href": "lecture-notes/01/index.html",
-    "title": "Lecture Notes 01",
-    "section": "",
-    "text": "This will be updated soon!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes 01"
-    ]
-  },
-  {
-    "objectID": "ubuntu-wsl.html",
-    "href": "ubuntu-wsl.html",
-    "title": "Installing Ubuntu on Windows using WSL",
-    "section": "",
-    "text": "Windows Subsystem for Linux, shortly called as WSL, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.\nFollow the following instructions to install Ubuntu on your Windows computer using WSL.\nPlease note that only Windows 10 version 2004 and higher or Windows 11 are supported.\nStep 1: Open Windows Power Shell\nEnter Windows Power Shell in the system search bar and open the application.\nStep 2: Install Ubuntu using WSL\nWSL is Windows Subsystem for Linux and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.\nRun the following command in the power shell to download and install Ubuntu.\nwsl --install\nPlease make sure you have a fast internet connection as this step downloads more than 1GB of data.\nStep 3: Open Ubuntu Terminal\nEnter Ubuntu in the system search bar and open the application.\nYou’ll should see a Ubuntu terminal.\nThat’s all! You are now ready to code.\n← Back to Software Setup\n\n\n\nHow to install Linux on Windows with WSL"
-  },
-  {
-    "objectID": "ubuntu-wsl.html#references",
-    "href": "ubuntu-wsl.html#references",
-    "title": "Installing Ubuntu on Windows using WSL",
-    "section": "",
-    "text": "How to install Linux on Windows with WSL"
-  },
-  {
-    "objectID": "problem-sets/index.html",
-    "href": "problem-sets/index.html",
-    "title": "Problem Sets",
-    "section": "",
-    "text": "Problem Sets\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nProblem Set 1\n\n\nCSketch\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Problem Sets"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "",
-    "text": "Welcome to the Fundamentals of Computing and Programming course.\nPlease look at the course page on ISI Bangalore website for syllabus and other details.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "Introduction",
-    "text": "Introduction\nThis course uses unix environment for writing, compiling and executing c programs.\nIf you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the Software Setup page.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#source-code",
-    "href": "index.html#source-code",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "Source Code",
-    "text": "Source Code\nThe source code for this website is available at the following github repository:\nhttps://github.com/anandology/isi-fcp",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#credits",
-    "href": "index.html#credits",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "Credits",
-    "text": "Credits\nThis course is taught of Prof. Jishnu Biswas, ISI Bangalore.\nThis website is setup by Anand Chitipothu.",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "Fundamentals of Computing and Programming",
-    "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nCC BY-SA 4.0",
-    "crumbs": [
-      "Fundamentals of Computing and Programming"
-    ]
-  },
-  {
-    "objectID": "git.html",
-    "href": "git.html",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setting-up-git",
-    "href": "git.html#setting-up-git",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setup-ssh-keys",
-    "href": "git.html#setup-ssh-keys",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#git-usage-complexity",
-    "href": "git.html#git-usage-complexity",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#cloning-a-repository",
-    "href": "git.html#cloning-a-repository",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#commiting-changes",
-    "href": "git.html#commiting-changes",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#references",
-    "href": "git.html#references",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "shell.html",
-    "href": "shell.html",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "hello-world\npermissions and #!\nnumerical expressions\nadd.sh\nloops\n\n\n\nA shell script is file that contains the list of commands that you want to run in a sequence.\nLet’s write a simple script.\n\n\nhello-world.sh\n\necho \"Hello, world!\"\n\nWe can run this as:\n$ bash hello-world.sh\nHello, world!\nTo run this script directly without invoking bash, we need do two things::\n\nFirst, we need to add a hash-bang directive in the first line of the script\nMake the script executable\n\nLet’s add the #! line.\n\n\nhello-world.sh\n\n#! /bin/bash\necho \"Hello, world!\"\n\nThe #! line is the unix way to tell the system that execute this script using bash.\nAfter adding that line, we still need to make the file executable. The file not executable unless we explicitly make it so. Let’s look at the output of ls -l.\n$ ls -l hello-world.sh\n-rw-rw-r-- 1 anand anand 34 Aug 19 09:07 hello-world.sh\nThe first column of the output indicates that the file has read, and write permissions.\nWe do add execute permissions by running chmod.\n$ chmod +x hello-world.sh\n\n$ ls -l hello-world.sh\n-rwxrwxr-x 1 anand anand 34 Aug 19 09:07 hello-world.sh\nNow the file is exutable. We can execute it using:\n$ ./hello-world.sh\nHello, world!\n\n\n\nIn shell scripts, # is the comment prefix. Everything after that character is considered a comment.\n\n\nhello-world.sh\n\n#! /bin/bash\n#\n# This program prints a hello world message\n#\n\necho \"Hello, world!\" # you can change the message here, if you wish\n\n# end of program\n\n\n\n\nVariables are placeholders to a value. Shell is weekly typed, so it doesn’t bother about datatypes like C.\nYou can define a variable just in a shell.\n$ fruit=Apple\nPlease note that the $ at the beginning of the line is just prompt of the shell. That is not something that you type.\n\n\n\n\n\n\nNote\n\n\n\nRemember that shell is very sensitive to spaces. You can set a variable only as name=value.\nIf you put spaces around =, it will complain. So name = value is invalid.\n$ x = 2\nx: command not found\nIn this case shell interprets it as invoking command with name x with two arguments = and 2. Just like what happens when we call echo hello world.\n\n\nTo use the value of a variable, we prefix the variable name with $.\n$ echo $fruit\nApple\n$ echo I like $fruit\nI like Apple\nWhen we want to use a variable in a sentence, we typically enclose it double quotes. We’ll learn more about quotes in a latter section.\n$ echo \"I like $fruit!\"\nI like Apple!\n\n\nThere are some variables already defined by the system. Variables like USER, HOME, SHELL, PATH etc. are usually defined for every session by the system.\n$ echo $USER\nanand\n$ echo $HOME\n/home/anand\n$ echo $SHELL\n/bin/bash\n$ echo $PATH\n/home/anand/.local/bin:/home/anand/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\nThe variable PATH is an interesting one. When you type a command, the system search for a file with that name in all the paths specified in the variable PATH. We’ll learn more about it later.\n\n\n\n\nShell has a shorthand for working with integer values. Put an expression in `$((..))``.\n$ x=3\n$ y=4\n$ echo \"$((x + y))\"\n7\n$ echo \"$((x * y))\"\n12\n$ echo \"$((x ** y))\"\n81\nPlease note that this is limited only to integers, doesn’t work with floating point numbers.\nIf you want to work with floating point numbers, use tools like bc or awk.\n\n\n\nThe command line arguments passed to a shell script are available in a special variable $*. You can use $# to find the number of arguments passed.\n\n\nargs.sh\n\n#! /bin/bash\necho \"You have given $# arguments\"\necho \"The arguments are $*\"\necho \"The first argument is $1\"\necho \"The second argument is $2\"\n\nLet’s make the script executable.\n$ chmod +x args.sh\n$ ls -l args.sh\n-rwxrwxr-x 1 anand anand 113 Aug 19 07:53 args.sh\nLet’s run it.\n$ ./args.sh hello world\nYou have given 2 arguments\nThe first argument is hello\nThe second argument is world\nIf you give less than 2 arguments $2 will be empty. Shell is weakly typed, so it doesn’t complain.\n$ ./args.sh hello\nYou have given 1 arguments\nThe first argument is hello\nThe second argument is\nNow lets write a shell script add-two-numbers.sh that takes two numbers as command line arguments and prints their sum.\n\n\nadd-two-numbers.sh\n\n#! /bin/bash\na=$1\nb=$2\necho $((a+b))\n\nLet’s make the script executable.\n$ chmod +x add-two-numbers.sh\nAnd run it.\n$ ./add-two-numbers.sh 3 4\n7\nProblem: Write a program square.sh that takes a number as command-line argument and prints its square.\n$ ./square.sh 5\n25\n\n\n\nThe read\n\n\nhello.sh\n\nread -p \"What is your name? \" name\n\necho \"Hello $name! Nice to meet you!!\"\n\n$ bash hello.sh\nWhat is your name? Anand\nHello Anand! Nice to meet you!!\n\n\n\nThere are three kinds of quotes used in shell scripts.\n\n\nSingle quotes preserve the literal value of the enclosed characters.\n$ echo 'You owe me $10 & an apple!'\nYou owe me $10 & an apple!\n\n\n\nDouble quotes preserves the literal value of the enclosed characters, but expands the variables and allows escape characters.\n$ echo \"hello $USER, how are you doing?\"\nhello anand, how are you doing?\n\n$ echo \"2 * 3 = $((2 * 3))\"\n2 * 3 = 6\nQuestion:\nWhat would the output of the following command? Can you explain why it produces a different result than what is shown in the example above?\necho 2 * 3 = $((2 * 3))\n\n\n\nShell allows putting a command in backquotes `...` and replaces it with the output of that command.\n$ echo \"The current date is `date`\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nWe can also use $(...) instead of `...`.\n$ echo \"The current date is $(date)\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nThe date command also supports custom formatting, we can use that to select that the day of the week.\n$ echo \"Today is a $(date +%A)\"\nToday is a Monday\nWe could also do the same thing using a variable.\n$ day=$(date +%A)\n$ echo \"Today is a $day\"\nToday is a Monday\n\n\n\n\nShell provides two kinds of loops, for loop and while loop.\n\n\n\n\nsquare-args.sh\n\n#! /bin/bash\n#\n# Program to compute square of all the numbers passed as command-line arguments\n#\nfor n in $*\ndo\n    echo $((n*n))\ndone\n\n$ bash square-args.sh 1 2 3 4\n1\n4\n9\n16\nWe can use wildcards to list file.\n$ for f in *.c; do figlet $f; done\n  ___(_)_ __ ___| | ___   ___\n / __| | '__/ __| |/ _ \\ / __|\n| (__| | | | (__| |  __/| (__\n \\___|_|_|  \\___|_|\\___(_)___|\n\n     _             _     _\n  __| | ___  _   _| |__ | | ___   ___\n / _` |/ _ \\| | | | '_ \\| |/ _ \\ / __|\n| (_| | (_) | |_| | |_) | |  __/| (__\n \\__,_|\\___/ \\__,_|_.__/|_|\\___(_)___|\nIf we want to loop over a sequence of numbers, we could make use of the seq command.\n$ for n in `seq 5`; do echo \"$((n*n))\"; done\n1\n4\n9\n16\n25\n\n\n\n\nThe while loop is used with a condition and it continues to run until the condition is false. It is very handly to read data from stdin or a file.\n\n\nsquares.sh\n\n#! /bin/bash\n\n# read each line in the input input variable `n`\nwhile read n\ndo\n    echo $((n*n))\ndone\n\n$ chmod +x squares.sh\n$ seq 5 | ./squares.sh\n1\n4\n9\n16\n25\nProblem: Write a program sum.sh to read numbers from stdin and print their sum.\n$ seq 5 | ./sum.sh\n15\n$ seq 5 | ./squares.sh | ./sum.sh\n55\n\n\n\n\n\n\n\n\n$*\n\nAll Arguments\n\n$#\n\nThe numner of arguments\n\n$0\n\nThe program name\n\n$1, $2, $3, …\n\nIndividual arguments",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#introduction",
-    "href": "shell.html#introduction",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "A shell script is file that contains the list of commands that you want to run in a sequence.\nLet’s write a simple script.\n\n\nhello-world.sh\n\necho \"Hello, world!\"\n\nWe can run this as:\n$ bash hello-world.sh\nHello, world!\nTo run this script directly without invoking bash, we need do two things::\n\nFirst, we need to add a hash-bang directive in the first line of the script\nMake the script executable\n\nLet’s add the #! line.\n\n\nhello-world.sh\n\n#! /bin/bash\necho \"Hello, world!\"\n\nThe #! line is the unix way to tell the system that execute this script using bash.\nAfter adding that line, we still need to make the file executable. The file not executable unless we explicitly make it so. Let’s look at the output of ls -l.\n$ ls -l hello-world.sh\n-rw-rw-r-- 1 anand anand 34 Aug 19 09:07 hello-world.sh\nThe first column of the output indicates that the file has read, and write permissions.\nWe do add execute permissions by running chmod.\n$ chmod +x hello-world.sh\n\n$ ls -l hello-world.sh\n-rwxrwxr-x 1 anand anand 34 Aug 19 09:07 hello-world.sh\nNow the file is exutable. We can execute it using:\n$ ./hello-world.sh\nHello, world!",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#comments",
-    "href": "shell.html#comments",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "In shell scripts, # is the comment prefix. Everything after that character is considered a comment.\n\n\nhello-world.sh\n\n#! /bin/bash\n#\n# This program prints a hello world message\n#\n\necho \"Hello, world!\" # you can change the message here, if you wish\n\n# end of program",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#variables",
-    "href": "shell.html#variables",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "Variables are placeholders to a value. Shell is weekly typed, so it doesn’t bother about datatypes like C.\nYou can define a variable just in a shell.\n$ fruit=Apple\nPlease note that the $ at the beginning of the line is just prompt of the shell. That is not something that you type.\n\n\n\n\n\n\nNote\n\n\n\nRemember that shell is very sensitive to spaces. You can set a variable only as name=value.\nIf you put spaces around =, it will complain. So name = value is invalid.\n$ x = 2\nx: command not found\nIn this case shell interprets it as invoking command with name x with two arguments = and 2. Just like what happens when we call echo hello world.\n\n\nTo use the value of a variable, we prefix the variable name with $.\n$ echo $fruit\nApple\n$ echo I like $fruit\nI like Apple\nWhen we want to use a variable in a sentence, we typically enclose it double quotes. We’ll learn more about quotes in a latter section.\n$ echo \"I like $fruit!\"\nI like Apple!\n\n\nThere are some variables already defined by the system. Variables like USER, HOME, SHELL, PATH etc. are usually defined for every session by the system.\n$ echo $USER\nanand\n$ echo $HOME\n/home/anand\n$ echo $SHELL\n/bin/bash\n$ echo $PATH\n/home/anand/.local/bin:/home/anand/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\nThe variable PATH is an interesting one. When you type a command, the system search for a file with that name in all the paths specified in the variable PATH. We’ll learn more about it later.",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#integer-expressions",
-    "href": "shell.html#integer-expressions",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "Shell has a shorthand for working with integer values. Put an expression in `$((..))``.\n$ x=3\n$ y=4\n$ echo \"$((x + y))\"\n7\n$ echo \"$((x * y))\"\n12\n$ echo \"$((x ** y))\"\n81\nPlease note that this is limited only to integers, doesn’t work with floating point numbers.\nIf you want to work with floating point numbers, use tools like bc or awk.",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#arguments",
-    "href": "shell.html#arguments",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "The command line arguments passed to a shell script are available in a special variable $*. You can use $# to find the number of arguments passed.\n\n\nargs.sh\n\n#! /bin/bash\necho \"You have given $# arguments\"\necho \"The arguments are $*\"\necho \"The first argument is $1\"\necho \"The second argument is $2\"\n\nLet’s make the script executable.\n$ chmod +x args.sh\n$ ls -l args.sh\n-rwxrwxr-x 1 anand anand 113 Aug 19 07:53 args.sh\nLet’s run it.\n$ ./args.sh hello world\nYou have given 2 arguments\nThe first argument is hello\nThe second argument is world\nIf you give less than 2 arguments $2 will be empty. Shell is weakly typed, so it doesn’t complain.\n$ ./args.sh hello\nYou have given 1 arguments\nThe first argument is hello\nThe second argument is\nNow lets write a shell script add-two-numbers.sh that takes two numbers as command line arguments and prints their sum.\n\n\nadd-two-numbers.sh\n\n#! /bin/bash\na=$1\nb=$2\necho $((a+b))\n\nLet’s make the script executable.\n$ chmod +x add-two-numbers.sh\nAnd run it.\n$ ./add-two-numbers.sh 3 4\n7\nProblem: Write a program square.sh that takes a number as command-line argument and prints its square.\n$ ./square.sh 5\n25",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#reading-input",
-    "href": "shell.html#reading-input",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "The read\n\n\nhello.sh\n\nread -p \"What is your name? \" name\n\necho \"Hello $name! Nice to meet you!!\"\n\n$ bash hello.sh\nWhat is your name? Anand\nHello Anand! Nice to meet you!!",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#quotes",
-    "href": "shell.html#quotes",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "There are three kinds of quotes used in shell scripts.\n\n\nSingle quotes preserve the literal value of the enclosed characters.\n$ echo 'You owe me $10 & an apple!'\nYou owe me $10 & an apple!\n\n\n\nDouble quotes preserves the literal value of the enclosed characters, but expands the variables and allows escape characters.\n$ echo \"hello $USER, how are you doing?\"\nhello anand, how are you doing?\n\n$ echo \"2 * 3 = $((2 * 3))\"\n2 * 3 = 6\nQuestion:\nWhat would the output of the following command? Can you explain why it produces a different result than what is shown in the example above?\necho 2 * 3 = $((2 * 3))\n\n\n\nShell allows putting a command in backquotes `...` and replaces it with the output of that command.\n$ echo \"The current date is `date`\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nWe can also use $(...) instead of `...`.\n$ echo \"The current date is $(date)\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nThe date command also supports custom formatting, we can use that to select that the day of the week.\n$ echo \"Today is a $(date +%A)\"\nToday is a Monday\nWe could also do the same thing using a variable.\n$ day=$(date +%A)\n$ echo \"Today is a $day\"\nToday is a Monday",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#loops",
-    "href": "shell.html#loops",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "Shell provides two kinds of loops, for loop and while loop.\n\n\n\n\nsquare-args.sh\n\n#! /bin/bash\n#\n# Program to compute square of all the numbers passed as command-line arguments\n#\nfor n in $*\ndo\n    echo $((n*n))\ndone\n\n$ bash square-args.sh 1 2 3 4\n1\n4\n9\n16\nWe can use wildcards to list file.\n$ for f in *.c; do figlet $f; done\n  ___(_)_ __ ___| | ___   ___\n / __| | '__/ __| |/ _ \\ / __|\n| (__| | | | (__| |  __/| (__\n \\___|_|_|  \\___|_|\\___(_)___|\n\n     _             _     _\n  __| | ___  _   _| |__ | | ___   ___\n / _` |/ _ \\| | | | '_ \\| |/ _ \\ / __|\n| (_| | (_) | |_| | |_) | |  __/| (__\n \\__,_|\\___/ \\__,_|_.__/|_|\\___(_)___|\nIf we want to loop over a sequence of numbers, we could make use of the seq command.\n$ for n in `seq 5`; do echo \"$((n*n))\"; done\n1\n4\n9\n16\n25",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#the-while-loop",
-    "href": "shell.html#the-while-loop",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "The while loop is used with a condition and it continues to run until the condition is false. It is very handly to read data from stdin or a file.\n\n\nsquares.sh\n\n#! /bin/bash\n\n# read each line in the input input variable `n`\nwhile read n\ndo\n    echo $((n*n))\ndone\n\n$ chmod +x squares.sh\n$ seq 5 | ./squares.sh\n1\n4\n9\n16\n25\nProblem: Write a program sum.sh to read numbers from stdin and print their sum.\n$ seq 5 | ./sum.sh\n15\n$ seq 5 | ./squares.sh | ./sum.sh\n55",
-    "crumbs": [
-      "Introduction to Shell Programming"
-    ]
-  },
-  {
-    "objectID": "shell.html#summary",
-    "href": "shell.html#summary",
-    "title": "Introduction to Shell Programming",
-    "section": "",
-    "text": "$*\n\nAll Arguments\n\n$#\n\nThe numner of arguments\n\n$0\n\nThe program name\n\n$1, $2, $3, …\n\nIndividual arguments",
-    "crumbs": [
-      "Introduction to Shell Programming"
     ]
   },
   {
@@ -728,60 +252,6 @@
     ]
   },
   {
-    "objectID": "lecture-notes/index.html",
-    "href": "lecture-notes/index.html",
-    "title": "Lecture Notes",
-    "section": "",
-    "text": "Lecture Notes\n\n\n\n\n\n\n\n\n\n\nLecture Notes - Mon Aug 12, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 01\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nJishnu Biswas\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 02\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Lecture Notes"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/2024-08-12/index.html",
-    "href": "lecture-notes/2024-08-12/index.html",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
-    "section": "",
-    "text": "Please see lesson Introduction to Unix Command Line.",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/2024-08-12/index.html#quick-setup",
-    "href": "lecture-notes/2024-08-12/index.html#quick-setup",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
-    "section": "Quick Setup",
-    "text": "Quick Setup\nPlease install the required packages to install the commands used in this session.\n$ sudo apt-get -y install coreutils figlet cowsay wbritish",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/2024-08-12/index.html#the-log",
-    "href": "lecture-notes/2024-08-12/index.html#the-log",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
-    "section": "The log",
-    "text": "The log\nHere is the log of all the commands tried in the class.\nLet’s start with printing a hello world message.\n$ echo hello world\nhello world\nThe echo command takes one or more command-line arguments and prints all of them as output. In this case echo is the name of the program and hello and world are two arguments passed to it.\nWe could try the date command to find the current date and time.\n$ date\nMonday 12 August 2024 11:33:05 AM IST\n$ date\nMonday 12 August 2024 11:33:07 AM IST\nNow, let’s try something fun!\n$ figlet hello world\n _          _ _                            _     _\n| |__   ___| | | ___   __      _____  _ __| | __| |\n| '_ \\ / _ \\ | |/ _ \\  \\ \\ /\\ / / _ \\| '__| |/ _` |\n| | | |  __/ | | (_) |  \\ V  V / (_) | |  | | (_| |\n|_| |_|\\___|_|_|\\___/    \\_/\\_/ \\___/|_|  |_|\\__,_|\nFiglet is a program that prints the given text as large characters made up of ordinary screen characters.\nPlease try figlet with some other arguments and see what happens.\nAlso note that if you are using figlet with any special characters, make sure you enclose the arguments pased to figlet in single quotes. If you don’t do that then shell may interpret them differently and do some weird things.\nFor example, if you call figlet with a * b as argument:\n$ figlet a * b\n\n              _          _             _          _\n  __ _    ___(_)_ __ ___| | ___    ___(_)_ __ ___| | ___   ___\n / _` |  / __| | '__/ __| |/ _ \\  / __| | '__/ __| |/ _ \\ / __|\n| (_| | | (__| | | | (__| |  __/ | (__| | | | (__| |  __/| (__\n \\__,_|  \\___|_|_|  \\___|_|\\___|  \\___|_|_|  \\___|_|\\___(_)___|\n\n      _          _\n  ___(_)_ __ ___| | ___   _____   ____ _\n / __| | '__/ __| |/ _ \\ / __\\ \\ / / _` |\n| (__| | | | (__| |  __/_\\__ \\\\ V / (_| |\n \\___|_|_|  \\___|_|\\___(_)___/ \\_/ \\__, |\n                                   |___/\n\n __  __       _         __ _ _\n|  \\/  | __ _| | _____ / _(_) | ___\n| |\\/| |/ _` | |/ / _ \\ |_| | |/ _ \\\n| |  | | (_| |   &lt;  __/  _| | |  __/\n|_|  |_|\\__,_|_|\\_\\___|_| |_|_|\\___|\n\n                      _                        _          _\n             _        _       _       _\n ___| | _____| |_ ___| |__   | |__\n/ __| |/ / _ \\ __/ __| '_ \\  | '_ \\\n\\__ \\   &lt;  __/ || (__| | | | | |_) |\n|___/_|\\_\\___|\\__\\___|_| |_| |_.__/\n                                                          _\nThe special character * means all the files in the current directory. You can verify that by running echo *.\n$ echo *\ncircle circle.c circle.svg Makefile sketch\nWe can enclose the arguments in single quotes to ignore the special characters.\n$ figlet 'a * b'\n                _\n  __ _  __/\\__ | |__\n / _` | \\    / | '_ \\\n| (_| | /_  _\\ | |_) |\n \\__,_|   \\/   |_.__/\nNow, let’s try a new command seq. The seq command takes a number n as argument and prints all numbers from 1 to n.\n$ seq 5\n1\n2\n3\n4\n5\nHow do we combine the seq and figlet program together so that the output of seq is passed as input to figlet? We just use the | character.\n$ seq 5 | figlet\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|\n\n _____\n|___ /\n  |_ \\\n ___) |\n|____/\n\n _  _\n| || |\n| || |_\n|__   _|\n   |_|\n\n ____\n| ___|\n|___ \\\n ___) |\n|____/\nThere is another interesting program called cowsay. It is usually not in the PATH (more about this later) so we need to give the full path for it to work. It is at path /usr/games/cowsay.\n$ /usr/games/cowsay hello world\n _____________\n&lt; hello world &gt;\n -------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\nWe could use a different animal by specifing the cowfile using option -f.\n$ /usr/games/cowsay -f tux hello world\n _____________\n&lt; hello world &gt;\n -------------\n   \\\n    \\\n        .--.\n       |o_o |\n       |:_/ |\n      //   \\ \\\n     (|     | )\n    /'\\_   _/`\\\n    \\___)=(___/\n$ seq 5 | /usr/games/cowsay\n ___________\n&lt; 1 2 3 4 5 &gt;\n -----------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 5 | /usr/games/cowsay -n\n ___\n/ 1 \\\n| 2 |\n| 3 |\n| 4 |\n\\ 5 /\n ---\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 2 | figlet | /usr/games/cowsay -n\n _________\n/  _      \\\n| / |     |\n| | |     |\n| | |     |\n| |_|     |\n|         |\n|  ____   |\n| |___ \\  |\n|   __) | |\n|  / __/  |\n| |_____| |\n\\         /\n ---------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ echo hello | figlet | /usr/games/cowsay -n\n ________________________\n/  _          _ _        \\\n| | |__   ___| | | ___   |\n| | '_ \\ / _ \\ | |/ _ \\  |\n| | | | |  __/ | | (_) | |\n| |_| |_|\\___|_|_|\\___/  |\n\\                        /\n ------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet\nhello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\nworld\n                    _     _\n__      _____  _ __| | __| |\n\\ \\ /\\ / / _ \\| '__| |/ _` |\n \\ V  V / (_) | |  | | (_| |\n  \\_/\\_/ \\___/|_|  |_|\\__,_|\n\n$ /usr/games/cowsay -n\nhello\nworld\n _______\n/ hello \\\n\\ world /\n -------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet -f slant hello\n    __         ____\n   / /_  ___  / / /___\n  / __ \\/ _ \\/ / / __ \\\n / / / /  __/ / / /_/ /\n/_/ /_/\\___/_/_/\\____/\n\n$ figlet -f lean hello\n\n    _/                  _/  _/\n   _/_/_/      _/_/    _/  _/    _/_/\n  _/    _/  _/_/_/_/  _/  _/  _/    _/\n _/    _/  _/        _/  _/  _/    _/\n_/    _/    _/_/_/  _/  _/    _/_/\n\n\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ cd\n$ pwd\n/home/anand\n$ cd /home/anand/github/anandology/isi-fcp/computing\n$\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat numbers.sh\nn=$1\nseq $n | figlet$\n$\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ cat\nhello\nhello\n$ ls -l\ntotal 168\n-rwxrwxr-x 1 anand anand 16976 Jul 30 21:54 circle\n-rw-rw-r-- 1 anand anand   196 Jul 29 00:16 circle.c\n-rw-rw-r-- 1 anand anand  6682 Aug  5 10:55 circle.svg\ndrwxrwxr-x 2 anand anand 32768 Aug  6 17:51 frames\n-rw-rw-r-- 1 anand anand   575 Aug  6 17:46 Makefile\n-rwxrwxr-x 1 anand anand 17152 Aug  6 17:50 moving-circle\n-rwxrwxr-x 1 anand anand 17024 Aug  6 17:32 moving-circle2\n-rw-rw-r-- 1 anand anand   433 Aug  6 17:32 moving-circle2.c\n-rw-rw-r-- 1 anand anand  1034 Aug  6 18:11 moving-circle.c\n-rw-rw-r-- 1 anand anand 40176 Aug  6 17:52 moving-circle.mp4\n-rw-rw-r-- 1 anand anand   359 Aug  6 17:36 moving-circle.svg\n-rw-rw-r-- 1 anand anand    21 Aug 12 12:07 numbers.sh\nlrwxrwxrwx 1 anand anand     9 Aug  5 10:55 sketch -&gt; ../sketch\n$ whoami\nanand\n$\n$ figlet sketch\n     _        _       _\n ___| | _____| |_ ___| |__\n/ __| |/ / _ \\ __/ __| '_ \\\n\\__ \\   &lt;  __/ || (__| | | |\n|___/_|\\_\\___|\\__\\___|_| |_|\n\n$ figlet -f slant sketch\n        __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ figlet -f slant sketch &gt; sketch.txt\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ seq\n$ seq 1000000 &gt; 1m.txt\n$ ls -l *.txt\n-rw-rw-r-- 1 anand anand 6888896 Aug 12 12:15 1m.txt\n-rw-rw-r-- 1 anand anand     198 Aug 12 12:12 sketch.txt\n$ wc -l 1m.txt\n1000000 1m.txt\n\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ /usr/games/cowsay -n &lt; sketch.txt\n __________________________________\n/          __        __       __   \\\n|    _____/ /_____  / /______/ /_  |\n|   / ___/ //_/ _ \\/ __/ ___/ __ \\ |\n|  (__  ) ,&lt; /  __/ /_/ /__/ / / / |\n| /____/_/|_|\\___/\\__/\\___/_/ /_/  |\n\\                                  /\n ----------------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ /usr/games/cowsay -n &lt; numbers.sh\n _________________\n/ n=$1            \\\n\\ seq $n | figlet /\n -----------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ seq 2000 | tail -5\n1996\n1997\n1998\n1999\n2000\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)+/g\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)/g\\1,/'\ng123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/'\n123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/g'\n123,456,7\n$ echo 1234567 | sed 's/.*\\(...\\)/\\1,/g'\n567,\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/g'\n1234567\n$ sudo apt-get -y install wbritish\n[sudo] password for anand:\nSorry, try again.\n[sudo] password for anand:\nReading package lists... Done\nBuilding dependency tree... Done\nReading state information... Done\nwbritish is already the newest version (2020.12.07-2).\n0 upgraded, 0 newly installed, 0 to remove and 706 not upgraded.\n$\n$ ls\n1m.txt      frames          moving-circle2.c   numbers.sh\ncircle      Makefile        moving-circle.c    sketch\ncircle.c    moving-circle   moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2  moving-circle.svg\n$\n\n$ cat moving-circle.c\n#include &lt;sketch.h&gt;\n#include &lt;unistd.h&gt;\n\nint frame_count = 0;\n\n// saves each frame as file frames/0000.svg, frames/0001.svg etc.\nvoid save_frame()\n{\n    char filename[100];\n\n    // format the file name and save it into the variable filename\n    sprintf(filename, \"frames/%04d.svg\", frame_count);\n\n    // save the sketch into the frame filename\n    save_sketch(filename);\n\n    // increment the frame count, so that the next call to this function\n    // will write to a different file\n    frame_count++;\n\n    printf(\"saved %s\\n\", filename);\n}\n\nint main()\n{\n    float r = 50;\n    float y = 0;\n    float x = -300 + r;\n\n    while (x &lt; 300)\n    {\n        // clear everything that is drawn so far\n        clear_sketch();\n\n        // draw one circle\n        draw_circle(x, y, r);\n\n        // save the sketch\n        // since we are doing this in a loop, the svg extension of vscode will\n        // update the image everytime the file is updated.\n        save_frame();\n\n        // move the circle by 10 pixels to the right\n        x++;\n    }\n}\n\n$ grep draw moving-circle.c\n        // clear everything that is drawn so far\n        // draw one circle\n        draw_circle(x, y, r);\n$ grep draw_ moving-circle.c\n        draw_circle(x, y, r);\n$ seq 1000000 | grep 5 | wc -l\n468559\n$ seq 1000000 | grep '5.*5' | head\n55\n155\n255\n355\n455\n505\n515\n525\n535\n545\n$ seq 1000000 | grep '5.*5' | wc -l\n114265",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
-    ]
-  },
-  {
-    "objectID": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
-    "href": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
-    "title": "Lecture Notes - Mon Aug 12, 2024",
-    "section": "Solving Wordle with command-line",
-    "text": "Solving Wordle with command-line\nWordle is a word game where you guess a word.\nWe are going to try solving it using unix command-line tools. For this we are going to use the command grep to match lines in a file that match given Regular Expression pattern.\nThe file /usr/share/dict/words contains all the words in the dictionary, one in each line.\n\n\n\n\n\n\nNote\n\n\n\nIf you don’t find that file, it means you don’t have a dictionary installed. Install it by running:\n$ sudo apt-get -y install wbritish\n\n\n$ wc -l /usr/share/dict/words\n104334 /usr/share/dict/words\nLet’s try to find all words that start with a prefix, say ice.\n$ grep '^ice' /usr/share/dict/words\nice\niceberg\niceberg's\nicebergs\nicebound\nicebox\niceboxes\nicebox's\nicebreaker\nicebreaker's\nicebreakers\nicecap\nicecap's\nicecaps\niced\nice's\nices\nLet’s find all the 5 letter words in the dictionary.\n$ grep '^.....$' /usr/share/dict/words | head\nABC's\nABM's\nAFAIK\nAFC's\nAMD's\nANSIs\nANZUS\nAOL's\nASCII\nASL's\n$ grep '^.....$' /usr/share/dict/words | wc -l\n7044\nThere are quite many of them. Let’s start with a guess. What shall we start with? Ok, FLAME!\n\n\n\nHow many 5-letter words are there that have letter f in them?\n$ grep '^.....$' /usr/share/dict/words | grep f | wc -l\n469\nThe letter L, A, M and E are not present in our word. Let’s try to skip all the words that have any of these characters.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | wc -l\n123\nThat is still quite a lof of them. Lets see some of those options.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | head\nAcuff\nAfros\nBuffy\nCorfu\nDuffy\nKhufu\nKnopf\nRufus\nSwift\nbiffs\nI’m going to try one of them. I’ll go with Swift.\n\n\n\nNow that we know correct letters in three positions and 6 letters that are not present, let’s see what all words are available.\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]' | head\nskiff\nsniff\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]'\nskiff\nsniff\nLet’s try with the first one skiff.\n\n\n\nYay! We solved Worle with command-line!",
-    "crumbs": [
-      "Lecture Notes",
-      "Lecture Notes - Mon Aug 12, 2024"
-    ]
-  },
-  {
     "objectID": "setup.html",
     "href": "setup.html",
     "title": "Software Setup",
@@ -862,10 +332,562 @@
     ]
   },
   {
+    "objectID": "shell.html",
+    "href": "shell.html",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "hello-world\npermissions and #!\nnumerical expressions\nadd.sh\nloops\n\n\n\nA shell script is file that contains the list of commands that you want to run in a sequence.\nLet’s write a simple script.\n\n\nhello-world.sh\n\necho \"Hello, world!\"\n\nWe can run this as:\n$ bash hello-world.sh\nHello, world!\nTo run this script directly without invoking bash, we need do two things::\n\nFirst, we need to add a hash-bang directive in the first line of the script\nMake the script executable\n\nLet’s add the #! line.\n\n\nhello-world.sh\n\n#! /bin/bash\necho \"Hello, world!\"\n\nThe #! line is the unix way to tell the system that execute this script using bash.\nAfter adding that line, we still need to make the file executable. The file not executable unless we explicitly make it so. Let’s look at the output of ls -l.\n$ ls -l hello-world.sh\n-rw-rw-r-- 1 anand anand 34 Aug 19 09:07 hello-world.sh\nThe first column of the output indicates that the file has read, and write permissions.\nWe do add execute permissions by running chmod.\n$ chmod +x hello-world.sh\n\n$ ls -l hello-world.sh\n-rwxrwxr-x 1 anand anand 34 Aug 19 09:07 hello-world.sh\nNow the file is exutable. We can execute it using:\n$ ./hello-world.sh\nHello, world!\n\n\n\nIn shell scripts, # is the comment prefix. Everything after that character is considered a comment.\n\n\nhello-world.sh\n\n#! /bin/bash\n#\n# This program prints a hello world message\n#\n\necho \"Hello, world!\" # you can change the message here, if you wish\n\n# end of program\n\n\n\n\nVariables are placeholders to a value. Shell is weekly typed, so it doesn’t bother about datatypes like C.\nYou can define a variable just in a shell.\n$ fruit=Apple\nPlease note that the $ at the beginning of the line is just prompt of the shell. That is not something that you type.\n\n\n\n\n\n\nNote\n\n\n\nRemember that shell is very sensitive to spaces. You can set a variable only as name=value.\nIf you put spaces around =, it will complain. So name = value is invalid.\n$ x = 2\nx: command not found\nIn this case shell interprets it as invoking command with name x with two arguments = and 2. Just like what happens when we call echo hello world.\n\n\nTo use the value of a variable, we prefix the variable name with $.\n$ echo $fruit\nApple\n$ echo I like $fruit\nI like Apple\nWhen we want to use a variable in a sentence, we typically enclose it double quotes. We’ll learn more about quotes in a latter section.\n$ echo \"I like $fruit!\"\nI like Apple!\n\n\nThere are some variables already defined by the system. Variables like USER, HOME, SHELL, PATH etc. are usually defined for every session by the system.\n$ echo $USER\nanand\n$ echo $HOME\n/home/anand\n$ echo $SHELL\n/bin/bash\n$ echo $PATH\n/home/anand/.local/bin:/home/anand/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\nThe variable PATH is an interesting one. When you type a command, the system search for a file with that name in all the paths specified in the variable PATH. We’ll learn more about it later.\n\n\n\n\nShell has a shorthand for working with integer values. Put an expression in `$((..))``.\n$ x=3\n$ y=4\n$ echo \"$((x + y))\"\n7\n$ echo \"$((x * y))\"\n12\n$ echo \"$((x ** y))\"\n81\nPlease note that this is limited only to integers, doesn’t work with floating point numbers.\nIf you want to work with floating point numbers, use tools like bc or awk.\n\n\n\nThe command line arguments passed to a shell script are available in a special variable $*. You can use $# to find the number of arguments passed.\n\n\nargs.sh\n\n#! /bin/bash\necho \"You have given $# arguments\"\necho \"The arguments are $*\"\necho \"The first argument is $1\"\necho \"The second argument is $2\"\n\nLet’s make the script executable.\n$ chmod +x args.sh\n$ ls -l args.sh\n-rwxrwxr-x 1 anand anand 113 Aug 19 07:53 args.sh\nLet’s run it.\n$ ./args.sh hello world\nYou have given 2 arguments\nThe first argument is hello\nThe second argument is world\nIf you give less than 2 arguments $2 will be empty. Shell is weakly typed, so it doesn’t complain.\n$ ./args.sh hello\nYou have given 1 arguments\nThe first argument is hello\nThe second argument is\nNow lets write a shell script add-two-numbers.sh that takes two numbers as command line arguments and prints their sum.\n\n\nadd-two-numbers.sh\n\n#! /bin/bash\na=$1\nb=$2\necho $((a+b))\n\nLet’s make the script executable.\n$ chmod +x add-two-numbers.sh\nAnd run it.\n$ ./add-two-numbers.sh 3 4\n7\nProblem: Write a program square.sh that takes a number as command-line argument and prints its square.\n$ ./square.sh 5\n25\n\n\n\nThe read\n\n\nhello.sh\n\nread -p \"What is your name? \" name\n\necho \"Hello $name! Nice to meet you!!\"\n\n$ bash hello.sh\nWhat is your name? Anand\nHello Anand! Nice to meet you!!\n\n\n\nThere are three kinds of quotes used in shell scripts.\n\n\nSingle quotes preserve the literal value of the enclosed characters.\n$ echo 'You owe me $10 & an apple!'\nYou owe me $10 & an apple!\n\n\n\nDouble quotes preserves the literal value of the enclosed characters, but expands the variables and allows escape characters.\n$ echo \"hello $USER, how are you doing?\"\nhello anand, how are you doing?\n\n$ echo \"2 * 3 = $((2 * 3))\"\n2 * 3 = 6\nQuestion:\nWhat would the output of the following command? Can you explain why it produces a different result than what is shown in the example above?\necho 2 * 3 = $((2 * 3))\n\n\n\nShell allows putting a command in backquotes `...` and replaces it with the output of that command.\n$ echo \"The current date is `date`\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nWe can also use $(...) instead of `...`.\n$ echo \"The current date is $(date)\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nThe date command also supports custom formatting, we can use that to select that the day of the week.\n$ echo \"Today is a $(date +%A)\"\nToday is a Monday\nWe could also do the same thing using a variable.\n$ day=$(date +%A)\n$ echo \"Today is a $day\"\nToday is a Monday\n\n\n\n\nShell provides two kinds of loops, for loop and while loop.\n\n\n\n\nsquare-args.sh\n\n#! /bin/bash\n#\n# Program to compute square of all the numbers passed as command-line arguments\n#\nfor n in $*\ndo\n    echo $((n*n))\ndone\n\n$ bash square-args.sh 1 2 3 4\n1\n4\n9\n16\nWe can use wildcards to list file.\n$ for f in *.c; do figlet $f; done\n  ___(_)_ __ ___| | ___   ___\n / __| | '__/ __| |/ _ \\ / __|\n| (__| | | | (__| |  __/| (__\n \\___|_|_|  \\___|_|\\___(_)___|\n\n     _             _     _\n  __| | ___  _   _| |__ | | ___   ___\n / _` |/ _ \\| | | | '_ \\| |/ _ \\ / __|\n| (_| | (_) | |_| | |_) | |  __/| (__\n \\__,_|\\___/ \\__,_|_.__/|_|\\___(_)___|\nIf we want to loop over a sequence of numbers, we could make use of the seq command.\n$ for n in `seq 5`; do echo \"$((n*n))\"; done\n1\n4\n9\n16\n25\n\n\n\n\nThe while loop is used with a condition and it continues to run until the condition is false. It is very handly to read data from stdin or a file.\n\n\nsquares.sh\n\n#! /bin/bash\n\n# read each line in the input input variable `n`\nwhile read n\ndo\n    echo $((n*n))\ndone\n\n$ chmod +x squares.sh\n$ seq 5 | ./squares.sh\n1\n4\n9\n16\n25\nProblem: Write a program sum.sh to read numbers from stdin and print their sum.\n$ seq 5 | ./sum.sh\n15\n$ seq 5 | ./squares.sh | ./sum.sh\n55\n\n\n\n\n\n\n\n\n$*\n\nAll Arguments\n\n$#\n\nThe numner of arguments\n\n$0\n\nThe program name\n\n$1, $2, $3, …\n\nIndividual arguments",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#introduction",
+    "href": "shell.html#introduction",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "A shell script is file that contains the list of commands that you want to run in a sequence.\nLet’s write a simple script.\n\n\nhello-world.sh\n\necho \"Hello, world!\"\n\nWe can run this as:\n$ bash hello-world.sh\nHello, world!\nTo run this script directly without invoking bash, we need do two things::\n\nFirst, we need to add a hash-bang directive in the first line of the script\nMake the script executable\n\nLet’s add the #! line.\n\n\nhello-world.sh\n\n#! /bin/bash\necho \"Hello, world!\"\n\nThe #! line is the unix way to tell the system that execute this script using bash.\nAfter adding that line, we still need to make the file executable. The file not executable unless we explicitly make it so. Let’s look at the output of ls -l.\n$ ls -l hello-world.sh\n-rw-rw-r-- 1 anand anand 34 Aug 19 09:07 hello-world.sh\nThe first column of the output indicates that the file has read, and write permissions.\nWe do add execute permissions by running chmod.\n$ chmod +x hello-world.sh\n\n$ ls -l hello-world.sh\n-rwxrwxr-x 1 anand anand 34 Aug 19 09:07 hello-world.sh\nNow the file is exutable. We can execute it using:\n$ ./hello-world.sh\nHello, world!",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#comments",
+    "href": "shell.html#comments",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "In shell scripts, # is the comment prefix. Everything after that character is considered a comment.\n\n\nhello-world.sh\n\n#! /bin/bash\n#\n# This program prints a hello world message\n#\n\necho \"Hello, world!\" # you can change the message here, if you wish\n\n# end of program",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#variables",
+    "href": "shell.html#variables",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "Variables are placeholders to a value. Shell is weekly typed, so it doesn’t bother about datatypes like C.\nYou can define a variable just in a shell.\n$ fruit=Apple\nPlease note that the $ at the beginning of the line is just prompt of the shell. That is not something that you type.\n\n\n\n\n\n\nNote\n\n\n\nRemember that shell is very sensitive to spaces. You can set a variable only as name=value.\nIf you put spaces around =, it will complain. So name = value is invalid.\n$ x = 2\nx: command not found\nIn this case shell interprets it as invoking command with name x with two arguments = and 2. Just like what happens when we call echo hello world.\n\n\nTo use the value of a variable, we prefix the variable name with $.\n$ echo $fruit\nApple\n$ echo I like $fruit\nI like Apple\nWhen we want to use a variable in a sentence, we typically enclose it double quotes. We’ll learn more about quotes in a latter section.\n$ echo \"I like $fruit!\"\nI like Apple!\n\n\nThere are some variables already defined by the system. Variables like USER, HOME, SHELL, PATH etc. are usually defined for every session by the system.\n$ echo $USER\nanand\n$ echo $HOME\n/home/anand\n$ echo $SHELL\n/bin/bash\n$ echo $PATH\n/home/anand/.local/bin:/home/anand/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\nThe variable PATH is an interesting one. When you type a command, the system search for a file with that name in all the paths specified in the variable PATH. We’ll learn more about it later.",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#integer-expressions",
+    "href": "shell.html#integer-expressions",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "Shell has a shorthand for working with integer values. Put an expression in `$((..))``.\n$ x=3\n$ y=4\n$ echo \"$((x + y))\"\n7\n$ echo \"$((x * y))\"\n12\n$ echo \"$((x ** y))\"\n81\nPlease note that this is limited only to integers, doesn’t work with floating point numbers.\nIf you want to work with floating point numbers, use tools like bc or awk.",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#arguments",
+    "href": "shell.html#arguments",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "The command line arguments passed to a shell script are available in a special variable $*. You can use $# to find the number of arguments passed.\n\n\nargs.sh\n\n#! /bin/bash\necho \"You have given $# arguments\"\necho \"The arguments are $*\"\necho \"The first argument is $1\"\necho \"The second argument is $2\"\n\nLet’s make the script executable.\n$ chmod +x args.sh\n$ ls -l args.sh\n-rwxrwxr-x 1 anand anand 113 Aug 19 07:53 args.sh\nLet’s run it.\n$ ./args.sh hello world\nYou have given 2 arguments\nThe first argument is hello\nThe second argument is world\nIf you give less than 2 arguments $2 will be empty. Shell is weakly typed, so it doesn’t complain.\n$ ./args.sh hello\nYou have given 1 arguments\nThe first argument is hello\nThe second argument is\nNow lets write a shell script add-two-numbers.sh that takes two numbers as command line arguments and prints their sum.\n\n\nadd-two-numbers.sh\n\n#! /bin/bash\na=$1\nb=$2\necho $((a+b))\n\nLet’s make the script executable.\n$ chmod +x add-two-numbers.sh\nAnd run it.\n$ ./add-two-numbers.sh 3 4\n7\nProblem: Write a program square.sh that takes a number as command-line argument and prints its square.\n$ ./square.sh 5\n25",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#reading-input",
+    "href": "shell.html#reading-input",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "The read\n\n\nhello.sh\n\nread -p \"What is your name? \" name\n\necho \"Hello $name! Nice to meet you!!\"\n\n$ bash hello.sh\nWhat is your name? Anand\nHello Anand! Nice to meet you!!",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#quotes",
+    "href": "shell.html#quotes",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "There are three kinds of quotes used in shell scripts.\n\n\nSingle quotes preserve the literal value of the enclosed characters.\n$ echo 'You owe me $10 & an apple!'\nYou owe me $10 & an apple!\n\n\n\nDouble quotes preserves the literal value of the enclosed characters, but expands the variables and allows escape characters.\n$ echo \"hello $USER, how are you doing?\"\nhello anand, how are you doing?\n\n$ echo \"2 * 3 = $((2 * 3))\"\n2 * 3 = 6\nQuestion:\nWhat would the output of the following command? Can you explain why it produces a different result than what is shown in the example above?\necho 2 * 3 = $((2 * 3))\n\n\n\nShell allows putting a command in backquotes `...` and replaces it with the output of that command.\n$ echo \"The current date is `date`\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nWe can also use $(...) instead of `...`.\n$ echo \"The current date is $(date)\"\nThe current date is Monday 19 August 2024 08:48:39 AM IST\nThe date command also supports custom formatting, we can use that to select that the day of the week.\n$ echo \"Today is a $(date +%A)\"\nToday is a Monday\nWe could also do the same thing using a variable.\n$ day=$(date +%A)\n$ echo \"Today is a $day\"\nToday is a Monday",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#loops",
+    "href": "shell.html#loops",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "Shell provides two kinds of loops, for loop and while loop.\n\n\n\n\nsquare-args.sh\n\n#! /bin/bash\n#\n# Program to compute square of all the numbers passed as command-line arguments\n#\nfor n in $*\ndo\n    echo $((n*n))\ndone\n\n$ bash square-args.sh 1 2 3 4\n1\n4\n9\n16\nWe can use wildcards to list file.\n$ for f in *.c; do figlet $f; done\n  ___(_)_ __ ___| | ___   ___\n / __| | '__/ __| |/ _ \\ / __|\n| (__| | | | (__| |  __/| (__\n \\___|_|_|  \\___|_|\\___(_)___|\n\n     _             _     _\n  __| | ___  _   _| |__ | | ___   ___\n / _` |/ _ \\| | | | '_ \\| |/ _ \\ / __|\n| (_| | (_) | |_| | |_) | |  __/| (__\n \\__,_|\\___/ \\__,_|_.__/|_|\\___(_)___|\nIf we want to loop over a sequence of numbers, we could make use of the seq command.\n$ for n in `seq 5`; do echo \"$((n*n))\"; done\n1\n4\n9\n16\n25",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#the-while-loop",
+    "href": "shell.html#the-while-loop",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "The while loop is used with a condition and it continues to run until the condition is false. It is very handly to read data from stdin or a file.\n\n\nsquares.sh\n\n#! /bin/bash\n\n# read each line in the input input variable `n`\nwhile read n\ndo\n    echo $((n*n))\ndone\n\n$ chmod +x squares.sh\n$ seq 5 | ./squares.sh\n1\n4\n9\n16\n25\nProblem: Write a program sum.sh to read numbers from stdin and print their sum.\n$ seq 5 | ./sum.sh\n15\n$ seq 5 | ./squares.sh | ./sum.sh\n55",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "shell.html#summary",
+    "href": "shell.html#summary",
+    "title": "Introduction to Shell Programming",
+    "section": "",
+    "text": "$*\n\nAll Arguments\n\n$#\n\nThe numner of arguments\n\n$0\n\nThe program name\n\n$1, $2, $3, …\n\nIndividual arguments",
+    "crumbs": [
+      "Introduction to Shell Programming"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-08-12/index.html",
+    "href": "lecture-notes/2024-08-12/index.html",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "",
+    "text": "Please see lesson Introduction to Unix Command Line.",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-08-12/index.html#quick-setup",
+    "href": "lecture-notes/2024-08-12/index.html#quick-setup",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "Quick Setup",
+    "text": "Quick Setup\nPlease install the required packages to install the commands used in this session.\n$ sudo apt-get -y install coreutils figlet cowsay wbritish",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-08-12/index.html#the-log",
+    "href": "lecture-notes/2024-08-12/index.html#the-log",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "The log",
+    "text": "The log\nHere is the log of all the commands tried in the class.\nLet’s start with printing a hello world message.\n$ echo hello world\nhello world\nThe echo command takes one or more command-line arguments and prints all of them as output. In this case echo is the name of the program and hello and world are two arguments passed to it.\nWe could try the date command to find the current date and time.\n$ date\nMonday 12 August 2024 11:33:05 AM IST\n$ date\nMonday 12 August 2024 11:33:07 AM IST\nNow, let’s try something fun!\n$ figlet hello world\n _          _ _                            _     _\n| |__   ___| | | ___   __      _____  _ __| | __| |\n| '_ \\ / _ \\ | |/ _ \\  \\ \\ /\\ / / _ \\| '__| |/ _` |\n| | | |  __/ | | (_) |  \\ V  V / (_) | |  | | (_| |\n|_| |_|\\___|_|_|\\___/    \\_/\\_/ \\___/|_|  |_|\\__,_|\nFiglet is a program that prints the given text as large characters made up of ordinary screen characters.\nPlease try figlet with some other arguments and see what happens.\nAlso note that if you are using figlet with any special characters, make sure you enclose the arguments pased to figlet in single quotes. If you don’t do that then shell may interpret them differently and do some weird things.\nFor example, if you call figlet with a * b as argument:\n$ figlet a * b\n\n              _          _             _          _\n  __ _    ___(_)_ __ ___| | ___    ___(_)_ __ ___| | ___   ___\n / _` |  / __| | '__/ __| |/ _ \\  / __| | '__/ __| |/ _ \\ / __|\n| (_| | | (__| | | | (__| |  __/ | (__| | | | (__| |  __/| (__\n \\__,_|  \\___|_|_|  \\___|_|\\___|  \\___|_|_|  \\___|_|\\___(_)___|\n\n      _          _\n  ___(_)_ __ ___| | ___   _____   ____ _\n / __| | '__/ __| |/ _ \\ / __\\ \\ / / _` |\n| (__| | | | (__| |  __/_\\__ \\\\ V / (_| |\n \\___|_|_|  \\___|_|\\___(_)___/ \\_/ \\__, |\n                                   |___/\n\n __  __       _         __ _ _\n|  \\/  | __ _| | _____ / _(_) | ___\n| |\\/| |/ _` | |/ / _ \\ |_| | |/ _ \\\n| |  | | (_| |   &lt;  __/  _| | |  __/\n|_|  |_|\\__,_|_|\\_\\___|_| |_|_|\\___|\n\n                      _                        _          _\n             _        _       _       _\n ___| | _____| |_ ___| |__   | |__\n/ __| |/ / _ \\ __/ __| '_ \\  | '_ \\\n\\__ \\   &lt;  __/ || (__| | | | | |_) |\n|___/_|\\_\\___|\\__\\___|_| |_| |_.__/\n                                                          _\nThe special character * means all the files in the current directory. You can verify that by running echo *.\n$ echo *\ncircle circle.c circle.svg Makefile sketch\nWe can enclose the arguments in single quotes to ignore the special characters.\n$ figlet 'a * b'\n                _\n  __ _  __/\\__ | |__\n / _` | \\    / | '_ \\\n| (_| | /_  _\\ | |_) |\n \\__,_|   \\/   |_.__/\nNow, let’s try a new command seq. The seq command takes a number n as argument and prints all numbers from 1 to n.\n$ seq 5\n1\n2\n3\n4\n5\nHow do we combine the seq and figlet program together so that the output of seq is passed as input to figlet? We just use the | character.\n$ seq 5 | figlet\n _\n/ |\n| |\n| |\n|_|\n\n ____\n|___ \\\n  __) |\n / __/\n|_____|\n\n _____\n|___ /\n  |_ \\\n ___) |\n|____/\n\n _  _\n| || |\n| || |_\n|__   _|\n   |_|\n\n ____\n| ___|\n|___ \\\n ___) |\n|____/\nThere is another interesting program called cowsay. It is usually not in the PATH (more about this later) so we need to give the full path for it to work. It is at path /usr/games/cowsay.\n$ /usr/games/cowsay hello world\n _____________\n&lt; hello world &gt;\n -------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\nWe could use a different animal by specifing the cowfile using option -f.\n$ /usr/games/cowsay -f tux hello world\n _____________\n&lt; hello world &gt;\n -------------\n   \\\n    \\\n        .--.\n       |o_o |\n       |:_/ |\n      //   \\ \\\n     (|     | )\n    /'\\_   _/`\\\n    \\___)=(___/\n$ seq 5 | /usr/games/cowsay\n ___________\n&lt; 1 2 3 4 5 &gt;\n -----------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 5 | /usr/games/cowsay -n\n ___\n/ 1 \\\n| 2 |\n| 3 |\n| 4 |\n\\ 5 /\n ---\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ seq 2 | figlet | /usr/games/cowsay -n\n _________\n/  _      \\\n| / |     |\n| | |     |\n| | |     |\n| |_|     |\n|         |\n|  ____   |\n| |___ \\  |\n|   __) | |\n|  / __/  |\n| |_____| |\n\\         /\n ---------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ echo hello | figlet | /usr/games/cowsay -n\n ________________________\n/  _          _ _        \\\n| | |__   ___| | | ___   |\n| | '_ \\ / _ \\ | |/ _ \\  |\n| | | | |  __/ | | (_) | |\n| |_| |_|\\___|_|_|\\___/  |\n\\                        /\n ------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet\nhello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\nworld\n                    _     _\n__      _____  _ __| | __| |\n\\ \\ /\\ / / _ \\| '__| |/ _` |\n \\ V  V / (_) | |  | | (_| |\n  \\_/\\_/ \\___/|_|  |_|\\__,_|\n\n$ /usr/games/cowsay -n\nhello\nworld\n _______\n/ hello \\\n\\ world /\n -------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ figlet hello\n _          _ _\n| |__   ___| | | ___\n| '_ \\ / _ \\ | |/ _ \\\n| | | |  __/ | | (_) |\n|_| |_|\\___|_|_|\\___/\n\n$ figlet -f slant hello\n    __         ____\n   / /_  ___  / / /___\n  / __ \\/ _ \\/ / / __ \\\n / / / /  __/ / / /_/ /\n/_/ /_/\\___/_/_/\\____/\n\n$ figlet -f lean hello\n\n    _/                  _/  _/\n   _/_/_/      _/_/    _/  _/    _/_/\n  _/    _/  _/_/_/_/  _/  _/  _/    _/\n _/    _/  _/        _/  _/  _/    _/\n_/    _/    _/_/_/  _/  _/    _/_/\n\n\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ cd\n$ pwd\n/home/anand\n$ cd /home/anand/github/anandology/isi-fcp/computing\n$\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat numbers.sh\nn=$1\nseq $n | figlet$\n$\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ cat\nhello\nhello\n$ ls -l\ntotal 168\n-rwxrwxr-x 1 anand anand 16976 Jul 30 21:54 circle\n-rw-rw-r-- 1 anand anand   196 Jul 29 00:16 circle.c\n-rw-rw-r-- 1 anand anand  6682 Aug  5 10:55 circle.svg\ndrwxrwxr-x 2 anand anand 32768 Aug  6 17:51 frames\n-rw-rw-r-- 1 anand anand   575 Aug  6 17:46 Makefile\n-rwxrwxr-x 1 anand anand 17152 Aug  6 17:50 moving-circle\n-rwxrwxr-x 1 anand anand 17024 Aug  6 17:32 moving-circle2\n-rw-rw-r-- 1 anand anand   433 Aug  6 17:32 moving-circle2.c\n-rw-rw-r-- 1 anand anand  1034 Aug  6 18:11 moving-circle.c\n-rw-rw-r-- 1 anand anand 40176 Aug  6 17:52 moving-circle.mp4\n-rw-rw-r-- 1 anand anand   359 Aug  6 17:36 moving-circle.svg\n-rw-rw-r-- 1 anand anand    21 Aug 12 12:07 numbers.sh\nlrwxrwxrwx 1 anand anand     9 Aug  5 10:55 sketch -&gt; ../sketch\n$ whoami\nanand\n$\n$ figlet sketch\n     _        _       _\n ___| | _____| |_ ___| |__\n/ __| |/ / _ \\ __/ __| '_ \\\n\\__ \\   &lt;  __/ || (__| | | |\n|___/_|\\_\\___|\\__\\___|_| |_|\n\n$ figlet -f slant sketch\n        __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ figlet -f slant sketch &gt; sketch.txt\n$ pwd\n/home/anand/github/anandology/isi-fcp/computing\n$ ls\ncircle      Makefile          moving-circle.c    sketch\ncircle.c    moving-circle     moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2    moving-circle.svg\nframes      moving-circle2.c  numbers.sh\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ seq\n$ seq 1000000 &gt; 1m.txt\n$ ls -l *.txt\n-rw-rw-r-- 1 anand anand 6888896 Aug 12 12:15 1m.txt\n-rw-rw-r-- 1 anand anand     198 Aug 12 12:12 sketch.txt\n$ wc -l 1m.txt\n1000000 1m.txt\n\n$ cat sketch.txt\n         __        __       __\n   _____/ /_____  / /______/ /_\n  / ___/ //_/ _ \\/ __/ ___/ __ \\\n (__  ) ,&lt; /  __/ /_/ /__/ / / /\n/____/_/|_|\\___/\\__/\\___/_/ /_/\n\n$ /usr/games/cowsay -n &lt; sketch.txt\n __________________________________\n/          __        __       __   \\\n|    _____/ /_____  / /______/ /_  |\n|   / ___/ //_/ _ \\/ __/ ___/ __ \\ |\n|  (__  ) ,&lt; /  __/ /_/ /__/ / / / |\n| /____/_/|_|\\___/\\__/\\___/_/ /_/  |\n\\                                  /\n ----------------------------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$ cat numbers.sh\nn=$1\nseq $n | figlet\n$ /usr/games/cowsay -n &lt; numbers.sh\n _________________\n/ n=$1            \\\n\\ seq $n | figlet /\n -----------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||\n$\n$ seq 2000 | tail -5\n1996\n1997\n1998\n1999\n2000\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)+/g\\1,/'\n1234567\n$ echo 1234567 | sed 's/\\(...\\)/g\\1,/'\ng123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/'\n123,4567\n$ echo 1234567 | sed 's/\\(...\\)/\\1,/g'\n123,456,7\n$ echo 1234567 | sed 's/.*\\(...\\)/\\1,/g'\n567,\n$ echo 1234567 | sed 's/\\(...\\)+/\\1,/g'\n1234567\n$ sudo apt-get -y install wbritish\n[sudo] password for anand:\nSorry, try again.\n[sudo] password for anand:\nReading package lists... Done\nBuilding dependency tree... Done\nReading state information... Done\nwbritish is already the newest version (2020.12.07-2).\n0 upgraded, 0 newly installed, 0 to remove and 706 not upgraded.\n$\n$ ls\n1m.txt      frames          moving-circle2.c   numbers.sh\ncircle      Makefile        moving-circle.c    sketch\ncircle.c    moving-circle   moving-circle.mp4  sketch.txt\ncircle.svg  moving-circle2  moving-circle.svg\n$\n\n$ cat moving-circle.c\n#include &lt;sketch.h&gt;\n#include &lt;unistd.h&gt;\n\nint frame_count = 0;\n\n// saves each frame as file frames/0000.svg, frames/0001.svg etc.\nvoid save_frame()\n{\n    char filename[100];\n\n    // format the file name and save it into the variable filename\n    sprintf(filename, \"frames/%04d.svg\", frame_count);\n\n    // save the sketch into the frame filename\n    save_sketch(filename);\n\n    // increment the frame count, so that the next call to this function\n    // will write to a different file\n    frame_count++;\n\n    printf(\"saved %s\\n\", filename);\n}\n\nint main()\n{\n    float r = 50;\n    float y = 0;\n    float x = -300 + r;\n\n    while (x &lt; 300)\n    {\n        // clear everything that is drawn so far\n        clear_sketch();\n\n        // draw one circle\n        draw_circle(x, y, r);\n\n        // save the sketch\n        // since we are doing this in a loop, the svg extension of vscode will\n        // update the image everytime the file is updated.\n        save_frame();\n\n        // move the circle by 10 pixels to the right\n        x++;\n    }\n}\n\n$ grep draw moving-circle.c\n        // clear everything that is drawn so far\n        // draw one circle\n        draw_circle(x, y, r);\n$ grep draw_ moving-circle.c\n        draw_circle(x, y, r);\n$ seq 1000000 | grep 5 | wc -l\n468559\n$ seq 1000000 | grep '5.*5' | head\n55\n155\n255\n355\n455\n505\n515\n525\n535\n545\n$ seq 1000000 | grep '5.*5' | wc -l\n114265",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
+    "href": "lecture-notes/2024-08-12/index.html#solving-wordle-with-command-line",
+    "title": "Lecture Notes - Mon Aug 12, 2024",
+    "section": "Solving Wordle with command-line",
+    "text": "Solving Wordle with command-line\nWordle is a word game where you guess a word.\nWe are going to try solving it using unix command-line tools. For this we are going to use the command grep to match lines in a file that match given Regular Expression pattern.\nThe file /usr/share/dict/words contains all the words in the dictionary, one in each line.\n\n\n\n\n\n\nNote\n\n\n\nIf you don’t find that file, it means you don’t have a dictionary installed. Install it by running:\n$ sudo apt-get -y install wbritish\n\n\n$ wc -l /usr/share/dict/words\n104334 /usr/share/dict/words\nLet’s try to find all words that start with a prefix, say ice.\n$ grep '^ice' /usr/share/dict/words\nice\niceberg\niceberg's\nicebergs\nicebound\nicebox\niceboxes\nicebox's\nicebreaker\nicebreaker's\nicebreakers\nicecap\nicecap's\nicecaps\niced\nice's\nices\nLet’s find all the 5 letter words in the dictionary.\n$ grep '^.....$' /usr/share/dict/words | head\nABC's\nABM's\nAFAIK\nAFC's\nAMD's\nANSIs\nANZUS\nAOL's\nASCII\nASL's\n$ grep '^.....$' /usr/share/dict/words | wc -l\n7044\nThere are quite many of them. Let’s start with a guess. What shall we start with? Ok, FLAME!\n\n\n\nHow many 5-letter words are there that have letter f in them?\n$ grep '^.....$' /usr/share/dict/words | grep f | wc -l\n469\nThe letter L, A, M and E are not present in our word. Let’s try to skip all the words that have any of these characters.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | wc -l\n123\nThat is still quite a lof of them. Lets see some of those options.\n$ grep '^.....$' /usr/share/dict/words | grep f | grep -v '[lame]' | head\nAcuff\nAfros\nBuffy\nCorfu\nDuffy\nKhufu\nKnopf\nRufus\nSwift\nbiffs\nI’m going to try one of them. I’ll go with Swift.\n\n\n\nNow that we know correct letters in three positions and 6 letters that are not present, let’s see what all words are available.\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]' | head\nskiff\nsniff\n$ grep '^s.if.$' /usr/share/dict/words |  grep -v '[lamewt]'\nskiff\nsniff\nLet’s try with the first one skiff.\n\n\n\nYay! We solved Worle with command-line!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Aug 12, 2024"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html",
+    "href": "lecture-notes/02/index.html",
+    "title": "Lecture Notes 02",
+    "section": "",
+    "text": "Warning\n\n\n\nThis lecture notes is still work in progress. Not all programs covered in the class are added here yet. The remaining ones will be added soon!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#introduction",
+    "href": "lecture-notes/02/index.html#introduction",
+    "title": "Lecture Notes 02",
+    "section": "Introduction",
+    "text": "Introduction\nWhy should you learn programming?\n\nA powerful programming language is more than just a means for instructing a computer to perform tasks. The language also serves as a framework within which we organize our ideas about processes.\n\n– Structure and Interpretation of Computer Programs\n\nEvery powerful language has three mechanisms for accomplishing this:\n\nprimitive expressions, which represent the simplest entities the language is concerned with,\nmeans of combination, by which compound elements are built from simpler ones, and\nmeans of abstraction, by which compound elements can be named and manipulated as units.\n\n\n– Structure and Interpretation of Computer Programs",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#diving-in",
+    "href": "lecture-notes/02/index.html#diving-in",
+    "title": "Lecture Notes 02",
+    "section": "Diving in",
+    "text": "Diving in\n\nA Circle\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    // draw a circle with center as (0, 0) and radius 100\n    draw_circle(0, 0, 100);\n\n    // save all the shapes draws to lesson2.svg\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nTwo Circles\nHow do we draw two circles instead of just one?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(-100, 0, 100);\n    draw_circle(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\nHow about drawing two concentic circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    draw_circle(0, 0, 200);\n    draw_circle(0, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nWhat if we want three circles?\n#include &lt;sketch.h&gt;\n\nint main()\n{\n    float r = 150;\n\n    draw_circle(0, 0, r / 3);\n    draw_circle(0, 0, 2 * r / 3);\n    draw_circle(0, 0, r);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCandle Lights\n#include &lt;sketch.h&gt;\n\nvoid bottle_circle(float bx, float by, float r)\n{\n    float cx = bx;\n    float cy = by + r;\n\n    draw_circle(cx, cy, r);\n}\n\nvoid draw_candle_light(float x, float y, float r)\n{\n    bottle_circle(x, y, r / 3);\n    bottle_circle(x, y, 2 * r / 3);\n    bottle_circle(x, y, r);\n}\n\nint main()\n{\n    draw_candle_light(-100, 0, 100);\n    draw_candle_light(100, 0, 100);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConcentric Circles\n#include &lt;sketch.h&gt;\n\nvoid concentric_circles(float x, float y, float r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        draw_circle(x, y, i * r / n);\n    }\n}\n\nint main()\n{\n    concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nRandom Concentric Circles\n#include &lt;sketch.h&gt;\n#include &lt;stdlib.h&gt;\n#include &lt;time.h&gt;\n\nvoid random_concentric_circles(float x, float y, int r, float n)\n{\n    for (int i = 1; i &lt;= n; i++)\n    {\n        // pick a random number from 1 to r\n        float r1 = 1 + rand() % r;\n\n        draw_circle(x, y, r1);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    random_concentric_circles(0, 0, 250, 10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\nTry running this program again and you’ll get completely different circles!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#string-art",
+    "href": "lecture-notes/02/index.html#string-art",
+    "title": "Lecture Notes 02",
+    "section": "String Art",
+    "text": "String Art\nLet’s add a bit more complexity. How do you find N points equidistant on a circle?\nYes, trigonometry!\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\nConnecting Points\nWhat if we connect some points?\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect(0, 4);\n    connect(1, 5);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nConnecting All Points\nLet’s go one step further and connect all the points.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(10);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nA Pattern\nWe could use connect_all multiple times to generate very interesting pattern.\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n\n#define N 36\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    make_circle(250);\n\n    connect_all(16);\n    connect_all(12);\n    connect_all(7);\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nCardoid\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 72\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    make_circle(250);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, 2 * i);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}\n\n\n\n\n\nFinal Touch\n#include &lt;sketch.h&gt;\n#include &lt;math.h&gt;\n#include &lt;time.h&gt;\n#include &lt;stdlib.h&gt;\n\n#define N 720\n\nfloat X[N];\nfloat Y[N];\n\n// initialze the X and Y for N points\n// on circle of radius r\nvoid make_circle(float r)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        float theta = 2 * M_PI / N * i;\n        X[i] = r * cos(theta);\n        Y[i] = r * sin(theta);\n        // draw_circle(X[i], Y[i], 2);\n    }\n}\n\nvoid connect(int i, int j)\n{\n    i = i % N;\n    j = j % N;\n    draw_line(X[i], Y[i], X[j], Y[j]);\n}\n\nvoid connect_all(int delta)\n{\n    for (int i = 0; i &lt; N; i++)\n    {\n        connect(i, i + delta);\n    }\n}\n\nint main()\n{\n    // initialize the random number generator\n    srand(time(NULL));\n\n    set_stroke_width(0.5);\n    set_stroke(\"#44444480\");\n\n    make_circle(250);\n\n    // connect_all(16);\n    // connect_all(12);\n    // connect_all(7);\n\n    for (int i = 0; i &lt; N; i++)\n    {\n        int d = N / 6;\n\n        connect(i, (i * i) % d);\n    }\n\n    save_sketch(\"lesson2.svg\");\n}",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/02/index.html#references",
+    "href": "lecture-notes/02/index.html#references",
+    "title": "Lecture Notes 02",
+    "section": "References",
+    "text": "References\n\nStructure and Interpretation of Computer Programs\nCurve stitching: the art of sewing beautiful mathematical patterns, Jon Millington",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 02"
+    ]
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "unix-power-tools.html",
+    "href": "unix-power-tools.html",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Unix has many power tools to automate a lot of boring things. In this chapter, we’ll look at some of those tools.\n\n\nWildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c\n\n\n\nRegular Expressions are used to search for and replace various patterns in text.\nTODO:\n\n\n\nSorts the input.\nTODO:\n\n\n\nFind the unique elements in a sorted input.\n\n\n\nThe find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc\n\n\n\nTODO:\n\n\n\nAwk is a mini language for manipulating columns of data.\nTODO:\n\n\n\n\nPrint all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file\n\n\n\n\n\nUnix Power Tools -\nAwk - Wizardzines",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#wildcards",
+    "href": "unix-power-tools.html#wildcards",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Wildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#regular-expressions",
+    "href": "unix-power-tools.html#regular-expressions",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Regular Expressions are used to search for and replace various patterns in text.\nTODO:",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#sort",
+    "href": "unix-power-tools.html#sort",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Sorts the input.\nTODO:",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#uniq",
+    "href": "unix-power-tools.html#uniq",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Find the unique elements in a sorted input.",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#find---finding-files",
+    "href": "unix-power-tools.html#find---finding-files",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "The find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#grep",
+    "href": "unix-power-tools.html#grep",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "TODO:",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#awk",
+    "href": "unix-power-tools.html#awk",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Awk is a mini language for manipulating columns of data.\nTODO:",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#problems",
+    "href": "unix-power-tools.html#problems",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Print all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "unix-power-tools.html#references",
+    "href": "unix-power-tools.html#references",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "Unix Power Tools -\nAwk - Wizardzines",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setting-up-git",
+    "href": "git.html#setting-up-git",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setup-ssh-keys",
+    "href": "git.html#setup-ssh-keys",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#git-usage-complexity",
+    "href": "git.html#git-usage-complexity",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#cloning-a-repository",
+    "href": "git.html#cloning-a-repository",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#commiting-changes",
+    "href": "git.html#commiting-changes",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#references",
+    "href": "git.html#references",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-09-30/index.html",
+    "href": "lecture-notes/2024-09-30/index.html",
+    "title": "Lecture Notes - Mon Sep 30, 2024",
+    "section": "",
+    "text": "$ pwd\n/home/anand/github/anandology/isi-fcp\n$ cd data\n$ ls\nun-data.tsv  un.tsv\nWe are going to work with the un.tsv file.\nLet’s see the first few lines of that file.\n$ head un.tsv\ncountry region  lifeMale    lifeFemale  infantMortality GDPperCapita\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nArmenia Europe  67.2    74.0    25  354\nAustralia   Oceania 75.4    81.2    6   20046\nAustria Europe  73.7    80.1    6   29006\nAzerbaijan  Asia    66.5    74.5    33  321\nAnd the last few lines.\n$ tail un.tsv\nUnited.States   America 73.4    80.1    7   26037\nUruguay America 69.6    76.1    17  5602\nUzbekistan  Asia    64.3    70.7    43  435\nVanuatu Oceania 65.5    69.5    38  1289\nVenezuela   America 70.0    75.7    21  3496\nViet.Nam    Asia    64.9    69.6    37  270\nYemen   Asia    57.4    58.4    80  732\nYugoslavia  Europe  69.8    75.3    19  1487\nZambia  Africa  42.2    43.7    103 382\nZimbabwe    Africa  47.6    49.4    68  786\nHow many lines/rows of data do we have? Let’s use the wordcount command wc to find it out.\n$ wc un.tsv\n 189 1134 6407 un.tsv\n\n$ wc -l un.tsv\n189 un.tsv\nIt has 189 lines. If we ignore the first line, which is the header, the file un.tsv has data for 188 countries.\nLet’s skip the header so that we can work just with the data.\n$ tail -n +2 un.tsv &gt; un-data.tsv\nThe above command takes the contents of un.tsv from the 2nd line onwards and writes the output to un-data.tsv.\nThe new file will not have the header and the number of lines will be less by one.\n$ head -5 un-data.tsv\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nSee, the header is gone.\n$ wc -l *.tsv\n  188 un-data.tsv\n  189 un.tsv\n  377 total\nThe new file has one line less than the original file.\n\n\n\nWe can use the grep command for searching for patterns. The grep command supports regular expressions, but for now we’ll search only for simple strings.\nLet’s see some countries in Asia.\n$ grep Asia un-data.txt | head -5\nAfghanistan Asia    45.0    46.0    154 2848\nAzerbaijan  Asia    66.5    74.5    33  321\nBahrain Asia    71.1    75.3    18  9073\nBangladesh  Asia    58.1    58.2    78  280\nBhutan  Asia    51.6    54.9    104 166\nHow many countries are there in Asia?\n$ grep Asia un-data.tsv | wc -l\n46\nWe could also do the same using the -c option of grep command, which counts the number of matches.\n$ grep -c Asia un-data.tsv\n46\n\n\n\nWe can select a column from tabular data using the cut command.\nFor example, the following commmand select the 2nd column, the region.\n$ cut -f2 un-data.tsv | head -5\nAsia\nEurope\nAfrica\nAfrica\nAmerica\nWhat are the unique regions?\n$ cut -f2 un-data.tsv | sort | uniq\nAfrica\nAmerica\nAsia\nEurope\nOceania\nCan we get the counts for each region?\n$ cut -f2 un-data.tsv | sort | uniq -c\n     53 Africa\n     35 America\n     46 Asia\n     40 Europe\n     14 Oceania\n\n\n\nLet’s ask some intersting questions now.\nWhich countries have lowest infant mortality?\nInfant Mortality is the 5th column.\nLet’s select only the country and infant mortality columns first.\n$ cut -f1,5 un-data.tsv | head -5\nAfghanistan 154\nAlbania 32\nAlgeria 44\nAngola  124\nArgentina   22\nNow pipe this to sort to sort based on the last column.\n$ cut -f1,5 un-data.tsv | sort -k2 | head\nCroatia 10\nFrench.Polynesia    10\nNetherlands.Antilles    10\nCambodia    102\nZambia  103\nBhutan  104\nDjibouti    106\nEquatorial.Guinea   107\nEthiopia    107\nMalaysia    11\nThere seems to be an issue. Sort is sorting the numbers alphabetically, not numerically. Let’s fix this by asking sort to sort numerically by passing option -n.\n$ cut -f1,5 un-data.tsv | sort -k2 -n | head\nTonga   3\nJapan   4\nFinland 5\nHong.Kong   5\nIceland 5\nNorway  5\nSingapore   5\nSweden  5\nSwitzerland 5\nAustralia   6\nCan we find mean life expectency across male and female?\nTechnically, it is not possible to compute the combined mean from two means unless we know the population size for male and female. For simplicity, let’s assume the the population of male and female is the same. With that assumption, we can compute the combine mean by taking the average of the two values.\nWe are going to use awk for solving this.\nThe columns of interest are column 3 (lifeMale) and column 4 (lifeFemale).\n$ awk '{print $1, ($3+$4)/2;}' un-data.tsv | head\nAfghanistan 45.5\nAlbania 71\nAlgeria 68.9\nAngola 46.5\nArgentina 73.2\nArmenia 70.6\nAustralia 78.3\nAustria 76.9\nAzerbaijan 70.5\nBahamas 73.8\nList the rich countries\nLet’s consider the countries with GDP per Capita more than $20000 as rich countries.\n$ awk '$6 &gt; 20000 {print $1, $6;}' un-data.tsv\nAustralia 20046\nAustria 29006\nBelgium 26582\nDenmark 33191\nFinland 24453\nFrance 26444\nGermany 29632\nHong.Kong 22898\nIceland 26217\nJapan 41718\nLuxembourg 35109\nNetherlands 25635\nNorway 33734\nSingapore 25581\nSweden 26253\nSwitzerland 42416\nUnited.States 26037\nWhich countries have highest difference between the life expectency of male and female?\nLet’s look at the difference between those two values.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | head\nAfghanistan 45.0 46.0 -1\nAlbania 68.0 74.0 -6\nAlgeria 67.5 70.3 -2.8\nAngola 44.9 48.1 -3.2\nArgentina 69.6 76.8 -7.2\nArmenia 67.2 74.0 -6.8\nAustralia 75.4 81.2 -5.8\nAustria 73.7 80.1 -6.4\nAzerbaijan 66.5 74.5 -8\nBahamas 70.5 77.1 -6.6\nWe need to find the countries with highest difference.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | sort -k4 -nr | tail\nReunion 70.9 79.8 -8.9\nPoland 66.7 75.7 -9\nHungary 64.5 73.8 -9.3\nKazakhstan 62.8 72.5 -9.7\nUkraine 63.6 74.0 -10.4\nBelarus 64.4 74.8 -10.4\nLithuania 64.9 76.0 -11.1\nEstonia 63.9 75.0 -11.1\nLatvia 62.5 74.3 -11.8\nRussia 58.0 71.5 -13.5\nWhat is the average life expectency across countries?\nWe can’t really compute this becase we don’t have the population of each country. Just for this exercise, assume that the population of each country is the same.\n$ awk '{ total += $3; } END { print total/NR }' un-data.tsv\n63.5261\nWhat if we want to find the average male life expectency only in Asia?\n$ awk '$2 == \"Asia\" { total += $3; } END { print total/NR }' un-data.tsv\n15.9957\nSomething seems to be wrong. We are dividing the total by the total number of countries instead of the number of countries in Asia. For that we need to maintain another counter.\n$ awk '$2 == \"Asia\" { total += $3; countries++; } END { print total/countries; }' un-data.tsv\n65.3739\nAverage infant mortality by continent\nAgain, ignoring the population of each country for simiplicity.\n$ awk '{ total[$2] += $5; countries[$2]++} END {for (name in total) { print name, total[name]/countries[name]; }}' un-data.tsv\nAmerica 26.6571\nAfrica 86.3208\nAsia 43.7826\nEurope 11.575\nOceania 24.6429",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Sep 30, 2024"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-09-30/index.html#unix-power-tools",
+    "href": "lecture-notes/2024-09-30/index.html#unix-power-tools",
+    "title": "Lecture Notes - Mon Sep 30, 2024",
+    "section": "",
+    "text": "$ pwd\n/home/anand/github/anandology/isi-fcp\n$ cd data\n$ ls\nun-data.tsv  un.tsv\nWe are going to work with the un.tsv file.\nLet’s see the first few lines of that file.\n$ head un.tsv\ncountry region  lifeMale    lifeFemale  infantMortality GDPperCapita\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nArmenia Europe  67.2    74.0    25  354\nAustralia   Oceania 75.4    81.2    6   20046\nAustria Europe  73.7    80.1    6   29006\nAzerbaijan  Asia    66.5    74.5    33  321\nAnd the last few lines.\n$ tail un.tsv\nUnited.States   America 73.4    80.1    7   26037\nUruguay America 69.6    76.1    17  5602\nUzbekistan  Asia    64.3    70.7    43  435\nVanuatu Oceania 65.5    69.5    38  1289\nVenezuela   America 70.0    75.7    21  3496\nViet.Nam    Asia    64.9    69.6    37  270\nYemen   Asia    57.4    58.4    80  732\nYugoslavia  Europe  69.8    75.3    19  1487\nZambia  Africa  42.2    43.7    103 382\nZimbabwe    Africa  47.6    49.4    68  786\nHow many lines/rows of data do we have? Let’s use the wordcount command wc to find it out.\n$ wc un.tsv\n 189 1134 6407 un.tsv\n\n$ wc -l un.tsv\n189 un.tsv\nIt has 189 lines. If we ignore the first line, which is the header, the file un.tsv has data for 188 countries.\nLet’s skip the header so that we can work just with the data.\n$ tail -n +2 un.tsv &gt; un-data.tsv\nThe above command takes the contents of un.tsv from the 2nd line onwards and writes the output to un-data.tsv.\nThe new file will not have the header and the number of lines will be less by one.\n$ head -5 un-data.tsv\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nSee, the header is gone.\n$ wc -l *.tsv\n  188 un-data.tsv\n  189 un.tsv\n  377 total\nThe new file has one line less than the original file.\n\n\n\nWe can use the grep command for searching for patterns. The grep command supports regular expressions, but for now we’ll search only for simple strings.\nLet’s see some countries in Asia.\n$ grep Asia un-data.txt | head -5\nAfghanistan Asia    45.0    46.0    154 2848\nAzerbaijan  Asia    66.5    74.5    33  321\nBahrain Asia    71.1    75.3    18  9073\nBangladesh  Asia    58.1    58.2    78  280\nBhutan  Asia    51.6    54.9    104 166\nHow many countries are there in Asia?\n$ grep Asia un-data.tsv | wc -l\n46\nWe could also do the same using the -c option of grep command, which counts the number of matches.\n$ grep -c Asia un-data.tsv\n46\n\n\n\nWe can select a column from tabular data using the cut command.\nFor example, the following commmand select the 2nd column, the region.\n$ cut -f2 un-data.tsv | head -5\nAsia\nEurope\nAfrica\nAfrica\nAmerica\nWhat are the unique regions?\n$ cut -f2 un-data.tsv | sort | uniq\nAfrica\nAmerica\nAsia\nEurope\nOceania\nCan we get the counts for each region?\n$ cut -f2 un-data.tsv | sort | uniq -c\n     53 Africa\n     35 America\n     46 Asia\n     40 Europe\n     14 Oceania\n\n\n\nLet’s ask some intersting questions now.\nWhich countries have lowest infant mortality?\nInfant Mortality is the 5th column.\nLet’s select only the country and infant mortality columns first.\n$ cut -f1,5 un-data.tsv | head -5\nAfghanistan 154\nAlbania 32\nAlgeria 44\nAngola  124\nArgentina   22\nNow pipe this to sort to sort based on the last column.\n$ cut -f1,5 un-data.tsv | sort -k2 | head\nCroatia 10\nFrench.Polynesia    10\nNetherlands.Antilles    10\nCambodia    102\nZambia  103\nBhutan  104\nDjibouti    106\nEquatorial.Guinea   107\nEthiopia    107\nMalaysia    11\nThere seems to be an issue. Sort is sorting the numbers alphabetically, not numerically. Let’s fix this by asking sort to sort numerically by passing option -n.\n$ cut -f1,5 un-data.tsv | sort -k2 -n | head\nTonga   3\nJapan   4\nFinland 5\nHong.Kong   5\nIceland 5\nNorway  5\nSingapore   5\nSweden  5\nSwitzerland 5\nAustralia   6\nCan we find mean life expectency across male and female?\nTechnically, it is not possible to compute the combined mean from two means unless we know the population size for male and female. For simplicity, let’s assume the the population of male and female is the same. With that assumption, we can compute the combine mean by taking the average of the two values.\nWe are going to use awk for solving this.\nThe columns of interest are column 3 (lifeMale) and column 4 (lifeFemale).\n$ awk '{print $1, ($3+$4)/2;}' un-data.tsv | head\nAfghanistan 45.5\nAlbania 71\nAlgeria 68.9\nAngola 46.5\nArgentina 73.2\nArmenia 70.6\nAustralia 78.3\nAustria 76.9\nAzerbaijan 70.5\nBahamas 73.8\nList the rich countries\nLet’s consider the countries with GDP per Capita more than $20000 as rich countries.\n$ awk '$6 &gt; 20000 {print $1, $6;}' un-data.tsv\nAustralia 20046\nAustria 29006\nBelgium 26582\nDenmark 33191\nFinland 24453\nFrance 26444\nGermany 29632\nHong.Kong 22898\nIceland 26217\nJapan 41718\nLuxembourg 35109\nNetherlands 25635\nNorway 33734\nSingapore 25581\nSweden 26253\nSwitzerland 42416\nUnited.States 26037\nWhich countries have highest difference between the life expectency of male and female?\nLet’s look at the difference between those two values.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | head\nAfghanistan 45.0 46.0 -1\nAlbania 68.0 74.0 -6\nAlgeria 67.5 70.3 -2.8\nAngola 44.9 48.1 -3.2\nArgentina 69.6 76.8 -7.2\nArmenia 67.2 74.0 -6.8\nAustralia 75.4 81.2 -5.8\nAustria 73.7 80.1 -6.4\nAzerbaijan 66.5 74.5 -8\nBahamas 70.5 77.1 -6.6\nWe need to find the countries with highest difference.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | sort -k4 -nr | tail\nReunion 70.9 79.8 -8.9\nPoland 66.7 75.7 -9\nHungary 64.5 73.8 -9.3\nKazakhstan 62.8 72.5 -9.7\nUkraine 63.6 74.0 -10.4\nBelarus 64.4 74.8 -10.4\nLithuania 64.9 76.0 -11.1\nEstonia 63.9 75.0 -11.1\nLatvia 62.5 74.3 -11.8\nRussia 58.0 71.5 -13.5\nWhat is the average life expectency across countries?\nWe can’t really compute this becase we don’t have the population of each country. Just for this exercise, assume that the population of each country is the same.\n$ awk '{ total += $3; } END { print total/NR }' un-data.tsv\n63.5261\nWhat if we want to find the average male life expectency only in Asia?\n$ awk '$2 == \"Asia\" { total += $3; } END { print total/NR }' un-data.tsv\n15.9957\nSomething seems to be wrong. We are dividing the total by the total number of countries instead of the number of countries in Asia. For that we need to maintain another counter.\n$ awk '$2 == \"Asia\" { total += $3; countries++; } END { print total/countries; }' un-data.tsv\n65.3739\nAverage infant mortality by continent\nAgain, ignoring the population of each country for simiplicity.\n$ awk '{ total[$2] += $5; countries[$2]++} END {for (name in total) { print name, total[name]/countries[name]; }}' un-data.tsv\nAmerica 26.6571\nAfrica 86.3208\nAsia 43.7826\nEurope 11.575\nOceania 24.6429",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes - Mon Sep 30, 2024"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/01/index.html",
+    "href": "lecture-notes/01/index.html",
+    "title": "Lecture Notes 01",
+    "section": "",
+    "text": "This will be updated soon!",
+    "crumbs": [
+      "Lecture Notes",
+      "Lecture Notes 01"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/index.html",
+    "href": "lecture-notes/index.html",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "Lecture Notes\n\n\n\n\n\n\n\n\n\n\nLecture Notes - Mon Aug 12, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes - Mon Sep 30, 2024\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 01\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nJishnu Biswas\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 02\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Lecture Notes"
+    ]
+  },
+  {
+    "objectID": "git-slides/index.html#what-is-git",
+    "href": "git-slides/index.html#what-is-git",
+    "title": "Introduction to Git",
+    "section": "What is Git?",
+    "text": "What is Git?"
+  },
+  {
+    "objectID": "git-slides/index.html#what-is-a-version-control-system",
+    "href": "git-slides/index.html#what-is-a-version-control-system",
+    "title": "Introduction to Git",
+    "section": "What is a version control system?",
+    "text": "What is a version control system?\n\n\nWhy do we need a version control system?\n\n\nTo avoid sistualtions like this.\n\n\nImage Credits: notFinal.doc by Jorge Cham, https://www.phdcomics.com"
+  },
+  {
+    "objectID": "git-slides/index.html#git-vs.-github",
+    "href": "git-slides/index.html#git-vs.-github",
+    "title": "Introduction to Git",
+    "section": "Git vs. Github",
+    "text": "Git vs. Github\nGit is a version control system created by Linus Torvalds.\nGithub is a commercial service that offers git hosting in the cloud. It is very popular among the developers and it is almost the defacto standard for hosting code.\nIt is possible to use Git without using Github. However, for this course, we’ll use both Git and Github."
+  },
+  {
+    "objectID": "git-slides/index.html#setting-up-git",
+    "href": "git-slides/index.html#setting-up-git",
+    "title": "Introduction to Git",
+    "section": "Setting up Git",
+    "text": "Setting up Git\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github."
+  },
+  {
+    "objectID": "git-slides/index.html#setup-ssh-keys",
+    "href": "git-slides/index.html#setup-ssh-keys",
+    "title": "Introduction to Git",
+    "section": "Setup ssh-keys",
+    "text": "Setup ssh-keys\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github."
+  },
+  {
+    "objectID": "git-slides/index.html#create-a-repository-on-github",
+    "href": "git-slides/index.html#create-a-repository-on-github",
+    "title": "Introduction to Git",
+    "section": "Create a Repository on Github",
+    "text": "Create a Repository on Github\n\n\n\nLogin to github\nCreate a new repository with name git-practice.\nAdd Repository name and Description\nAnd select Add a README file."
+  },
+  {
+    "objectID": "git-slides/index.html#clone-the-repo",
+    "href": "git-slides/index.html#clone-the-repo",
+    "title": "Introduction to Git",
+    "section": "Clone the repo",
+    "text": "Clone the repo\nClone the repo to your local computer.\ngit clone git@github.com:anandology/git-practice.git"
+  },
+  {
+    "objectID": "git-slides/index.html#add-a-new-file-to-the-repo",
+    "href": "git-slides/index.html#add-a-new-file-to-the-repo",
+    "title": "Introduction to Git",
+    "section": "Add a new file to the repo",
+    "text": "Add a new file to the repo\n$ touch planets.md\n\n$ git status"
+  },
+  {
+    "objectID": "ubuntu-wsl.html",
+    "href": "ubuntu-wsl.html",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "Windows Subsystem for Linux, shortly called as WSL, is a feature of Microsoft Windows that supports installing a linux distributting running inside Windows.\nFollow the following instructions to install Ubuntu on your Windows computer using WSL.\nPlease note that only Windows 10 version 2004 and higher or Windows 11 are supported.\nStep 1: Open Windows Power Shell\nEnter Windows Power Shell in the system search bar and open the application.\nStep 2: Install Ubuntu using WSL\nWSL is Windows Subsystem for Linux and it supports running Linux inside Windows. For this course we’ll be using the Linux distribution Ubuntu 24.04.\nRun the following command in the power shell to download and install Ubuntu.\nwsl --install\nPlease make sure you have a fast internet connection as this step downloads more than 1GB of data.\nStep 3: Open Ubuntu Terminal\nEnter Ubuntu in the system search bar and open the application.\nYou’ll should see a Ubuntu terminal.\nThat’s all! You are now ready to code.\n← Back to Software Setup\n\n\n\nHow to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "ubuntu-wsl.html#references",
+    "href": "ubuntu-wsl.html#references",
+    "title": "Installing Ubuntu on Windows using WSL",
+    "section": "",
+    "text": "How to install Linux on Windows with WSL"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "",
+    "text": "Welcome to the Fundamentals of Computing and Programming course.\nPlease look at the course page on ISI Bangalore website for syllabus and other details.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Introduction",
+    "text": "Introduction\nThis course uses unix environment for writing, compiling and executing c programs.\nIf you are using Linux or Mac, you probably don’t need to setup anything. If you are on windows, you can set up Ubuntu using WSL and the instructions are provided in the Software Setup page.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#source-code",
+    "href": "index.html#source-code",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Source Code",
+    "text": "Source Code\nThe source code for this website is available at the following github repository:\nhttps://github.com/anandology/isi-fcp",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "Credits",
+    "text": "Credits\nThis course is taught of Prof. Jishnu Biswas, ISI Bangalore.\nThis website is setup by Anand Chitipothu.",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Fundamentals of Computing and Programming",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.\n\n\n\nCC BY-SA 4.0",
+    "crumbs": [
+      "Fundamentals of Computing and Programming"
+    ]
+  },
+  {
+    "objectID": "problem-sets/index.html",
+    "href": "problem-sets/index.html",
+    "title": "Problem Sets",
+    "section": "",
+    "text": "Problem Sets\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nProblem Set 1\n\n\nCSketch\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Problem Sets"
+    ]
   }
 ]
