@@ -1,0 +1,330 @@
+---
+title: Lecture Notes - Mon Sep 30, 2024
+date: 2024-09-30
+author:
+  - name: Anand Chitipothu
+---
+
+## Unix Power Tools
+
+### Previewing data using `head` and `tail`
+
+```txt
+$ pwd
+/home/anand/github/anandology/isi-fcp
+$ cd data
+$ ls
+un-data.tsv  un.tsv
+```
+
+We are going to work with the `un.tsv` file.
+
+Let's see the first few lines of that file.
+
+```txt
+$ head un.tsv
+country	region	lifeMale	lifeFemale	infantMortality	GDPperCapita
+Afghanistan	Asia	45.0	46.0	154	2848
+Albania	Europe	68.0	74.0	32	863
+Algeria	Africa	67.5	70.3	44	1531
+Angola	Africa	44.9	48.1	124	355
+Argentina	America	69.6	76.8	22	8055
+Armenia	Europe	67.2	74.0	25	354
+Australia	Oceania	75.4	81.2	6	20046
+Austria	Europe	73.7	80.1	6	29006
+Azerbaijan	Asia	66.5	74.5	33	321
+```
+
+And the last few lines.
+
+```txt
+$ tail un.tsv
+United.States	America	73.4	80.1	7	26037
+Uruguay	America	69.6	76.1	17	5602
+Uzbekistan	Asia	64.3	70.7	43	435
+Vanuatu	Oceania	65.5	69.5	38	1289
+Venezuela	America	70.0	75.7	21	3496
+Viet.Nam	Asia	64.9	69.6	37	270
+Yemen	Asia	57.4	58.4	80	732
+Yugoslavia	Europe	69.8	75.3	19	1487
+Zambia	Africa	42.2	43.7	103	382
+Zimbabwe	Africa	47.6	49.4	68	786
+```
+
+How many lines/rows of data do we have? Let's use the wordcount command `wc` to find it out.
+
+
+```txt
+$ wc un.tsv
+ 189 1134 6407 un.tsv
+
+$ wc -l un.tsv
+189 un.tsv
+```
+
+It has 189 lines. If we ignore the first line, which is the header, the file `un.tsv` has data for 188 countries.
+
+Let's skip the header so that we can work just with the data.
+
+```txt
+$ tail -n +2 un.tsv > un-data.tsv
+```
+The above command takes the contents of `un.tsv` from the 2nd line onwards and writes the output to `un-data.tsv`.
+
+The new file will not have the header and the number of lines will be less by one.
+
+```txt
+$ head -5 un-data.tsv
+Afghanistan	Asia	45.0	46.0	154	2848
+Albania	Europe	68.0	74.0	32	863
+Algeria	Africa	67.5	70.3	44	1531
+Angola	Africa	44.9	48.1	124	355
+Argentina	America	69.6	76.8	22	8055
+```
+
+See, the header is gone.
+
+```txt
+$ wc -l *.tsv
+  188 un-data.tsv
+  189 un.tsv
+  377 total
+```
+
+The new file has one line less than the original file.
+
+### Searching for patterns using `grep`
+
+We can use the `grep` command for searching for patterns. The `grep` command supports regular expressions, but for now we'll search only for simple strings.
+
+Let's see some countries in Asia.
+
+```txt
+$ grep Asia un-data.txt | head -5
+Afghanistan	Asia	45.0	46.0	154	2848
+Azerbaijan	Asia	66.5	74.5	33	321
+Bahrain	Asia	71.1	75.3	18	9073
+Bangladesh	Asia	58.1	58.2	78	280
+Bhutan	Asia	51.6	54.9	104	166
+```
+
+How many countries are there in Asia?
+
+```txt
+$ grep Asia un-data.tsv | wc -l
+46
+```
+
+We could also do the same using the `-c` option of grep command, which counts the number of matches.
+
+```txt
+$ grep -c Asia un-data.tsv
+46
+```
+
+### Selecting and Sorting data
+
+We can select a column from tabular data using the `cut` command.
+
+For example, the following commmand select the 2nd column, the region.
+
+```txt
+$ cut -f2 un-data.tsv | head -5
+Asia
+Europe
+Africa
+Africa
+America
+```
+
+What are the unique regions?
+
+```txt
+$ cut -f2 un-data.tsv | sort | uniq
+Africa
+America
+Asia
+Europe
+Oceania
+```
+
+Can we get the counts for each region?
+
+```txt
+$ cut -f2 un-data.tsv | sort | uniq -c
+     53 Africa
+     35 America
+     46 Asia
+     40 Europe
+     14 Oceania
+```
+
+### Interesting Questions
+
+Let's ask some intersting questions now.
+
+**Which countries have lowest infant mortality?**
+
+Infant Mortality is the 5th column.
+
+Let's select only the country and infant mortality columns first.
+
+```txt
+$ cut -f1,5 un-data.tsv | head -5
+Afghanistan	154
+Albania	32
+Algeria	44
+Angola	124
+Argentina	22
+```
+
+Now pipe this to `sort` to sort based on the last column.
+
+```txt
+$ cut -f1,5 un-data.tsv | sort -k2 | head
+Croatia	10
+French.Polynesia	10
+Netherlands.Antilles	10
+Cambodia	102
+Zambia	103
+Bhutan	104
+Djibouti	106
+Equatorial.Guinea	107
+Ethiopia	107
+Malaysia	11
+```
+
+There seems to be an issue. Sort is sorting the numbers alphabetically, not numerically. Let's fix this by asking `sort` to sort numerically by passing option `-n`.
+
+```txt
+$ cut -f1,5 un-data.tsv | sort -k2 -n | head
+Tonga	3
+Japan	4
+Finland	5
+Hong.Kong	5
+Iceland	5
+Norway	5
+Singapore	5
+Sweden	5
+Switzerland	5
+Australia	6
+```
+
+**Can we find mean life expectency across male and female?**
+
+Technically, it is not possible to compute the combined mean from two means unless we know the population size for male and female. For simplicity, let's assume the the population of male and female is the same. With that assumption, we can compute the combine mean by taking the average of the two values.
+
+We are going to use `awk` for solving this.
+
+The columns of interest are column 3 (`lifeMale`) and column 4 (`lifeFemale`).
+
+```txt
+$ awk '{print $1, ($3+$4)/2;}' un-data.tsv | head
+Afghanistan 45.5
+Albania 71
+Algeria 68.9
+Angola 46.5
+Argentina 73.2
+Armenia 70.6
+Australia 78.3
+Austria 76.9
+Azerbaijan 70.5
+Bahamas 73.8
+```
+
+**List the rich countries**
+
+Let's consider the countries with GDP per Capita more than `$20000` as rich countries.
+
+```txt
+$ awk '$6 > 20000 {print $1, $6;}' un-data.tsv
+Australia 20046
+Austria 29006
+Belgium 26582
+Denmark 33191
+Finland 24453
+France 26444
+Germany 29632
+Hong.Kong 22898
+Iceland 26217
+Japan 41718
+Luxembourg 35109
+Netherlands 25635
+Norway 33734
+Singapore 25581
+Sweden 26253
+Switzerland 42416
+United.States 26037
+```
+
+**Which countries have highest difference between the life expectency of male and female?**
+
+Let's look at the difference between those two values.
+
+```txt
+$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | head
+Afghanistan 45.0 46.0 -1
+Albania 68.0 74.0 -6
+Algeria 67.5 70.3 -2.8
+Angola 44.9 48.1 -3.2
+Argentina 69.6 76.8 -7.2
+Armenia 67.2 74.0 -6.8
+Australia 75.4 81.2 -5.8
+Austria 73.7 80.1 -6.4
+Azerbaijan 66.5 74.5 -8
+Bahamas 70.5 77.1 -6.6
+```
+
+We need to find the countries with highest difference.
+
+
+```txt
+$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | sort -k4 -nr | tail
+Reunion 70.9 79.8 -8.9
+Poland 66.7 75.7 -9
+Hungary 64.5 73.8 -9.3
+Kazakhstan 62.8 72.5 -9.7
+Ukraine 63.6 74.0 -10.4
+Belarus 64.4 74.8 -10.4
+Lithuania 64.9 76.0 -11.1
+Estonia 63.9 75.0 -11.1
+Latvia 62.5 74.3 -11.8
+Russia 58.0 71.5 -13.5
+```
+
+**What is the average life expectency across countries?**
+
+We can't really compute this becase we don't have the population of each country. Just for this exercise, assume that the population of each country is the same.
+
+```txt
+$ awk '{ total += $3; } END { print total/NR }' un-data.tsv
+63.5261
+```
+
+What if we want to find the  average male life expectency only in Asia?
+
+```txt
+$ awk '$2 == "Asia" { total += $3; } END { print total/NR }' un-data.tsv
+15.9957
+```
+
+Something seems to be wrong. We are dividing the total by the total number of countries instead of the number of countries in Asia. For that we need to maintain another counter.
+
+
+```txt
+$ awk '$2 == "Asia" { total += $3; countries++; } END { print total/countries; }' un-data.tsv
+65.3739
+```
+
+**Average infant mortality by continent**
+
+Again, ignoring the population of each country for simiplicity.
+
+```txt
+$ awk '{ total[$2] += $5; countries[$2]++} END {for (name in total) { print name, total[name]/countries[name]; }}' un-data.tsv
+America 26.6571
+Africa 86.3208
+Asia 43.7826
+Europe 11.575
+Oceania 24.6429
+```
