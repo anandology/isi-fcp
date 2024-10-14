@@ -541,11 +541,96 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "lecture-notes/2024-10-14/index.html",
+    "href": "lecture-notes/2024-10-14/index.html",
+    "title": "Introduction to Python (Mon Oct 14, 2024)",
     "section": "",
-    "text": "About this site"
+    "text": "Type an expression and press Shift + Enter to execute the cell.\n1 + 2\n\n3",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 14, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-10-14/index.html#a-taste-of-python",
+    "href": "lecture-notes/2024-10-14/index.html#a-taste-of-python",
+    "title": "Introduction to Python (Mon Oct 14, 2024)",
+    "section": "A Taste of Python",
+    "text": "A Taste of Python\nPython is a very simple language, yet very powerful.\n\nPython is simple\n\nprint(\"hello, wolrd!\")\n\nhello, wolrd!\n\n\n\n1 + 2\n\n3\n\n\n\n\nPython is dynamically typed\n\nx = 1\ny = 2\nx + y\n\n3\n\n\n\nx = 1\nprint(x)\n\nx = \"hello\"\nprint(x)\n\n1\nhello\n\n\nWhile variables do not have types associated with them, the values do have types and Python is very strict about them.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[7], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\n\n\nPython uses indentation\n\n# invalid python program\n\nx = 1\n  y = 2\nx + y\n\n\n  Cell In[8], line 4\n    y = 2\n    ^\nIndentationError: unexpected indent\n\n\n\n\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nAnother example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone\n\n\n\n\nPython is Expressive\nSum of square of all even numbers below one million.\n\nsum([n*n for n in range(1000000) if n%2 == 0])\n\n166666166667000000\n\n\n\n!head /usr/share/dict/words\n\nA\nAA\nAAA\nAA's\nAB\nABC\nABC's\nABCs\nABM\nABM's\n\n\n\n!wc -l /usr/share/dict/words\n\n104334 /usr/share/dict/words\n\n\nCan you find the largest word in the dictionary?\n\nmax([3, 4, 5, 8, 2])\n\n8\n\n\n\nmax([\"one\", \"two\", \"three\", \"four\", \"five\"])\n\n'two'\n\n\n\nmax([\"one\", \"two\", \"three\", \"four\", \"five\"], key=len)\n\n'three'\n\n\n\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\"electroencephalograph's\\n\"\n\n\nHow to find the top 5 words?\n\nsorted(open(\"/usr/share/dict/words\"), key=len)[-5:]\n\n['counterrevolutionaries\\n',\n \"counterrevolutionary's\\n\",\n \"electroencephalogram's\\n\",\n 'electroencephalographs\\n',\n \"electroencephalograph's\\n\"]\n\n\n\n\nPython is Productive\nThis requires a library called requests. You can install it by running:\n\n!python -m pip install requests\n\nRequirement already satisfied: requests in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (2.32.3)\nRequirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (3.3.2)\nRequirement already satisfied: idna&lt;4,&gt;=2.5 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (3.7)\nRequirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (2.2.2)\nRequirement already satisfied: certifi&gt;=2017.4.17 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (2024.7.4)\n\n\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"ISI Bangalore\"\n}\ndata = requests.get(url, params=params).json()\n\n\ndata.keys()\n\ndict_keys(['total_count', 'incomplete_results', 'items'])\n\n\n\ndata['total_count']\n\n4\n\n\n\ndata['items'][0]\n\n{'id': 832589430,\n 'node_id': 'R_kgDOMaBOdg',\n 'name': 'isi-fcp',\n 'full_name': 'anandology/isi-fcp',\n 'private': False,\n 'owner': {'login': 'anandology',\n  'id': 7569,\n  'node_id': 'MDQ6VXNlcjc1Njk=',\n  'avatar_url': 'https://avatars.githubusercontent.com/u/7569?v=4',\n  'gravatar_id': '',\n  'url': 'https://api.github.com/users/anandology',\n  'html_url': 'https://github.com/anandology',\n  'followers_url': 'https://api.github.com/users/anandology/followers',\n  'following_url': 'https://api.github.com/users/anandology/following{/other_user}',\n  'gists_url': 'https://api.github.com/users/anandology/gists{/gist_id}',\n  'starred_url': 'https://api.github.com/users/anandology/starred{/owner}{/repo}',\n  'subscriptions_url': 'https://api.github.com/users/anandology/subscriptions',\n  'organizations_url': 'https://api.github.com/users/anandology/orgs',\n  'repos_url': 'https://api.github.com/users/anandology/repos',\n  'events_url': 'https://api.github.com/users/anandology/events{/privacy}',\n  'received_events_url': 'https://api.github.com/users/anandology/received_events',\n  'type': 'User',\n  'site_admin': False},\n 'html_url': 'https://github.com/anandology/isi-fcp',\n 'description': 'Course respository for the Fundamentals of Computing and Programming at ISI Bangalore',\n 'fork': False,\n 'url': 'https://api.github.com/repos/anandology/isi-fcp',\n 'forks_url': 'https://api.github.com/repos/anandology/isi-fcp/forks',\n 'keys_url': 'https://api.github.com/repos/anandology/isi-fcp/keys{/key_id}',\n 'collaborators_url': 'https://api.github.com/repos/anandology/isi-fcp/collaborators{/collaborator}',\n 'teams_url': 'https://api.github.com/repos/anandology/isi-fcp/teams',\n 'hooks_url': 'https://api.github.com/repos/anandology/isi-fcp/hooks',\n 'issue_events_url': 'https://api.github.com/repos/anandology/isi-fcp/issues/events{/number}',\n 'events_url': 'https://api.github.com/repos/anandology/isi-fcp/events',\n 'assignees_url': 'https://api.github.com/repos/anandology/isi-fcp/assignees{/user}',\n 'branches_url': 'https://api.github.com/repos/anandology/isi-fcp/branches{/branch}',\n 'tags_url': 'https://api.github.com/repos/anandology/isi-fcp/tags',\n 'blobs_url': 'https://api.github.com/repos/anandology/isi-fcp/git/blobs{/sha}',\n 'git_tags_url': 'https://api.github.com/repos/anandology/isi-fcp/git/tags{/sha}',\n 'git_refs_url': 'https://api.github.com/repos/anandology/isi-fcp/git/refs{/sha}',\n 'trees_url': 'https://api.github.com/repos/anandology/isi-fcp/git/trees{/sha}',\n 'statuses_url': 'https://api.github.com/repos/anandology/isi-fcp/statuses/{sha}',\n 'languages_url': 'https://api.github.com/repos/anandology/isi-fcp/languages',\n 'stargazers_url': 'https://api.github.com/repos/anandology/isi-fcp/stargazers',\n 'contributors_url': 'https://api.github.com/repos/anandology/isi-fcp/contributors',\n 'subscribers_url': 'https://api.github.com/repos/anandology/isi-fcp/subscribers',\n 'subscription_url': 'https://api.github.com/repos/anandology/isi-fcp/subscription',\n 'commits_url': 'https://api.github.com/repos/anandology/isi-fcp/commits{/sha}',\n 'git_commits_url': 'https://api.github.com/repos/anandology/isi-fcp/git/commits{/sha}',\n 'comments_url': 'https://api.github.com/repos/anandology/isi-fcp/comments{/number}',\n 'issue_comment_url': 'https://api.github.com/repos/anandology/isi-fcp/issues/comments{/number}',\n 'contents_url': 'https://api.github.com/repos/anandology/isi-fcp/contents/{+path}',\n 'compare_url': 'https://api.github.com/repos/anandology/isi-fcp/compare/{base}...{head}',\n 'merges_url': 'https://api.github.com/repos/anandology/isi-fcp/merges',\n 'archive_url': 'https://api.github.com/repos/anandology/isi-fcp/{archive_format}{/ref}',\n 'downloads_url': 'https://api.github.com/repos/anandology/isi-fcp/downloads',\n 'issues_url': 'https://api.github.com/repos/anandology/isi-fcp/issues{/number}',\n 'pulls_url': 'https://api.github.com/repos/anandology/isi-fcp/pulls{/number}',\n 'milestones_url': 'https://api.github.com/repos/anandology/isi-fcp/milestones{/number}',\n 'notifications_url': 'https://api.github.com/repos/anandology/isi-fcp/notifications{?since,all,participating}',\n 'labels_url': 'https://api.github.com/repos/anandology/isi-fcp/labels{/name}',\n 'releases_url': 'https://api.github.com/repos/anandology/isi-fcp/releases{/id}',\n 'deployments_url': 'https://api.github.com/repos/anandology/isi-fcp/deployments',\n 'created_at': '2024-07-23T10:25:25Z',\n 'updated_at': '2024-10-13T18:59:50Z',\n 'pushed_at': '2024-10-13T19:00:21Z',\n 'git_url': 'git://github.com/anandology/isi-fcp.git',\n 'ssh_url': 'git@github.com:anandology/isi-fcp.git',\n 'clone_url': 'https://github.com/anandology/isi-fcp.git',\n 'svn_url': 'https://github.com/anandology/isi-fcp',\n 'homepage': 'https://anandology.github.io/isi-fcp/',\n 'size': 2867,\n 'stargazers_count': 6,\n 'watchers_count': 6,\n 'language': 'C',\n 'has_issues': True,\n 'has_projects': True,\n 'has_downloads': True,\n 'has_wiki': True,\n 'has_pages': True,\n 'has_discussions': True,\n 'forks_count': 0,\n 'mirror_url': None,\n 'archived': False,\n 'disabled': False,\n 'open_issues_count': 0,\n 'license': None,\n 'allow_forking': True,\n 'is_template': False,\n 'web_commit_signoff_required': False,\n 'topics': [],\n 'visibility': 'public',\n 'forks': 0,\n 'open_issues': 0,\n 'watchers': 6,\n 'default_branch': 'main',\n 'score': 1.0}\n\n\n\ndata['items'][0]['full_name']\n\n'anandology/isi-fcp'\n\n\n\nfor repo in data['items']:\n    print(repo['full_name'])\n\nanandology/isi-fcp\nisibangculturalcommittee/isibangculturalcommittee.github.io\nMathClubISIB/mathclubisib.github.io\nsudiptarakshit/ML-Modules-ISI\n\n\nLet’s put all of this together.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"hyperbolic geometry language:python\"\n}\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items']:\n    print(repo['full_name'])\n\ncduck/hyperbolic\nevfro/HyperbolicRecommenders\nEloind/Hyperbolic-Geometry\nyankai-chen/LKGR\ntjweisman/geometry_tools\nLabardini/Hyperbolic-GeometPy\nmountain/hyperbolic-wythoff\nya-wei-eileen-lin/HyperbolicDiffusionDistance\nnunukim/explore_hyperbolic_geometry\nnbubis/Poincare\ntrevorBajkowski/hyperbolicPoincareDiskGeometry\nTinfoilHat0/Hyperbolic-Generator\nhdbray/hyperbolic_geometry\ncalwoo/hyperbolic\nJWKennington/pyperbolic\nstla/PyMobiusHyperbolic\nMonkeyUnderMountain/PopularizeGeometry\nasahidari/gyrovector_hyperbolic_b3d\nDRWardrope/TFGeoTests\ndrewitz/VIPer\nzbovaird/UHG-Library\nLuckyGirl-XU/STGN\nRajwrita/Poincare-Embeddings\nAnoushkaVyas/HyperCode\nBStandage/CuttingSequence\nmountain/sunspot\n\n\n\n\nurl = \"https://api.frankfurter.app/latest\"\nparams = {\"base\": \"USD\", \"symbols\": \"INR\"}\n\nrequests.get(url, params=params).json()\n\n{'amount': 1.0, 'base': 'USD', 'date': '2024-10-11', 'rates': {'INR': 84.07}}\n\n\n\ndata = requests.get(url, params=params).json()\ndata['rates']['INR']\n\n84.07",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 14, 2024)"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setting-up-git",
+    "href": "git.html#setting-up-git",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setup-ssh-keys",
+    "href": "git.html#setup-ssh-keys",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#git-usage-complexity",
+    "href": "git.html#git-usage-complexity",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#cloning-a-repository",
+    "href": "git.html#cloning-a-repository",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#commiting-changes",
+    "href": "git.html#commiting-changes",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#references",
+    "href": "git.html#references",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
   },
   {
     "objectID": "unix-power-tools.html",
@@ -648,74 +733,11 @@
     ]
   },
   {
-    "objectID": "git.html",
-    "href": "git.html",
-    "title": "Introduction to Git",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setting-up-git",
-    "href": "git.html#setting-up-git",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setup-ssh-keys",
-    "href": "git.html#setup-ssh-keys",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#git-usage-complexity",
-    "href": "git.html#git-usage-complexity",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#cloning-a-repository",
-    "href": "git.html#cloning-a-repository",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#commiting-changes",
-    "href": "git.html#commiting-changes",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#references",
-    "href": "git.html#references",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
+    "text": "About this site"
   },
   {
     "objectID": "lecture-notes/2024-09-30/index.html",
