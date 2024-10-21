@@ -117,6 +117,10 @@ TODO:
 * Print a file with line numbers
 * Print only even lines in a file
 
+## Class Notes
+
+See [class notes on Unix Power Tools](lecture-notes/2024-09-30/index.qmd) for the examples covered in the class.
+
 ## References
 
 * [Unix Power Tools - ](https://docstore.mik.ua/orelly/unix/upt/index.htm)

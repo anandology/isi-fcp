@@ -1,13 +1,13 @@
 ---
-title: Lecture Notes - Mon Sep 30, 2024
+title: Unix Power Tools (Mon Sep 30, 2024)
 date: 2024-09-30
 author:
   - name: Anand Chitipothu
 ---
 
-## Unix Power Tools
+# Unix Power Tools
 
-### Previewing data using `head` and `tail`
+## Previewing data using `head` and `tail`
 
 ```txt
 $ pwd
@@ -93,7 +93,7 @@ $ wc -l *.tsv
 
 The new file has one line less than the original file.
 
-### Searching for patterns using `grep`
+## Searching for patterns using `grep`
 
 We can use the `grep` command for searching for patterns. The `grep` command supports regular expressions, but for now we'll search only for simple strings.
 
@@ -122,7 +122,7 @@ $ grep -c Asia un-data.tsv
 46
 ```
 
-### Selecting and Sorting data
+## Selecting and Sorting data
 
 We can select a column from tabular data using the `cut` command.
 
