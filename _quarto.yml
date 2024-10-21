@@ -45,6 +45,7 @@ website:
           - lecture-notes/2024-08-12/index.qmd
           - lecture-notes/2024-09-30/index.qmd
           - lecture-notes/2024-10-14/index.ipynb
+          - lecture-notes/2024-10-21/index.ipynb
 
 format:
   html:
