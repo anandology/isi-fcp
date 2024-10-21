@@ -20,6 +20,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: install dependencies
+        run: |
+          python3 -m pip install jupyter
+
       - name: Render Book project
         uses: quarto-dev/quarto-actions/render@v2
         with:
