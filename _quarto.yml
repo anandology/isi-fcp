@@ -28,6 +28,11 @@ website:
       - unix-power-tools.qmd
       - git.qmd
       - quarto.qmd
+      - section: Introduction to Python
+        contents:
+          - python/taste-of-python.qmd
+          - python/numpy.ipynb
+          - python/plotting.ipynb
       - section: Problem Sets
         href: problem-sets/index.qmd
         contents:

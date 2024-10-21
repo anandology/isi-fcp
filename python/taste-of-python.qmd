@@ -1,0 +1,130 @@
+---
+execute:
+    error: true
+    cache: true
+---
+
+# A Taste of Python
+
+Welcome to the world of Python.
+
+Python is very simple language to learn, yet it is quite powerful.
+
+Let's get a taste of Python by looking at a couple of examples.
+
+## Python is Simple
+
+Python is a very simple programming language and it is quite easy to learn.
+
+Writing a hello-world program just takes a single line of code.
+
+```{python}
+print("hello, world!")
+```
+
+It is very handy to use Python as a calculator.
+
+```{python}
+print(1 + 2)
+```
+
+## Python is Dynamically Typed
+
+Python is a dynamically typed programming language, so you don't need to declare type of variables.
+
+```{python}
+x = 1
+y = 2
+print(x + y)
+```
+
+It is perfectly fine to reassign a variable to a value of a different type.
+
+```{python}
+x = 1
+print(x)
+
+x = "foo"
+print(x)
+```
+
+
+While the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn't allow operations on incompatible datatypes.
+
+```{python}
+1 + "2"
+```
+
+People often assume that a dynamically-typed language is also weekly-typed, which is the case for languages like Perl, PHP and even Javascript. Python is dynamically-typed, but also strongly-typed.
+
+## Python uses Indentation
+
+Python uses indentation to identify the code that is part of a block.
+
+```{python}
+marks = 50
+
+if marks > 35:
+    print("pass")
+else:
+    print("fail")
+```
+
+Notice that Python doesn't use the usual `{` and `}` characters to
+identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like `if`, `else`, etc.
+
+Here is another example:
+
+```{python}
+numbers = [1, 2, 3, 4]
+
+for n in numbers:
+    print(n)
+print("done")
+```
+
+## Python is Expressive
+
+Python has elegant data strucutres and many built-in functions.
+
+Using them the right way leads to very elegant code.
+
+For example, the following example computes the sum of squares of all even numbers below one million.
+
+```{python}
+# sum of squares of all even numbers below one million
+sum([n*n for n in range(1000000) if n % 2 == 0])
+```
+
+Isn't that almost like restating the problem?
+
+Not impressed yet? Here is another gem to find the longest word in the english dictionary[^dict].
+
+```{python}
+# what is the lonest word in the dictioanary
+max(open("/usr/share/dict/words"), key=len)
+```
+
+
+[^dict]: On unix machines, the words in the dictionary are usually available in the file `/usr/share/dict/words`.
+
+## Python is Productive
+
+Python has an extensive standard library and many third-party libraries.
+
+The following example find the most popular repositories on github.
+
+
+```{python}
+import requests
+
+url = "https://api.github.com/search/repositories"
+params = {
+    "q": "language:python"
+}
+
+data = requests.get(url, params=params).json()
+
+for repo in data['items'][:10]:
+    print(repo['full_name'])
+```
