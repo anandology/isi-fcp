@@ -9,7 +9,7 @@
 <meta name="author" content="Anand Chitipothu">
 <meta name="dcterms.date" content="2024-09-30">
 
-<title>Lecture Notes - Mon Sep 30, 2024 – Fundamentals of Computing and Programming</title>
+<title>Unix Power Tools (Mon Sep 30, 2024) – Fundamentals of Computing and Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lecture-notes/index.html">Lecture Notes</a></li><li class="breadcrumb-item"><a href="../../lecture-notes/2024-09-30/index.html">Lecture Notes - Mon Sep 30, 2024</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lecture-notes/index.html">Lecture Notes</a></li><li class="breadcrumb-item"><a href="../../lecture-notes/2024-09-30/index.html">Unix Power Tools (Mon Sep 30, 2024)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -190,13 +190,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../problem-sets/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Sets</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction to Python</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/taste-of-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A Taste of Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Numpy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../python/plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting Graphs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../problem-sets/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Sets</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../problem-sets/ps1.html" class="sidebar-item-text sidebar-link">
@@ -209,11 +238,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="../../lecture-notes/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture Notes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../lecture-notes/01/index.html" class="sidebar-item-text sidebar-link">
@@ -235,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../lecture-notes/2024-09-30/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lecture Notes - Mon Sep 30, 2024</span></a>
+ <span class="menu-text">Unix Power Tools (Mon Sep 30, 2024)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,8 +289,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#previewing-data-using-head-and-tail" id="toc-previewing-data-using-head-and-tail" class="nav-link" data-scroll-target="#previewing-data-using-head-and-tail">Previewing data using <code>head</code> and <code>tail</code></a></li>
   <li><a href="#searching-for-patterns-using-grep" id="toc-searching-for-patterns-using-grep" class="nav-link" data-scroll-target="#searching-for-patterns-using-grep">Searching for patterns using <code>grep</code></a></li>
-  <li><a href="#selecting-and-sorting-data" id="toc-selecting-and-sorting-data" class="nav-link" data-scroll-target="#selecting-and-sorting-data">Selecting and Sorting data</a></li>
+  <li><a href="#selecting-and-sorting-data" id="toc-selecting-and-sorting-data" class="nav-link" data-scroll-target="#selecting-and-sorting-data">Selecting and Sorting data</a>
+  <ul class="collapse">
   <li><a href="#interesting-questions" id="toc-interesting-questions" class="nav-link" data-scroll-target="#interesting-questions">Interesting Questions</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -269,9 +300,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lecture-notes/index.html">Lecture Notes</a></li><li class="breadcrumb-item"><a href="../../lecture-notes/2024-09-30/index.html">Lecture Notes - Mon Sep 30, 2024</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../lecture-notes/index.html">Lecture Notes</a></li><li class="breadcrumb-item"><a href="../../lecture-notes/2024-09-30/index.html">Unix Power Tools (Mon Sep 30, 2024)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lecture Notes - Mon Sep 30, 2024</h1>
+<h1 class="title">Unix Power Tools (Mon Sep 30, 2024)</h1>
 </div>
 
 
@@ -300,10 +331,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="unix-power-tools" class="level2">
-<h2 class="anchored" data-anchor-id="unix-power-tools">Unix Power Tools</h2>
-<section id="previewing-data-using-head-and-tail" class="level3">
-<h3 class="anchored" data-anchor-id="previewing-data-using-head-and-tail">Previewing data using <code>head</code> and <code>tail</code></h3>
+<section id="unix-power-tools" class="level1">
+<h1>Unix Power Tools</h1>
+<section id="previewing-data-using-head-and-tail" class="level2">
+<h2 class="anchored" data-anchor-id="previewing-data-using-head-and-tail">Previewing data using <code>head</code> and <code>tail</code></h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$ pwd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>/home/anand/github/anandology/isi-fcp</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>$ cd data</span>
@@ -358,8 +389,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  377 total</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The new file has one line less than the original file.</p>
 </section>
-<section id="searching-for-patterns-using-grep" class="level3">
-<h3 class="anchored" data-anchor-id="searching-for-patterns-using-grep">Searching for patterns using <code>grep</code></h3>
+<section id="searching-for-patterns-using-grep" class="level2">
+<h2 class="anchored" data-anchor-id="searching-for-patterns-using-grep">Searching for patterns using <code>grep</code></h2>
 <p>We can use the <code>grep</code> command for searching for patterns. The <code>grep</code> command supports regular expressions, but for now we’ll search only for simple strings.</p>
 <p>Let’s see some countries in Asia.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>$ grep Asia un-data.txt | head -5</span>
@@ -375,8 +406,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb10"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>$ grep -c Asia un-data.tsv</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>46</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="selecting-and-sorting-data" class="level3">
-<h3 class="anchored" data-anchor-id="selecting-and-sorting-data">Selecting and Sorting data</h3>
+<section id="selecting-and-sorting-data" class="level2">
+<h2 class="anchored" data-anchor-id="selecting-and-sorting-data">Selecting and Sorting data</h2>
 <p>We can select a column from tabular data using the <code>cut</code> command.</p>
 <p>For example, the following commmand select the 2nd column, the region.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>$ cut -f2 un-data.tsv | head -5</span>
@@ -399,7 +430,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>     46 Asia</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>     40 Europe</span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>     14 Oceania</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
 <section id="interesting-questions" class="level3">
 <h3 class="anchored" data-anchor-id="interesting-questions">Interesting Questions</h3>
 <p>Let’s ask some intersting questions now.</p>
@@ -516,6 +546,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>Oceania 24.6429</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 </section>
 

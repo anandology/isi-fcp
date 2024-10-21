@@ -563,73 +563,146 @@
     ]
   },
   {
-    "objectID": "git.html",
-    "href": "git.html",
-    "title": "Introduction to Git",
+    "objectID": "python/plotting.html",
+    "href": "python/plotting.html",
+    "title": "Plotting Graphs",
     "section": "",
-    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "text": "The matplotlib is one of the most popular libraries for plotting graphs with Python. Unlike many modern counterparts, matplotlib is primarily designed to produce static plots. It is still a popular option to generate publication quality plots in the academia.\nWhile it is easy to get started, it is very flexible and allows drawing complex things.\nWhile interactivity is not part of its design, we can achieve that using interactive widgets and creating animations. However, that may required a lot more code and may sound tedius.\nNeedless to day, we use numpy arrays for plotting graphs.\nimport numpy as np\nimport matplotlib.pyplot as plt",
     "crumbs": [
-      "Introduction to Git"
+      "Introduction to Python",
+      "Plotting Graphs"
     ]
   },
   {
-    "objectID": "git.html#setting-up-git",
-    "href": "git.html#setting-up-git",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
+    "objectID": "python/plotting.html#getting-started-with-plotting",
+    "href": "python/plotting.html#getting-started-with-plotting",
+    "title": "Plotting Graphs",
+    "section": "Getting started with plotting",
+    "text": "Getting started with plotting\nLet’s plot sqrt.\n\nx = np.linspace(0, 2, 100)\ny = np.sqrt(x)\n\n\nplt.plot(x, y)\n\n# add a grid to the graph\nplt.grid()\n\n\n\n\n\n\n\n\nWe can even plot multiple plots in the same figure.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x)\nplt.plot(x, x*x)\nplt.plot(x, np.sqrt(x))\n\nplt.grid()\n\n\n\n\n\n\n\n\nIt is handy to add a legend when there are multiple plots in the same figure. And we can use latex for math expressions.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x, label=\"$y = x$\")\nplt.plot(x, np.sqrt(x), label=r\"$y = \\sqrt{x}$\")\nplt.plot(x, x*x, label=\"$y = x^2$\")\n\nplt.grid()\nplt.legend()\n\n# we can even give a title\n# the semicolon at the end of last line is used to supress the output of that expression\nplt.title(\"plot of $x$, $\\sqrt{x}$ and $x^2$\");\n\n\n\n\n\n\n\n\nNote that we write the last label as r\"$y = \\sqrt{x}$\". Notice the prefix r before the string. That indicates that it is a raw string. In regular strings, the \\ character has special meaning. For example \\n means a new line and \\t means a tab character.\nIf we write \"$\\theta$\", python intereprets the \\t in it as a tab and matplotlib only sees \"$&lt;tab&gt;heta$\". To avoid that we use raw strings whenever we are writing math expressions that require using \\ character.",
     "crumbs": [
-      "Introduction to Git"
+      "Introduction to Python",
+      "Plotting Graphs"
     ]
   },
   {
-    "objectID": "git.html#setup-ssh-keys",
-    "href": "git.html#setup-ssh-keys",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
+    "objectID": "python/plotting.html#customizing-ticks",
+    "href": "python/plotting.html#customizing-ticks",
+    "title": "Plotting Graphs",
+    "section": "Customizing ticks",
+    "text": "Customizing ticks\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\n\n\n\n\n\n\n\nWe can customize the ticks.\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\nplt.xticks([0, 90, 180, 270, 360]);\n\n\n\n\n\n\n\n\nWe can even give custom labels to the ticks.\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\nplt.xticks([0, 90, 180, 270, 360], \n           [r\"$0$\", r\"$\\frac{\\pi}{2}$\", r\"$\\pi$\", r\"$\\frac{3\\pi}{2}$\", r\"$2\\pi$\"])\n\n# and even axis labels\nplt.xlabel(r\"$\\theta$\")\nplt.ylabel(r\"$\\sin{\\theta}$\")\n\n# and title\nplt.title(r\"$y = \\sin{\\theta}$\");",
     "crumbs": [
-      "Introduction to Git"
+      "Introduction to Python",
+      "Plotting Graphs"
     ]
   },
   {
-    "objectID": "git.html#git-usage-complexity",
-    "href": "git.html#git-usage-complexity",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
+    "objectID": "python/plotting.html#saving-figures-as-images",
+    "href": "python/plotting.html#saving-figures-as-images",
+    "title": "Plotting Graphs",
+    "section": "Saving figures as images",
+    "text": "Saving figures as images\nMatplotlib allows exporting figures as images or pdf.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x, label=\"$y = x$\")\nplt.plot(x, np.sqrt(x), label=r\"$y = \\sqrt{x}$\")\nplt.plot(x, x*x, label=\"$y = x^2$\")\n\nplt.grid()\nplt.legend()\n\n# we can even give a title\nplt.title(\"plot of $x$, $\\sqrt{x}$ and $x^2$\")\n\nplt.savefig(\"plots.png\")\nplt.savefig(\"plots.svg\")\nplt.savefig(\"plots.pdf\")\nprint(\"saved the figure as png, svg and pdf.\")\n\nsaved the figure as png, svg and pdf.\n\n\n\n\n\n\n\n\n\n\nProblem: Plot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\)\nPlot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\) in the same figure with \\(\\theta\\) going from \\(0\\) to \\(2\\pi\\).\nPlease use x ticks in increments of \\(\\frac{\\pi}{2}\\) and include legend.",
     "crumbs": [
-      "Introduction to Git"
+      "Introduction to Python",
+      "Plotting Graphs"
     ]
   },
   {
-    "objectID": "git.html#cloning-a-repository",
-    "href": "git.html#cloning-a-repository",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
+    "objectID": "python/plotting.html#subplots",
+    "href": "python/plotting.html#subplots",
+    "title": "Plotting Graphs",
+    "section": "Subplots",
+    "text": "Subplots\nFor complex visualizations, we need to display multiple sub plots and it is easy to do with matplotlib.\n\nfig, (ax0, ax1) = plt.subplots(1, 2)\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nPlease note that the y-axis scale is different for both the graphs. We can force the same scale using sharey=True when creating subplots.\n\nfig, (ax0, ax1) = plt.subplots(1, 2, sharey=True)\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\n\n# specify custom fig size\nfig, (ax0, ax1) = plt.subplots(1, 2, sharey=True, figsize=(8, 4))\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nWe can do the same with two rows and one column. In that case, we can sharex instead of y.\n\n# specify custom fig size\nfig, (ax0, ax1) = plt.subplots(2, 1, sharex=True, figsize=(4, 8))\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nWe can even do a grid.\n\n# specify custom fig size\nfig, axs = plt.subplots(2, 2, sharex=True, sharey=True, figsize=(8, 8))\n\ndef plot(ax, x, y, title):\n    ax.plot(x, y)\n    ax.set_title(title)\n    ax.grid()\n    \nx = np.linspace(0, 2, 100)\nplot(axs[0, 0], x, x, r\"$y = x$\")\nplot(axs[0, 1], x, x*x, r\"$y = x^2$\")\nplot(axs[1, 0], x, np.sqrt(x), r\"$y = \\sqrt{x}$\")\nplot(axs[1, 1], x, 2**x, r\"$y = 2^x$\")\n\n# set super title\nplt.suptitle(\"Exploring subplots\");\n\n\n\n\n\n\n\n\n\nProblem: Plot \\(\\sin\\) and \\(\\cos\\) as subplots\nPlot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\) as subplots with \\(\\theta\\) going from \\(0\\) to \\(2\\pi\\).\nPlease use x ticks in increments of \\(\\frac{\\pi}{2}\\) and include titles for the subplots.",
     "crumbs": [
-      "Introduction to Git"
+      "Introduction to Python",
+      "Plotting Graphs"
     ]
   },
   {
-    "objectID": "git.html#commiting-changes",
-    "href": "git.html#commiting-changes",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
+    "objectID": "python/plotting.html#example-lassajous-curves",
+    "href": "python/plotting.html#example-lassajous-curves",
+    "title": "Plotting Graphs",
+    "section": "Example: Lassajous Curves",
+    "text": "Example: Lassajous Curves\nLassajous Curves are interesting mathematical curves that are generated using:\n\\(x = \\sin{(at + \\delta)}\\)\n\\(y = \\sin{(bt)}\\)\n\ndef lassajous(a, b, delta):\n    t = np.linspace(0, 2*np.pi, 1000)\n    x = np.sin(a*t+delta)\n    y = np.sin(b*t)\n\n    plt.figure(figsize=(6, 6))\n    plt.plot(x, y)\n    plt.grid()\n    \n    # show delta as a fraction of pi\n    delta_fraction = delta/np.pi\n    plt.title(rf\"$\\delta={delta_fraction}\\pi, a={a}, b={b}$\")\n\n\nlassajous(a=1, b=1, delta=0)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=1, delta=np.pi/2)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=1, delta=np.pi/4)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=2, delta=np.pi/2)\n\n\n\n\n\n\n\n\n\nProblem: Table of Lassajous curves\nPlot the following lassajous curves using subplots. The row labels in the picture shows the ratio \\(a:b\\) and the column label shows the value of \\(\\delta\\).\nIt may be tricky to set the row and column labels as shown in the image. Specfify the value of \\(\\delta, a, b\\) for each subplot.",
     "crumbs": [
-      "Introduction to Git"
+      "Introduction to Python",
+      "Plotting Graphs"
     ]
   },
   {
-    "objectID": "git.html#references",
-    "href": "git.html#references",
-    "title": "Introduction to Git",
+    "objectID": "python/taste-of-python.html",
+    "href": "python/taste-of-python.html",
+    "title": "A Taste of Python",
     "section": "",
-    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "text": "Welcome to the world of Python.\nPython is very simple language to learn, yet it is quite powerful.\nLet’s get a taste of Python by looking at a couple of examples.\n\n\nPython is a very simple programming language and it is quite easy to learn.\nWriting a hello-world program just takes a single line of code.\n\nprint(\"hello, world!\")\n\nhello, world!\n\n\nIt is very handy to use Python as a calculator.\n\nprint(1 + 2)\n\n3\n\n\n\n\n\nPython is a dynamically typed programming language, so you don’t need to declare type of variables.\n\nx = 1\ny = 2\nprint(x + y)\n\n3\n\n\nIt is perfectly fine to reassign a variable to a value of a different type.\n\nx = 1\nprint(x)\n\nx = \"foo\"\nprint(x)\n\n1\nfoo\n\n\nWhile the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn’t allow operations on incompatible datatypes.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[5], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\nPeople often assume that a dynamically-typed language is also weekly-typed, which is the case for languages like Perl, PHP and even Javascript. Python is dynamically-typed, but also strongly-typed.\n\n\n\nPython uses indentation to identify the code that is part of a block.\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nNotice that Python doesn’t use the usual { and } characters to identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like if, else, etc.\nHere is another example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone\n\n\n\n\n\nPython has elegant data strucutres and many built-in functions.\nUsing them the right way leads to very elegant code.\nFor example, the following example computes the sum of squares of all even numbers below one million.\n\n# sum of squares of all even numbers below one million\nsum([n*n for n in range(1000000) if n % 2 == 0])\n\n166666166667000000\n\n\nIsn’t that almost like restating the problem?\nNot impressed yet? Here is another gem to find the longest word in the english dictionary1.\n\n# what is the lonest word in the dictioanary\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\n---------------------------------------------------------------------------\nFileNotFoundError                         Traceback (most recent call last)\nCell In[9], line 2\n      1 # what is the lonest word in the dictioanary\n----&gt; 2 max(open(\"/usr/share/dict/words\"), key=len)\n\nFile ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:324, in _modified_open(file, *args, **kwargs)\n    317 if file in {0, 1, 2}:\n    318     raise ValueError(\n    319         f\"IPython won't let you open fd={file} by default \"\n    320         \"as it is likely to crash IPython. If you know what you are doing, \"\n    321         \"you can use builtins' open.\"\n    322     )\n--&gt; 324 return io_open(file, *args, **kwargs)\n\nFileNotFoundError: [Errno 2] No such file or directory: '/usr/share/dict/words'\n\n\n\n\n\n\nPython has an extensive standard library and many third-party libraries.\nThe following example find the most popular repositories on github.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"language:python\"\n}\n\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items'][:10]:\n    print(repo['full_name'])\n\nvinta/awesome-python\nSignificant-Gravitas/AutoGPT\njackfrued/Python-100-Days\nytdl-org/youtube-dl\n521xueweihan/HelloGitHub\npytorch/pytorch\ndjango/django\ntensorflow/models\nhome-assistant/core\nfighting41love/funNLP",
     "crumbs": [
-      "Introduction to Git"
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-is-simple",
+    "href": "python/taste-of-python.html#python-is-simple",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python is a very simple programming language and it is quite easy to learn.\nWriting a hello-world program just takes a single line of code.\n\nprint(\"hello, world!\")\n\nhello, world!\n\n\nIt is very handy to use Python as a calculator.\n\nprint(1 + 2)\n\n3",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-is-dynamically-typed",
+    "href": "python/taste-of-python.html#python-is-dynamically-typed",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python is a dynamically typed programming language, so you don’t need to declare type of variables.\n\nx = 1\ny = 2\nprint(x + y)\n\n3\n\n\nIt is perfectly fine to reassign a variable to a value of a different type.\n\nx = 1\nprint(x)\n\nx = \"foo\"\nprint(x)\n\n1\nfoo\n\n\nWhile the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn’t allow operations on incompatible datatypes.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[5], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\nPeople often assume that a dynamically-typed language is also weekly-typed, which is the case for languages like Perl, PHP and even Javascript. Python is dynamically-typed, but also strongly-typed.",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-uses-indentation",
+    "href": "python/taste-of-python.html#python-uses-indentation",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python uses indentation to identify the code that is part of a block.\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nNotice that Python doesn’t use the usual { and } characters to identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like if, else, etc.\nHere is another example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-is-expressive",
+    "href": "python/taste-of-python.html#python-is-expressive",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python has elegant data strucutres and many built-in functions.\nUsing them the right way leads to very elegant code.\nFor example, the following example computes the sum of squares of all even numbers below one million.\n\n# sum of squares of all even numbers below one million\nsum([n*n for n in range(1000000) if n % 2 == 0])\n\n166666166667000000\n\n\nIsn’t that almost like restating the problem?\nNot impressed yet? Here is another gem to find the longest word in the english dictionary1.\n\n# what is the lonest word in the dictioanary\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\n---------------------------------------------------------------------------\nFileNotFoundError                         Traceback (most recent call last)\nCell In[9], line 2\n      1 # what is the lonest word in the dictioanary\n----&gt; 2 max(open(\"/usr/share/dict/words\"), key=len)\n\nFile ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:324, in _modified_open(file, *args, **kwargs)\n    317 if file in {0, 1, 2}:\n    318     raise ValueError(\n    319         f\"IPython won't let you open fd={file} by default \"\n    320         \"as it is likely to crash IPython. If you know what you are doing, \"\n    321         \"you can use builtins' open.\"\n    322     )\n--&gt; 324 return io_open(file, *args, **kwargs)\n\nFileNotFoundError: [Errno 2] No such file or directory: '/usr/share/dict/words'",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-is-productive",
+    "href": "python/taste-of-python.html#python-is-productive",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python has an extensive standard library and many third-party libraries.\nThe following example find the most popular repositories on github.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"language:python\"\n}\n\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items'][:10]:\n    print(repo['full_name'])\n\nvinta/awesome-python\nSignificant-Gravitas/AutoGPT\njackfrued/Python-100-Days\nytdl-org/youtube-dl\n521xueweihan/HelloGitHub\npytorch/pytorch\ndjango/django\ntensorflow/models\nhome-assistant/core\nfighting41love/funNLP",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#footnotes",
+    "href": "python/taste-of-python.html#footnotes",
+    "title": "A Taste of Python",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOn unix machines, the words in the dictionary are usually available in the file /usr/share/dict/words.↩︎",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
     ]
   },
   {
@@ -637,7 +710,7 @@
     "href": "unix-power-tools.html",
     "title": "Unix Power Tools",
     "section": "",
-    "text": "Unix has many power tools to automate a lot of boring things. In this chapter, we’ll look at some of those tools.\n\n\nWildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c\n\n\n\nRegular Expressions are used to search for and replace various patterns in text.\nTODO:\n\n\n\nSorts the input.\nTODO:\n\n\n\nFind the unique elements in a sorted input.\n\n\n\nThe find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc\n\n\n\nTODO:\n\n\n\nAwk is a mini language for manipulating columns of data.\nTODO:\n\n\n\n\nPrint all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file\n\n\n\n\n\nUnix Power Tools -\nAwk - Wizardzines",
+    "text": "Unix has many power tools to automate a lot of boring things. In this chapter, we’ll look at some of those tools.\n\n\nWildcard is pattern to specify match filenames.\nThe most common pattern is *, which matches any characters.\nFor example, the following program lists all the files with .c extension.\n$ ls *.c\nThe other commony used wildcard pattern is [0-9], which matches any character in that range.\n[0-9] - match any letter from 0 to 9\n[0-9a-f] - match any letter from 0 to 9 and a to f\n[abc] - match any one of a, b and c\n\n\n\nRegular Expressions are used to search for and replace various patterns in text.\nTODO:\n\n\n\nSorts the input.\nTODO:\n\n\n\nFind the unique elements in a sorted input.\n\n\n\nThe find is used to find files a directory that match given conditions.\nUSAGE:\n\nfind path expressions\nLet’s look at some examples.\nFind all the c files in the current directory.\n$ find . -name '*.c'\nThe name uses a wildcard pattern, a pattern in which *\nFind all subdirectories in the current directory tree.\n$ find . -type d\nFind all files in /usr/bin which are larger than 10MB.\n$ find /usr/bin -size +10M\nFind all files in current directory which are modified in the last 2 days.\n$ find . -mtime -2\nFind all files in current directory which are modified in the last 2 hours (120 minutes).\n$ find . -mmin -120\nFind all the c files in the current directory and run wc command for each of them.\n$ find . -name '*.c' -exec wc {} \\;\nWhen using -exec, write the command and use {} where you want the matched file to substitued and end it with \\;.\nYou can also do the same using xargs.\n$ find . -name '*.c' | xargs wc\n\n\n\nTODO:\n\n\n\nAwk is a mini language for manipulating columns of data.\nTODO:\n\n\n\n\nPrint all not empty lines in a file\nPrint a file with line numbers\nPrint only even lines in a file\n\n\n\n\nSee class notes on Unix Power Tools for the examples covered in the class.\n\n\n\n\nUnix Power Tools -\nAwk - Wizardzines",
     "crumbs": [
       "Unix Power Tools"
     ]
@@ -723,6 +796,16 @@
     ]
   },
   {
+    "objectID": "unix-power-tools.html#class-notes",
+    "href": "unix-power-tools.html#class-notes",
+    "title": "Unix Power Tools",
+    "section": "",
+    "text": "See class notes on Unix Power Tools for the examples covered in the class.",
+    "crumbs": [
+      "Unix Power Tools"
+    ]
+  },
+  {
     "objectID": "unix-power-tools.html#references",
     "href": "unix-power-tools.html#references",
     "title": "Unix Power Tools",
@@ -730,6 +813,131 @@
     "text": "Unix Power Tools -\nAwk - Wizardzines",
     "crumbs": [
       "Unix Power Tools"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setting-up-git",
+    "href": "git.html#setting-up-git",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#setup-ssh-keys",
+    "href": "git.html#setup-ssh-keys",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#git-usage-complexity",
+    "href": "git.html#git-usage-complexity",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#cloning-a-repository",
+    "href": "git.html#cloning-a-repository",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#commiting-changes",
+    "href": "git.html#commiting-changes",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#references",
+    "href": "git.html#references",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html",
+    "href": "python/numpy.html",
+    "title": "Introduction to Numpy",
+    "section": "",
+    "text": "Numpy is the numerical computing library in Python, that provides wonderful support for creating and manipulating arrays.\nimport numpy as np",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html#introduction-to-numpy-arrays",
+    "href": "python/numpy.html#introduction-to-numpy-arrays",
+    "title": "Introduction to Numpy",
+    "section": "Introduction to Numpy Arrays",
+    "text": "Introduction to Numpy Arrays\nLet’s start with creating an array.\n\nx = np.array([1, 2, 3, 4, 5])\n\n\nx\n\narray([1, 2, 3, 4, 5])\n\n\nNumpy allows vector operations on arrays. These operations that work on every element of the array.\n\nx + 10\n\narray([11, 12, 13, 14, 15])\n\n\n\nx*x\n\narray([ 1,  4,  9, 16, 25])",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html#multi-dimentional-arrays",
+    "href": "python/numpy.html#multi-dimentional-arrays",
+    "title": "Introduction to Numpy",
+    "section": "Multi-dimentional arrays",
+    "text": "Multi-dimentional arrays\nNumpy supports n-dimentional arrays.\n\nd = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])\n\n\nd\n\narray([[1, 2, 3, 4],\n       [5, 6, 7, 8]])\n\n\n\nd + 10\n\narray([[11, 12, 13, 14],\n       [15, 16, 17, 18]])\n\n\n\nd*d\n\narray([[ 1,  4,  9, 16],\n       [25, 36, 49, 64]])\n\n\nIt supports many mathematical functions to work with 2-d arrays or matrices.\n\nnp.transpose(d)\n\narray([[1, 5],\n       [2, 6],\n       [3, 7],\n       [4, 8]])\n\n\n\nd1 = np.transpose(d)\n\n\nnp.dot(d, d1)\n\narray([[ 30,  70],\n       [ 70, 174]])\n\n\nIt also suppports even higher dimentional arrays, though we may not use to them in this course.\n\nd3 = np.array([\n    [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]],\n    [[13, 14, 15, 16], [17, 18, 19, 20], [21, 22, 23, 24]]])\n\nd3\n\narray([[[ 1,  2,  3,  4],\n        [ 5,  6,  7,  8],\n        [ 9, 10, 11, 12]],\n\n       [[13, 14, 15, 16],\n        [17, 18, 19, 20],\n        [21, 22, 23, 24]]])\n\n\n\nThe shape and dtype\nEvery array has a shape showing the size of the array in each dimention and dtype indicating the datatype of each element in the array.\nPlease note that all elements of an array will be of the same datatype.\n\nx = np.array([1, 2, 3, 4, 5])\nd = np.array([\n    [1, 2, 3, 4], \n    [5, 6, 7, 8]])\n\n\nx.shape\n\n(5,)\n\n\n\nd.shape\n\n(2, 4)\n\n\nThe array x is a one dimentional array and d is a two dimentional array.\nYou may be surprised why x.shape is shown as (5,) instead of (5). In python the parenthesis are used both for grouping and to represent tuples (kind-of read-only lists). The value of (5) is 5 because it is considered as grouping. It is just like (2 + 3). However if we want to represent a tuple of size 1, the only way is to include a comma to force to treat that as a tuple.\n\nx.dtype\n\ndtype('int64')\n\n\nThe elements of x are are 64-bit integers.\n\nx2 = np.array([0.1, 0.2, 0.3])\n\n\nx2.dtype\n\ndtype('float64')\n\n\nWhen we use decimal numbers, it used a dtype of float64.",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html#creating-arrays",
+    "href": "python/numpy.html#creating-arrays",
+    "title": "Introduction to Numpy",
+    "section": "Creating Arrays",
+    "text": "Creating Arrays\nWhile we can create arrays by giving all the elements, like we did in the example above, it is not practical to create large arrays like that. Numpy has utilities to create arrays.\n\n# create 10 zeros\nnp.zeros(10)\n\narray([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])\n\n\n\n# create 10 ones\nnp.ones(10)\n\narray([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])\n\n\n\n# range of numbers from 0 to 1 in steps of 0.1\n# please note that the end is not included\nnp.arange(0, 1, 0.1)\n\narray([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])\n\n\nThe linspace function takes the begin and end and divides that into a number of points. Unlike arange, the result of linspace includes the end.\n\nnp.linspace(0, 1, 11)\n\narray([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])\n\n\n\nnp.linspace(0, 1, 5)\n\narray([0.  , 0.25, 0.5 , 0.75, 1.  ])",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html#utilties",
+    "href": "python/numpy.html#utilties",
+    "title": "Introduction to Numpy",
+    "section": "Utilties",
+    "text": "Utilties\nNumpy has many utilties and mathematical functions.\n\nnp.pi\n\n3.141592653589793\n\n\n\n# convert degrees to radians\nnp.radians(90)\n\n1.5707963267948966\n\n\n\nangles = np.linspace(0, 360, 13)\n\n\nangles\n\narray([  0.,  30.,  60.,  90., 120., 150., 180., 210., 240., 270., 300.,\n       330., 360.])\n\n\n\nangles_in_radians = np.radians(angles)\n\n\nangles_in_radians\n\narray([0.        , 0.52359878, 1.04719755, 1.57079633, 2.0943951 ,\n       2.61799388, 3.14159265, 3.66519143, 4.1887902 , 4.71238898,\n       5.23598776, 5.75958653, 6.28318531])\n\n\n\n# we can also create the angles in radians\nnp.linspace(0, 2*np.pi, 13)\n\narray([0.        , 0.52359878, 1.04719755, 1.57079633, 2.0943951 ,\n       2.61799388, 3.14159265, 3.66519143, 4.1887902 , 4.71238898,\n       5.23598776, 5.75958653, 6.28318531])\n\n\nNumpy support trigonometric functions as well.\n\nnp.sin(angles_in_radians)\n\narray([ 0.00000000e+00,  5.00000000e-01,  8.66025404e-01,  1.00000000e+00,\n        8.66025404e-01,  5.00000000e-01,  1.22464680e-16, -5.00000000e-01,\n       -8.66025404e-01, -1.00000000e+00, -8.66025404e-01, -5.00000000e-01,\n       -2.44929360e-16])\n\n\n\nnp.cos(angles_in_radians)\n\narray([ 1.00000000e+00,  8.66025404e-01,  5.00000000e-01,  6.12323400e-17,\n       -5.00000000e-01, -8.66025404e-01, -1.00000000e+00, -8.66025404e-01,\n       -5.00000000e-01, -1.83697020e-16,  5.00000000e-01,  8.66025404e-01,\n        1.00000000e+00])\n\n\nThe common mathematical functions like sqrt and abs are available too.\n\nx = np.arange(10)\n\n\nx\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n\nnp.sqrt(x)\n\narray([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,\n       2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])\n\n\n\nx-5\n\narray([-5, -4, -3, -2, -1,  0,  1,  2,  3,  4])\n\n\n\nx1 = np.abs(x-5)\nx1\n\narray([5, 4, 3, 2, 1, 0, 1, 2, 3, 4])\n\n\n\nnp.sum(x1)\n\n25\n\n\n\nExample: Euclidean Distance\nEuclidian distance between two vectors is defines as:\n\\(E(p, q) = \\sqrt{\\sum_{i=1}^{n}{(p_i-q_i)^2}}\\)\nWrite a function euclidian_distance to compute the euclidian distance between two vectors specified as numpy arrays.\n\ndef eucliean_distance(p, q):\n    d = p-q\n    total = np.sum(d*d)\n    return np.sqrt(total)\n\n\np = np.array([1.0, 2.0, 3.0])\nq = np.array([4.0, 5.0, 6.0])\n\n\neucliean_distance(p, q)\n\n5.196152422706632\n\n\nYou can verify that step-by-step.\n\nd = p-q\nd\n\narray([-3., -3., -3.])\n\n\n\nd*d\n\narray([9., 9., 9.])\n\n\n\ntotal = np.sum(d*d)\ntotal\n\n27.0\n\n\n\nnp.sqrt(total)\n\n5.196152422706632\n\n\n\n\nProblem: Manhattan Distance\nWrite a function manhattan_distance to compute the manhattan distance between two vectors.\nThe manhattan distance is defined as:\n\\(M(p, q) = \\sum_{i=1}^{n}{| p_i - q_i |}\\)\nFor more info see: https://en.wikipedia.org/wiki/Taxicab_geometry\n&gt;&gt;&gt; manhanttan_distance(np.array([0,0]), np.array([3, 4]))\n7",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
     ]
   },
   {
@@ -742,23 +950,45 @@
   {
     "objectID": "lecture-notes/2024-09-30/index.html",
     "href": "lecture-notes/2024-09-30/index.html",
-    "title": "Lecture Notes - Mon Sep 30, 2024",
+    "title": "Unix Power Tools (Mon Sep 30, 2024)",
     "section": "",
-    "text": "$ pwd\n/home/anand/github/anandology/isi-fcp\n$ cd data\n$ ls\nun-data.tsv  un.tsv\nWe are going to work with the un.tsv file.\nLet’s see the first few lines of that file.\n$ head un.tsv\ncountry region  lifeMale    lifeFemale  infantMortality GDPperCapita\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nArmenia Europe  67.2    74.0    25  354\nAustralia   Oceania 75.4    81.2    6   20046\nAustria Europe  73.7    80.1    6   29006\nAzerbaijan  Asia    66.5    74.5    33  321\nAnd the last few lines.\n$ tail un.tsv\nUnited.States   America 73.4    80.1    7   26037\nUruguay America 69.6    76.1    17  5602\nUzbekistan  Asia    64.3    70.7    43  435\nVanuatu Oceania 65.5    69.5    38  1289\nVenezuela   America 70.0    75.7    21  3496\nViet.Nam    Asia    64.9    69.6    37  270\nYemen   Asia    57.4    58.4    80  732\nYugoslavia  Europe  69.8    75.3    19  1487\nZambia  Africa  42.2    43.7    103 382\nZimbabwe    Africa  47.6    49.4    68  786\nHow many lines/rows of data do we have? Let’s use the wordcount command wc to find it out.\n$ wc un.tsv\n 189 1134 6407 un.tsv\n\n$ wc -l un.tsv\n189 un.tsv\nIt has 189 lines. If we ignore the first line, which is the header, the file un.tsv has data for 188 countries.\nLet’s skip the header so that we can work just with the data.\n$ tail -n +2 un.tsv &gt; un-data.tsv\nThe above command takes the contents of un.tsv from the 2nd line onwards and writes the output to un-data.tsv.\nThe new file will not have the header and the number of lines will be less by one.\n$ head -5 un-data.tsv\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nSee, the header is gone.\n$ wc -l *.tsv\n  188 un-data.tsv\n  189 un.tsv\n  377 total\nThe new file has one line less than the original file.\n\n\n\nWe can use the grep command for searching for patterns. The grep command supports regular expressions, but for now we’ll search only for simple strings.\nLet’s see some countries in Asia.\n$ grep Asia un-data.txt | head -5\nAfghanistan Asia    45.0    46.0    154 2848\nAzerbaijan  Asia    66.5    74.5    33  321\nBahrain Asia    71.1    75.3    18  9073\nBangladesh  Asia    58.1    58.2    78  280\nBhutan  Asia    51.6    54.9    104 166\nHow many countries are there in Asia?\n$ grep Asia un-data.tsv | wc -l\n46\nWe could also do the same using the -c option of grep command, which counts the number of matches.\n$ grep -c Asia un-data.tsv\n46\n\n\n\nWe can select a column from tabular data using the cut command.\nFor example, the following commmand select the 2nd column, the region.\n$ cut -f2 un-data.tsv | head -5\nAsia\nEurope\nAfrica\nAfrica\nAmerica\nWhat are the unique regions?\n$ cut -f2 un-data.tsv | sort | uniq\nAfrica\nAmerica\nAsia\nEurope\nOceania\nCan we get the counts for each region?\n$ cut -f2 un-data.tsv | sort | uniq -c\n     53 Africa\n     35 America\n     46 Asia\n     40 Europe\n     14 Oceania\n\n\n\nLet’s ask some intersting questions now.\nWhich countries have lowest infant mortality?\nInfant Mortality is the 5th column.\nLet’s select only the country and infant mortality columns first.\n$ cut -f1,5 un-data.tsv | head -5\nAfghanistan 154\nAlbania 32\nAlgeria 44\nAngola  124\nArgentina   22\nNow pipe this to sort to sort based on the last column.\n$ cut -f1,5 un-data.tsv | sort -k2 | head\nCroatia 10\nFrench.Polynesia    10\nNetherlands.Antilles    10\nCambodia    102\nZambia  103\nBhutan  104\nDjibouti    106\nEquatorial.Guinea   107\nEthiopia    107\nMalaysia    11\nThere seems to be an issue. Sort is sorting the numbers alphabetically, not numerically. Let’s fix this by asking sort to sort numerically by passing option -n.\n$ cut -f1,5 un-data.tsv | sort -k2 -n | head\nTonga   3\nJapan   4\nFinland 5\nHong.Kong   5\nIceland 5\nNorway  5\nSingapore   5\nSweden  5\nSwitzerland 5\nAustralia   6\nCan we find mean life expectency across male and female?\nTechnically, it is not possible to compute the combined mean from two means unless we know the population size for male and female. For simplicity, let’s assume the the population of male and female is the same. With that assumption, we can compute the combine mean by taking the average of the two values.\nWe are going to use awk for solving this.\nThe columns of interest are column 3 (lifeMale) and column 4 (lifeFemale).\n$ awk '{print $1, ($3+$4)/2;}' un-data.tsv | head\nAfghanistan 45.5\nAlbania 71\nAlgeria 68.9\nAngola 46.5\nArgentina 73.2\nArmenia 70.6\nAustralia 78.3\nAustria 76.9\nAzerbaijan 70.5\nBahamas 73.8\nList the rich countries\nLet’s consider the countries with GDP per Capita more than $20000 as rich countries.\n$ awk '$6 &gt; 20000 {print $1, $6;}' un-data.tsv\nAustralia 20046\nAustria 29006\nBelgium 26582\nDenmark 33191\nFinland 24453\nFrance 26444\nGermany 29632\nHong.Kong 22898\nIceland 26217\nJapan 41718\nLuxembourg 35109\nNetherlands 25635\nNorway 33734\nSingapore 25581\nSweden 26253\nSwitzerland 42416\nUnited.States 26037\nWhich countries have highest difference between the life expectency of male and female?\nLet’s look at the difference between those two values.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | head\nAfghanistan 45.0 46.0 -1\nAlbania 68.0 74.0 -6\nAlgeria 67.5 70.3 -2.8\nAngola 44.9 48.1 -3.2\nArgentina 69.6 76.8 -7.2\nArmenia 67.2 74.0 -6.8\nAustralia 75.4 81.2 -5.8\nAustria 73.7 80.1 -6.4\nAzerbaijan 66.5 74.5 -8\nBahamas 70.5 77.1 -6.6\nWe need to find the countries with highest difference.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | sort -k4 -nr | tail\nReunion 70.9 79.8 -8.9\nPoland 66.7 75.7 -9\nHungary 64.5 73.8 -9.3\nKazakhstan 62.8 72.5 -9.7\nUkraine 63.6 74.0 -10.4\nBelarus 64.4 74.8 -10.4\nLithuania 64.9 76.0 -11.1\nEstonia 63.9 75.0 -11.1\nLatvia 62.5 74.3 -11.8\nRussia 58.0 71.5 -13.5\nWhat is the average life expectency across countries?\nWe can’t really compute this becase we don’t have the population of each country. Just for this exercise, assume that the population of each country is the same.\n$ awk '{ total += $3; } END { print total/NR }' un-data.tsv\n63.5261\nWhat if we want to find the average male life expectency only in Asia?\n$ awk '$2 == \"Asia\" { total += $3; } END { print total/NR }' un-data.tsv\n15.9957\nSomething seems to be wrong. We are dividing the total by the total number of countries instead of the number of countries in Asia. For that we need to maintain another counter.\n$ awk '$2 == \"Asia\" { total += $3; countries++; } END { print total/countries; }' un-data.tsv\n65.3739\nAverage infant mortality by continent\nAgain, ignoring the population of each country for simiplicity.\n$ awk '{ total[$2] += $5; countries[$2]++} END {for (name in total) { print name, total[name]/countries[name]; }}' un-data.tsv\nAmerica 26.6571\nAfrica 86.3208\nAsia 43.7826\nEurope 11.575\nOceania 24.6429",
+    "text": "$ pwd\n/home/anand/github/anandology/isi-fcp\n$ cd data\n$ ls\nun-data.tsv  un.tsv\nWe are going to work with the un.tsv file.\nLet’s see the first few lines of that file.\n$ head un.tsv\ncountry region  lifeMale    lifeFemale  infantMortality GDPperCapita\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nArmenia Europe  67.2    74.0    25  354\nAustralia   Oceania 75.4    81.2    6   20046\nAustria Europe  73.7    80.1    6   29006\nAzerbaijan  Asia    66.5    74.5    33  321\nAnd the last few lines.\n$ tail un.tsv\nUnited.States   America 73.4    80.1    7   26037\nUruguay America 69.6    76.1    17  5602\nUzbekistan  Asia    64.3    70.7    43  435\nVanuatu Oceania 65.5    69.5    38  1289\nVenezuela   America 70.0    75.7    21  3496\nViet.Nam    Asia    64.9    69.6    37  270\nYemen   Asia    57.4    58.4    80  732\nYugoslavia  Europe  69.8    75.3    19  1487\nZambia  Africa  42.2    43.7    103 382\nZimbabwe    Africa  47.6    49.4    68  786\nHow many lines/rows of data do we have? Let’s use the wordcount command wc to find it out.\n$ wc un.tsv\n 189 1134 6407 un.tsv\n\n$ wc -l un.tsv\n189 un.tsv\nIt has 189 lines. If we ignore the first line, which is the header, the file un.tsv has data for 188 countries.\nLet’s skip the header so that we can work just with the data.\n$ tail -n +2 un.tsv &gt; un-data.tsv\nThe above command takes the contents of un.tsv from the 2nd line onwards and writes the output to un-data.tsv.\nThe new file will not have the header and the number of lines will be less by one.\n$ head -5 un-data.tsv\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nSee, the header is gone.\n$ wc -l *.tsv\n  188 un-data.tsv\n  189 un.tsv\n  377 total\nThe new file has one line less than the original file.\n\n\n\nWe can use the grep command for searching for patterns. The grep command supports regular expressions, but for now we’ll search only for simple strings.\nLet’s see some countries in Asia.\n$ grep Asia un-data.txt | head -5\nAfghanistan Asia    45.0    46.0    154 2848\nAzerbaijan  Asia    66.5    74.5    33  321\nBahrain Asia    71.1    75.3    18  9073\nBangladesh  Asia    58.1    58.2    78  280\nBhutan  Asia    51.6    54.9    104 166\nHow many countries are there in Asia?\n$ grep Asia un-data.tsv | wc -l\n46\nWe could also do the same using the -c option of grep command, which counts the number of matches.\n$ grep -c Asia un-data.tsv\n46\n\n\n\nWe can select a column from tabular data using the cut command.\nFor example, the following commmand select the 2nd column, the region.\n$ cut -f2 un-data.tsv | head -5\nAsia\nEurope\nAfrica\nAfrica\nAmerica\nWhat are the unique regions?\n$ cut -f2 un-data.tsv | sort | uniq\nAfrica\nAmerica\nAsia\nEurope\nOceania\nCan we get the counts for each region?\n$ cut -f2 un-data.tsv | sort | uniq -c\n     53 Africa\n     35 America\n     46 Asia\n     40 Europe\n     14 Oceania\n\n\nLet’s ask some intersting questions now.\nWhich countries have lowest infant mortality?\nInfant Mortality is the 5th column.\nLet’s select only the country and infant mortality columns first.\n$ cut -f1,5 un-data.tsv | head -5\nAfghanistan 154\nAlbania 32\nAlgeria 44\nAngola  124\nArgentina   22\nNow pipe this to sort to sort based on the last column.\n$ cut -f1,5 un-data.tsv | sort -k2 | head\nCroatia 10\nFrench.Polynesia    10\nNetherlands.Antilles    10\nCambodia    102\nZambia  103\nBhutan  104\nDjibouti    106\nEquatorial.Guinea   107\nEthiopia    107\nMalaysia    11\nThere seems to be an issue. Sort is sorting the numbers alphabetically, not numerically. Let’s fix this by asking sort to sort numerically by passing option -n.\n$ cut -f1,5 un-data.tsv | sort -k2 -n | head\nTonga   3\nJapan   4\nFinland 5\nHong.Kong   5\nIceland 5\nNorway  5\nSingapore   5\nSweden  5\nSwitzerland 5\nAustralia   6\nCan we find mean life expectency across male and female?\nTechnically, it is not possible to compute the combined mean from two means unless we know the population size for male and female. For simplicity, let’s assume the the population of male and female is the same. With that assumption, we can compute the combine mean by taking the average of the two values.\nWe are going to use awk for solving this.\nThe columns of interest are column 3 (lifeMale) and column 4 (lifeFemale).\n$ awk '{print $1, ($3+$4)/2;}' un-data.tsv | head\nAfghanistan 45.5\nAlbania 71\nAlgeria 68.9\nAngola 46.5\nArgentina 73.2\nArmenia 70.6\nAustralia 78.3\nAustria 76.9\nAzerbaijan 70.5\nBahamas 73.8\nList the rich countries\nLet’s consider the countries with GDP per Capita more than $20000 as rich countries.\n$ awk '$6 &gt; 20000 {print $1, $6;}' un-data.tsv\nAustralia 20046\nAustria 29006\nBelgium 26582\nDenmark 33191\nFinland 24453\nFrance 26444\nGermany 29632\nHong.Kong 22898\nIceland 26217\nJapan 41718\nLuxembourg 35109\nNetherlands 25635\nNorway 33734\nSingapore 25581\nSweden 26253\nSwitzerland 42416\nUnited.States 26037\nWhich countries have highest difference between the life expectency of male and female?\nLet’s look at the difference between those two values.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | head\nAfghanistan 45.0 46.0 -1\nAlbania 68.0 74.0 -6\nAlgeria 67.5 70.3 -2.8\nAngola 44.9 48.1 -3.2\nArgentina 69.6 76.8 -7.2\nArmenia 67.2 74.0 -6.8\nAustralia 75.4 81.2 -5.8\nAustria 73.7 80.1 -6.4\nAzerbaijan 66.5 74.5 -8\nBahamas 70.5 77.1 -6.6\nWe need to find the countries with highest difference.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | sort -k4 -nr | tail\nReunion 70.9 79.8 -8.9\nPoland 66.7 75.7 -9\nHungary 64.5 73.8 -9.3\nKazakhstan 62.8 72.5 -9.7\nUkraine 63.6 74.0 -10.4\nBelarus 64.4 74.8 -10.4\nLithuania 64.9 76.0 -11.1\nEstonia 63.9 75.0 -11.1\nLatvia 62.5 74.3 -11.8\nRussia 58.0 71.5 -13.5\nWhat is the average life expectency across countries?\nWe can’t really compute this becase we don’t have the population of each country. Just for this exercise, assume that the population of each country is the same.\n$ awk '{ total += $3; } END { print total/NR }' un-data.tsv\n63.5261\nWhat if we want to find the average male life expectency only in Asia?\n$ awk '$2 == \"Asia\" { total += $3; } END { print total/NR }' un-data.tsv\n15.9957\nSomething seems to be wrong. We are dividing the total by the total number of countries instead of the number of countries in Asia. For that we need to maintain another counter.\n$ awk '$2 == \"Asia\" { total += $3; countries++; } END { print total/countries; }' un-data.tsv\n65.3739\nAverage infant mortality by continent\nAgain, ignoring the population of each country for simiplicity.\n$ awk '{ total[$2] += $5; countries[$2]++} END {for (name in total) { print name, total[name]/countries[name]; }}' un-data.tsv\nAmerica 26.6571\nAfrica 86.3208\nAsia 43.7826\nEurope 11.575\nOceania 24.6429",
     "crumbs": [
       "Lecture Notes",
-      "Lecture Notes - Mon Sep 30, 2024"
+      "Unix Power Tools (Mon Sep 30, 2024)"
     ]
   },
   {
-    "objectID": "lecture-notes/2024-09-30/index.html#unix-power-tools",
-    "href": "lecture-notes/2024-09-30/index.html#unix-power-tools",
-    "title": "Lecture Notes - Mon Sep 30, 2024",
+    "objectID": "lecture-notes/2024-09-30/index.html#previewing-data-using-head-and-tail",
+    "href": "lecture-notes/2024-09-30/index.html#previewing-data-using-head-and-tail",
+    "title": "Unix Power Tools (Mon Sep 30, 2024)",
     "section": "",
-    "text": "$ pwd\n/home/anand/github/anandology/isi-fcp\n$ cd data\n$ ls\nun-data.tsv  un.tsv\nWe are going to work with the un.tsv file.\nLet’s see the first few lines of that file.\n$ head un.tsv\ncountry region  lifeMale    lifeFemale  infantMortality GDPperCapita\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nArmenia Europe  67.2    74.0    25  354\nAustralia   Oceania 75.4    81.2    6   20046\nAustria Europe  73.7    80.1    6   29006\nAzerbaijan  Asia    66.5    74.5    33  321\nAnd the last few lines.\n$ tail un.tsv\nUnited.States   America 73.4    80.1    7   26037\nUruguay America 69.6    76.1    17  5602\nUzbekistan  Asia    64.3    70.7    43  435\nVanuatu Oceania 65.5    69.5    38  1289\nVenezuela   America 70.0    75.7    21  3496\nViet.Nam    Asia    64.9    69.6    37  270\nYemen   Asia    57.4    58.4    80  732\nYugoslavia  Europe  69.8    75.3    19  1487\nZambia  Africa  42.2    43.7    103 382\nZimbabwe    Africa  47.6    49.4    68  786\nHow many lines/rows of data do we have? Let’s use the wordcount command wc to find it out.\n$ wc un.tsv\n 189 1134 6407 un.tsv\n\n$ wc -l un.tsv\n189 un.tsv\nIt has 189 lines. If we ignore the first line, which is the header, the file un.tsv has data for 188 countries.\nLet’s skip the header so that we can work just with the data.\n$ tail -n +2 un.tsv &gt; un-data.tsv\nThe above command takes the contents of un.tsv from the 2nd line onwards and writes the output to un-data.tsv.\nThe new file will not have the header and the number of lines will be less by one.\n$ head -5 un-data.tsv\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nSee, the header is gone.\n$ wc -l *.tsv\n  188 un-data.tsv\n  189 un.tsv\n  377 total\nThe new file has one line less than the original file.\n\n\n\nWe can use the grep command for searching for patterns. The grep command supports regular expressions, but for now we’ll search only for simple strings.\nLet’s see some countries in Asia.\n$ grep Asia un-data.txt | head -5\nAfghanistan Asia    45.0    46.0    154 2848\nAzerbaijan  Asia    66.5    74.5    33  321\nBahrain Asia    71.1    75.3    18  9073\nBangladesh  Asia    58.1    58.2    78  280\nBhutan  Asia    51.6    54.9    104 166\nHow many countries are there in Asia?\n$ grep Asia un-data.tsv | wc -l\n46\nWe could also do the same using the -c option of grep command, which counts the number of matches.\n$ grep -c Asia un-data.tsv\n46\n\n\n\nWe can select a column from tabular data using the cut command.\nFor example, the following commmand select the 2nd column, the region.\n$ cut -f2 un-data.tsv | head -5\nAsia\nEurope\nAfrica\nAfrica\nAmerica\nWhat are the unique regions?\n$ cut -f2 un-data.tsv | sort | uniq\nAfrica\nAmerica\nAsia\nEurope\nOceania\nCan we get the counts for each region?\n$ cut -f2 un-data.tsv | sort | uniq -c\n     53 Africa\n     35 America\n     46 Asia\n     40 Europe\n     14 Oceania\n\n\n\nLet’s ask some intersting questions now.\nWhich countries have lowest infant mortality?\nInfant Mortality is the 5th column.\nLet’s select only the country and infant mortality columns first.\n$ cut -f1,5 un-data.tsv | head -5\nAfghanistan 154\nAlbania 32\nAlgeria 44\nAngola  124\nArgentina   22\nNow pipe this to sort to sort based on the last column.\n$ cut -f1,5 un-data.tsv | sort -k2 | head\nCroatia 10\nFrench.Polynesia    10\nNetherlands.Antilles    10\nCambodia    102\nZambia  103\nBhutan  104\nDjibouti    106\nEquatorial.Guinea   107\nEthiopia    107\nMalaysia    11\nThere seems to be an issue. Sort is sorting the numbers alphabetically, not numerically. Let’s fix this by asking sort to sort numerically by passing option -n.\n$ cut -f1,5 un-data.tsv | sort -k2 -n | head\nTonga   3\nJapan   4\nFinland 5\nHong.Kong   5\nIceland 5\nNorway  5\nSingapore   5\nSweden  5\nSwitzerland 5\nAustralia   6\nCan we find mean life expectency across male and female?\nTechnically, it is not possible to compute the combined mean from two means unless we know the population size for male and female. For simplicity, let’s assume the the population of male and female is the same. With that assumption, we can compute the combine mean by taking the average of the two values.\nWe are going to use awk for solving this.\nThe columns of interest are column 3 (lifeMale) and column 4 (lifeFemale).\n$ awk '{print $1, ($3+$4)/2;}' un-data.tsv | head\nAfghanistan 45.5\nAlbania 71\nAlgeria 68.9\nAngola 46.5\nArgentina 73.2\nArmenia 70.6\nAustralia 78.3\nAustria 76.9\nAzerbaijan 70.5\nBahamas 73.8\nList the rich countries\nLet’s consider the countries with GDP per Capita more than $20000 as rich countries.\n$ awk '$6 &gt; 20000 {print $1, $6;}' un-data.tsv\nAustralia 20046\nAustria 29006\nBelgium 26582\nDenmark 33191\nFinland 24453\nFrance 26444\nGermany 29632\nHong.Kong 22898\nIceland 26217\nJapan 41718\nLuxembourg 35109\nNetherlands 25635\nNorway 33734\nSingapore 25581\nSweden 26253\nSwitzerland 42416\nUnited.States 26037\nWhich countries have highest difference between the life expectency of male and female?\nLet’s look at the difference between those two values.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | head\nAfghanistan 45.0 46.0 -1\nAlbania 68.0 74.0 -6\nAlgeria 67.5 70.3 -2.8\nAngola 44.9 48.1 -3.2\nArgentina 69.6 76.8 -7.2\nArmenia 67.2 74.0 -6.8\nAustralia 75.4 81.2 -5.8\nAustria 73.7 80.1 -6.4\nAzerbaijan 66.5 74.5 -8\nBahamas 70.5 77.1 -6.6\nWe need to find the countries with highest difference.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | sort -k4 -nr | tail\nReunion 70.9 79.8 -8.9\nPoland 66.7 75.7 -9\nHungary 64.5 73.8 -9.3\nKazakhstan 62.8 72.5 -9.7\nUkraine 63.6 74.0 -10.4\nBelarus 64.4 74.8 -10.4\nLithuania 64.9 76.0 -11.1\nEstonia 63.9 75.0 -11.1\nLatvia 62.5 74.3 -11.8\nRussia 58.0 71.5 -13.5\nWhat is the average life expectency across countries?\nWe can’t really compute this becase we don’t have the population of each country. Just for this exercise, assume that the population of each country is the same.\n$ awk '{ total += $3; } END { print total/NR }' un-data.tsv\n63.5261\nWhat if we want to find the average male life expectency only in Asia?\n$ awk '$2 == \"Asia\" { total += $3; } END { print total/NR }' un-data.tsv\n15.9957\nSomething seems to be wrong. We are dividing the total by the total number of countries instead of the number of countries in Asia. For that we need to maintain another counter.\n$ awk '$2 == \"Asia\" { total += $3; countries++; } END { print total/countries; }' un-data.tsv\n65.3739\nAverage infant mortality by continent\nAgain, ignoring the population of each country for simiplicity.\n$ awk '{ total[$2] += $5; countries[$2]++} END {for (name in total) { print name, total[name]/countries[name]; }}' un-data.tsv\nAmerica 26.6571\nAfrica 86.3208\nAsia 43.7826\nEurope 11.575\nOceania 24.6429",
+    "text": "$ pwd\n/home/anand/github/anandology/isi-fcp\n$ cd data\n$ ls\nun-data.tsv  un.tsv\nWe are going to work with the un.tsv file.\nLet’s see the first few lines of that file.\n$ head un.tsv\ncountry region  lifeMale    lifeFemale  infantMortality GDPperCapita\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nArmenia Europe  67.2    74.0    25  354\nAustralia   Oceania 75.4    81.2    6   20046\nAustria Europe  73.7    80.1    6   29006\nAzerbaijan  Asia    66.5    74.5    33  321\nAnd the last few lines.\n$ tail un.tsv\nUnited.States   America 73.4    80.1    7   26037\nUruguay America 69.6    76.1    17  5602\nUzbekistan  Asia    64.3    70.7    43  435\nVanuatu Oceania 65.5    69.5    38  1289\nVenezuela   America 70.0    75.7    21  3496\nViet.Nam    Asia    64.9    69.6    37  270\nYemen   Asia    57.4    58.4    80  732\nYugoslavia  Europe  69.8    75.3    19  1487\nZambia  Africa  42.2    43.7    103 382\nZimbabwe    Africa  47.6    49.4    68  786\nHow many lines/rows of data do we have? Let’s use the wordcount command wc to find it out.\n$ wc un.tsv\n 189 1134 6407 un.tsv\n\n$ wc -l un.tsv\n189 un.tsv\nIt has 189 lines. If we ignore the first line, which is the header, the file un.tsv has data for 188 countries.\nLet’s skip the header so that we can work just with the data.\n$ tail -n +2 un.tsv &gt; un-data.tsv\nThe above command takes the contents of un.tsv from the 2nd line onwards and writes the output to un-data.tsv.\nThe new file will not have the header and the number of lines will be less by one.\n$ head -5 un-data.tsv\nAfghanistan Asia    45.0    46.0    154 2848\nAlbania Europe  68.0    74.0    32  863\nAlgeria Africa  67.5    70.3    44  1531\nAngola  Africa  44.9    48.1    124 355\nArgentina   America 69.6    76.8    22  8055\nSee, the header is gone.\n$ wc -l *.tsv\n  188 un-data.tsv\n  189 un.tsv\n  377 total\nThe new file has one line less than the original file.",
     "crumbs": [
       "Lecture Notes",
-      "Lecture Notes - Mon Sep 30, 2024"
+      "Unix Power Tools (Mon Sep 30, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-09-30/index.html#searching-for-patterns-using-grep",
+    "href": "lecture-notes/2024-09-30/index.html#searching-for-patterns-using-grep",
+    "title": "Unix Power Tools (Mon Sep 30, 2024)",
+    "section": "",
+    "text": "We can use the grep command for searching for patterns. The grep command supports regular expressions, but for now we’ll search only for simple strings.\nLet’s see some countries in Asia.\n$ grep Asia un-data.txt | head -5\nAfghanistan Asia    45.0    46.0    154 2848\nAzerbaijan  Asia    66.5    74.5    33  321\nBahrain Asia    71.1    75.3    18  9073\nBangladesh  Asia    58.1    58.2    78  280\nBhutan  Asia    51.6    54.9    104 166\nHow many countries are there in Asia?\n$ grep Asia un-data.tsv | wc -l\n46\nWe could also do the same using the -c option of grep command, which counts the number of matches.\n$ grep -c Asia un-data.tsv\n46",
+    "crumbs": [
+      "Lecture Notes",
+      "Unix Power Tools (Mon Sep 30, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-09-30/index.html#selecting-and-sorting-data",
+    "href": "lecture-notes/2024-09-30/index.html#selecting-and-sorting-data",
+    "title": "Unix Power Tools (Mon Sep 30, 2024)",
+    "section": "",
+    "text": "We can select a column from tabular data using the cut command.\nFor example, the following commmand select the 2nd column, the region.\n$ cut -f2 un-data.tsv | head -5\nAsia\nEurope\nAfrica\nAfrica\nAmerica\nWhat are the unique regions?\n$ cut -f2 un-data.tsv | sort | uniq\nAfrica\nAmerica\nAsia\nEurope\nOceania\nCan we get the counts for each region?\n$ cut -f2 un-data.tsv | sort | uniq -c\n     53 Africa\n     35 America\n     46 Asia\n     40 Europe\n     14 Oceania\n\n\nLet’s ask some intersting questions now.\nWhich countries have lowest infant mortality?\nInfant Mortality is the 5th column.\nLet’s select only the country and infant mortality columns first.\n$ cut -f1,5 un-data.tsv | head -5\nAfghanistan 154\nAlbania 32\nAlgeria 44\nAngola  124\nArgentina   22\nNow pipe this to sort to sort based on the last column.\n$ cut -f1,5 un-data.tsv | sort -k2 | head\nCroatia 10\nFrench.Polynesia    10\nNetherlands.Antilles    10\nCambodia    102\nZambia  103\nBhutan  104\nDjibouti    106\nEquatorial.Guinea   107\nEthiopia    107\nMalaysia    11\nThere seems to be an issue. Sort is sorting the numbers alphabetically, not numerically. Let’s fix this by asking sort to sort numerically by passing option -n.\n$ cut -f1,5 un-data.tsv | sort -k2 -n | head\nTonga   3\nJapan   4\nFinland 5\nHong.Kong   5\nIceland 5\nNorway  5\nSingapore   5\nSweden  5\nSwitzerland 5\nAustralia   6\nCan we find mean life expectency across male and female?\nTechnically, it is not possible to compute the combined mean from two means unless we know the population size for male and female. For simplicity, let’s assume the the population of male and female is the same. With that assumption, we can compute the combine mean by taking the average of the two values.\nWe are going to use awk for solving this.\nThe columns of interest are column 3 (lifeMale) and column 4 (lifeFemale).\n$ awk '{print $1, ($3+$4)/2;}' un-data.tsv | head\nAfghanistan 45.5\nAlbania 71\nAlgeria 68.9\nAngola 46.5\nArgentina 73.2\nArmenia 70.6\nAustralia 78.3\nAustria 76.9\nAzerbaijan 70.5\nBahamas 73.8\nList the rich countries\nLet’s consider the countries with GDP per Capita more than $20000 as rich countries.\n$ awk '$6 &gt; 20000 {print $1, $6;}' un-data.tsv\nAustralia 20046\nAustria 29006\nBelgium 26582\nDenmark 33191\nFinland 24453\nFrance 26444\nGermany 29632\nHong.Kong 22898\nIceland 26217\nJapan 41718\nLuxembourg 35109\nNetherlands 25635\nNorway 33734\nSingapore 25581\nSweden 26253\nSwitzerland 42416\nUnited.States 26037\nWhich countries have highest difference between the life expectency of male and female?\nLet’s look at the difference between those two values.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | head\nAfghanistan 45.0 46.0 -1\nAlbania 68.0 74.0 -6\nAlgeria 67.5 70.3 -2.8\nAngola 44.9 48.1 -3.2\nArgentina 69.6 76.8 -7.2\nArmenia 67.2 74.0 -6.8\nAustralia 75.4 81.2 -5.8\nAustria 73.7 80.1 -6.4\nAzerbaijan 66.5 74.5 -8\nBahamas 70.5 77.1 -6.6\nWe need to find the countries with highest difference.\n$ awk ' {print $1, $3, $4, $3-$4;}' un-data.tsv | sort -k4 -nr | tail\nReunion 70.9 79.8 -8.9\nPoland 66.7 75.7 -9\nHungary 64.5 73.8 -9.3\nKazakhstan 62.8 72.5 -9.7\nUkraine 63.6 74.0 -10.4\nBelarus 64.4 74.8 -10.4\nLithuania 64.9 76.0 -11.1\nEstonia 63.9 75.0 -11.1\nLatvia 62.5 74.3 -11.8\nRussia 58.0 71.5 -13.5\nWhat is the average life expectency across countries?\nWe can’t really compute this becase we don’t have the population of each country. Just for this exercise, assume that the population of each country is the same.\n$ awk '{ total += $3; } END { print total/NR }' un-data.tsv\n63.5261\nWhat if we want to find the average male life expectency only in Asia?\n$ awk '$2 == \"Asia\" { total += $3; } END { print total/NR }' un-data.tsv\n15.9957\nSomething seems to be wrong. We are dividing the total by the total number of countries instead of the number of countries in Asia. For that we need to maintain another counter.\n$ awk '$2 == \"Asia\" { total += $3; countries++; } END { print total/countries; }' un-data.tsv\n65.3739\nAverage infant mortality by continent\nAgain, ignoring the population of each country for simiplicity.\n$ awk '{ total[$2] += $5; countries[$2]++} END {for (name in total) { print name, total[name]/countries[name]; }}' un-data.tsv\nAmerica 26.6571\nAfrica 86.3208\nAsia 43.7826\nEurope 11.575\nOceania 24.6429",
+    "crumbs": [
+      "Lecture Notes",
+      "Unix Power Tools (Mon Sep 30, 2024)"
     ]
   },
   {
@@ -777,7 +1007,7 @@
     "href": "lecture-notes/index.html",
     "title": "Lecture Notes",
     "section": "",
-    "text": "Lecture Notes\n\n\n\n\n\n\n\n\n\n\nLecture Notes - Mon Aug 12, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes - Mon Sep 30, 2024\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 01\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nJishnu Biswas\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 02\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\nNo matching items",
+    "text": "Lecture Notes\n\n\n\n\n\n\n\n\n\n\nLecture Notes - Mon Aug 12, 2024\n\n\n\n\n\n\n\n\n\n\n\nAug 12, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 01\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nJishnu Biswas\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Notes 02\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\n\n\n\n\n\n\nUnix Power Tools (Mon Sep 30, 2024)\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2024\n\n\nAnand Chitipothu\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Lecture Notes"
     ]
