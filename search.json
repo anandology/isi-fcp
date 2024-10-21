@@ -543,166 +543,155 @@
   {
     "objectID": "lecture-notes/2024-10-14/index.html",
     "href": "lecture-notes/2024-10-14/index.html",
-    "title": "Introduction to Python (Mon Oct 14, 2024)",
+    "title": "A Taste of Python (Mon Oct 14, 2024)",
     "section": "",
     "text": "Type an expression and press Shift + Enter to execute the cell.\n1 + 2\n\n3",
     "crumbs": [
       "Lecture Notes",
-      "Introduction to Python (Mon Oct 14, 2024)"
+      "A Taste of Python (Mon Oct 14, 2024)"
     ]
   },
   {
     "objectID": "lecture-notes/2024-10-14/index.html#a-taste-of-python",
     "href": "lecture-notes/2024-10-14/index.html#a-taste-of-python",
-    "title": "Introduction to Python (Mon Oct 14, 2024)",
+    "title": "A Taste of Python (Mon Oct 14, 2024)",
     "section": "A Taste of Python",
     "text": "A Taste of Python\nPython is a very simple language, yet very powerful.\n\nPython is simple\n\nprint(\"hello, wolrd!\")\n\nhello, wolrd!\n\n\n\n1 + 2\n\n3\n\n\n\n\nPython is dynamically typed\n\nx = 1\ny = 2\nx + y\n\n3\n\n\n\nx = 1\nprint(x)\n\nx = \"hello\"\nprint(x)\n\n1\nhello\n\n\nWhile variables do not have types associated with them, the values do have types and Python is very strict about them.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[7], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\n\n\nPython uses indentation\n\n# invalid python program\n\nx = 1\n  y = 2\nx + y\n\n\n  Cell In[8], line 4\n    y = 2\n    ^\nIndentationError: unexpected indent\n\n\n\n\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nAnother example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone\n\n\n\n\nPython is Expressive\nSum of square of all even numbers below one million.\n\nsum([n*n for n in range(1000000) if n%2 == 0])\n\n166666166667000000\n\n\n\n!head /usr/share/dict/words\n\nA\nAA\nAAA\nAA's\nAB\nABC\nABC's\nABCs\nABM\nABM's\n\n\n\n!wc -l /usr/share/dict/words\n\n104334 /usr/share/dict/words\n\n\nCan you find the largest word in the dictionary?\n\nmax([3, 4, 5, 8, 2])\n\n8\n\n\n\nmax([\"one\", \"two\", \"three\", \"four\", \"five\"])\n\n'two'\n\n\n\nmax([\"one\", \"two\", \"three\", \"four\", \"five\"], key=len)\n\n'three'\n\n\n\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\"electroencephalograph's\\n\"\n\n\nHow to find the top 5 words?\n\nsorted(open(\"/usr/share/dict/words\"), key=len)[-5:]\n\n['counterrevolutionaries\\n',\n \"counterrevolutionary's\\n\",\n \"electroencephalogram's\\n\",\n 'electroencephalographs\\n',\n \"electroencephalograph's\\n\"]\n\n\n\n\nPython is Productive\nThis requires a library called requests. You can install it by running:\n\n!python -m pip install requests\n\nRequirement already satisfied: requests in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (2.32.3)\nRequirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (3.3.2)\nRequirement already satisfied: idna&lt;4,&gt;=2.5 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (3.7)\nRequirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (2.2.2)\nRequirement already satisfied: certifi&gt;=2017.4.17 in /home/anand/.rye/py/cpython@3.12.3/lib/python3.12/site-packages (from requests) (2024.7.4)\n\n\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"ISI Bangalore\"\n}\ndata = requests.get(url, params=params).json()\n\n\ndata.keys()\n\ndict_keys(['total_count', 'incomplete_results', 'items'])\n\n\n\ndata['total_count']\n\n4\n\n\n\ndata['items'][0]\n\n{'id': 832589430,\n 'node_id': 'R_kgDOMaBOdg',\n 'name': 'isi-fcp',\n 'full_name': 'anandology/isi-fcp',\n 'private': False,\n 'owner': {'login': 'anandology',\n  'id': 7569,\n  'node_id': 'MDQ6VXNlcjc1Njk=',\n  'avatar_url': 'https://avatars.githubusercontent.com/u/7569?v=4',\n  'gravatar_id': '',\n  'url': 'https://api.github.com/users/anandology',\n  'html_url': 'https://github.com/anandology',\n  'followers_url': 'https://api.github.com/users/anandology/followers',\n  'following_url': 'https://api.github.com/users/anandology/following{/other_user}',\n  'gists_url': 'https://api.github.com/users/anandology/gists{/gist_id}',\n  'starred_url': 'https://api.github.com/users/anandology/starred{/owner}{/repo}',\n  'subscriptions_url': 'https://api.github.com/users/anandology/subscriptions',\n  'organizations_url': 'https://api.github.com/users/anandology/orgs',\n  'repos_url': 'https://api.github.com/users/anandology/repos',\n  'events_url': 'https://api.github.com/users/anandology/events{/privacy}',\n  'received_events_url': 'https://api.github.com/users/anandology/received_events',\n  'type': 'User',\n  'site_admin': False},\n 'html_url': 'https://github.com/anandology/isi-fcp',\n 'description': 'Course respository for the Fundamentals of Computing and Programming at ISI Bangalore',\n 'fork': False,\n 'url': 'https://api.github.com/repos/anandology/isi-fcp',\n 'forks_url': 'https://api.github.com/repos/anandology/isi-fcp/forks',\n 'keys_url': 'https://api.github.com/repos/anandology/isi-fcp/keys{/key_id}',\n 'collaborators_url': 'https://api.github.com/repos/anandology/isi-fcp/collaborators{/collaborator}',\n 'teams_url': 'https://api.github.com/repos/anandology/isi-fcp/teams',\n 'hooks_url': 'https://api.github.com/repos/anandology/isi-fcp/hooks',\n 'issue_events_url': 'https://api.github.com/repos/anandology/isi-fcp/issues/events{/number}',\n 'events_url': 'https://api.github.com/repos/anandology/isi-fcp/events',\n 'assignees_url': 'https://api.github.com/repos/anandology/isi-fcp/assignees{/user}',\n 'branches_url': 'https://api.github.com/repos/anandology/isi-fcp/branches{/branch}',\n 'tags_url': 'https://api.github.com/repos/anandology/isi-fcp/tags',\n 'blobs_url': 'https://api.github.com/repos/anandology/isi-fcp/git/blobs{/sha}',\n 'git_tags_url': 'https://api.github.com/repos/anandology/isi-fcp/git/tags{/sha}',\n 'git_refs_url': 'https://api.github.com/repos/anandology/isi-fcp/git/refs{/sha}',\n 'trees_url': 'https://api.github.com/repos/anandology/isi-fcp/git/trees{/sha}',\n 'statuses_url': 'https://api.github.com/repos/anandology/isi-fcp/statuses/{sha}',\n 'languages_url': 'https://api.github.com/repos/anandology/isi-fcp/languages',\n 'stargazers_url': 'https://api.github.com/repos/anandology/isi-fcp/stargazers',\n 'contributors_url': 'https://api.github.com/repos/anandology/isi-fcp/contributors',\n 'subscribers_url': 'https://api.github.com/repos/anandology/isi-fcp/subscribers',\n 'subscription_url': 'https://api.github.com/repos/anandology/isi-fcp/subscription',\n 'commits_url': 'https://api.github.com/repos/anandology/isi-fcp/commits{/sha}',\n 'git_commits_url': 'https://api.github.com/repos/anandology/isi-fcp/git/commits{/sha}',\n 'comments_url': 'https://api.github.com/repos/anandology/isi-fcp/comments{/number}',\n 'issue_comment_url': 'https://api.github.com/repos/anandology/isi-fcp/issues/comments{/number}',\n 'contents_url': 'https://api.github.com/repos/anandology/isi-fcp/contents/{+path}',\n 'compare_url': 'https://api.github.com/repos/anandology/isi-fcp/compare/{base}...{head}',\n 'merges_url': 'https://api.github.com/repos/anandology/isi-fcp/merges',\n 'archive_url': 'https://api.github.com/repos/anandology/isi-fcp/{archive_format}{/ref}',\n 'downloads_url': 'https://api.github.com/repos/anandology/isi-fcp/downloads',\n 'issues_url': 'https://api.github.com/repos/anandology/isi-fcp/issues{/number}',\n 'pulls_url': 'https://api.github.com/repos/anandology/isi-fcp/pulls{/number}',\n 'milestones_url': 'https://api.github.com/repos/anandology/isi-fcp/milestones{/number}',\n 'notifications_url': 'https://api.github.com/repos/anandology/isi-fcp/notifications{?since,all,participating}',\n 'labels_url': 'https://api.github.com/repos/anandology/isi-fcp/labels{/name}',\n 'releases_url': 'https://api.github.com/repos/anandology/isi-fcp/releases{/id}',\n 'deployments_url': 'https://api.github.com/repos/anandology/isi-fcp/deployments',\n 'created_at': '2024-07-23T10:25:25Z',\n 'updated_at': '2024-10-13T18:59:50Z',\n 'pushed_at': '2024-10-13T19:00:21Z',\n 'git_url': 'git://github.com/anandology/isi-fcp.git',\n 'ssh_url': 'git@github.com:anandology/isi-fcp.git',\n 'clone_url': 'https://github.com/anandology/isi-fcp.git',\n 'svn_url': 'https://github.com/anandology/isi-fcp',\n 'homepage': 'https://anandology.github.io/isi-fcp/',\n 'size': 2867,\n 'stargazers_count': 6,\n 'watchers_count': 6,\n 'language': 'C',\n 'has_issues': True,\n 'has_projects': True,\n 'has_downloads': True,\n 'has_wiki': True,\n 'has_pages': True,\n 'has_discussions': True,\n 'forks_count': 0,\n 'mirror_url': None,\n 'archived': False,\n 'disabled': False,\n 'open_issues_count': 0,\n 'license': None,\n 'allow_forking': True,\n 'is_template': False,\n 'web_commit_signoff_required': False,\n 'topics': [],\n 'visibility': 'public',\n 'forks': 0,\n 'open_issues': 0,\n 'watchers': 6,\n 'default_branch': 'main',\n 'score': 1.0}\n\n\n\ndata['items'][0]['full_name']\n\n'anandology/isi-fcp'\n\n\n\nfor repo in data['items']:\n    print(repo['full_name'])\n\nanandology/isi-fcp\nisibangculturalcommittee/isibangculturalcommittee.github.io\nMathClubISIB/mathclubisib.github.io\nsudiptarakshit/ML-Modules-ISI\n\n\nLet’s put all of this together.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"hyperbolic geometry language:python\"\n}\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items']:\n    print(repo['full_name'])\n\ncduck/hyperbolic\nevfro/HyperbolicRecommenders\nEloind/Hyperbolic-Geometry\nyankai-chen/LKGR\ntjweisman/geometry_tools\nLabardini/Hyperbolic-GeometPy\nmountain/hyperbolic-wythoff\nya-wei-eileen-lin/HyperbolicDiffusionDistance\nnunukim/explore_hyperbolic_geometry\nnbubis/Poincare\ntrevorBajkowski/hyperbolicPoincareDiskGeometry\nTinfoilHat0/Hyperbolic-Generator\nhdbray/hyperbolic_geometry\ncalwoo/hyperbolic\nJWKennington/pyperbolic\nstla/PyMobiusHyperbolic\nMonkeyUnderMountain/PopularizeGeometry\nasahidari/gyrovector_hyperbolic_b3d\nDRWardrope/TFGeoTests\ndrewitz/VIPer\nzbovaird/UHG-Library\nLuckyGirl-XU/STGN\nRajwrita/Poincare-Embeddings\nAnoushkaVyas/HyperCode\nBStandage/CuttingSequence\nmountain/sunspot\n\n\n\n\nurl = \"https://api.frankfurter.app/latest\"\nparams = {\"base\": \"USD\", \"symbols\": \"INR\"}\n\nrequests.get(url, params=params).json()\n\n{'amount': 1.0, 'base': 'USD', 'date': '2024-10-11', 'rates': {'INR': 84.07}}\n\n\n\ndata = requests.get(url, params=params).json()\ndata['rates']['INR']\n\n84.07",
     "crumbs": [
       "Lecture Notes",
-      "Introduction to Python (Mon Oct 14, 2024)"
+      "A Taste of Python (Mon Oct 14, 2024)"
     ]
   },
   {
-    "objectID": "python/plotting.html",
-    "href": "python/plotting.html",
-    "title": "Plotting Graphs",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "The matplotlib is one of the most popular libraries for plotting graphs with Python. Unlike many modern counterparts, matplotlib is primarily designed to produce static plots. It is still a popular option to generate publication quality plots in the academia.\nWhile it is easy to get started, it is very flexible and allows drawing complex things.\nWhile interactivity is not part of its design, we can achieve that using interactive widgets and creating animations. However, that may required a lot more code and may sound tedius.\nNeedless to day, we use numpy arrays for plotting graphs.\nimport numpy as np\nimport matplotlib.pyplot as plt",
-    "crumbs": [
-      "Introduction to Python",
-      "Plotting Graphs"
-    ]
+    "text": "About this site"
   },
   {
-    "objectID": "python/plotting.html#getting-started-with-plotting",
-    "href": "python/plotting.html#getting-started-with-plotting",
-    "title": "Plotting Graphs",
-    "section": "Getting started with plotting",
-    "text": "Getting started with plotting\nLet’s plot sqrt.\n\nx = np.linspace(0, 2, 100)\ny = np.sqrt(x)\n\n\nplt.plot(x, y)\n\n# add a grid to the graph\nplt.grid()\n\n\n\n\n\n\n\n\nWe can even plot multiple plots in the same figure.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x)\nplt.plot(x, x*x)\nplt.plot(x, np.sqrt(x))\n\nplt.grid()\n\n\n\n\n\n\n\n\nIt is handy to add a legend when there are multiple plots in the same figure. And we can use latex for math expressions.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x, label=\"$y = x$\")\nplt.plot(x, np.sqrt(x), label=r\"$y = \\sqrt{x}$\")\nplt.plot(x, x*x, label=\"$y = x^2$\")\n\nplt.grid()\nplt.legend()\n\n# we can even give a title\n# the semicolon at the end of last line is used to supress the output of that expression\nplt.title(\"plot of $x$, $\\sqrt{x}$ and $x^2$\");\n\n\n\n\n\n\n\n\nNote that we write the last label as r\"$y = \\sqrt{x}$\". Notice the prefix r before the string. That indicates that it is a raw string. In regular strings, the \\ character has special meaning. For example \\n means a new line and \\t means a tab character.\nIf we write \"$\\theta$\", python intereprets the \\t in it as a tab and matplotlib only sees \"$&lt;tab&gt;heta$\". To avoid that we use raw strings whenever we are writing math expressions that require using \\ character.",
-    "crumbs": [
-      "Introduction to Python",
-      "Plotting Graphs"
-    ]
-  },
-  {
-    "objectID": "python/plotting.html#customizing-ticks",
-    "href": "python/plotting.html#customizing-ticks",
-    "title": "Plotting Graphs",
-    "section": "Customizing ticks",
-    "text": "Customizing ticks\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\n\n\n\n\n\n\n\nWe can customize the ticks.\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\nplt.xticks([0, 90, 180, 270, 360]);\n\n\n\n\n\n\n\n\nWe can even give custom labels to the ticks.\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\nplt.xticks([0, 90, 180, 270, 360], \n           [r\"$0$\", r\"$\\frac{\\pi}{2}$\", r\"$\\pi$\", r\"$\\frac{3\\pi}{2}$\", r\"$2\\pi$\"])\n\n# and even axis labels\nplt.xlabel(r\"$\\theta$\")\nplt.ylabel(r\"$\\sin{\\theta}$\")\n\n# and title\nplt.title(r\"$y = \\sin{\\theta}$\");",
-    "crumbs": [
-      "Introduction to Python",
-      "Plotting Graphs"
-    ]
-  },
-  {
-    "objectID": "python/plotting.html#saving-figures-as-images",
-    "href": "python/plotting.html#saving-figures-as-images",
-    "title": "Plotting Graphs",
-    "section": "Saving figures as images",
-    "text": "Saving figures as images\nMatplotlib allows exporting figures as images or pdf.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x, label=\"$y = x$\")\nplt.plot(x, np.sqrt(x), label=r\"$y = \\sqrt{x}$\")\nplt.plot(x, x*x, label=\"$y = x^2$\")\n\nplt.grid()\nplt.legend()\n\n# we can even give a title\nplt.title(\"plot of $x$, $\\sqrt{x}$ and $x^2$\")\n\nplt.savefig(\"plots.png\")\nplt.savefig(\"plots.svg\")\nplt.savefig(\"plots.pdf\")\nprint(\"saved the figure as png, svg and pdf.\")\n\nsaved the figure as png, svg and pdf.\n\n\n\n\n\n\n\n\n\n\nProblem: Plot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\)\nPlot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\) in the same figure with \\(\\theta\\) going from \\(0\\) to \\(2\\pi\\).\nPlease use x ticks in increments of \\(\\frac{\\pi}{2}\\) and include legend.",
-    "crumbs": [
-      "Introduction to Python",
-      "Plotting Graphs"
-    ]
-  },
-  {
-    "objectID": "python/plotting.html#subplots",
-    "href": "python/plotting.html#subplots",
-    "title": "Plotting Graphs",
-    "section": "Subplots",
-    "text": "Subplots\nFor complex visualizations, we need to display multiple sub plots and it is easy to do with matplotlib.\n\nfig, (ax0, ax1) = plt.subplots(1, 2)\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nPlease note that the y-axis scale is different for both the graphs. We can force the same scale using sharey=True when creating subplots.\n\nfig, (ax0, ax1) = plt.subplots(1, 2, sharey=True)\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\n\n# specify custom fig size\nfig, (ax0, ax1) = plt.subplots(1, 2, sharey=True, figsize=(8, 4))\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nWe can do the same with two rows and one column. In that case, we can sharex instead of y.\n\n# specify custom fig size\nfig, (ax0, ax1) = plt.subplots(2, 1, sharex=True, figsize=(4, 8))\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nWe can even do a grid.\n\n# specify custom fig size\nfig, axs = plt.subplots(2, 2, sharex=True, sharey=True, figsize=(8, 8))\n\ndef plot(ax, x, y, title):\n    ax.plot(x, y)\n    ax.set_title(title)\n    ax.grid()\n    \nx = np.linspace(0, 2, 100)\nplot(axs[0, 0], x, x, r\"$y = x$\")\nplot(axs[0, 1], x, x*x, r\"$y = x^2$\")\nplot(axs[1, 0], x, np.sqrt(x), r\"$y = \\sqrt{x}$\")\nplot(axs[1, 1], x, 2**x, r\"$y = 2^x$\")\n\n# set super title\nplt.suptitle(\"Exploring subplots\");\n\n\n\n\n\n\n\n\n\nProblem: Plot \\(\\sin\\) and \\(\\cos\\) as subplots\nPlot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\) as subplots with \\(\\theta\\) going from \\(0\\) to \\(2\\pi\\).\nPlease use x ticks in increments of \\(\\frac{\\pi}{2}\\) and include titles for the subplots.",
-    "crumbs": [
-      "Introduction to Python",
-      "Plotting Graphs"
-    ]
-  },
-  {
-    "objectID": "python/plotting.html#example-lassajous-curves",
-    "href": "python/plotting.html#example-lassajous-curves",
-    "title": "Plotting Graphs",
-    "section": "Example: Lassajous Curves",
-    "text": "Example: Lassajous Curves\nLassajous Curves are interesting mathematical curves that are generated using:\n\\(x = \\sin{(at + \\delta)}\\)\n\\(y = \\sin{(bt)}\\)\n\ndef lassajous(a, b, delta):\n    t = np.linspace(0, 2*np.pi, 1000)\n    x = np.sin(a*t+delta)\n    y = np.sin(b*t)\n\n    plt.figure(figsize=(6, 6))\n    plt.plot(x, y)\n    plt.grid()\n    \n    # show delta as a fraction of pi\n    delta_fraction = delta/np.pi\n    plt.title(rf\"$\\delta={delta_fraction}\\pi, a={a}, b={b}$\")\n\n\nlassajous(a=1, b=1, delta=0)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=1, delta=np.pi/2)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=1, delta=np.pi/4)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=2, delta=np.pi/2)\n\n\n\n\n\n\n\n\n\nProblem: Table of Lassajous curves\nPlot the following lassajous curves using subplots. The row labels in the picture shows the ratio \\(a:b\\) and the column label shows the value of \\(\\delta\\).\nIt may be tricky to set the row and column labels as shown in the image. Specfify the value of \\(\\delta, a, b\\) for each subplot.",
-    "crumbs": [
-      "Introduction to Python",
-      "Plotting Graphs"
-    ]
-  },
-  {
-    "objectID": "python/taste-of-python.html",
-    "href": "python/taste-of-python.html",
-    "title": "A Taste of Python",
+    "objectID": "python/numpy.html",
+    "href": "python/numpy.html",
+    "title": "Introduction to Numpy",
     "section": "",
-    "text": "Welcome to the world of Python.\nPython is very simple language to learn, yet it is quite powerful.\nLet’s get a taste of Python by looking at a couple of examples.\n\n\nPython is a very simple programming language and it is quite easy to learn.\nWriting a hello-world program just takes a single line of code.\n\nprint(\"hello, world!\")\n\nhello, world!\n\n\nIt is very handy to use Python as a calculator.\n\nprint(1 + 2)\n\n3\n\n\n\n\n\nPython is a dynamically typed programming language, so you don’t need to declare type of variables.\n\nx = 1\ny = 2\nprint(x + y)\n\n3\n\n\nIt is perfectly fine to reassign a variable to a value of a different type.\n\nx = 1\nprint(x)\n\nx = \"foo\"\nprint(x)\n\n1\nfoo\n\n\nWhile the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn’t allow operations on incompatible datatypes.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[5], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\nPeople often assume that a dynamically-typed language is also weekly-typed, which is the case for languages like Perl, PHP and even Javascript. Python is dynamically-typed, but also strongly-typed.\n\n\n\nPython uses indentation to identify the code that is part of a block.\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nNotice that Python doesn’t use the usual { and } characters to identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like if, else, etc.\nHere is another example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone\n\n\n\n\n\nPython has elegant data strucutres and many built-in functions.\nUsing them the right way leads to very elegant code.\nFor example, the following example computes the sum of squares of all even numbers below one million.\n\n# sum of squares of all even numbers below one million\nsum([n*n for n in range(1000000) if n % 2 == 0])\n\n166666166667000000\n\n\nIsn’t that almost like restating the problem?\nNot impressed yet? Here is another gem to find the longest word in the english dictionary1.\n\n# what is the lonest word in the dictioanary\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\n---------------------------------------------------------------------------\nFileNotFoundError                         Traceback (most recent call last)\nCell In[9], line 2\n      1 # what is the lonest word in the dictioanary\n----&gt; 2 max(open(\"/usr/share/dict/words\"), key=len)\n\nFile ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:324, in _modified_open(file, *args, **kwargs)\n    317 if file in {0, 1, 2}:\n    318     raise ValueError(\n    319         f\"IPython won't let you open fd={file} by default \"\n    320         \"as it is likely to crash IPython. If you know what you are doing, \"\n    321         \"you can use builtins' open.\"\n    322     )\n--&gt; 324 return io_open(file, *args, **kwargs)\n\nFileNotFoundError: [Errno 2] No such file or directory: '/usr/share/dict/words'\n\n\n\n\n\n\nPython has an extensive standard library and many third-party libraries.\nThe following example find the most popular repositories on github.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"language:python\"\n}\n\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items'][:10]:\n    print(repo['full_name'])\n\nvinta/awesome-python\nSignificant-Gravitas/AutoGPT\njackfrued/Python-100-Days\nytdl-org/youtube-dl\n521xueweihan/HelloGitHub\npytorch/pytorch\ndjango/django\ntensorflow/models\nhome-assistant/core\nfighting41love/funNLP",
+    "text": "Numpy is the numerical computing library in Python, that provides wonderful support for creating and manipulating arrays.\nimport numpy as np",
     "crumbs": [
       "Introduction to Python",
-      "A Taste of Python"
+      "Introduction to Numpy"
     ]
   },
   {
-    "objectID": "python/taste-of-python.html#python-is-simple",
-    "href": "python/taste-of-python.html#python-is-simple",
-    "title": "A Taste of Python",
+    "objectID": "python/numpy.html#introduction-to-numpy-arrays",
+    "href": "python/numpy.html#introduction-to-numpy-arrays",
+    "title": "Introduction to Numpy",
+    "section": "Introduction to Numpy Arrays",
+    "text": "Introduction to Numpy Arrays\nLet’s start with creating an array.\n\nx = np.array([1, 2, 3, 4, 5])\n\n\nx\n\narray([1, 2, 3, 4, 5])\n\n\nNumpy allows vector operations on arrays. These operations that work on every element of the array.\n\nx + 10\n\narray([11, 12, 13, 14, 15])\n\n\n\nx*x\n\narray([ 1,  4,  9, 16, 25])",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html#multi-dimentional-arrays",
+    "href": "python/numpy.html#multi-dimentional-arrays",
+    "title": "Introduction to Numpy",
+    "section": "Multi-dimentional arrays",
+    "text": "Multi-dimentional arrays\nNumpy supports n-dimentional arrays.\n\nd = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])\n\n\nd\n\narray([[1, 2, 3, 4],\n       [5, 6, 7, 8]])\n\n\n\nd + 10\n\narray([[11, 12, 13, 14],\n       [15, 16, 17, 18]])\n\n\n\nd*d\n\narray([[ 1,  4,  9, 16],\n       [25, 36, 49, 64]])\n\n\nIt supports many mathematical functions to work with 2-d arrays or matrices.\n\nnp.transpose(d)\n\narray([[1, 5],\n       [2, 6],\n       [3, 7],\n       [4, 8]])\n\n\n\nd1 = np.transpose(d)\n\n\nnp.dot(d, d1)\n\narray([[ 30,  70],\n       [ 70, 174]])\n\n\nIt also suppports even higher dimentional arrays, though we may not use to them in this course.\n\nd3 = np.array([\n    [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]],\n    [[13, 14, 15, 16], [17, 18, 19, 20], [21, 22, 23, 24]]])\n\nd3\n\narray([[[ 1,  2,  3,  4],\n        [ 5,  6,  7,  8],\n        [ 9, 10, 11, 12]],\n\n       [[13, 14, 15, 16],\n        [17, 18, 19, 20],\n        [21, 22, 23, 24]]])\n\n\n\nThe shape and dtype\nEvery array has a shape showing the size of the array in each dimention and dtype indicating the datatype of each element in the array.\nPlease note that all elements of an array will be of the same datatype.\n\nx = np.array([1, 2, 3, 4, 5])\nd = np.array([\n    [1, 2, 3, 4], \n    [5, 6, 7, 8]])\n\n\nx.shape\n\n(5,)\n\n\n\nd.shape\n\n(2, 4)\n\n\nThe array x is a one dimentional array and d is a two dimentional array.\nYou may be surprised why x.shape is shown as (5,) instead of (5). In python the parenthesis are used both for grouping and to represent tuples (kind-of read-only lists). The value of (5) is 5 because it is considered as grouping. It is just like (2 + 3). However if we want to represent a tuple of size 1, the only way is to include a comma to force to treat that as a tuple.\n\nx.dtype\n\ndtype('int64')\n\n\nThe elements of x are are 64-bit integers.\n\nx2 = np.array([0.1, 0.2, 0.3])\n\n\nx2.dtype\n\ndtype('float64')\n\n\nWhen we use decimal numbers, it used a dtype of float64.",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html#creating-arrays",
+    "href": "python/numpy.html#creating-arrays",
+    "title": "Introduction to Numpy",
+    "section": "Creating Arrays",
+    "text": "Creating Arrays\nWhile we can create arrays by giving all the elements, like we did in the example above, it is not practical to create large arrays like that. Numpy has utilities to create arrays.\n\n# create 10 zeros\nnp.zeros(10)\n\narray([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])\n\n\n\n# create 10 ones\nnp.ones(10)\n\narray([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])\n\n\n\n# range of numbers from 0 to 1 in steps of 0.1\n# please note that the end is not included\nnp.arange(0, 1, 0.1)\n\narray([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])\n\n\nThe linspace function takes the begin and end and divides that into a number of points. Unlike arange, the result of linspace includes the end.\n\nnp.linspace(0, 1, 11)\n\narray([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])\n\n\n\nnp.linspace(0, 1, 5)\n\narray([0.  , 0.25, 0.5 , 0.75, 1.  ])",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "python/numpy.html#utilties",
+    "href": "python/numpy.html#utilties",
+    "title": "Introduction to Numpy",
+    "section": "Utilties",
+    "text": "Utilties\nNumpy has many utilties and mathematical functions.\n\nnp.pi\n\n3.141592653589793\n\n\n\n# convert degrees to radians\nnp.radians(90)\n\n1.5707963267948966\n\n\n\nangles = np.linspace(0, 360, 13)\n\n\nangles\n\narray([  0.,  30.,  60.,  90., 120., 150., 180., 210., 240., 270., 300.,\n       330., 360.])\n\n\n\nangles_in_radians = np.radians(angles)\n\n\nangles_in_radians\n\narray([0.        , 0.52359878, 1.04719755, 1.57079633, 2.0943951 ,\n       2.61799388, 3.14159265, 3.66519143, 4.1887902 , 4.71238898,\n       5.23598776, 5.75958653, 6.28318531])\n\n\n\n# we can also create the angles in radians\nnp.linspace(0, 2*np.pi, 13)\n\narray([0.        , 0.52359878, 1.04719755, 1.57079633, 2.0943951 ,\n       2.61799388, 3.14159265, 3.66519143, 4.1887902 , 4.71238898,\n       5.23598776, 5.75958653, 6.28318531])\n\n\nNumpy support trigonometric functions as well.\n\nnp.sin(angles_in_radians)\n\narray([ 0.00000000e+00,  5.00000000e-01,  8.66025404e-01,  1.00000000e+00,\n        8.66025404e-01,  5.00000000e-01,  1.22464680e-16, -5.00000000e-01,\n       -8.66025404e-01, -1.00000000e+00, -8.66025404e-01, -5.00000000e-01,\n       -2.44929360e-16])\n\n\n\nnp.cos(angles_in_radians)\n\narray([ 1.00000000e+00,  8.66025404e-01,  5.00000000e-01,  6.12323400e-17,\n       -5.00000000e-01, -8.66025404e-01, -1.00000000e+00, -8.66025404e-01,\n       -5.00000000e-01, -1.83697020e-16,  5.00000000e-01,  8.66025404e-01,\n        1.00000000e+00])\n\n\nThe common mathematical functions like sqrt and abs are available too.\n\nx = np.arange(10)\n\n\nx\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n\nnp.sqrt(x)\n\narray([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,\n       2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])\n\n\n\nx-5\n\narray([-5, -4, -3, -2, -1,  0,  1,  2,  3,  4])\n\n\n\nx1 = np.abs(x-5)\nx1\n\narray([5, 4, 3, 2, 1, 0, 1, 2, 3, 4])\n\n\n\nnp.sum(x1)\n\n25\n\n\n\nExample: Euclidean Distance\nEuclidian distance between two vectors is defines as:\n\\(E(p, q) = \\sqrt{\\sum_{i=1}^{n}{(p_i-q_i)^2}}\\)\nWrite a function euclidian_distance to compute the euclidian distance between two vectors specified as numpy arrays.\n\ndef eucliean_distance(p, q):\n    d = p-q\n    total = np.sum(d*d)\n    return np.sqrt(total)\n\n\np = np.array([1.0, 2.0, 3.0])\nq = np.array([4.0, 5.0, 6.0])\n\n\neucliean_distance(p, q)\n\n5.196152422706632\n\n\nYou can verify that step-by-step.\n\nd = p-q\nd\n\narray([-3., -3., -3.])\n\n\n\nd*d\n\narray([9., 9., 9.])\n\n\n\ntotal = np.sum(d*d)\ntotal\n\n27.0\n\n\n\nnp.sqrt(total)\n\n5.196152422706632\n\n\n\n\nProblem: Manhattan Distance\nWrite a function manhattan_distance to compute the manhattan distance between two vectors.\nThe manhattan distance is defined as:\n\\(M(p, q) = \\sum_{i=1}^{n}{| p_i - q_i |}\\)\nFor more info see: https://en.wikipedia.org/wiki/Taxicab_geometry\n&gt;&gt;&gt; manhanttan_distance(np.array([0,0]), np.array([3, 4]))\n7",
+    "crumbs": [
+      "Introduction to Python",
+      "Introduction to Numpy"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "Introduction to Git",
     "section": "",
-    "text": "Python is a very simple programming language and it is quite easy to learn.\nWriting a hello-world program just takes a single line of code.\n\nprint(\"hello, world!\")\n\nhello, world!\n\n\nIt is very handy to use Python as a calculator.\n\nprint(1 + 2)\n\n3",
+    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
     "crumbs": [
-      "Introduction to Python",
-      "A Taste of Python"
+      "Introduction to Git"
     ]
   },
   {
-    "objectID": "python/taste-of-python.html#python-is-dynamically-typed",
-    "href": "python/taste-of-python.html#python-is-dynamically-typed",
-    "title": "A Taste of Python",
+    "objectID": "git.html#setting-up-git",
+    "href": "git.html#setting-up-git",
+    "title": "Introduction to Git",
     "section": "",
-    "text": "Python is a dynamically typed programming language, so you don’t need to declare type of variables.\n\nx = 1\ny = 2\nprint(x + y)\n\n3\n\n\nIt is perfectly fine to reassign a variable to a value of a different type.\n\nx = 1\nprint(x)\n\nx = \"foo\"\nprint(x)\n\n1\nfoo\n\n\nWhile the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn’t allow operations on incompatible datatypes.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[5], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\nPeople often assume that a dynamically-typed language is also weekly-typed, which is the case for languages like Perl, PHP and even Javascript. Python is dynamically-typed, but also strongly-typed.",
+    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
     "crumbs": [
-      "Introduction to Python",
-      "A Taste of Python"
+      "Introduction to Git"
     ]
   },
   {
-    "objectID": "python/taste-of-python.html#python-uses-indentation",
-    "href": "python/taste-of-python.html#python-uses-indentation",
-    "title": "A Taste of Python",
+    "objectID": "git.html#setup-ssh-keys",
+    "href": "git.html#setup-ssh-keys",
+    "title": "Introduction to Git",
     "section": "",
-    "text": "Python uses indentation to identify the code that is part of a block.\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nNotice that Python doesn’t use the usual { and } characters to identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like if, else, etc.\nHere is another example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone",
+    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
     "crumbs": [
-      "Introduction to Python",
-      "A Taste of Python"
+      "Introduction to Git"
     ]
   },
   {
-    "objectID": "python/taste-of-python.html#python-is-expressive",
-    "href": "python/taste-of-python.html#python-is-expressive",
-    "title": "A Taste of Python",
+    "objectID": "git.html#git-usage-complexity",
+    "href": "git.html#git-usage-complexity",
+    "title": "Introduction to Git",
     "section": "",
-    "text": "Python has elegant data strucutres and many built-in functions.\nUsing them the right way leads to very elegant code.\nFor example, the following example computes the sum of squares of all even numbers below one million.\n\n# sum of squares of all even numbers below one million\nsum([n*n for n in range(1000000) if n % 2 == 0])\n\n166666166667000000\n\n\nIsn’t that almost like restating the problem?\nNot impressed yet? Here is another gem to find the longest word in the english dictionary1.\n\n# what is the lonest word in the dictioanary\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\n---------------------------------------------------------------------------\nFileNotFoundError                         Traceback (most recent call last)\nCell In[9], line 2\n      1 # what is the lonest word in the dictioanary\n----&gt; 2 max(open(\"/usr/share/dict/words\"), key=len)\n\nFile ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:324, in _modified_open(file, *args, **kwargs)\n    317 if file in {0, 1, 2}:\n    318     raise ValueError(\n    319         f\"IPython won't let you open fd={file} by default \"\n    320         \"as it is likely to crash IPython. If you know what you are doing, \"\n    321         \"you can use builtins' open.\"\n    322     )\n--&gt; 324 return io_open(file, *args, **kwargs)\n\nFileNotFoundError: [Errno 2] No such file or directory: '/usr/share/dict/words'",
+    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
     "crumbs": [
-      "Introduction to Python",
-      "A Taste of Python"
+      "Introduction to Git"
     ]
   },
   {
-    "objectID": "python/taste-of-python.html#python-is-productive",
-    "href": "python/taste-of-python.html#python-is-productive",
-    "title": "A Taste of Python",
+    "objectID": "git.html#cloning-a-repository",
+    "href": "git.html#cloning-a-repository",
+    "title": "Introduction to Git",
     "section": "",
-    "text": "Python has an extensive standard library and many third-party libraries.\nThe following example find the most popular repositories on github.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"language:python\"\n}\n\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items'][:10]:\n    print(repo['full_name'])\n\nvinta/awesome-python\nSignificant-Gravitas/AutoGPT\njackfrued/Python-100-Days\nytdl-org/youtube-dl\n521xueweihan/HelloGitHub\npytorch/pytorch\ndjango/django\ntensorflow/models\nhome-assistant/core\nfighting41love/funNLP",
+    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
     "crumbs": [
-      "Introduction to Python",
-      "A Taste of Python"
+      "Introduction to Git"
     ]
   },
   {
-    "objectID": "python/taste-of-python.html#footnotes",
-    "href": "python/taste-of-python.html#footnotes",
-    "title": "A Taste of Python",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nOn unix machines, the words in the dictionary are usually available in the file /usr/share/dict/words.↩︎",
+    "objectID": "git.html#commiting-changes",
+    "href": "git.html#commiting-changes",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
     "crumbs": [
-      "Introduction to Python",
-      "A Taste of Python"
+      "Introduction to Git"
+    ]
+  },
+  {
+    "objectID": "git.html#references",
+    "href": "git.html#references",
+    "title": "Introduction to Git",
+    "section": "",
+    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
+    "crumbs": [
+      "Introduction to Git"
     ]
   },
   {
@@ -816,136 +805,213 @@
     ]
   },
   {
-    "objectID": "git.html",
-    "href": "git.html",
-    "title": "Introduction to Git",
+    "objectID": "python/taste-of-python.html",
+    "href": "python/taste-of-python.html",
+    "title": "A Taste of Python",
     "section": "",
-    "text": "Git is a popular version control system used to keep track of changes to various files.\n\n\n\n\n\nSetup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.\n\n\n\n$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.\n\n\n\n\n\nUse git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.\n\n\n\n\nRun these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.\n\n\n\nCreate a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main\n\n\n\n\nGIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setting-up-git",
-    "href": "git.html#setting-up-git",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Setup git by configuring your name and email address in git.\n$ git config --global user.name \"Anand Chitipothu\"\n$ git config --global user.email \"anand@example.com\"\nPlease use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#setup-ssh-keys",
-    "href": "git.html#setup-ssh-keys",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "$ ssh-keygen -t ed25519 -C anand@my-laptop-name\nThat will output the following:\nGenerating public/private ed25519 key pair.\nEnter file in which to save the key (/home/anand/.ssh/id_ed25519):\nJust press Enter.\nEnter passphrase (empty for no passphrase):\nIf you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#git-usage-complexity",
-    "href": "git.html#git-usage-complexity",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Use git for managing your own projects.\n\n\n\nUse git to collaborate with a small number of known people.\n\n\n\nCollaborate with unknown, untrusted people.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#cloning-a-repository",
-    "href": "git.html#cloning-a-repository",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Run these steps after creating your repository and adding your ssh-keys.\n$ cd\n$ pwd\n/home/anand\n$\n$ git clone git@github.com:anandology/git-practice.git\nCloning into 'git-practice'...\nremote: Enumerating objects: 4, done.\nremote: Counting objects: 100% (4/4), done.\nremote: Compressing objects: 100% (4/4), done.\nremote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)\nReceiving objects: 100% (4/4), done.\n$ cd git-practice/\n$ code .\nReplace the repository URL in the example with the URL of your repoistory clone URL.",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#commiting-changes",
-    "href": "git.html#commiting-changes",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "Create a new file.\n$ seq 10 &gt; 10.txt\nAdd the file to git staging area.\n$ git add 10.txt\n$ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges to be committed:\n  (use \"git restore --staged &lt;file&gt;...\" to unstage)\n        new file:   10.txt\nCommit the changes.\n$ git commit -m \"Added 10.txt\"\n[main b8c9a60] added 10.txt file\n 1 file changed, 10 insertions(+)\n create mode 100644 10.txt\nAnd push the changes.\n$ git push\n...\nTo github.com:anandology/git-practice.git\n   b8c9a60..e53d588  main -&gt; main",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "git.html#references",
-    "href": "git.html#references",
-    "title": "Introduction to Git",
-    "section": "",
-    "text": "GIT CHEAT SHEET - Github (PDF)\nGetting Started with Git - Github\nVersion Control with Git - Software Carpentry",
-    "crumbs": [
-      "Introduction to Git"
-    ]
-  },
-  {
-    "objectID": "python/numpy.html",
-    "href": "python/numpy.html",
-    "title": "Introduction to Numpy",
-    "section": "",
-    "text": "Numpy is the numerical computing library in Python, that provides wonderful support for creating and manipulating arrays.\nimport numpy as np",
+    "text": "Welcome to the world of Python.\nPython is very simple language to learn, yet it is quite powerful.\nLet’s get a taste of Python by looking at a couple of examples.\n\n\nPython is a very simple programming language and it is quite easy to learn.\nWriting a hello-world program just takes a single line of code.\n\nprint(\"hello, world!\")\n\nhello, world!\n\n\nIt is very handy to use Python as a calculator.\n\nprint(1 + 2)\n\n3\n\n\n\n\n\nPython is a dynamically typed programming language, so you don’t need to declare type of variables.\n\nx = 1\ny = 2\nprint(x + y)\n\n3\n\n\nIt is perfectly fine to reassign a variable to a value of a different type.\n\nx = 1\nprint(x)\n\nx = \"foo\"\nprint(x)\n\n1\nfoo\n\n\nWhile the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn’t allow operations on incompatible datatypes.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[5], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\nPeople often assume that a dynamically-typed language is also weekly-typed, which is the case for languages like Perl, PHP and even Javascript. Python is dynamically-typed, but also strongly-typed.\n\n\n\nPython uses indentation to identify the code that is part of a block.\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nNotice that Python doesn’t use the usual { and } characters to identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like if, else, etc.\nHere is another example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone\n\n\n\n\n\nPython has elegant data strucutres and many built-in functions.\nUsing them the right way leads to very elegant code.\nFor example, the following example computes the sum of squares of all even numbers below one million.\n\n# sum of squares of all even numbers below one million\nsum([n*n for n in range(1000000) if n % 2 == 0])\n\n166666166667000000\n\n\nIsn’t that almost like restating the problem?\nNot impressed yet? Here is another gem to find the longest word in the english dictionary1.\n\n# what is the lonest word in the dictioanary\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\n---------------------------------------------------------------------------\nFileNotFoundError                         Traceback (most recent call last)\nCell In[9], line 2\n      1 # what is the lonest word in the dictioanary\n----&gt; 2 max(open(\"/usr/share/dict/words\"), key=len)\n\nFile ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:324, in _modified_open(file, *args, **kwargs)\n    317 if file in {0, 1, 2}:\n    318     raise ValueError(\n    319         f\"IPython won't let you open fd={file} by default \"\n    320         \"as it is likely to crash IPython. If you know what you are doing, \"\n    321         \"you can use builtins' open.\"\n    322     )\n--&gt; 324 return io_open(file, *args, **kwargs)\n\nFileNotFoundError: [Errno 2] No such file or directory: '/usr/share/dict/words'\n\n\n\n\n\n\nPython has an extensive standard library and many third-party libraries.\nThe following example find the most popular repositories on github.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"language:python\"\n}\n\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items'][:10]:\n    print(repo['full_name'])\n\nkeras-team/keras\nscikit-learn/scikit-learn\ndeepfakes/faceswap\nTextualize/rich\ncharlax/professional-programming\nfaif/python-patterns\npsf/black\nodoo/odoo\n0voice/interview_internal_reference\ngto76/python-cheatsheet",
     "crumbs": [
       "Introduction to Python",
-      "Introduction to Numpy"
+      "A Taste of Python"
     ]
   },
   {
-    "objectID": "python/numpy.html#introduction-to-numpy-arrays",
-    "href": "python/numpy.html#introduction-to-numpy-arrays",
-    "title": "Introduction to Numpy",
-    "section": "Introduction to Numpy Arrays",
-    "text": "Introduction to Numpy Arrays\nLet’s start with creating an array.\n\nx = np.array([1, 2, 3, 4, 5])\n\n\nx\n\narray([1, 2, 3, 4, 5])\n\n\nNumpy allows vector operations on arrays. These operations that work on every element of the array.\n\nx + 10\n\narray([11, 12, 13, 14, 15])\n\n\n\nx*x\n\narray([ 1,  4,  9, 16, 25])",
-    "crumbs": [
-      "Introduction to Python",
-      "Introduction to Numpy"
-    ]
-  },
-  {
-    "objectID": "python/numpy.html#multi-dimentional-arrays",
-    "href": "python/numpy.html#multi-dimentional-arrays",
-    "title": "Introduction to Numpy",
-    "section": "Multi-dimentional arrays",
-    "text": "Multi-dimentional arrays\nNumpy supports n-dimentional arrays.\n\nd = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])\n\n\nd\n\narray([[1, 2, 3, 4],\n       [5, 6, 7, 8]])\n\n\n\nd + 10\n\narray([[11, 12, 13, 14],\n       [15, 16, 17, 18]])\n\n\n\nd*d\n\narray([[ 1,  4,  9, 16],\n       [25, 36, 49, 64]])\n\n\nIt supports many mathematical functions to work with 2-d arrays or matrices.\n\nnp.transpose(d)\n\narray([[1, 5],\n       [2, 6],\n       [3, 7],\n       [4, 8]])\n\n\n\nd1 = np.transpose(d)\n\n\nnp.dot(d, d1)\n\narray([[ 30,  70],\n       [ 70, 174]])\n\n\nIt also suppports even higher dimentional arrays, though we may not use to them in this course.\n\nd3 = np.array([\n    [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]],\n    [[13, 14, 15, 16], [17, 18, 19, 20], [21, 22, 23, 24]]])\n\nd3\n\narray([[[ 1,  2,  3,  4],\n        [ 5,  6,  7,  8],\n        [ 9, 10, 11, 12]],\n\n       [[13, 14, 15, 16],\n        [17, 18, 19, 20],\n        [21, 22, 23, 24]]])\n\n\n\nThe shape and dtype\nEvery array has a shape showing the size of the array in each dimention and dtype indicating the datatype of each element in the array.\nPlease note that all elements of an array will be of the same datatype.\n\nx = np.array([1, 2, 3, 4, 5])\nd = np.array([\n    [1, 2, 3, 4], \n    [5, 6, 7, 8]])\n\n\nx.shape\n\n(5,)\n\n\n\nd.shape\n\n(2, 4)\n\n\nThe array x is a one dimentional array and d is a two dimentional array.\nYou may be surprised why x.shape is shown as (5,) instead of (5). In python the parenthesis are used both for grouping and to represent tuples (kind-of read-only lists). The value of (5) is 5 because it is considered as grouping. It is just like (2 + 3). However if we want to represent a tuple of size 1, the only way is to include a comma to force to treat that as a tuple.\n\nx.dtype\n\ndtype('int64')\n\n\nThe elements of x are are 64-bit integers.\n\nx2 = np.array([0.1, 0.2, 0.3])\n\n\nx2.dtype\n\ndtype('float64')\n\n\nWhen we use decimal numbers, it used a dtype of float64.",
-    "crumbs": [
-      "Introduction to Python",
-      "Introduction to Numpy"
-    ]
-  },
-  {
-    "objectID": "python/numpy.html#creating-arrays",
-    "href": "python/numpy.html#creating-arrays",
-    "title": "Introduction to Numpy",
-    "section": "Creating Arrays",
-    "text": "Creating Arrays\nWhile we can create arrays by giving all the elements, like we did in the example above, it is not practical to create large arrays like that. Numpy has utilities to create arrays.\n\n# create 10 zeros\nnp.zeros(10)\n\narray([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])\n\n\n\n# create 10 ones\nnp.ones(10)\n\narray([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])\n\n\n\n# range of numbers from 0 to 1 in steps of 0.1\n# please note that the end is not included\nnp.arange(0, 1, 0.1)\n\narray([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])\n\n\nThe linspace function takes the begin and end and divides that into a number of points. Unlike arange, the result of linspace includes the end.\n\nnp.linspace(0, 1, 11)\n\narray([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])\n\n\n\nnp.linspace(0, 1, 5)\n\narray([0.  , 0.25, 0.5 , 0.75, 1.  ])",
-    "crumbs": [
-      "Introduction to Python",
-      "Introduction to Numpy"
-    ]
-  },
-  {
-    "objectID": "python/numpy.html#utilties",
-    "href": "python/numpy.html#utilties",
-    "title": "Introduction to Numpy",
-    "section": "Utilties",
-    "text": "Utilties\nNumpy has many utilties and mathematical functions.\n\nnp.pi\n\n3.141592653589793\n\n\n\n# convert degrees to radians\nnp.radians(90)\n\n1.5707963267948966\n\n\n\nangles = np.linspace(0, 360, 13)\n\n\nangles\n\narray([  0.,  30.,  60.,  90., 120., 150., 180., 210., 240., 270., 300.,\n       330., 360.])\n\n\n\nangles_in_radians = np.radians(angles)\n\n\nangles_in_radians\n\narray([0.        , 0.52359878, 1.04719755, 1.57079633, 2.0943951 ,\n       2.61799388, 3.14159265, 3.66519143, 4.1887902 , 4.71238898,\n       5.23598776, 5.75958653, 6.28318531])\n\n\n\n# we can also create the angles in radians\nnp.linspace(0, 2*np.pi, 13)\n\narray([0.        , 0.52359878, 1.04719755, 1.57079633, 2.0943951 ,\n       2.61799388, 3.14159265, 3.66519143, 4.1887902 , 4.71238898,\n       5.23598776, 5.75958653, 6.28318531])\n\n\nNumpy support trigonometric functions as well.\n\nnp.sin(angles_in_radians)\n\narray([ 0.00000000e+00,  5.00000000e-01,  8.66025404e-01,  1.00000000e+00,\n        8.66025404e-01,  5.00000000e-01,  1.22464680e-16, -5.00000000e-01,\n       -8.66025404e-01, -1.00000000e+00, -8.66025404e-01, -5.00000000e-01,\n       -2.44929360e-16])\n\n\n\nnp.cos(angles_in_radians)\n\narray([ 1.00000000e+00,  8.66025404e-01,  5.00000000e-01,  6.12323400e-17,\n       -5.00000000e-01, -8.66025404e-01, -1.00000000e+00, -8.66025404e-01,\n       -5.00000000e-01, -1.83697020e-16,  5.00000000e-01,  8.66025404e-01,\n        1.00000000e+00])\n\n\nThe common mathematical functions like sqrt and abs are available too.\n\nx = np.arange(10)\n\n\nx\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n\nnp.sqrt(x)\n\narray([0.        , 1.        , 1.41421356, 1.73205081, 2.        ,\n       2.23606798, 2.44948974, 2.64575131, 2.82842712, 3.        ])\n\n\n\nx-5\n\narray([-5, -4, -3, -2, -1,  0,  1,  2,  3,  4])\n\n\n\nx1 = np.abs(x-5)\nx1\n\narray([5, 4, 3, 2, 1, 0, 1, 2, 3, 4])\n\n\n\nnp.sum(x1)\n\n25\n\n\n\nExample: Euclidean Distance\nEuclidian distance between two vectors is defines as:\n\\(E(p, q) = \\sqrt{\\sum_{i=1}^{n}{(p_i-q_i)^2}}\\)\nWrite a function euclidian_distance to compute the euclidian distance between two vectors specified as numpy arrays.\n\ndef eucliean_distance(p, q):\n    d = p-q\n    total = np.sum(d*d)\n    return np.sqrt(total)\n\n\np = np.array([1.0, 2.0, 3.0])\nq = np.array([4.0, 5.0, 6.0])\n\n\neucliean_distance(p, q)\n\n5.196152422706632\n\n\nYou can verify that step-by-step.\n\nd = p-q\nd\n\narray([-3., -3., -3.])\n\n\n\nd*d\n\narray([9., 9., 9.])\n\n\n\ntotal = np.sum(d*d)\ntotal\n\n27.0\n\n\n\nnp.sqrt(total)\n\n5.196152422706632\n\n\n\n\nProblem: Manhattan Distance\nWrite a function manhattan_distance to compute the manhattan distance between two vectors.\nThe manhattan distance is defined as:\n\\(M(p, q) = \\sum_{i=1}^{n}{| p_i - q_i |}\\)\nFor more info see: https://en.wikipedia.org/wiki/Taxicab_geometry\n&gt;&gt;&gt; manhanttan_distance(np.array([0,0]), np.array([3, 4]))\n7",
-    "crumbs": [
-      "Introduction to Python",
-      "Introduction to Numpy"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "python/taste-of-python.html#python-is-simple",
+    "href": "python/taste-of-python.html#python-is-simple",
+    "title": "A Taste of Python",
     "section": "",
-    "text": "About this site"
+    "text": "Python is a very simple programming language and it is quite easy to learn.\nWriting a hello-world program just takes a single line of code.\n\nprint(\"hello, world!\")\n\nhello, world!\n\n\nIt is very handy to use Python as a calculator.\n\nprint(1 + 2)\n\n3",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-is-dynamically-typed",
+    "href": "python/taste-of-python.html#python-is-dynamically-typed",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python is a dynamically typed programming language, so you don’t need to declare type of variables.\n\nx = 1\ny = 2\nprint(x + y)\n\n3\n\n\nIt is perfectly fine to reassign a variable to a value of a different type.\n\nx = 1\nprint(x)\n\nx = \"foo\"\nprint(x)\n\n1\nfoo\n\n\nWhile the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn’t allow operations on incompatible datatypes.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[5], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\nPeople often assume that a dynamically-typed language is also weekly-typed, which is the case for languages like Perl, PHP and even Javascript. Python is dynamically-typed, but also strongly-typed.",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-uses-indentation",
+    "href": "python/taste-of-python.html#python-uses-indentation",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python uses indentation to identify the code that is part of a block.\n\nmarks = 50\n\nif marks &gt; 35:\n    print(\"pass\")\nelse:\n    print(\"fail\")\n\npass\n\n\nNotice that Python doesn’t use the usual { and } characters to identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like if, else, etc.\nHere is another example:\n\nnumbers = [1, 2, 3, 4]\n\nfor n in numbers:\n    print(n)\nprint(\"done\")\n\n1\n2\n3\n4\ndone",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-is-expressive",
+    "href": "python/taste-of-python.html#python-is-expressive",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python has elegant data strucutres and many built-in functions.\nUsing them the right way leads to very elegant code.\nFor example, the following example computes the sum of squares of all even numbers below one million.\n\n# sum of squares of all even numbers below one million\nsum([n*n for n in range(1000000) if n % 2 == 0])\n\n166666166667000000\n\n\nIsn’t that almost like restating the problem?\nNot impressed yet? Here is another gem to find the longest word in the english dictionary1.\n\n# what is the lonest word in the dictioanary\nmax(open(\"/usr/share/dict/words\"), key=len)\n\n\n---------------------------------------------------------------------------\nFileNotFoundError                         Traceback (most recent call last)\nCell In[9], line 2\n      1 # what is the lonest word in the dictioanary\n----&gt; 2 max(open(\"/usr/share/dict/words\"), key=len)\n\nFile ~/.local/lib/python3.10/site-packages/IPython/core/interactiveshell.py:324, in _modified_open(file, *args, **kwargs)\n    317 if file in {0, 1, 2}:\n    318     raise ValueError(\n    319         f\"IPython won't let you open fd={file} by default \"\n    320         \"as it is likely to crash IPython. If you know what you are doing, \"\n    321         \"you can use builtins' open.\"\n    322     )\n--&gt; 324 return io_open(file, *args, **kwargs)\n\nFileNotFoundError: [Errno 2] No such file or directory: '/usr/share/dict/words'",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#python-is-productive",
+    "href": "python/taste-of-python.html#python-is-productive",
+    "title": "A Taste of Python",
+    "section": "",
+    "text": "Python has an extensive standard library and many third-party libraries.\nThe following example find the most popular repositories on github.\n\nimport requests\n\nurl = \"https://api.github.com/search/repositories\"\nparams = {\n    \"q\": \"language:python\"\n}\n\ndata = requests.get(url, params=params).json()\n\nfor repo in data['items'][:10]:\n    print(repo['full_name'])\n\nkeras-team/keras\nscikit-learn/scikit-learn\ndeepfakes/faceswap\nTextualize/rich\ncharlax/professional-programming\nfaif/python-patterns\npsf/black\nodoo/odoo\n0voice/interview_internal_reference\ngto76/python-cheatsheet",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/taste-of-python.html#footnotes",
+    "href": "python/taste-of-python.html#footnotes",
+    "title": "A Taste of Python",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOn unix machines, the words in the dictionary are usually available in the file /usr/share/dict/words.↩︎",
+    "crumbs": [
+      "Introduction to Python",
+      "A Taste of Python"
+    ]
+  },
+  {
+    "objectID": "python/plotting.html",
+    "href": "python/plotting.html",
+    "title": "Plotting Graphs",
+    "section": "",
+    "text": "The matplotlib is one of the most popular libraries for plotting graphs with Python. Unlike many modern counterparts, matplotlib is primarily designed to produce static plots. It is still a popular option to generate publication quality plots in the academia.\nWhile it is easy to get started, it is very flexible and allows drawing complex things.\nWhile interactivity is not part of its design, we can achieve that using interactive widgets and creating animations. However, that may required a lot more code and may sound tedius.\nNeedless to day, we use numpy arrays for plotting graphs.\nimport numpy as np\nimport matplotlib.pyplot as plt",
+    "crumbs": [
+      "Introduction to Python",
+      "Plotting Graphs"
+    ]
+  },
+  {
+    "objectID": "python/plotting.html#getting-started-with-plotting",
+    "href": "python/plotting.html#getting-started-with-plotting",
+    "title": "Plotting Graphs",
+    "section": "Getting started with plotting",
+    "text": "Getting started with plotting\nLet’s plot sqrt.\n\nx = np.linspace(0, 2, 100)\ny = np.sqrt(x)\n\n\nplt.plot(x, y)\n\n# add a grid to the graph\nplt.grid()\n\n\n\n\n\n\n\n\nWe can even plot multiple plots in the same figure.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x)\nplt.plot(x, x*x)\nplt.plot(x, np.sqrt(x))\n\nplt.grid()\n\n\n\n\n\n\n\n\nIt is handy to add a legend when there are multiple plots in the same figure. And we can use latex for math expressions.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x, label=\"$y = x$\")\nplt.plot(x, np.sqrt(x), label=r\"$y = \\sqrt{x}$\")\nplt.plot(x, x*x, label=\"$y = x^2$\")\n\nplt.grid()\nplt.legend()\n\n# we can even give a title\n# the semicolon at the end of last line is used to supress the output of that expression\nplt.title(\"plot of $x$, $\\sqrt{x}$ and $x^2$\");\n\n\n\n\n\n\n\n\nNote that we write the last label as r\"$y = \\sqrt{x}$\". Notice the prefix r before the string. That indicates that it is a raw string. In regular strings, the \\ character has special meaning. For example \\n means a new line and \\t means a tab character.\nIf we write \"$\\theta$\", python intereprets the \\t in it as a tab and matplotlib only sees \"$&lt;tab&gt;heta$\". To avoid that we use raw strings whenever we are writing math expressions that require using \\ character.",
+    "crumbs": [
+      "Introduction to Python",
+      "Plotting Graphs"
+    ]
+  },
+  {
+    "objectID": "python/plotting.html#customizing-ticks",
+    "href": "python/plotting.html#customizing-ticks",
+    "title": "Plotting Graphs",
+    "section": "Customizing ticks",
+    "text": "Customizing ticks\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\n\n\n\n\n\n\n\nWe can customize the ticks.\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\nplt.xticks([0, 90, 180, 270, 360]);\n\n\n\n\n\n\n\n\nWe can even give custom labels to the ticks.\n\nx = np.linspace(0, 360, 100)\ny = np.sin(np.radians(x))\n\nplt.plot(x, y)\nplt.grid()\n\nplt.xticks([0, 90, 180, 270, 360], \n           [r\"$0$\", r\"$\\frac{\\pi}{2}$\", r\"$\\pi$\", r\"$\\frac{3\\pi}{2}$\", r\"$2\\pi$\"])\n\n# and even axis labels\nplt.xlabel(r\"$\\theta$\")\nplt.ylabel(r\"$\\sin{\\theta}$\")\n\n# and title\nplt.title(r\"$y = \\sin{\\theta}$\");",
+    "crumbs": [
+      "Introduction to Python",
+      "Plotting Graphs"
+    ]
+  },
+  {
+    "objectID": "python/plotting.html#saving-figures-as-images",
+    "href": "python/plotting.html#saving-figures-as-images",
+    "title": "Plotting Graphs",
+    "section": "Saving figures as images",
+    "text": "Saving figures as images\nMatplotlib allows exporting figures as images or pdf.\n\nx = np.linspace(0, 2, 100)\n\nplt.plot(x, x, label=\"$y = x$\")\nplt.plot(x, np.sqrt(x), label=r\"$y = \\sqrt{x}$\")\nplt.plot(x, x*x, label=\"$y = x^2$\")\n\nplt.grid()\nplt.legend()\n\n# we can even give a title\nplt.title(\"plot of $x$, $\\sqrt{x}$ and $x^2$\")\n\nplt.savefig(\"plots.png\")\nplt.savefig(\"plots.svg\")\nplt.savefig(\"plots.pdf\")\nprint(\"saved the figure as png, svg and pdf.\")\n\nsaved the figure as png, svg and pdf.\n\n\n\n\n\n\n\n\n\n\nProblem: Plot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\)\nPlot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\) in the same figure with \\(\\theta\\) going from \\(0\\) to \\(2\\pi\\).\nPlease use x ticks in increments of \\(\\frac{\\pi}{2}\\) and include legend.",
+    "crumbs": [
+      "Introduction to Python",
+      "Plotting Graphs"
+    ]
+  },
+  {
+    "objectID": "python/plotting.html#subplots",
+    "href": "python/plotting.html#subplots",
+    "title": "Plotting Graphs",
+    "section": "Subplots",
+    "text": "Subplots\nFor complex visualizations, we need to display multiple sub plots and it is easy to do with matplotlib.\n\nfig, (ax0, ax1) = plt.subplots(1, 2)\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nPlease note that the y-axis scale is different for both the graphs. We can force the same scale using sharey=True when creating subplots.\n\nfig, (ax0, ax1) = plt.subplots(1, 2, sharey=True)\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\n\n# specify custom fig size\nfig, (ax0, ax1) = plt.subplots(1, 2, sharey=True, figsize=(8, 4))\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nWe can do the same with two rows and one column. In that case, we can sharex instead of y.\n\n# specify custom fig size\nfig, (ax0, ax1) = plt.subplots(2, 1, sharex=True, figsize=(4, 8))\n\nx = np.linspace(0, 2, 100)\nax0.plot(x, x)\nax0.set_title(\"$y = x$\")\nax0.grid()\n\nax1.plot(x, np.sqrt(x))\nax1.set_title(label=r\"$y = \\sqrt{x}$\")\nax1.grid()\n\n\n\n\n\n\n\n\nWe can even do a grid.\n\n# specify custom fig size\nfig, axs = plt.subplots(2, 2, sharex=True, sharey=True, figsize=(8, 8))\n\ndef plot(ax, x, y, title):\n    ax.plot(x, y)\n    ax.set_title(title)\n    ax.grid()\n    \nx = np.linspace(0, 2, 100)\nplot(axs[0, 0], x, x, r\"$y = x$\")\nplot(axs[0, 1], x, x*x, r\"$y = x^2$\")\nplot(axs[1, 0], x, np.sqrt(x), r\"$y = \\sqrt{x}$\")\nplot(axs[1, 1], x, 2**x, r\"$y = 2^x$\")\n\n# set super title\nplt.suptitle(\"Exploring subplots\");\n\n\n\n\n\n\n\n\n\nProblem: Plot \\(\\sin\\) and \\(\\cos\\) as subplots\nPlot \\(\\sin{\\theta}\\) and \\(\\cos{\\theta}\\) as subplots with \\(\\theta\\) going from \\(0\\) to \\(2\\pi\\).\nPlease use x ticks in increments of \\(\\frac{\\pi}{2}\\) and include titles for the subplots.",
+    "crumbs": [
+      "Introduction to Python",
+      "Plotting Graphs"
+    ]
+  },
+  {
+    "objectID": "python/plotting.html#example-lassajous-curves",
+    "href": "python/plotting.html#example-lassajous-curves",
+    "title": "Plotting Graphs",
+    "section": "Example: Lassajous Curves",
+    "text": "Example: Lassajous Curves\nLassajous Curves are interesting mathematical curves that are generated using:\n\\(x = \\sin{(at + \\delta)}\\)\n\\(y = \\sin{(bt)}\\)\n\ndef lassajous(a, b, delta):\n    t = np.linspace(0, 2*np.pi, 1000)\n    x = np.sin(a*t+delta)\n    y = np.sin(b*t)\n\n    plt.figure(figsize=(6, 6))\n    plt.plot(x, y)\n    plt.grid()\n    \n    # show delta as a fraction of pi\n    delta_fraction = delta/np.pi\n    plt.title(rf\"$\\delta={delta_fraction}\\pi, a={a}, b={b}$\")\n\n\nlassajous(a=1, b=1, delta=0)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=1, delta=np.pi/2)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=1, delta=np.pi/4)\n\n\n\n\n\n\n\n\n\nlassajous(a=1, b=2, delta=np.pi/2)\n\n\n\n\n\n\n\n\n\nProblem: Table of Lassajous curves\nPlot the following lassajous curves using subplots. The row labels in the picture shows the ratio \\(a:b\\) and the column label shows the value of \\(\\delta\\).\nIt may be tricky to set the row and column labels as shown in the image. Specfify the value of \\(\\delta, a, b\\) for each subplot.",
+    "crumbs": [
+      "Introduction to Python",
+      "Plotting Graphs"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-10-21/index.html",
+    "href": "lecture-notes/2024-10-21/index.html",
+    "title": "Introduction to Python (Mon Oct 21, 2024)",
+    "section": "",
+    "text": "1 + 2\n\n3\nprint(\"hello, world!\")\n\nhello, world!\nWe use markdown to write notes.\nPress Shift + Enter to execute a cell.\nYou can write heading using:",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 21, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-10-21/index.html#heading-level-2",
+    "href": "lecture-notes/2024-10-21/index.html#heading-level-2",
+    "title": "Introduction to Python (Mon Oct 21, 2024)",
+    "section": "Heading level 2",
+    "text": "Heading level 2\nYou can also write math.\n$x^2 + y^2 = z^2$\n\n$\\Sigma_{x=0}^{n}{x} = \\frac{n (n+1)}{2}$\n\\(x^2 + y^2 = z^2\\)\n\\(\\Sigma_{x=0}^{n}{x} = \\frac{n (n+1)}{2}\\)",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 21, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-10-21/index.html#quick-recap-of-python",
+    "href": "lecture-notes/2024-10-21/index.html#quick-recap-of-python",
+    "title": "Introduction to Python (Mon Oct 21, 2024)",
+    "section": "Quick Recap of Python",
+    "text": "Quick Recap of Python\n\nprint(\"hello, world!\")\n\nhello, world!",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 21, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-10-21/index.html#python-datatypes",
+    "href": "lecture-notes/2024-10-21/index.html#python-datatypes",
+    "title": "Introduction to Python (Mon Oct 21, 2024)",
+    "section": "Python Datatypes",
+    "text": "Python Datatypes\n\nx = 1\nprint(x)\n\nx = \"hello\"\nprint(x)\n\n1\nhello\n\n\n\nIntegers\nPython has integers.\n\n7 + 2\n\n9\n\n\n\n7 - 2\n\n5\n\n\n\n7 * 2\n\n14\n\n\n\n7 / 2\n\n3.5\n\n\nTo perform integer division, use the // operator.\n\n7 // 2\n\n3\n\n\n\n2 ** 10\n\n1024\n\n\n\n2 ** 1000\n\n10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376\n\n\n\n\nFloating Point Numbers\nPython has floating point numbers too.\n\n1.2 + 2.3\n\n3.5\n\n\n\n0.1 + 0.2 \n\n0.30000000000000004\n\n\nPlease checkout https://0.30000000000000004.com/ for explanation.\n\n\nStrings\nStrings in Python can be closed in single quotes of double quotes.\n\n\"hello\"\n\n'hello'\n\n\n\n'world'\n\n'world'\n\n\n\n\"hello\" + \"world\"\n\n'helloworld'\n\n\n\n\"hello\" * 5\n\n'hellohellohellohellohello'\n\n\n\nline = \"-\" * 40\nprint(line)\n\n----------------------------------------\n\n\n\nlen(\"hello\")\n\n5\n\n\nProblem: Can you write a program to generate the following pattern using Python code? It has exactly 20 hyphen (-) characters.\n@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@-@\nProblem: Write a program to display a header and footer for name as shown below.\nname = \"Python\"\n# your code here\nWill produce:\n------\nPython\n------\nIf the value of name is “Bangalore”, the output would be:\n---------\nBangalore\n---------\n\nname = \"Python\"\n\n\nprint(name)\n\nPython\n\n\nPython supports multi-line strings too!\n\nmessage  = \"\"\"\nHello everyone,\n\nWelcome to the FCP class.\n\"\"\"\n\n\nmessage\n\n'\\nHello everyone,\\n\\nWelcome to the FCP class.\\n'\n\n\n\nprint(message)\n\n\nHello everyone,\n\nWelcome to the FCP class.\n\n\n\n\nString Formatting\nPython uses format strings for string formatting.\nThey are like regular strings, but start with a prefix f.\n\nname = \"Python\"\nmessage = f\"Hello {name}\"\nprint(message)\n\nHello Python\n\n\n\nname = \"Anand\"\n\n\nmessage = f\"\"\"\nDear {name},\n\nGood morning!\n\"\"\"\n\n\nprint(message)\n\n\nDear Anand,\n\nGood morning!\n\n\n\n\nn = 12\n\nfor i in range(1, 11):\n    print(f\"{n} * {i} = {n*i}\")\n\n12 * 1 = 12\n12 * 2 = 24\n12 * 3 = 36\n12 * 4 = 48\n12 * 5 = 60\n12 * 6 = 72\n12 * 7 = 84\n12 * 8 = 96\n12 * 9 = 108\n12 * 10 = 120\n\n\nThe string formatting supports aligning.\n\nn = 12\n\nfor i in range(1, 11):\n    print(f\"{n:2d} * {i:2d} = {n*i:3d}\")\n\n12 *  1 =  12\n12 *  2 =  24\n12 *  3 =  36\n12 *  4 =  48\n12 *  5 =  60\n12 *  6 =  72\n12 *  7 =  84\n12 *  8 =  96\n12 *  9 = 108\n12 * 10 = 120\n\n\nPython has good support for unicode text.\n\nname = \"ಭಾರತೀಯ ಅಂಕಿಅಂಶಗಳ ಸಂಸ್ಥೆ\"\n\n\nprint(\"Welcome to\", name)\n\nWelcome to ಭಾರತೀಯ ಅಂಕಿಅಂಶಗಳ ಸಂಸ್ಥೆ\n\n\n\nprint(\"\\u0c05\\u0c06\\u0c07\\u0c08\") # telugu\nprint(\"\\u0c85\\u0c86\\u0c87\\u0c88\") # kannada\nprint(\"\\u0905\\u0906\\u0907\\u0908\") # hindi\n\nఅఆఇఈ\nಅಆಇಈ\nअआइई\n\n\n\ncat = \"\\U0001f638\"\n\n\ncat\n\n'😸'\n\n\n\ncat * 10\n\n'😸😸😸😸😸😸😸😸😸😸'",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 21, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-10-21/index.html#lists",
+    "href": "lecture-notes/2024-10-21/index.html#lists",
+    "title": "Introduction to Python (Mon Oct 21, 2024)",
+    "section": "Lists",
+    "text": "Lists\n\n[1, 2, 3, 4]\n\n[1, 2, 3, 4]\n\n\n\nx = [\"a\", \"b\", \"c\", \"d\"]\n\n\nx\n\n['a', 'b', 'c', 'd']\n\n\n\nlen(x)\n\n4\n\n\n\nnames = [\"Alice\", \"Bob\", \"Charlie\", \"Dave\"]\n\n\nnames\n\n['Alice', 'Bob', 'Charlie', 'Dave']\n\n\n\nlen(names)\n\n4\n\n\n\nnames[0]\n\n'Alice'\n\n\n\nnames[1]\n\n'Bob'\n\n\nWe can use for loop to iterate over a list.\n\nfor name in names:\n    print(\"Hello\", name)\n\nHello Alice\nHello Bob\nHello Charlie\nHello Dave\n\n\nHow to print them in the same line?\n\nfor name in names:\n    print(\"Hello\", name, end=\" * \")\n\nHello Alice * Hello Bob * Hello Charlie * Hello Dave * \n\n\n\nDictionaries\n\nphone_numbers = {\n    \"Alice\": 1234,\n    \"Bob\": 2345,\n    \"Charlie\": 3456\n}\n\n\nphone_numbers\n\n{'Alice': 1234, 'Bob': 2345, 'Charlie': 3456}\n\n\n\nphone_numbers[\"Alice\"]\n\n1234\n\n\n\nphone_numbers[\"Dave\"] = 4567\n\n\nphone_numbers\n\n{'Alice': 1234, 'Bob': 2345, 'Charlie': 3456, 'Dave': 4567}\n\n\n\nphone_numbers[\"Alice\"] = 1235\n\n\nphone_numbers\n\n{'Alice': 1235, 'Bob': 2345, 'Charlie': 3456, 'Dave': 4567}",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 21, 2024)"
+    ]
+  },
+  {
+    "objectID": "lecture-notes/2024-10-21/index.html#functions-methods-modules",
+    "href": "lecture-notes/2024-10-21/index.html#functions-methods-modules",
+    "title": "Introduction to Python (Mon Oct 21, 2024)",
+    "section": "Functions, Methods & Modules",
+    "text": "Functions, Methods & Modules\nPython has many built-in functions.\n\nprint(\"hello\")\n\nhello\n\n\n\nlen(\"hello\")\n\n5\n\n\n\nsum([1, 2, 3, 4, 5])\n\n15\n\n\nPython doesn’t allow operations on incompatible datatypes.\n\n1 + \"2\"\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[75], line 1\n----&gt; 1 1 + \"2\"\n\nTypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n\n\nThe built-in functions int and str can be used to convert values to integer and string respectively.\n\nstr(1) + \"2\"\n\n'12'\n\n\n\n1 + int(\"2\")\n\n3\n\n\n\nExample: Counting the number of digits in a number\n\n12345\n\n12345\n\n\n\n2 ** 100\n\n1267650600228229401496703205376\n\n\n\n# how many digits  are there in number n?\nn = 2 ** 100\n\nlen(str(n))\n\n31\n\n\n\n\nWriting our own functions\n\ndef square(x):\n    return x*x\n\n\nsquare(4)\n\n16\n\n\nCan we convert the count digits example into a function?\n\ndef count_digits(n):\n    return len(str(n))\n\n\ncount_digits(2**100)\n\n31",
+    "crumbs": [
+      "Lecture Notes",
+      "Introduction to Python (Mon Oct 21, 2024)"
+    ]
   },
   {
     "objectID": "lecture-notes/2024-09-30/index.html",
