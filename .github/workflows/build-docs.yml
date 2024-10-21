@@ -22,7 +22,7 @@ jobs:
 
       - name: install dependencies
         run: |
-          python3 -m pip install jupyter
+          python3 -m pip install jupyter jupyter-cache
 
       - name: Render Book project
         uses: quarto-dev/quarto-actions/render@v2
