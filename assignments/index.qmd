@@ -1,0 +1,8 @@
+---
+title: Assignments
+listing:
+  contents: "*.ipynb"
+  type: table
+sidebar: true
+toc: false
+---
