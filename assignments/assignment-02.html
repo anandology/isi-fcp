@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Git – Fundamentals of Computing and Programming</title>
+<title>Assignment 02 – Fundamentals of Computing and Programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../lecture-notes/index.html" rel="next">
+<link href="../assignments/index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -101,11 +103,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked slimcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -114,9 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Fundamentals of Computing and Programming
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/assignment-02.html">Assignment 02</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -243,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/assignment-02.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignments/assignment-02.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Assignment 02</span></a>
   </div>
 </li>
@@ -306,28 +335,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-git" id="toc-introduction-to-git" class="nav-link active" data-scroll-target="#introduction-to-git">Introduction to Git</a></li>
-  <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link" data-scroll-target="#what-is-git">What is Git?</a></li>
-  <li><a href="#what-is-a-version-control-system" id="toc-what-is-a-version-control-system" class="nav-link" data-scroll-target="#what-is-a-version-control-system">What is a version control system?</a>
-  <ul class="collapse">
-  <li><a href="#why-do-we-need-a-version-control-system" id="toc-why-do-we-need-a-version-control-system" class="nav-link" data-scroll-target="#why-do-we-need-a-version-control-system">Why do we need a version control system?</a></li>
-  </ul></li>
-  <li><a href="#git-vs.-github" id="toc-git-vs.-github" class="nav-link" data-scroll-target="#git-vs.-github">Git vs.&nbsp;Github</a></li>
-  <li><a href="#setting-up-git" id="toc-setting-up-git" class="nav-link" data-scroll-target="#setting-up-git">Setting up Git</a></li>
-  <li><a href="#setup-ssh-keys" id="toc-setup-ssh-keys" class="nav-link" data-scroll-target="#setup-ssh-keys">Setup ssh-keys</a></li>
-  <li><a href="#create-a-repository-on-github" id="toc-create-a-repository-on-github" class="nav-link" data-scroll-target="#create-a-repository-on-github">Create a Repository on Github</a></li>
-  <li><a href="#clone-the-repo" id="toc-clone-the-repo" class="nav-link" data-scroll-target="#clone-the-repo">Clone the repo</a></li>
-  <li><a href="#add-a-new-file-to-the-repo" id="toc-add-a-new-file-to-the-repo" class="nav-link" data-scroll-target="#add-a-new-file-to-the-repo">Add a new file to the repo</a></li>
+  <li><a href="#problem-1-digit-count" id="toc-problem-1-digit-count" class="nav-link active" data-scroll-target="#problem-1-digit-count">Problem 1: Digit Count</a></li>
+  <li><a href="#problem-2-despace" id="toc-problem-2-despace" class="nav-link" data-scroll-target="#problem-2-despace">Problem 2: Despace</a></li>
+  <li><a href="#problem-3-reverse-words" id="toc-problem-3-reverse-words" class="nav-link" data-scroll-target="#problem-3-reverse-words">Problem 3: Reverse Words</a></li>
+  <li><a href="#problem-4-multiple-of-3-and-5" id="toc-problem-4-multiple-of-3-and-5" class="nav-link" data-scroll-target="#problem-4-multiple-of-3-and-5">Problem 4: Multiple of 3 and 5</a></li>
+  <li><a href="#problem-5-generate-password" id="toc-problem-5-generate-password" class="nav-link" data-scroll-target="#problem-5-generate-password">Problem 5: Generate Password</a></li>
+  <li><a href="#problem-6-fortune" id="toc-problem-6-fortune" class="nav-link" data-scroll-target="#problem-6-fortune">Problem 6: Fortune</a></li>
+  <li><a href="#problem-7-countdown" id="toc-problem-7-countdown" class="nav-link" data-scroll-target="#problem-7-countdown">Problem 7 : Countdown</a></li>
+  <li><a href="#problem-8-largest-number-in-a-file" id="toc-problem-8-largest-number-in-a-file" class="nav-link" data-scroll-target="#problem-8-largest-number-in-a-file">Problem 8: Largest Number in a File</a></li>
+  <li><a href="#problem-9-plot-y-x2-and-y-2x" id="toc-problem-9-plot-y-x2-and-y-2x" class="nav-link" data-scroll-target="#problem-9-plot-y-x2-and-y-2x">Problem 9: Plot <span class="math inline">\(y = x^2\)</span> and <span class="math inline">\(y = 2^x\)</span></a></li>
+  <li><a href="#problem-10-manhattan-distance" id="toc-problem-10-manhattan-distance" class="nav-link" data-scroll-target="#problem-10-manhattan-distance">Problem 10: Manhattan Distance</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/assignment-02.html">Assignment 02</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction to Git</h1>
-<p class="subtitle lead">How to keep track of changes to work using Git &amp; GitHub</p>
+<h1 class="title">Assignment 02</h1>
 </div>
 
 
@@ -344,74 +370,186 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-to-git" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-git">Introduction to Git</h2>
-</section>
-<section id="what-is-git" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-git">What is Git?</h2>
-</section>
-<section id="what-is-a-version-control-system" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="what-is-a-version-control-system">What is a version control system?</h2>
-<hr>
-<section id="why-do-we-need-a-version-control-system" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="why-do-we-need-a-version-control-system">Why do we need a version control system?</h3>
-<p><img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" align="right" style="text-align: right;"></p>
-<!--
-![](http://www.phdcomics.com/comics/archive/phd101212s.gif){.nostretch fig-align="right" width="50%"} -->
-<p>To avoid sistualtions like this.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Image Credits: notFinal.doc by Jorge Cham,<br> https://www.phdcomics.com</p>
-</div></div></section>
-</section>
-<section id="git-vs.-github" class="level2">
-<h2 class="anchored" data-anchor-id="git-vs.-github">Git vs.&nbsp;Github</h2>
-<p><strong>Git</strong> is a version control system created by Linus Torvalds.</p>
-<p><strong>Github</strong> is a commercial service that offers git hosting in the cloud. It is very popular among the developers and it is almost the defacto standard for hosting code.</p>
-<p>It is possible to use <em>Git</em> without using <em>Github</em>. However, for this course, we’ll use both <em>Git</em> and <em>Github</em>.</p>
-</section>
-<section id="setting-up-git" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-git">Setting up Git</h2>
-<p>Setup git by configuring your name and email address in git.</p>
-<pre class="text"><code>$ git config --global user.name "Anand Chitipothu"
-$ git config --global user.email "anand@example.com"</code></pre>
-<p>Please use your name and email address in the example above. Also, make sure the email address is same as what you have used when creating an account on github.</p>
-</section>
-<section id="setup-ssh-keys" class="level2">
-<h2 class="anchored" data-anchor-id="setup-ssh-keys">Setup ssh-keys</h2>
-<pre class="text"><code>$ ssh-keygen -t ed25519 -C anand@my-laptop-name</code></pre>
-<p>That will output the following:</p>
-<pre class="text"><code>Generating public/private ed25519 key pair.
-Enter file in which to save the key (/home/anand/.ssh/id_ed25519):</code></pre>
-<p>Just press <em>Enter</em>.</p>
-<pre class="text"><code>Enter passphrase (empty for no passphrase):</code></pre>
-<p>If you are using your own laptop, leave this empty. If you using the lab computer, pick a strong passphrase as that allows pusing any changes to your repositories on github.</p>
-</section>
-<section id="create-a-repository-on-github" class="level2 nostretch">
-<h2 class="nostretch anchored" data-anchor-id="create-a-repository-on-github">Create a Repository on Github</h2>
-<div class="columns">
-<div class="column">
+<p>You are expected to submit this assignment as a github repo.</p>
 <ul>
-<li>Login to github</li>
-<li>Create a new repository with name <code>git-practice</code>.</li>
-<li>Add <em>Repository name</em> and <em>Description</em></li>
-<li>And select <em>Add a README file</em>.</li>
+<li><p>Create a new github repository. You may call it <code>fcp-assignment2</code>. Please make sure you make this repository public.</p></li>
+<li><p>Please <a href="https://raw.githubusercontent.com/anandology/practical-computing/refs/heads/main/notebooks/assignment-02.ipynb">download this notebook</a> and add it to your repository.</p></li>
+<li><p>Solve all the problems in the notebook and commit them to the repository.</p></li>
 </ul>
-</div><div class="column">
-<p><img src="new-repo.png" align="right" style="border: 1px solid #ddd; padding: 2px;"></p>
-</div>
-</div>
+<p>The instructions for submitting your assignment will be shared with you by email.</p>
+<p>Please solve the problems in the empty cells provided below the problem statement.</p>
+<p>Some of the problems require input files. In those cases, sample input files provided after the problem.</p>
+<p>Please <code>Run All Cells</code> to execute all the cells and create the required files before you start solving the problems. Please note that you just need to do that only once.</p>
+<section id="problem-1-digit-count" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-digit-count">Problem 1: Digit Count</h2>
+<p>Write a function <code>digit_count</code> that takes a number and a digit as argument and returns the number of times the digit is present in that number.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> digit_count(<span class="dv">1231</span>, <span class="dv">1</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> digit_count(<span class="dv">1231</span>, <span class="dv">3</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> digit_count(<span class="dv">1231</span>, <span class="dv">9</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Hint:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">"mathematics"</span>.count(<span class="st">"mat"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="clone-the-repo" class="level2">
-<h2 class="anchored" data-anchor-id="clone-the-repo">Clone the repo</h2>
-<p>Clone the repo to your local computer.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>git clone git@github.com:anandology/git-practice.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="problem-2-despace" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-despace">Problem 2: Despace</h2>
+<p>Write a function <code>despace</code> to remove all the spaces from a string.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> despace(<span class="st">"hello world"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">'helloworld'</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> despace(<span class="st">"a b c d e"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">'abcde'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> despace(<span class="st">"pi seconds is a nano century"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">'pisecondsisananocentury'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="add-a-new-file-to-the-repo" class="level2">
-<h2 class="anchored" data-anchor-id="add-a-new-file-to-the-repo">Add a new file to the repo</h2>
-<pre><code>$ touch planets.md
+<section id="problem-3-reverse-words" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-reverse-words">Problem 3: Reverse Words</h2>
+<p>Write a function <code>reverse_words</code> that takes a sentence and returns a new sentence with all the words in the reserse order.</p>
+<pre><code>&gt;&gt;&gt; reverse_words("joy of programming")
+'programming of joy'
 
-$ git status</code></pre>
+&gt;&gt;&gt; reverse_words("less is more")
+'more is less'
+
+&gt;&gt;&gt; reverse_words("road goes ever on and on")
+'on and on ever goes road'</code></pre>
+<p>Please note that only the order of the words in the sentence is reversed, not the letters in each word.</p>
+</section>
+<section id="problem-4-multiple-of-3-and-5" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4-multiple-of-3-and-5">Problem 4: Multiple of 3 and 5</h2>
+<p>If we list all the natural numbers below that are multiples of <code>3</code> or <code>5</code>, we get <code>3</code>, <code>5</code>, <code>6</code>, and <code>9</code>. The sum of these multiples is <code>23</code>.</p>
+<p>Write a python program to compute the sum of all the multiples of <code>3</code> or <code>5</code> below <code>1000</code>.</p>
+<p>Credits: This problem is based on <a href="https://projecteuler.net/problem=1">Problem 1 of Project Euler</a>.</p>
+</section>
+<section id="problem-5-generate-password" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5-generate-password">Problem 5: Generate Password</h2>
+<p>Write a function <code>generate_password</code> to generate random password of given length.</p>
+<p>The function should take length <code>n</code> as argument and generate a password using mix of letters from lowercase, uppercase from English alphabet and digits. It should not have any other characters.</p>
+<pre><code>&gt;&gt;&gt; generate_password(8)
+'rBZLcP8V'
+&gt;&gt;&gt; generate_password(25)
+'JU938tUT36QRvVEPh9OLrxlrB'</code></pre>
+<p><strong>Hint</strong></p>
+<ul>
+<li>See <code>random.choice</code> function from the <code>random</code> module</li>
+<li>See <code>string.ascii_letters</code> and <code>string.digits</code> from the string module</li>
+</ul>
+</section>
+<section id="problem-6-fortune" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6-fortune">Problem 6: Fortune</h2>
+<p><code>fortune</code> is popular program on Unix that displays a random message from a database of quotations. These quotes are often funny and witty.</p>
+<p>Your task is a implement a simpler version of the <em>fortune</em> command. Write a program <code>fortune.py</code> that prints a random quote from <code>fortune.txt</code> file. The file contains quotes separated by <code>%</code>. A sample <code>fortune.txt</code> is provided below.</p>
+<p>This is how it is suppose to work.</p>
+<pre><code>$ python fortune.py
+You are taking yourself far too seriously.
+
+$ python fortune.py
+It usually takes more than three weeks to prepare a good impromptu speech.
+                -- Mark Twain</code></pre>
+<p><strong>Hint:</strong></p>
+<p>Python has a built-in module <code>random</code>. It can be used to pick a random item from a list of items.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> random</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> names <span class="op">=</span> [<span class="st">"alice"</span>, <span class="st">"bob"</span>, <span class="st">"charlie"</span>, <span class="st">"dave"</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> random.choice(names)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">'charlie'</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> random.choice(names)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">'alice'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-27" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span><span class="bu">file</span> fortune.txt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>You will soon forget this.</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Too much <span class="kw">is</span> just enough.</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                <span class="op">--</span> Mark Twain, on whiskey</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>Q:      Why did the astrophysicist order three hamburgers?</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>A:      Because he was hungry.</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>You will be aided greatly by a person whom you thought to be unimportant.</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>Communicate<span class="op">!</span>  It can<span class="st">'t make things any worse.</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="er">%</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="er">It usually takes more than three weeks to prepare a good impromptu speech.</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                <span class="op">--</span> Mark Twain</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>Write yourself a threatening letter <span class="kw">and</span> pen a defiant reply.</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>You should go home.</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>You are taking yourself far too seriously.</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>Q:      Do you know what the death rate around here <span class="kw">is</span>?</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>A:      One per person.</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="op">%</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>You need no longer worry about the future.  This time tomorrow you<span class="st">'ll be dead. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Overwriting fortune.txt</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-7-countdown" class="level2">
+<h2 class="anchored" data-anchor-id="problem-7-countdown">Problem 7 : Countdown</h2>
+<p>Write a program <code>countdown.py</code> to print numbers from <code>n</code> to 1.</p>
+<p>The program should take the number <code>n</code> as command-line argument.</p>
+<pre><code>$ python countdown.py 5
+5
+4
+3
+2
+1</code></pre>
+</section>
+<section id="problem-8-largest-number-in-a-file" class="level2">
+<h2 class="anchored" data-anchor-id="problem-8-largest-number-in-a-file">Problem 8: Largest Number in a File</h2>
+<p>Write a function <code>largest_number_in_file</code> that takes a name of a file containing numbers as an arguments and returns largest number in that file.</p>
+<pre><code>&gt;&gt;&gt; largest_number_in_file("5.txt")
+5
+&gt;&gt;&gt; largest_number_in_file("numbers.txt")
+42</code></pre>
+<p>The sample input files are provided below.</p>
+<p><strong>Hint:</strong></p>
+<p>The built-in function <code>max</code> takes a list a numbers as arguments and returns the maximum among them.</p>
+<pre><code>&gt;&gt;&gt; max([1, 2, 3, 4, 5])
+5</code></pre>
+<div id="cell-38" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span><span class="bu">file</span> <span class="fl">5.</span><span class="er">txt</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Overwriting 5.txt</code></pre>
+</div>
+</div>
+<div id="cell-39" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span><span class="bu">file</span> numbers.txt</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="dv">37</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="dv">42</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="dv">19</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="dv">18</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="dv">24</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Writing numbers.txt</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-9-plot-y-x2-and-y-2x" class="level2">
+<h2 class="anchored" data-anchor-id="problem-9-plot-y-x2-and-y-2x">Problem 9: Plot <span class="math inline">\(y = x^2\)</span> and <span class="math inline">\(y = 2^x\)</span></h2>
+<p>Write a python program to plot <span class="math inline">\(y = x^2\)</span> and <span class="math inline">\(y = 2^x\)</span> in the range <span class="math inline">\([-2, 2]\)</span>. Both the plots should appear in the same graph and add legend to label the plots. Please use latex math expressions for the labels to write <span class="math inline">\(x^2\)</span> and <span class="math inline">\(2^x\)</span>.</p>
+</section>
+<section id="problem-10-manhattan-distance" class="level2">
+<h2 class="anchored" data-anchor-id="problem-10-manhattan-distance">Problem 10: Manhattan Distance</h2>
+<p>Write a function <code>manhattan_distance</code> to compute the manhattan distance between two vectors.</p>
+<p>The manhattan distance is defined as:</p>
+<p><span class="math inline">\(M(p, q) = \sum_{i=1}^{n}{| p_i - q_i |}\)</span></p>
+<p>For more info see: https://en.wikipedia.org/wiki/Taxicab_geometry</p>
+<pre><code>&gt;&gt;&gt; manhanttan_distance(np.array([0,0]), np.array([3, 4]))
+7</code></pre>
 
 
 </section>
@@ -837,6 +975,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../assignments/index.html" class="pagination-link" aria-label="Assignments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignments</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../lecture-notes/index.html" class="pagination-link" aria-label="Lecture Notes">
+        <span class="nav-page-text">Lecture Notes</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
