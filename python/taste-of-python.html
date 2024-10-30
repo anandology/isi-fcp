@@ -294,6 +294,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Introduction to Python (Mon Oct 21, 2024)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecture-notes/2024-10-28/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">More Python</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -332,14 +338,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="python-is-simple">Python is Simple</h2>
 <p>Python is a very simple programming language and it is quite easy to learn.</p>
 <p>Writing a hello-world program just takes a single line of code.</p>
-<div id="2dd00d3d" class="cell" data-execution_count="1">
+<div id="50433d6a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>hello, world!</code></pre>
 </div>
 </div>
 <p>It is very handy to use Python as a calculator.</p>
-<div id="5e165642" class="cell" data-execution_count="2">
+<div id="bb95b411" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
@@ -349,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="python-is-dynamically-typed" class="level2">
 <h2 class="anchored" data-anchor-id="python-is-dynamically-typed">Python is Dynamically Typed</h2>
 <p>Python is a dynamically typed programming language, so you don’t need to declare type of variables.</p>
-<div id="28867127" class="cell" data-execution_count="3">
+<div id="81547cb9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">+</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -358,7 +364,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>It is perfectly fine to reassign a variable to a value of a different type.</p>
-<div id="edae1790" class="cell" data-execution_count="4">
+<div id="9b648fa2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -370,7 +376,7 @@ foo</code></pre>
 </div>
 </div>
 <p>While the variables do not have types associated with them, the values do have types. Python is strict about them and it doesn’t allow operations on incompatible datatypes.</p>
-<div id="2198bc87" class="cell" data-execution_count="5">
+<div id="941cbf3f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="st">"2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -388,7 +394,7 @@ Cell <span class="ansi-green-fg">In[5], line 1</span>
 <section id="python-uses-indentation" class="level2">
 <h2 class="anchored" data-anchor-id="python-uses-indentation">Python uses Indentation</h2>
 <p>Python uses indentation to identify the code that is part of a block.</p>
-<div id="c3493629" class="cell" data-execution_count="6">
+<div id="37d7e60f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>marks <span class="op">=</span> <span class="dv">50</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> marks <span class="op">&gt;</span> <span class="dv">35</span>:</span>
@@ -401,7 +407,7 @@ Cell <span class="ansi-green-fg">In[5], line 1</span>
 </div>
 <p>Notice that Python doesn’t use the usual <code>{</code> and <code>}</code> characters to identify code blocks. It just uses indentation to identify the block of code that is part of compound statements like <code>if</code>, <code>else</code>, etc.</p>
 <p>Here is another example:</p>
-<div id="8502ee30" class="cell" data-execution_count="7">
+<div id="8a59e461" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> numbers:</span>
@@ -421,7 +427,7 @@ done</code></pre>
 <p>Python has elegant data strucutres and many built-in functions.</p>
 <p>Using them the right way leads to very elegant code.</p>
 <p>For example, the following example computes the sum of squares of all even numbers below one million.</p>
-<div id="2d27426d" class="cell" data-execution_count="8">
+<div id="6a80574e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sum of squares of all even numbers below one million</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>([n<span class="op">*</span>n <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000000</span>) <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -430,7 +436,7 @@ done</code></pre>
 </div>
 <p>Isn’t that almost like restating the problem?</p>
 <p>Not impressed yet? Here is another gem to find the longest word in the english dictionary<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<div id="db119e2b" class="cell" data-execution_count="9">
+<div id="8816bb94" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what is the lonest word in the dictioanary</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(<span class="bu">open</span>(<span class="st">"/usr/share/dict/words"</span>), key<span class="op">=</span><span class="bu">len</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
@@ -459,7 +465,7 @@ File <span class="ansi-green-fg">~/.local/lib/python3.10/site-packages/IPython/c
 <h2 class="anchored" data-anchor-id="python-is-productive">Python is Productive</h2>
 <p>Python has an extensive standard library and many third-party libraries.</p>
 <p>The following example find the most popular repositories on github.</p>
-<div id="e5e6df68" class="cell" data-execution_count="10">
+<div id="cacf5ab1" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://api.github.com/search/repositories"</span></span>
@@ -480,8 +486,8 @@ Significant-Gravitas/AutoGPT
 jackfrued/Python-100-Days
 AUTOMATIC1111/stable-diffusion-webui
 huggingface/transformers
-521xueweihan/HelloGitHub
-yt-dlp/yt-dlp</code></pre>
+ytdl-org/youtube-dl
+521xueweihan/HelloGitHub</code></pre>
 </div>
 </div>
 
