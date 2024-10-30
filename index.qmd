@@ -22,7 +22,7 @@ The source code for this website is available at the following github repository
 
 ## Credits
 
-This course is taught of Prof. Jishnu Biswas, ISI Bangalore.
+This course is taught of Jishnu Biswas, ISI Bangalore.
 
 This website is setup by [Anand Chitipothu](https://anandology.com/).
 
